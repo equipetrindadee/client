@@ -1,0 +1,27 @@
+.loading-container {
+    display: flex;
+    width: 100% !important;
+    height: 100vh !important;
+    z-index: 2000 !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100vh !important; /* Altura da tela cheia */
+    overflow: hidden; /* Evita overflow se a imagem for maior que a tela */
+    margin: 0; /* Remove margens */
+    padding: 0; /* Remove preenchimento */
+   
+}
+
+.loading-image {
+    max-width: 100% !important; /* A imagem ocupa 100% da largura da tela */
+    height: 100vh !important; /* A imagem ocupa 100% da altura da tela */
+    object-fit: cover !important; 
+    z-index: 2000 !important;/* A imagem cobre toda a tela sem distorcer */
+}
+
+
+
+.loading-container h2 {
+    font-size: 24px;
+    color: #333; /* Cor do texto */
+}

@@ -1,0 +1,45 @@
+/* direito.css */
+.calendar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.calendar-box {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+}
+.calendar-container {
+  display: flex;
+  flex-direction: row; /* Para telas maiores */
+  justify-content: space-between; /* Espaçamento entre os componentes */
+}
+.scheduled-days {
+  width: 100%; /* Ocupa 100% da largura disponível */
+  padding: 10px; /* Adiciona um padding */
+  border: 1px solid #ccc; /* Adiciona uma borda */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve */
+  border-radius: 8px; /* Arredonda os cantos da div */
+  margin-top: 10px; /* Adiciona um espaçamento acima da div */
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .calendar-container {
+    flex-direction: column; /* Muda para coluna para telas menores */
+  }
+  .calendar-box {
+    max-width: 300px;
+    padding: 5px;
+  }
+  .scheduled-days {
+    width: 100%; /* A largura da div de agendamentos ocupa 100% */
+    padding: 10px; /* Adiciona um padding */
+    border: none; /* Remove a borda em telas pequenas */
+  }
+}
+
+
+

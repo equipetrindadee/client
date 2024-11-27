@@ -1,0 +1,150 @@
+.DashBoardMaster-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.DashBoardMaster-sidebar {
+    background-color: #623CEA;
+    width: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    gap: 20px;
+    color: white;
+}
+
+.DashBoardMaster-content {
+    width: 95%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.DashBoardMaster-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.DashBoardMaster-header h1 {
+    font-family: 'Pattaya', cursive;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.DashBoardMaster-grids {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.DashBoardMaster-card {
+    background-color: #89CFF0;
+    color: white;
+    width: 22%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+.DashBoardMaster-card:nth-child(2) { background-color: #6495ED; }
+.DashBoardMaster-card:nth-child(3) { background-color: #4169E1; }
+.DashBoardMaster-card:nth-child(4) { background-color: #6A5ACD; }
+
+.DashBoardMaster-bottom-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Alinha a seção do lado esquerdo mais acima */
+    width: 100%;
+    margin-top: 20px; /* Dá mais espaço acima da seção de baixo */
+}
+
+.DashBoardMaster-notifications {
+    width: 60%;
+    font-size: 1rem;
+}
+
+.DashBoardMaster-notifications h3 {
+    font-weight: bold;
+}
+
+.DashBoardMaster-notifications ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.DashBoardMaster-notifications li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    gap: 10px;
+    font-size: 1rem;
+}
+
+.DashBoardMaster-actions {
+    width: 35%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    align-items: center;
+    position: relative; /* Torna o posicionamento do dropdown relativo ao container */
+    top: -20px; /* Move a barra de pesquisa e filtro mais para cima */
+}
+
+.DashBoardMaster-search-icon,
+.DashBoardMaster-filter-icon {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.DashBoardMaster-search-bar {
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 1rem;
+    width: 150px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.DashBoardMaster-filter-dropdown {
+    position: absolute;
+    top: 40px; /* Ajusta o dropdown para abrir logo abaixo do botão de filtro */
+    right: 0;
+    background-color: white;
+    border: 1px solid #6846EF;
+    padding: 10px;
+    border-radius: 5px;
+    width: 150px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.DashBoardMaster-filter-dropdown h4 {
+    margin: 0 0 10px 0;
+    font-size: 1rem;
+    text-align: center;
+    color: #6846EF;
+    font-weight: bold;
+    font-family: 'Oswald';
+}
+
+.DashBoardMaster-filter-dropdown ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.DashBoardMaster-filter-dropdown li {
+    padding: 5px 0;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #333;
+}

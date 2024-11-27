@@ -1,0 +1,269 @@
+.user_RecuperarSenha-parent {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 100%;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    height: 100vh;
+}
+
+.user_RecuperarSenha-left {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.809), rgba(0, 0, 0, 0) 80%),
+        url('../../userComum/RecuperarSenha/img/Group 294.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100% !important;
+    width: 100% !important;
+}
+
+.user_RecuperarSenha-left h1 {
+    margin-top: 7vh;
+    font-size: 4vw !important;
+    font-weight: 700;
+}
+
+.user_RecuperarSenha-left h6 {
+    letter-spacing: 5px;
+    margin-top: 10px;
+    margin-left: 27vh;
+    border: solid 3px #FBBC04;
+    width: 50vh;
+    height: 25px;
+    border-width: none;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+}
+
+.user_RecuperarSenha-left h6,
+.user_RecuperarSenha-left h1 {
+    font-family: Oswald;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.user_RecuperarSenha-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+    gap: 40px;
+}
+
+.user_RecuperarSenha-right-container p {
+    font-size: 20px;
+    /* font-weight: 500; */
+    font-family: 'Montserrat' !important;
+}
+
+.user_RecuperarSenha-right h1 {
+    font-family: Oswald;
+    font-size: 7vh;
+    font-weight: 800;
+}
+
+.user_RecuperarSenha-right button {
+    font-family: Oswald;
+    font-size: 20px;
+    font-weight: 500;
+    color: #FBBC04;
+    height: 6vh;
+    width: 43vh;
+}
+
+.user_RecuperarSenha-label p{
+    font-family: 'Montserrat' !important;
+    font-weight: 600;
+    
+}
+
+.user_RecuperarSenha-borderBlack {
+    border: 1px solid;
+    border-color: rgba(0, 0, 0);
+    border-radius: 5px;
+    height: 42px !important;
+    width: 55vh;
+    font-size: 12px;
+    font-family: 'Montserrat' !important;
+
+}
+
+ .user_RecuperarSenha-button-enviar {
+    background-color: black !important;
+    color: #FBBC04; /* Cor do texto padrão */
+}
+
+.user_RecuperarSenha-button-enviar p {
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+/* Remover qualquer alteração de cor ou estilo ao clicar */
+.user_RecuperarSenha-button-enviar:active {
+    background-color: black !important; /* Manter a cor de fundo ao clicar */
+    color: #FBBC04 !important; /* Manter a cor do texto ao clicar */
+}
+
+/* Hover */
+.user_RecuperarSenha-button-enviar:hover {
+    background-color: black !important; /* Mantém a cor de fundo no hover */
+    color: #FBBC04 !important; /* Mantém a cor do texto no hover */
+}
+
+/* Remover seleção de texto */
+.user_RecuperarSenha-button-enviar ::selection {
+    background-color: none !important;
+    color: rgb(237, 6, 6);
+}
+ 
+.user_RecuperarSenha-IrParaLogin{
+  color: #FBBC04;
+  font-size: 15px;
+  text-decoration: solid #FBBC04 !important;
+
+}
+
+
+
+/* Responsividade celular */
+@media (min-width: 300px) and (max-width: 720px) {
+    .user_RecuperarSenha-parent {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .user_RecuperarSenha-left {
+        display: none;
+    }
+
+    .user_RecuperarSenha-right {
+        width: 100%;
+        padding: 10px;
+        gap: 43px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .user_RecuperarSenha-right h1 {
+        font-size: 5vh;
+        text-align: center;
+    }
+
+    .user_RecuperarSenha-right button {
+        width: 39vh;
+        height: 45px;
+        text-align: center;
+    }
+
+    .user_RecuperarSenha-borderBlack {
+        width: 40vh;
+        height: 40px;
+    }
+}
+
+/* Responsividade para telas médias */
+@media (min-width: 800px) and (max-width: 1560px) {
+    .user_RecuperarSenha-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+    }
+
+    .user_RecuperarSenha-left h1 {
+        margin-top: 7vh;
+        font-size: 40px !important;
+        text-align: center;
+    }
+
+    .user_RecuperarSenha-left h6 {
+        letter-spacing: 4px;
+        margin-top: 4px;
+        font-size: 11px;
+        width: 51vh;
+        height: 23px;
+        border: solid 3px #FBBC04;
+        border-right: none;
+        border-left: none;
+        border-top: none;
+        margin-right: 26vh;
+        text-align: center;
+    }
+
+    .user_RecuperarSenha-right h1 {
+        font-family: Oswald;
+        font-size: 39px;
+        font-weight: 800;
+    }
+
+    .user_RecuperarSenha-borderBlack {
+        width: 49vh;
+        height: 40px !important;
+    }
+
+    .user_RecuperarSenha-right button {
+        font-family: Oswald;
+        font-size: 20px;
+        font-weight: 500;
+        color: #FBBC04;
+        height: 6vh;
+        width: 48vh;
+    }
+}
+
+/* Responsividade para telas intermediárias */
+@media (min-width: 721px) and (max-width: 799px) {
+    .user_RecuperarSenha-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+    }
+
+    .user_RecuperarSenha-left h1 {
+        margin-top: 7vh;
+        font-size: 6vh !important;
+        text-align: center;
+    }
+
+    .user_RecuperarSenha-left h6 {
+        letter-spacing: 4px;
+        margin-top: 4px;
+        font-size: 11px;
+        width: 51vh;
+        height: 22px;
+        border: solid 3px #FBBC04;
+        border-right: none;
+        border-left: none;
+        border-top: none;
+        margin-right: 27vh;
+        text-align: center;
+    }
+
+    .user_RecuperarSenha-right h1 {
+        font-family: Oswald;
+        font-size: 39px;
+        font-weight: 800;
+    }
+
+    .user_RecuperarSenha-borderBlack {
+        width: 48vh;
+        height: 40px !important;
+    }
+
+    .user_RecuperarSenha-right button {
+        font-family: Oswald;
+        font-size: 20px;
+        font-weight: 500;
+        color: #FBBC04;
+        height: 6vh;
+        width: 47vh;
+    }
+}

@@ -1,0 +1,696 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+/* HEADER */
+.user_landPage-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.user_landPage-header-date-container {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.user_landPage-header-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap; /* Não permite que os botões se movam para uma nova linha */
+    
+}
+
+.user_landPage-header-button {
+    background: none;
+    border: none;
+    color: #000000;
+    font-size: 16px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding: 5px 10px; /* Adiciona algum padding para o botão */
+    white-space: nowrap; /* Garante que o texto e o ícone não quebrem para a linha seguinte */
+    transition: color 0.3s; /* Transição suave para a cor do texto */
+}
+
+.user_landPage-header-button .icon {
+    margin-left: 8px; /* Espaço entre o texto e o ícone */
+}
+
+.user_landPage-header-button:hover {
+    color: #000000; /* Cor ao passar o mouse */
+}
+
+.user_landPage-header-button::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    background-color: #000000;
+    position: absolute;
+    bottom: -4px; /* Distância da linha em relação ao texto do botão */
+    left: 0;
+    transition: width 0.3s; /* Transição suave para a largura da linha */
+}
+
+.user_landPage-header-button:hover::after,
+.user_landPage-header-button.active::after {
+    width: 100%;
+}
+
+/* TITULO */
+.user_landPage-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background-color: #ffffff;
+    border-top: 1px solid #ddd;
+}
+
+.user_landPage-footer-line {
+    flex: 1;
+    height: 15px;
+    background-color: #FBBC04; /* Linha laranja */
+}
+
+.user_landPage-footer-content {
+    text-align: center;
+    margin: 0 20px;
+}
+
+.user_landPage-footer-title {
+    font-size: 70px;
+    font-weight: bold;
+    margin: 0;
+    font-family: Oswald;
+    text-align: left;
+}
+
+.user_landPage-footer-subtitle {
+    font-size: 25px;
+    margin-top: 5px;
+    font-family: Oswald;
+}
+
+
+/* Carrossel */
+
+.user_landPage-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.user_landPage-carousel-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    color: #00FF00;
+    
+}
+
+.user_landPage-carousel-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 50px;
+}
+
+.user_landPage-carousel-item {
+    width: 150px;
+    height: 75px;
+    position: relative;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.user_landPage-carousel-item-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.user_landPage-carousel-item-button i {
+    font-size: 16px;
+}
+
+.user_LandPage-carousel-text{
+    font-size: 15px;
+    text-align: left;
+    margin-top: -13px;
+    font-family: Rajdhani;
+}
+
+
+
+
+.bi-chevron-left, .bi-chevron-right {
+    color: #000; 
+    font-size: 40px
+    ; 
+}
+
+.carousel-control-prev {
+    position: absolute;
+    top: 50%;
+    left: -50px;
+    transform: translateY(-50%);
+    width: auto;
+    height: auto;
+}
+
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    right: -50px; 
+    transform: translateY(-50%);
+    width: auto;
+    height: auto;
+}
+
+
+.user_landPage-carousel-item-color1 { background-color: #FF0000; }
+.user_landPage-carousel-item-color2 { background-color: #00FF00; }
+.user_landPage-carousel-item-color3 { background-color: #0000FF; }
+.user_landPage-carousel-item-color4 { background-color: #c0c000; }
+.user_landPage-carousel-item-color5 { background-color: #FF00FF; }
+.user_landPage-carousel-item-color6 { background-color: #00FFFF; }
+.user_landPage-carousel-item-color7 { background-color: #000000; }
+.user_landPage-carousel-item-color8 { background-color: #FFA500; }
+.user_landPage-carousel-item-color9 { background-color: #800080; }
+.user_landPage-carousel-item-color10 { background-color: #005780; }
+.user_landPage-carousel-item-color11 { background-color: #fff530; }
+.user_landPage-carousel-item-color12 { background-color: #2ebd07; }
+
+/* Seção de notícias */
+.user_landPage-news-section {
+    margin-top: 40px;
+    width: 33%; /* 33% da largura da tela */
+    background-color: #ffffff;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+}
+
+/* Cada item de notícia */
+.user_landPage-news-item {
+    margin-bottom: 30px; /* Espaçamento entre itens de notícia */
+}
+
+/* Título */
+.user_landPage-news-title {
+    color: #024959; /* Cor do título */
+    font-size: 37px;
+    margin-bottom: 10px;
+    font-family: Oswald;
+    text-align: center;
+    padding-bottom: 50px;
+    
+}
+
+/* Subtítulo */
+.user_landPage-news-subtitle {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333333;
+    font-family: Oswald;
+}
+
+/* Texto da notícia */
+.user_landPage-news-text {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #555555;
+    font-family: Oswald;
+    padding-right: 15px;
+    
+}
+
+/* Data da notícia */
+.user_landPage-news-date {
+    color: #024959; /* Cor da data */
+    font-size: 14px;
+    margin-top: 5px;
+    font-family: Oswald;
+}
+
+.user_landPage-jornal-container {
+    /* display: flex; */
+    width: 100%;
+    margin-top: 20px;
+    
+}
+
+.user_landPage-jornal {
+    width: 100%;
+    margin-top: 50px;
+    display: grid;
+grid-template-columns: 30% 70%;
+grid-template-rows: 100%;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+
+    
+}
+
+.user_LandPage-jornal-components{
+    display: grid;
+grid-template-columns: 25% 75%;
+grid-template-rows: 100%;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+
+.user_landPage-jornal-left {
+    width: 90%;
+    margin-left: 40px; /* Espaçamento à direita para a linha roxa */
+    font-family: Oswald;
+    border-right: 3px solid #6934FF;
+    
+    
+}
+
+
+.user_landPage-jornal-right-grid{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, 50%);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding: 2%;
+    
+}
+
+.user_landPage-jornal-right {
+    flex-grow: 1; /*Ocupar o restante da tela */
+     display: flex;
+    flex-direction: row; /* Alinhar subtítulo, textos e data ao lado da imagem */
+    align-items: flex-start;
+    border-bottom: 3px solid #6934FF;
+    /* background-color: #00FF00; */
+    /* height   : 50px; */
+    
+}
+
+.user_landPage-jornal-right-2 {
+    flex-grow: 1; /*Ocupar o restante da tela */
+     display: flex;
+    flex-direction: row; /* Alinhar subtítulo, textos e data ao lado da imagem */
+    align-items: flex-start;
+    margin-top: 7%;
+    /* background-color: #00FF00; */
+    /* height   : 50px; */
+    
+}
+
+.user_landPage-jornal-image {
+    width: 100%;
+    height: auto;
+}
+
+.user_LandPage-jornal-right-image-2{
+    padding-left: 15%;
+    width: 60%;
+    height: auto;
+}
+
+.user_landPage-jornal-image {
+    width: 100%;
+    height: auto;
+}
+
+.user_LandPage-jornal-right-image-2 p{
+
+    margin-top: 10px;
+    color: #A6A5A5;
+    font-family: Oswald;
+    margin-right: 10%;
+    font-size: 10px;
+
+}
+
+.user_LandPage-jornal-right-image p{
+
+    margin-top: 10px;
+    color: #A6A5A5;
+    font-family: Oswald;
+    font-size: 10px;
+
+}
+.user_landPage-jornal-right-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Alinhar subtítulo e texto verticalmente */
+    font-family: Oswald;
+    width: 33%;
+    text-align: start;
+    margin-left: 5%;
+    margin-top: 1%;
+    font-size: 15px;
+    
+}
+
+.user_landPage-jornal-right-content h4{
+    font-size: 200%;
+}
+
+
+.user_landPage-jornal-right-text { 
+    margin-top: 10px;
+}
+
+.user_landPage-full-horizontal-line {
+    clear: both; /* Garante que a linha fique abaixo de todos os elementos flutuantes */
+    width: 230%; /* A linha ocupará a largura da parte direita */
+    height: 2px; /* Espessura da linha */
+    background-color: #6934FF; /* Cor roxa */
+    margin-top: 50px; /* Espaçamento superior */
+}
+
+
+/*GALERIA*/
+
+.user_LandPage-galeria{
+    margin-top: 3%;
+    align-items: center;
+    padding: 20px;
+    
+}
+
+.TypeUser_landPage-contentWrapper-Component {
+    position: absolute;
+    bottom: 0;
+    left: 70%;
+    transform: translateX(-50%);
+    width: 100%; /* ou um valor fixo dependendo da necessidade */
+    text-align: center;
+}
+
+.TypeUser_landPage-gridContainer-Component {
+    display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(2, 1fr);
+padding: 0.5%;
+gap: 2%;
+
+}
+
+.TypeUser_landPage-title-Component {
+    font-family: 'Coiny', cursive;
+    font-weight: bold; 
+    font-size: 10rem;
+    color: #000000;
+    margin-bottom: 10px; /* Adiciona um espaçamento entre o título e o grid */
+}
+
+.TypeUser_landPage-subtitle-Component {
+    font-size: 1em;
+    color: #A6A5A5;
+    margin-top: 5px;
+}
+
+.TypeUser_landPage-gridItem1-Component { 
+    grid-area: 1 / 1 / 3 / 2; 
+   
+    
+}
+
+.TypeUser_landPage-gridItem2-Component { 
+    grid-area: 1 / 2 / 2 / 3; 
+    
+}
+
+.TypeUser_landPage-gridItem3-Component { 
+    grid-area: 2 / 2 / 3 / 3; 
+    
+    
+}
+
+.TypeUser_landPage-gridItem4-Component { 
+    grid-area: 1 / 3 / 3 / 4;
+    margin: 10%;
+}
+
+.TypeUser_landPage-title-Component {
+    font-family: 'Coiny', cursive;
+    font-size: 10em;
+    color: #000000;
+}
+
+.TypeUser_landPage-subtitle-Component {
+    font-size: 2em;
+    color: #A6A5A5;
+    margin-top: 5px;
+    text-align: start;
+    margin-bottom: 5%;
+}
+
+/* LINHA ROSA */
+
+.TypeUser_landPage-bannerWrapper-Component {
+    width: 100%;
+    background-color: #F2357B;
+    padding: 40px 0; /* Ajuste o padding conforme necessário */
+    position: relative; /* Necessário para o posicionamento do texto no canto */
+}
+
+.TypeUser_landPage-bannerText-Component {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4.5em;
+    color: #ffffff; /* Texto branco para contraste */
+    position: absolute;
+    right: 20px; /* Espaçamento do lado direito */
+    top: 50%;
+    transform: translateY(-50%); /* Para centralizar verticalmente */
+    margin: 0;
+}
+
+/* ABAIXO DA LINHA ROSA */
+
+.TypeUser_landPage-threeColumnWrapper-Component {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.TypeUser_landPage-sectionWrapper-Component-1 {
+    padding: 20px;
+   
+    border-right: 2px solid #F2357B;
+}
+
+.TypeUser_landPage-sectionWrapper-Component-2 {
+    padding: 20px;
+}
+
+.TypeUser_landPage-title-Component-faixa{
+    font-family: 'Oswald', sans-serif;
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.TypeUser_landPage-text-Component-faixa {
+    font-size: 1.5em;
+    color: #A6A5A5;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.TypeUser_landPage-dateText-Component-faixa {
+    font-size: 1.3em;
+    color: #F2357B;
+    text-align: left;
+}
+
+.TypeUser_landPage-image-Component {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* BOTÃO */
+.TypeUser_landPage-buttonWrapper-Component {
+    
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    background-color: #E6256D;
+    color: white;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+    width: fit-content;
+}
+
+.TypeUser_landPage-buttonText-Component {
+    margin-right: 10px;
+}
+
+.TypeUser_landPage-buttonIcon-Component {
+    font-size: 1.2em;
+}
+
+/* FOOTER */
+.TypeUser_footerWrapper-Component {
+    background-color: #000000;
+    color: white;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Oswald', sans-serif;
+}
+
+.TypeUser_footerLeft-Component {
+    display: flex;
+    flex-direction: column;
+}
+
+.TypeUser_footerLeftTitle-Component {
+    font-size: 4.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.TypeUser_footerSocialIcons-Component {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.TypeUser_footerIcon-Component {
+    color: white;
+    font-size: 2.5em;
+    cursor: pointer;
+}
+
+.TypeUser_footerRight-Component {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.TypeUser_footerSection-Component {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+}
+
+.TypeUser_footerSectionTitle-Component {
+    font-size: 3.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.TypeUser_footerSectionItem-Component {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.TypeUser_footerSectionItemIcon-Component {
+    margin-right: 10px;
+    font-size: 2.2em;
+    color: white;
+}
+
+@media screen and (max-width: 1300px){
+    .user_LandPage-galeria{
+        display: none;
+    }
+} 
+
+@media screen and (max-width: 1105px){
+    .user_landPage-jornal-right img{
+        width: 90%;
+    }
+
+    .user_landPage-jornal-right-2 img{
+        width: 100%;
+    }
+} 
+
+@media screen and (max-width: 950px) {
+    .user_landPage-jornal-left{
+        display: none
+        ;
+    }
+
+    .user_landPage-header-buttons{
+        display: none;
+    }
+
+    .user_landPage-header-date-container{
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .user_landPage-jornal-right-grid {
+        flex-direction: row; /* Em telas maiores, coloca os itens lado a lado */
+    }
+
+    .user_landPage-jornal-right,
+    .user_landPage-jornal-right-2 {
+        flex-direction: row; /* Mantém a flexibilidade lado a lado */
+        align-items: flex-start; /* Alinha os itens ao topo */
+        align-items: center;
+
+    }
+
+    .user_landPage-jornal-right-content,
+    .user_landPage-jornal-right-image,
+    .user_LandPage-jornal-right-image-2 {
+        width: 50%; /* Ajusta a largura para metade em telas maiores */
+        padding-left: 5%;
+    }
+
+    .user_landPage-jornal-right-content {
+        text-align: start; /* Alinha o texto à esquerda em telas grandes */
+    }
+
+    .user_landPage-jornal{
+        grid-template-columns: 100%;
+    }
+
+    .user_LandPage-galeria{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 845px) {
+    .user_landPage-jornal-right{
+        flex-direction: column; /* Mantém a flexibilidade lado a lado */ 
+
+    }
+
+    .user_landPage-jornal-right-2{
+        flex-direction: column-reverse;
+    }
+}
+
+

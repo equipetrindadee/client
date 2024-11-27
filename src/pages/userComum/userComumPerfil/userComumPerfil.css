@@ -1,0 +1,409 @@
+/* Estilo da Div Principal */
+.principal-container {
+    height: 85vh;
+    margin-top: 15vh;
+    background: linear-gradient(to bottom, transparent 35%, white 35%), url('../../../../public/img/bg-perfil-semborda.svg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Espaçamento entre perfil-info e pastas-conteudo */
+    padding: 20px;
+    overflow-y: hidden;
+  }
+  
+  /* Estilo do Perfil Info */
+  .perfil-info {
+    width: 300px;
+    height: 440px; /* Altura restaurada para 400px */
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2); /* Efeito de box-shadow */
+    transition: box-shadow 0.3s ease-in-out;
+    position: relative; /* Para posicionar o botão de edição */
+    margin-top: 10rem;
+  }
+    
+  /* Header e Imagem do Perfil */
+  .perfil-header {
+    position: relative;
+  }
+  
+  .perfil-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* Botão de Edição */
+  .edit-btn {
+    position: absolute;
+    left: 55%;
+    width: 35px; /* Largura do botão */
+    height: 35px; /* Altura do botão */
+    border-radius: 50%; /* Botão redondo */
+    background-color: #ff69b4; /* Cor de fundo rosa */
+    border: none; /* Remove borda */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Estilo do ícone */
+  .edit-btn i {
+    color: white; /* Cor do ícone em branco */
+    font-size: 19px; /* Tamanho do ícone */
+  }
+  
+  /* Lista de Informações */
+  .info-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .info-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    float:  left;
+    font-size: 19px;
+  }
+  
+  .info-list li i {
+    font-size: 1.3em;
+    color: rgb(224, 54, 83);
+  }
+  
+  .info-list span {
+    font-size: 1.1em;
+  }
+  
+  /* Botão de Logout */
+  .btn-pink {
+    background-color: #ff69b4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  
+  /* Estilo das Divs de Pastas */
+  .pastas-conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: start; /* Alinhar ao início */
+    align-items: stretch; /* Alinhar a altura das divs */
+    gap: 0; /* Remover gap entre os botões e as pastas */
+    width: 60%; /* Largura das divs ajustada para 60% da tela */
+    height: 400px; /* Altura restaurada para 400px */
+    padding: 0; /* Remover padding extra */
+    margin-top: 7.5rem;
+  }
+  
+  /* Estilo dos Botões de Tabs */
+  .pasta-buttons {
+    display: flex;
+    gap: 0; /* Remover gap entre os botões */
+    margin: 0; /* Remover margin para encostar nas divs */
+  }
+  
+  .pasta-buttons .btn {
+    border-radius: 0; /* Remover bordas arredondadas para parecer parte da mesma div */
+  }
+  
+  .tab-btn {
+    width: 120px;
+  }
+  
+  .btn-secondary {
+    background-color: #d3d3d3;
+    border-color: #d3d3d3;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  /* Estilo das pastas */
+  .pasta-perfil,
+  .pasta-comentarios {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 0 0 10px 10px; /* Apenas borda inferior arredondada */
+    height: 100%; /* Ocupa toda a altura da div de pastas-conteudo */
+    flex-grow: 1; /* Ocupar o espaço até encostar nos botões */
+    
+  }
+
+  
+
+  /* Título centralizado */
+.titulo-perfil {
+  color: #ff69b4; /* Cor rosa chocante */
+  margin-bottom: 20px;
+}
+
+/* Subtítulos dos campos */
+.subtitulo-perfil {
+  color: #333;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+/* Botão rosa */
+.btn-pink {
+  background-color: #ff69b4;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+/* Modal botão rosa */
+.btn-pink, .btn-outline-pink {
+  font-weight: bold;
+}
+
+.btn-outline-pink {
+  border: 2px solid #ff69b4;
+  color: #ff69b4;
+  background: #fff;
+}
+
+
+/* Estrutura da Div Comentários (lado esquerdo) */
+.comentarios-container {
+  width: 100%; /* Largura da divisão esquerda */
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+
+}
+
+.comentarios-titulo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.linha-comentarios {
+  border: 1px solid #ccc; /* Linha fina para simular o header */
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.cards-comentarios {
+  padding: 10px 0;
+}
+
+/* Estrutura da Div Comentários (lado esquerdo) */
+.comentarios-container {
+  width: 50%; /* Largura ajustada para 50% */
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  
+  border-right: 2px solid #6296D2;
+}
+
+.comentarios-titulo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-align: center; /* Título centralizado */
+}
+
+.linha-comentarios {
+  border: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.cards-comentarios {
+  padding: 10px 0;
+  border-radius: 10px;
+  text-align: center; /* Centralizar o conteúdo temporário */
+}
+
+/* Estrutura da Div Matérias Curtidas (lado direito) */
+.materias-curtidas-container {
+  width: 50%; /* Largura ajustada para 50% */
+  padding: 20px;
+  background: #ff69b4; /* Fundo rosa chocante */
+  border-radius: 10px;
+}
+
+.materias-curtidas-titulo,
+.subtitulo-curtidas {
+  color: white;
+  text-align: center;
+}
+
+.linha-curtidas {
+  border: 1px solid white;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.subtitulo-curtidas {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.emoji-sad {
+  font-size: 48px;
+  text-align: center;
+}
+
+/* Ajuste no container de comentários */
+.pasta-comentarios {
+  width: 100%; /* Define a largura total para distribuir as divs */
+}
+/* Estrutura da Div Comentários (lado esquerdo) */
+.comentarios-container {
+  width: 100%; /* Largura da divisão esquerda */
+  padding: 20px;
+  width: 60%; /* Largura ajustada para 50% */
+  margin-right: 10px !important;
+
+}
+
+.comentarios-titulo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.linha-comentarios {
+  border: 1px solid #ccc; /* Linha fina para simular o header */
+  width: 100%;
+  margin-bottom: 10px;
+}
+.cards-comentarios {
+  padding: 10px 0;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center; /* Centralizar o conteúdo temporário */
+
+
+  display: flex;
+  flex-direction: column; /* Organizar os cards em coluna */
+  overflow-y: auto; /* Scroll apenas vertical */
+  overflow-x: hidden; /* Desativar o scroll horizontal */
+  padding: 5px; /* Padding ao redor */
+  max-height: 300px; /* Defina uma altura máxima para ativar o scroll */
+}
+/* Estilizar a barra de rolagem - oculta apenas as setas */
+.cards-comentarios::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem */
+}
+
+.cards-comentarios::-webkit-scrollbar-thumb {
+  background: #d3d3d3; /* Cor do thumb (indicador de rolagem) */
+  border-radius: 10px; /* Bordas arredondadas */
+}
+
+/* Remove as setas no WebKit */
+.cards-comentarios::-webkit-scrollbar-button {
+  display: none; /* Oculta as setas de navegação */
+}
+
+/* Estrutura da Div Matérias Curtidas (lado direito) */
+.materias-curtidas-container {
+  width: 50%; /* Largura ajustada para 50% */
+  padding: 20px;
+  background: #ff69b4; /* Fundo rosa chocante */
+  border-radius: 10px;
+}
+
+.materias-curtidas-titulo,
+.subtitulo-curtidas {
+  color: white;
+  text-align: center;
+}
+
+.linha-curtidas {
+  border: 1px solid white;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.subtitulo-curtidas {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.emoji-sad {
+  font-size: 48px;
+  text-align: center;
+}
+
+/* Estilo para o card de comentários */
+.card-comentario {
+  border: 1px solid black; /* Borda preta fina */
+  border-radius: 5px; /* Bordas levemente arredondadas */
+  padding: 5px; /* Reduzido para ocupar menos espaço */
+  width: 100%; /* Diminuir a largura do card */
+  font-size: 1.1em; /* Texto menor para todos os elementos */
+  margin-right: 10px; /* Espaçamento entre os cards */
+}
+
+
+/* Header do card */
+.card-comentario-header {
+  padding: 3px;
+}
+
+/* Título e subtítulo do header */
+.card-comentario-titulo {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.card-comentario-subtitulo {
+  margin: 0;
+  font-size: 0.75em;
+  color: #666;
+}
+
+/* Corpo do card */
+.card-comentario-body {
+  margin: 5px 0;
+}
+
+/* Texto do corpo */
+.card-comentario-texto {
+  font-size: 0.8em;
+  line-height: 1.2; /* Altura de linha reduzida */
+}
+
+/* Footer do card */
+.card-comentario-footer {
+  margin-top: 5px;
+  padding: 3px;
+}
+
+/* Botões menores no Footer */
+.btn-sm {
+  font-size: 0.75em; /* Texto menor */
+  padding: 2px 5px; /* Padding reduzido */
+}
+
+/* Botão Curtidas */
+.btn-curtidas {
+  color: #FD9771; /* Cor do texto */
+}
+
+/* Botão Respostas */
+.btn-respostas {
+  color: #69DE40; /* Cor do texto */
+}
+
+/* Botão Ver Matéria */
+.btn-ver-materia {
+  color: #FF1493; /* Rosa chocante */
+}

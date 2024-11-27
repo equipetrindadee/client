@@ -1,0 +1,120 @@
+.ListColunistasControleColuna-item {
+    display: flex !important;
+    align-items: center !important;
+    padding: 5px !important;
+    border-bottom: 1px #D9D9D9 solid !important;
+}
+
+.ListColunistasControleColuna-info {
+    display: flex !important;
+}
+
+.ListColunistasControleColuna-details {
+    display: flex !important;
+    flex-direction: column !important;
+    margin-left: 10px !important;
+}
+
+.modalAdiconarColunaDesign {
+    width: 100% !important;
+}
+
+.ListColunistasControleColuna {
+    position: relative !important;
+}
+
+.modalBodyControleColunaAdicionarColuna {
+    width: 100% !important;
+}
+
+.buttonModalAdicionarColuna {
+    background-color: transparent !important;
+    border: none !important;
+    color: #A6A5A5 !important;
+    font-size: 17px !important;
+}
+
+.modalAdicionarColunistaHeaderBody {
+    display: flex !important;
+    margin-bottom: 10px !important;
+    justify-content: space-between !important;
+}
+
+.modalAdicionarColunistaHeader {
+    border-bottom: 1px black solid !important;
+}
+
+.buttonAdicionarColunistas {
+    background-color: #F2CB05 !important;
+    border: none !important;
+    font-family: "Montsserrat", sans-serif !important;
+    font-weight: 600 !important;
+    color: black !important;
+    align-items: center !important;
+    text-align: center !important;
+    font-size: 15px !important;
+    height: 40px !important;
+    width: 90% !important;
+}
+
+.buttonAdicionarColunistas:hover {
+    background-color: #F2CB05 !important;
+    border: none !important;
+    font-family: "Montsserrat", sans-serif !important;
+    font-weight: 600 !important;
+    color: black !important;
+    font-size: 15px !important;
+    height: 40px !important;
+    width: 90% !important;
+}
+.buttonAdicionarColunistasP{
+    position: relative;
+    margin: 0 auto;
+    align-items: center !important;
+    text-align: center !important;
+    font-family: "Montsserrat", sans-serif !important;
+    font-weight: 600 !important;
+    color: black !important;
+    font-size: 15px !important;
+}
+
+.titleModalAdicionarColunaAlunos {
+    color: #F2CB05 !important;
+    font-family: "Oswald", sans-serif !important;
+    font-size: 22px !important;
+}
+
+.AdicionarColunista-nome {
+    font-family: "Montsserrat", sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    color: black !important;
+}
+
+.colunistaAdicionar-img {
+    width: 50px !important;
+    height: 50px !important;
+    margin-left: 13px !important;
+    border-radius: 5px !important;
+}
+
+.AdicionarColunista-ano {
+    font-family: "Montsserrat", sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    color: #A6A5A5 !important;
+}
+
+.form-check-input {
+    width: 15px !important;
+    height: 15px !important;
+}
+
+.form-check-input:checked {
+    background-color: black !important;
+    border-color: black !important;
+}
+
+.form-check-input:focus {
+    box-shadow: none !important;
+}

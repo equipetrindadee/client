@@ -1,0 +1,121 @@
+.user_publicacao-materia {
+    width: 84vw;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    font-family: 'Libre Baskerville';
+    font-size: 17px;
+    text-align: justify;
+  }
+  
+  .user_publicacao-materia-title {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+  
+  .user_publicacao-materia-title h3 {
+    font-family: 'Oswald';
+    padding: 1rem 0;
+    font-size: 35px;
+  }
+  
+  .user_publicacao-materia-text-esquerdo,
+  .user_publicacao-materia-text-centro {
+    padding: 3rem 2rem;
+  }
+  
+  .user_publicacao-materia-img-direito,
+  .user_publicacao-materia-img-esquerdo {
+    width: 100%;
+  }
+  
+  .user_publicacao-materia-img-direito img,
+  .user_publicacao-materia-img-esquerdo img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .user_publicacao-materia-paragrafo,
+  .user_publicacao-materia-paragrafo-inferior {
+    grid-column: 1 / -1;
+    padding: 3rem 2rem;
+  }
+  
+  .user_publicacao-materia-footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .user_publicacao-materia-footer-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .user_publicacao-materia-footer-img img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+  }
+  
+  .user_publicacao-materia-footer-text {
+    margin-left: 20px;
+  }
+  @media (max-width: 900px) {
+    .user_publicacao-materia {
+      grid-template-columns: 1fr;
+      /* Uma coluna em telas menores */
+    }
+  
+    .user_publicacao-materia-title,
+    .user_publicacao-materia-text-esquerdo,
+    .user_publicacao-materia-text-centro,
+    .user_publicacao-materia-paragrafo,
+    .user_publicacao-materia-paragrafo-inferior {
+      grid-column: 1;
+      /* Ocupa a coluna inteira */
+    }
+  
+    .user_publicacao-materia-img-direito,
+    .user_publicacao-materia-img-esquerdo {
+      grid-column: 1;
+      /* Imagens ocupam a coluna inteira */
+    }
+  
+  
+    .user_publicacao-materia-footer {
+      grid-template-columns: 1fr;
+      /* Mudança para uma coluna no modo responsivo */
+      gap: 10px;
+      /* Espaçamento menor no responsivo */
+    }
+  
+    .user_publicacao-materia-footer-item {
+      display: grid;
+      /* Usar grid para manter imagem e texto lado a lado */
+      grid-template-columns: 1fr 2fr;
+      /* Imagem ocupando 1 parte e texto ocupando 2 partes */
+      align-items: center;
+      gap: 10px;
+    }
+  
+    .user_publicacao-materia-footer-img img {
+      width: 100%;
+      max-width: 100px;
+      /* Ajusta o tamanho da imagem no responsivo */
+    }
+  
+    .user_publicacao-materia-footer-text {
+      margin-left: 0;
+      /* Remover margem no responsivo */
+    }
+  
+   
+  }
+  
+ 

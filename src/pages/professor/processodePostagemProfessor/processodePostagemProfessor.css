@@ -1,0 +1,415 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root{
+    font-size: 10px;
+    --areadoAlunoColor: #41BFB3;
+}
+
+.section-processodePostagem {
+    padding: 2rem;
+}
+
+.title-processodePostagem {
+    font-size: 6rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+}
+
+.subtitle-processodePostagem {
+    font-size: 2.5rem;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin-bottom: .5rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+}
+
+.linha-processodePostagem{
+      width: 30%;
+      height: 2px;
+      background-color: #FFD914;
+      border-radius: 0.25rem;
+      margin-inline: auto;
+      margin-bottom: 3rem;
+}
+
+.top-Educador{
+    width: 100%;
+}
+
+.content-processodePostagem {
+    background-color: white;
+    border-radius: 0.5rem;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    overflow-x: hidden;
+
+}
+
+.artigo-title-processodePostagem {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.25rem;
+}
+
+.infoJornal-processodePostagem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    border: 1px solid #D9D9D9;
+    margin-left: auto;
+    margin-bottom: 2rem;
+}
+
+.infoJornal-processodePostagem img{
+    width: 100% ;
+    padding-top: 10px;
+}
+
+.autor-processorPostagem {
+    height: 3.125rem;
+    /* border-radius: 50%; */
+    margin-right: auto;
+    margin-left: 5rem;
+    /* margin-top: 10rem; */
+    display: flex;
+    text-align: start !important;
+    background-color: #65A6F0;
+}
+
+.autor-processorPostagem img {
+    width: 100px;
+    
+    text-align: start !important;
+}
+
+.nome-processodePostagem {
+    margin-top: 0.3rem;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0px;
+    margin-left: 0.5rem;
+}
+
+.data-processodePostagem {
+    font-size: 0.875rem;
+    color: gray;
+    margin-left: 0.5rem;
+}
+
+.audio-processorPostagem{
+    margin-right: auto;
+    margin-top: 2rem;
+    color: #D9D9D9;
+    width: 90%;
+    margin-inline: auto;
+    display: flex;
+}
+
+.audio-processorPostagem i{
+    font-size: 3rem;
+    margin-left: auto;
+}
+
+.linhaAudio-processorPostagem{
+    width: 90%;
+    height: 5px;
+    margin-top: 1.2rem;
+    margin-right: auto;
+    background-color: #A6A5A5;
+}
+
+.titlecontent-processorPostagem{
+    font-weight: 800;
+    margin-top: 1.5rem;
+    margin-bottom: 1.2rem;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.firstParagrafo-processorPostagem{
+    width: 90%;
+    text-align: start;
+    display: flex;
+    margin-top: 1.5rem;
+    font-family: 'LibreBaskerville', sans-serif;
+}
+
+.campoTexto1-processorPostagem{
+    width: 50%;
+    font-size: 15px;
+    margin-top: 1.3rem;
+    margin-right: auto;
+}
+
+.campoImagem1-processorPostagem{
+    width: 45%;
+    height: 18rem;
+    background-color: #D9D9D9;
+    margin-inline: auto;
+}
+
+.segundoParagrafo-processorPostagem{
+    width: 90%;
+    text-align: center;
+    display: flex;
+    margin-top: 1.5rem;
+}
+
+.campoTexto2-processorPostagem{
+    width: 100%;
+    font-size: 15px;
+    margin-top: 1.4rem;
+    margin-inline: auto;
+}
+
+
+.terceiroParagrafo-processorPostagem{
+    background-color: #D9D9D9;
+    width: 90%;
+    height: 22rem;
+    display: flex;
+    text-align: left;
+    margin-top: 1.5rem;
+}
+
+.campoImagem2-processorPostagem{
+    background-color: #65A6F0;
+    width: 42%;
+    height: 18rem;
+    margin-inline: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.campoTexto3-processorPostagem{
+    width: 50%;
+    font-size: 15px;
+    margin-top: 4rem;
+    margin-inline: auto;
+}
+
+.quartoParagrafo-processorPostagem{
+    width: 90%;
+    height: 22rem;
+    display: flex;
+    text-align: left;
+    margin-top: 1.5rem;
+}
+
+.campoImagem3-processorPostagem{
+    background-color: #D9D9D9;
+    width: 42%;
+    height: 18rem;
+    margin-inline: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.campoTexto4-processorPostagem{
+    width: 50%;
+    font-size: 15px;
+    margin-top: 4rem;
+    margin-inline: auto;
+}
+
+.fotter-processorPostagem{
+    width: 90%;
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: start;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.saibaMais-processoPostagem{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    text-align: start;
+    color: #312CBF;
+    font-weight: 700;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.areaColunista-processodePostagem-professor{
+    background-color: black;
+    margin-top: 1rem;
+    width: 16%;
+    padding: 10px 2px;
+    margin-inline: 3rem;
+    border-radius: 10px;
+    display: flex;
+    height: 300px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.titleAreaColunista-processodePostagem{
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    margin-top: 2rem;
+    font-size: 2.5rem;
+}
+
+.buttoEnviar-processodePostagem{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    height: 43px;
+
+    padding: 1rem;
+    margin-top: 1rem;
+    border: none;
+    width: 90%;
+    border-radius: 5px;
+    margin-inline: auto;
+    background-color: white;
+
+    justify-content: space-between;
+    text-align: start;
+    display: flex;
+}
+
+.buttoEnviar-processodePostagem i{
+    font-size: 18px;
+}
+
+.buttoEnviar-processodePostagem p{
+    font-family: 'Montserrat', 'sans-serif';
+    font-size: 14px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.buttoEnviar-processodePostagem-postado{
+    background-color: #90F000;
+    color: black;
+}
+
+.buttoEnviar-processodePostagem-concluido{
+    background-color: #90B6FF;
+    color: black;
+}
+
+.buttoEditar-processodePostagem i{
+    font-size: 18px !important;
+}
+
+.titleModal-enviar-processoPostagem{
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.buttonFechar-Modal-processoPostagem{
+    margin-left: auto;
+    border: none;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: transparent;
+    color: #FF2222;
+}
+
+.areaColunista-processodePostagem-certeza h1{
+    font-size: 100px;
+}
+
+/* .btn-primary {
+    background-color: red;
+    border-color: #ff0000;
+    color: red;
+}
+
+.btn-primary:hover {
+    background-color: red;
+    color: #ffffff;
+    border-color: #ff0000;
+} */
+
+.buttonNao-modal-processoPostagem-professor{
+    background-color: #FBBC04;
+    border: #FBBC04 1px solid;
+    font-size: 15px;
+    font-family: 'Oswald', sans-serif;
+    width: 100px;
+}
+
+.buttonNao-modal-processoPostagem-professor:hover{
+    background-color: #FBBC04;
+    border: #FBBC04 1px solid;
+    font-family: 'Oswald', sans-serif;
+}
+
+.buttonSim-modal-processoPostagem-professor{
+    background-color: #ffffff;
+    border: #FBBC04 1px solid;
+    color: #FBBC04;
+    font-size: 15px;
+    font-family: 'Oswald', sans-serif;
+    width: 100px;
+}
+
+.buttonSim-modal-processoPostagem-professor:hover{
+    background-color: #ffffff;
+    border: #FBBC04 1px solid;
+    color: #FBBC04;
+    font-family: 'Oswald', sans-serif;
+}
+
+.modal-fechar-processoPostagem{
+    border-bottom: 0px;
+}
+
+.container-postadoConcluido-processoPostagem{
+    width: 100%;
+    height: 75px;
+    position: fixed;
+    margin-top: 150px;
+}
+
+.materiaNaoPostada-processoPostagem{
+    opacity: 0;
+}
+
+.materiaPostada-processoPostagem{
+    background-color: #FFDE31;
+    width: 14.7%;
+    padding: 17px 9px;
+    margin-left: 4.55%;
+    border-radius: 5px;
+    text-align: center;
+    opacity: 1;
+}
+
+.materiaPostada-processoPostagem h1{
+    font-size: 18px;
+    font-family: 'Oswald', 'sans-serif';
+}
+
+.materiaNaoConcluida-processoPostagem{
+    opacity: 0;
+}
+
+.materiaConcluida-processoPostagem{
+    background-color: #FBBC04;
+    width: 14.7%;
+    padding: 17px 9px;
+    margin-left: 4.55%;
+    border-radius: 5px;
+    text-align: center;
+    opacity: 1;
+    margin-top: 20px;
+}
+
+.materiaConcluida-processoPostagem h1{
+    font-size: 17px;
+    font-family: 'Oswald', 'sans-serif';
+}

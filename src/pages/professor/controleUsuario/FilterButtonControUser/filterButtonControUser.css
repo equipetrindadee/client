@@ -1,0 +1,167 @@
+
+:root{
+    --color-iconCircle:#fbbc04;
+}
+
+
+/* Estilo para o botão */
+.professor_ControlUser-FilterButton-custom-button {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    border: 1px solid #d9d9d9;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+    padding: 0 8px 0 9px;
+    display: flex;
+    width: 9rem !important;
+    height: 3rem !important;
+}
+
+  
+.professor_ControlUser-FilterButton-custom-button:hover {
+    border: 1px solid #d9d9d9 !important;
+}
+
+.professor_ControlUser-FilterButton-custom-button i {
+    font-size: 18px;
+    text-align: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.professor_ControlUser-FilterButton-custom-button p {
+    font-size: 20px;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: bold;
+    text-align: center !important;
+}
+
+/* Container do menu */
+.professor_ControlUser-FilterButton-dropdown-menu {
+    display: block;
+    position: absolute;
+    /* background-color: #fff; */
+    /* background-color: #568FFE; */
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+    padding: 10px;
+    width: 250px !important;
+    z-index: 1000;
+    margin-left: -15rem;
+    margin-top: 5%;
+}
+
+/* Estilo para as opções do menu */
+.professor_ControlUser-FilterButton-dropdown-item {
+    display: flex;
+    cursor: pointer;
+    border: 1px solid #ececec !important;
+    border-radius: 5px;
+    margin-top: 5%;
+    height: 4rem;
+    align-items: center;
+    text-align: center;
+    /* background-color: red !important; */
+}
+
+.professor_ControlUser-FilterButton-dropdown-item i {
+    font-size: 26px;
+    margin-right: 10px;
+}
+
+.professor_ControlUser-FilterButton-dropdown-item p {
+    font-size: 14px;
+    padding-left: 8px;
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    margin: 0;
+    flex-grow: 1;
+}
+.professor_ControlUser-FilterButton-dropdown-item-icon{
+    font-size: 20px !important;
+    color: var(--color-iconCircle);
+}
+
+
+.professor_ControlUser-FilterButton-dropdown-icon-check {
+    font-size: 2rem;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.professor_ControlUser-FilterButton-tab-content i{
+    font-size:30px;
+    margin-right: 5px;
+}
+
+.professor_ControlUser-FilterButton-tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    /* background-color: red !important; */
+    border-radius: 10px ;
+    font-family: 'Rajdhani' !important;
+    font-size: 15px;
+    color: black;
+   
+
+}
+
+.professor_ControlUser-FilterButton-tabs button{
+    color: black !important;
+    opacity: 1 !important;
+    position: relative;
+    z-index: 1000 !important;
+}
+
+
+.tab-button {
+    flex: 1;
+    padding: 5px;
+    font-weight: bold;
+    border: none;
+    color: black;
+  
+    cursor: pointer;
+    background-color: transparent !important;
+    /* width: 50% !important; */
+
+}
+
+
+.tab-button.active {
+    /* background-color: #fdec01 !important; */
+    box-shadow: 0 2px 4px rgba(167, 71, 245, 0.2);
+    border-radius: 5px !important;
+}
+
+.professor_ControlUser-FilterButton-tab-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.professor_ControlUser-FilterButton-dropdown-item {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    cursor: pointer;
+    border-radius: 10px !important;
+   
+}
+
+
+.professor_ControlUser-FilterButton-dropdown-item-coluna p{
+    margin: 0 auto !important;
+     text-align: center !important;
+    align-items: center !important;
+}
+
+#todas_Colunas{
+    border: 1px solid black !important;
+}
+
+.professor_ControlUser-FilterButton-dropdown-item:hover {
+    background-color: #f9f9f9;
+}
+

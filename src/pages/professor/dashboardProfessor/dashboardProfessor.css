@@ -1,0 +1,656 @@
+.dropTeste{
+    float: right;
+}
+.container-dashboard-Professor{
+    width: 100%;
+}
+
+.buttonNotFunction{
+    display: none;
+}
+
+body::-webkit-scrollbar{ 
+    width: 8px;
+}
+body::-webkit-scrollbar-track{ 
+    background-color: #f0f0f0;
+}
+body::-webkit-scrollbar-thumb{ 
+    background-color: #7d7d7d; 
+    border-radius: 10px; 
+    border: 2px solid #f0f0f0; 
+}
+
+.dashboard-content-Professor{
+    width: 100%;
+    text-align: center;
+}
+
+
+.logoDashboard-logo-Professor{
+    width: 100%;
+    align-items: center;
+    margin-top: 14px;
+}
+
+.titleLogo-dashboard-Professor{
+    margin-inline: auto;
+    font-family: 'Oswald', 'sans-serif';
+    font-weight: 800;
+    font-size: 30px;
+    margin-bottom: 0 !important;
+}
+
+.subTitleLogo-dashboard-Professor{
+    margin-inline: auto;
+    font-size: 13px;
+    font-weight: 400;
+    font-family: 'Oswald', 'sans-serif';
+    letter-spacing: 2px;
+    margin-top: 0 !important;
+}
+
+.linhalogo-dashboard-Professor{
+    margin-inline: auto;
+    width: 350px;
+    height: 2.5px;
+    background-color: #FFDC22;
+}
+
+.container-bemVindo-dashboardProfessor{
+    margin-left: 0 !important;
+    margin-right: 52%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-family: 'Oswald', 'sans-serif'; 
+}
+
+.bemVindo-dashboard-Professor{
+    font-weight: 600;
+    font-size: 26px;
+}
+
+.carrosselDashboard-Professor{
+    width: 70%;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    justify-content: space-around;
+}
+
+.colunaSlide-dashboard-professor{
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    height: 65px;
+    transition: transform 0.8s ease-in-out; 
+}
+
+.colunaSlide-dashboard-professor div {
+    opacity: 1;
+    transform: scale(1);
+    transition: transform 0.6s ease-in-out; /* Aumentei o tempo para suavidade */
+}
+
+.animatingLeft , .animatingRight{
+    opacity: 0.9;
+    transform: scale(0.8); /* Leve efeito visual mais suave */
+    transition: transform 0.6s ease-in-out; /* Suavização */
+}
+
+.colunaSlide-dashboard-professor.animatingLeft {
+    transform: translateX(15px) scale(0.99); /* Movimentação um pouco maior e suave */
+}
+
+.colunaSlide-dashboard-professor.animatingRight {
+    transform: translateX(-15px) scale(0.99); /* Movimentação um pouco maior e suave */
+}
+
+.colunaSlide-dashboard-professor div {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.divColuna-dashboard-professor{
+    color: white;
+    width: 125px;
+    border-radius: 5px;
+    text-align: end;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.arrowLeft, .arrowRight {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
+.titleColunas-dashboard-professor{
+    text-align: left;
+    font-size: 15px;
+    font-family: 'Oswald', 'sans-serif'; 
+    font-weight: 600;
+    margin-bottom: 0 !important;
+    z-index: 1;
+    margin: 6px;
+    height: 35px;
+}
+
+.buttonColunas-dashboard-professor{
+    margin-right: 6px;
+    font-size: 15px;
+}
+
+/* cards de visualização */
+.cardVisualizacao-dashboard-Professor{
+    display: flex;
+    margin-inline: auto;
+    width: 80%;
+    margin-top: 25px;
+    justify-content: space-around;
+}
+
+.allConteudo-colunas-dashboard-professor{
+    display: flex;
+}
+
+.alemLivroBall-dashboard-professor{
+    color: #BC91D9;
+    font-size: 16.5px;
+}
+
+.alemFronteirasBall-dashboard-professor{
+    color: #CD3542;
+    font-size: 16.5px;
+}
+
+.educacaoFocoBall-dashboard-professor{
+    color: #AFF24B;
+    font-size: 16.5px;
+}
+
+.monthlyEnglishBall-dashboard-professor{
+    color: #312CBF;
+    font-size: 16.5px;
+}
+
+.palavreandoBall-dashboard-professor{
+    color: #F6EC00;
+    font-size: 16.5px;
+}
+
+.aconteceuEscolaBall-dashboard-professor{
+    color: #F2357B;
+    font-size: 16.5px;
+}
+
+.tecnologiaBall-dashboard-professor{
+    color: #024959;
+    font-size: 16.5px;
+}
+
+.aventurasHistoriaBall-dashboard-professor{
+    color: #A66E4E;
+    font-size: 16.5px;
+}
+
+.biofimicaBall-dashboard-professor{
+    color: #41BFB3;
+    font-size: 16.5px;
+}
+
+.cardRevisao-dashboard-Professor{
+    width: 22%;
+    padding: 10px;
+    border: solid 1.4px #787878;
+    border-radius: 10px;
+    height: 335px;
+}
+
+.cardRevisao-dashboard-Professor button{
+    display: none;
+}
+
+.cardRevisao-dashboard-Professor h3{
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Oswald', 'sans-serif';
+}
+
+.cardConclusao-dashboard-Professor{
+    width: 22%;
+    padding: 10px;
+    border: solid 1.4px #787878;
+    border-radius: 10px;
+    height: 335px;
+}
+
+.cardConclusao-dashboard-Professor h3{
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Oswald', 'sans-serif';
+}
+
+.cardConclusao-dashboard-Professor button{
+    display: none;
+}
+
+.cardPostado-dashboard-Professor{
+    width: 22%;
+    padding: 10px;
+    border: solid 1.4px #787878;
+    border-radius: 10px;
+    height: 335px;
+}
+
+.cardPostado-dashboard-Professor h3{ 
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Oswald', 'sans-serif';
+}
+
+.cardPostado-dashboard-Professor button{
+    display: none;
+}
+
+.cardNaoEntregue-dashboard-Professor{
+    width: 22%;
+    padding: 10px;
+    border: solid 1.4px #787878;
+    border-radius: 10px;
+}
+
+.cardNaoEntregue-dashboard-Professor h3{
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Oswald', 'sans-serif';
+}
+
+.logoRevisao-dashboard-Professor{
+    border-radius: 50%;
+    background-color: #FFDC22;
+    font-size: 30px;
+    width: 60px;
+    padding: 5px;
+    padding-inline: 13px;
+    color: white;
+    margin-inline: auto;
+    margin-bottom: 6px;
+}
+
+.logoConclusao-dashboard-Professor{
+    border-radius: 50%;
+    background-color: #226DFF;
+    font-size: 30px;
+    width: 60px;
+    padding: 5px;
+    padding-inline: 13px;
+    color: white;
+    margin-inline: auto;
+    margin-bottom: 6px;
+}
+
+.logoPostado-dashboard-Professor{
+    border-radius: 50%;
+    background-color: #23DF36;
+    font-size: 30px;
+    padding-top: 6px;
+    padding-bottom: 4px;
+    width: 60px;
+    padding-right: 16px;
+    color: white;
+    text-align: right !important;
+    margin-inline: auto;
+    margin-bottom: 6px;
+}
+
+.logoNaoEntregue-dashboard-Professor{
+    border-radius: 50%;
+    background-color: #FF2222;
+    font-size: 30px;
+    width: 60px;
+    padding: 5px;
+    padding-inline: 13px;
+    color: white;
+    margin-inline: auto;
+    margin-bottom: 6px;
+}
+
+.colunasVisualizacao-dashboard-Professor{
+    display: flex;
+}
+
+/* Alteraçãp de design do scroll */
+.colunasRevisao-dashboard-Professor::-webkit-scrollbar {
+    width: 8px; 
+}
+
+.colunasRevisao-dashboard-Professor::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.colunasRevisao-dashboard-Professor::-webkit-scrollbar-thumb {
+    background-color: transparent; 
+    border-radius: 10px; 
+    border: none; 
+}
+
+.colunasConclusao-dashboard-Professor::-webkit-scrollbar{
+    width: 8px;
+}
+
+.colunasConclusao-dashboard-Professor::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+.colunasConclusao-dashboard-Professor::-webkit-scrollbar-thumb{
+    background-color: transparent; 
+    border-radius: 10px; 
+    border: none; 
+}
+
+.colunasPostado-dashboard-Professor::-webkit-scrollbar{
+    width: 8px;
+}
+
+.colunasPostado-dashboard-Professor::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+.colunasPostado-dashboard-Professor::-webkit-scrollbar-thumb{
+    background-color: transparent; 
+    border-radius: 10px; 
+    border: none; 
+}
+
+.colunasNaoEntregue-dashboard-Professor::-webkit-scrollbar{
+    width: 2px;
+}
+
+.colunasNaoEntregue-dashboard-Professor::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+.colunasNaoEntregue-dashboard-Professor::-webkit-scrollbar-thumb{
+    background-color: transparent; 
+    border-radius: 10px; 
+    border: none; 
+}
+
+/* Alteraçãp de design do scroll */
+
+.colunasRevisao-dashboard-Professor{
+    text-align: left;
+    padding: 6px 12px;
+    max-height: 190px;
+    overflow-y: auto; 
+    margin-top: 10px;
+}
+
+.colunasConclusao-dashboard-Professor{
+    text-align: left;
+    padding: 6px 12px;
+    max-height: 190px;
+    overflow-y: auto; 
+    margin-top: 10px;
+}
+
+.colunasPostado-dashboard-Professor{
+    text-align: left;
+    padding: 6px 12px;
+    max-height: 190px;
+    overflow-y: auto; 
+    margin-top: 10px;
+}
+
+.colunasNaoEntregue-dashboard-Professor{
+    text-align: left;
+    padding: 6px 12px;
+    max-height: 170px;
+    overflow-y: auto; 
+}
+
+.buttonNotificar-dashboard-Professor{
+    border: none;
+    background-color: #FF3333;
+    color: white;
+    padding: 7px 15px;
+    font-size: 14px;
+    margin-top: 17px;
+    border-radius: 7px;
+    letter-spacing: 1px;
+    font-family: 'Inter', 'sans-serif';
+    font-weight: 400;
+}
+
+.footer-dashboard-Professor{
+    margin-inline: auto;
+    width: 80%;
+    display: flex;
+    margin-top: 20px;
+}
+
+.calendario-dashboard-Professor{
+    height: 45vh;
+    width: 45%;
+    margin-inline: auto;
+}
+
+.linhaSeparadora-dashboard-Professor{
+    width: 2.5px;
+    height: 40vh;
+    background-color: #000;
+    margin-inline: auto;
+    margin-top: 10px;
+}
+
+.calendario-dashboard-Professor{
+    height: 43vh;
+    width: 53%;
+    margin-inline: auto;
+}
+
+.areaImpressão-dashboard-Professor{
+    height: 43vh;
+    width: 42%;
+    margin-inline: auto;
+    text-align: left;
+    overflow-y: auto; 
+}
+
+.areaImpressão-dashboard-Professor h1{
+    font-family: 'Oswald', 'sans-serif';
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.edicaoNova-dashboard-Professor{
+    position: relative;
+    width: 95%;
+    height: 130px;
+    margin: 10px 0;
+    /* background-image: url('../../../../public/img/site_2.svg'); */
+    background-size: cover;
+    text-align: center;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.edicaoNova-dashboard-Professor::before {
+    content: ""; /* Necessário para o pseudo-elemento */
+    position: absolute; /* Posiciona em relação ao contêiner pai */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Preto com 50% de opacidade */
+    border-radius: 5px; /* Mesma borda arredondada */
+    z-index: 1; /* Coloca a sobreposição acima do fundo */
+}
+
+.edicaoNova-dashboard-Professor > * {
+    position: relative;
+    z-index: 2;
+}
+
+.areaImpressão-dashboard-Professor::-webkit-scrollbar{
+    width: 1px;
+}
+
+.areaImpressão-dashboard-Professor::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+.areaImpressão-dashboard-Professor::-webkit-scrollbar-thumb{
+    background-color: transparent; 
+    border-radius: 10px; 
+    border: none; 
+}
+
+.nomeEdicao-dashboard-Professor{
+    font-family: 'Oswald', 'sans-serif';
+    font-weight: 700;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 0;
+    padding-top: 32px;
+}
+
+.buttonEdicao-dashboard-Professor{
+    padding: 7px 15px;
+    color: white;
+    border: none;
+    background-color: #000;
+    border-radius: 7px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.arrowCards-Dashboard-Professor{
+    display: none;
+}
+
+
+
+@media (max-width: 1000px){
+    .arrowCards-Dashboard-Professor{
+        display: block;
+    }
+
+    .arrowCards-Dashboard-Professor:before{
+        margin: 150px 0px !important;
+    }
+
+    .container-bemVindo-dashboardProfessor{
+        margin-left: 0 !important;
+        margin-right: 44.5%;
+        margin-top: 20px;
+        margin-bottom: 5px;
+        font-family: 'Oswald', 'sans-serif'; 
+    }
+
+    .calendario-dashboard-Professor{
+        height: 43vh;
+        width: 58%;
+        margin-inline: auto;
+    }
+
+    .areaImpressão-dashboard-Professor{
+        height: 43vh;
+        width: 37%;
+        margin-inline: auto;
+        text-align: left;
+        overflow-y: auto; 
+    }
+
+    .nomeEdicao-dashboard-Professor{
+        font-size: 18px;
+    }
+
+    .cardRevisao-dashboard-Professor{
+        width: 40%;
+    }
+    .cardPostado-dashboard-Professor{
+        width: 40%;
+    }
+    .cardConclusao-dashboard-Professor{
+        width: 40%;
+    }
+    .cardNaoEntregue-dashboard-Professor{
+        width: 40%;
+    }
+}
+
+@media (max-width:769px) {
+    .footer-dashboard-Professor{
+        display: none;
+    }
+
+    .cardVisualizacao-dashboard-Professor{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .arrowCards-Dashboard-Professor{
+        display: none;
+    }
+
+    .cardRevisao-dashboard-Professor{
+        width: 100%;
+        padding: 10px;
+        border: solid 1.4px #787878;
+        border-radius: 10px;
+        margin-inline: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        height: 335px;
+    }
+
+    .cardConclusao-dashboard-Professor{
+        width: 100%;
+        padding: 10px;
+        margin-inline: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        height: 335px;
+    }
+
+    .cardPostado-dashboard-Professor{
+        width: 100%;
+        padding: 10px;
+        margin-inline: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        height: 335px;
+    }
+
+    .cardNaoEntregue-dashboard-Professor{
+        width: 100%;
+        padding: 10px;
+        margin-inline: auto;
+        margin-top: 10px;
+        margin-bottom: 70px;
+    }
+
+    .bemVindo-dashboard-Professor{
+        font-size: 24px;
+    }
+
+    .container-bemVindo-dashboardProfessor{
+        margin-left: 0 !important;
+        margin-right: 25% !important;
+        margin-top: 40px;
+        margin-bottom: 5px;
+        font-family: 'Oswald', 'sans-serif'; 
+    }
+    
+    .carrosselDashboard-Professor{
+        display: none;
+    }
+
+    .cardVisualizacao-dashboard-Professor{
+        width: 90% !important;
+    }
+}

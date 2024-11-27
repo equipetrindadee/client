@@ -1,0 +1,364 @@
+.gridColuna-postarTelaInicial-professor.containerPostagem-postagemTelaInicial-professor{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.folhaJornal-postagemTelaInicial-professor{
+    width: 60%;
+    margin-inline: auto;
+    padding: 20px;
+    border: 2px solid #D9D9D9;
+    top: 50px;
+    bottom: 60px;
+    position: relative;
+}
+
+.gridSection1-editarTelaInicial-professor{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 30.83%);
+    grid-template-rows: repeat(4, 22%);
+    grid-column-gap: 17px;
+    grid-row-gap: 15px;
+    width: 95%;
+    height: 380px;
+    margin-inline: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.gridTextoEsquerdo-postarTelaInicial-professor {
+    grid-area: 1 / 1 / 5 / 2;
+    max-width: 100%; /* Ajusta para garantir que o grid ocupe no máximo 100% da largura do container */
+    border-right: 2px solid #6a34ff87;
+    padding-right: 20px;
+    margin-right: auto;
+    margin-bottom: 4px;
+
+    font-family: 'Oswald', 'sans-serif';
+    font-weight: normal;
+    text-align: start;
+    white-space: pre-wrap;
+    word-wrap: break-word !important;
+    line-height: 1.1;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, min-content);
+    grid-column-gap: 0px;
+    grid-row-gap: 12px;
+    
+    overflow: hidden; /* Impede que o conteúdo transborde */
+}
+
+.titleChamativo-postarTelaInicial-professor {
+    grid-area: 1 / 1 / 2 / 2;
+    max-width: 100%; /* Garante que o título não ultrapasse a largura do grid */
+    white-space: pre-wrap;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word;
+    overflow: hidden; /* Oculta qualquer excesso de texto que ultrapasse o grid */
+    text-overflow: ellipsis; /* Adiciona reticências quando necessário */
+    margin-top: 20px;
+
+    font-size: 18px;
+    font-weight: 600;
+    color: #024959;
+    font-family: 'Oswald', 'sans-serif';
+}
+
+.paragrafo1-postarTelaInicial-professor {
+    grid-area: 2 / 1 / 4 / 2;
+    max-width: 100%; /* Garante que o parágrafo respeite o tamanho do grid */
+    white-space: pre-wrap;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word;
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites */
+    font-family: 'Oswald', 'sans-serif';
+}
+
+.paragrafo1-postarTelaInicial-professor h4{
+    font-family: 'Oswald', 'sans-serif';
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.paragrafo1-postarTelaInicial-professor p{
+    font-family: 'Oswald', 'sans-serif';
+    font-size: 9.8px;
+}
+
+.paragrafo2-postarTelaInicial-professor {
+    grid-area: 4 / 1 / 6 / 2;
+    max-width: 100%; /* Garante que o parágrafo respeite o tamanho do grid */
+    white-space: pre-wrap;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word;
+    font-family: 'Oswald', 'sans-serif';
+    overflow: hidden; /* Oculta o conteúdo extra */
+} 
+
+.paragrafo2-postarTelaInicial-professor h4{
+    font-family: 'Oswald', 'sans-serif';
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.paragrafo2-postarTelaInicial-professor p{
+    font-family: 'Oswald', 'sans-serif';
+    font-size: 9.8px;
+}
+
+.gridTextoDireitoTop-postarTelaInicial-professor{
+    text-align: start;
+    grid-area: 1 / 2 / 3 / 4;
+    display: flex;
+    border-bottom: 2px solid #6a34ff87;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.gridTextoDireitoTop-postarTelaInicial-professor div {
+    width: 50%;
+    margin-inline: auto;
+    text-align: start;
+}
+
+.gridTextoDireitoTop-postarTelaInicial-professor div h4{
+    width: 95%;
+    font-family: 'Oswald', 'sans-serif';
+    font-size: 13px;
+    font-weight: 600;
+    margin-right: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word !important;
+}
+
+.gridTextoDireitoTop-postarTelaInicial-professor div p{
+    width: 95%;
+    font-family: 'Oswald', 'sans-serif';
+    font-weight: normal;
+    margin-right: auto;
+    white-space: pre-wrap; /* Preserva quebras de linha e faz o texto quebrar conforme necessário */
+    word-wrap: break-word !important; /* Garante que palavras longas também quebrem para a linha seguinte */
+    overflow-wrap: break-word; /* Força palavras a quebrarem quando necessário */
+    line-height: 1.1;
+    font-size: 11px !important;
+    margin-bottom: 4px;
+}
+
+.gridTextoDireitoTop-postarTelaInicial-professor div img{
+    width: 95%;
+    height: 90%;
+    margin-inline: auto;
+}
+
+.gridTextoDireitoBottom-postarTelaInicial-professor{
+    grid-area: 3 / 2 / 5 / 4;
+    display: flex;
+    text-align: center;
+}
+
+.gridTextoDireitoBottom-postarTelaInicial-professor div{
+    width: 50%;
+    margin-inline: auto;
+    text-align: start;
+}
+
+.gridTextoDireitoBottom-postarTelaInicial-professor div h4{
+    width: 95%;
+    font-family: 'Oswald', 'sans-serif';
+    margin-inline: auto;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: pre-wrap;
+    word-wrap: break-word !important;
+}
+
+.gridTextoDireitoBottom-postarTelaInicial-professor div p{
+    width: 95%;
+    font-family: 'Oswald', 'sans-serif';
+    margin-inline: auto;
+    font-weight: normal;
+    white-space: pre-wrap; /* Preserva quebras de linha e faz o texto quebrar conforme necessário */
+    word-wrap: break-word !important; /* Garante que palavras longas também quebrem para a linha seguinte */
+    overflow-wrap: break-word; /* Força palavras a quebrarem quando necessário */
+    line-height: 1.1;
+    font-size: 11px;
+    margin-bottom: 4px;
+}
+
+.gridTextoDireitoBottom-postarTelaInicial-professor div img{
+    width: 95%;
+    height: 90%;
+    margin-inline: auto;
+}
+
+.section2-editarTelaInicial-professor{
+    width: 100%;
+    text-align: start;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.section2-editarTelaInicial-professor h1{
+    font-family: 'Coiny', 'sans-serif';
+    width: 60%;
+    margin-left: 3%;
+    font-size: 4rem;
+    margin-bottom: 2px !important;
+}
+
+.galeriaGrid-editarTelaInicial-professor{
+    display: grid;
+    grid-template-columns: repeat(3, 31.6666666667%);
+    grid-template-rows: repeat(4, 22%);
+    grid-column-gap: 8px;
+    grid-row-gap: 10px;
+    width: 100%;
+    height: 80%;
+    margin-inline: auto;
+}
+
+.galeriaImage1-postarTelaInicial-professor{
+    grid-area: 1 / 1 / 5 / 2;
+    height: 100%;
+    width: 100%;
+}
+
+.galeriaImage2-postarTelaInicial-professor{
+    grid-area: 1 / 2 / 3 / 3;
+    height: 100%;
+    width: 100%;
+}
+
+.galeriaImage3-postarTelaInicial-professor{
+    grid-area: 3 / 2 / 5 / 3;
+    height: 100%;
+    width: 100%;
+}
+
+.galeriaImage4-postarTelaInicial-professor{
+    grid-area: 1 / 3 / 5 / 4;
+    height: 100%;
+    width: 100%;
+}
+
+.designColuna-postarTelaInicial-professor{
+    width: 100%;
+    background-color: #F2357B;
+    text-align: end;
+    font-family: 'Oswald', 'sans-serif';
+}
+
+.designColuna-postarTelaInicial-professor h1{
+    font-family: 'Oswald', 'sans-serif';
+    color: white;
+    padding: 5px 20px;
+    font-weight: 600;
+    letter-spacing: 1%;
+    font-size: 30px;
+}
+
+.designColuna-postarTelaInicial-professor h1{
+    font-family: 'Oswald', 'sans-serif';
+    color: white;
+    padding: 5px 20px;
+    font-weight: 600;
+    letter-spacing: 1%;
+    font-size: 30px;
+}
+
+.gridColuna-postarTelaInicial-professor{
+    display: grid;
+    grid-template-columns: 1fr 0.009fr repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 8px;
+    grid-row-gap: 10px;
+    width: 95%;
+    margin-right: auto;
+    margin-left: 2px;
+    margin-top: 20px;
+    text-align: start;
+}
+
+.gridColuna-postarTelaInicial-professor div{
+    width: 165px;
+    margin-inline: auto;
+}
+
+.gridColuna-postarTelaInicial-professor div h4{
+    width: 95%;
+    margin-right: auto;
+    font-family: 'Oswald', 'sans-serif';
+    font-weight: 600;
+    white-space: pre-wrap;
+    word-wrap: break-word !important;
+}
+
+.gridColuna-postarTelaInicial-professor div p{
+    width: 102%;
+    font-family: 'Oswald', 'sans-serif';
+    font-weight: normal;
+    font-size: 12px;
+    white-space: pre-wrap; /* Preserva quebras de linha e faz o texto quebrar conforme necessário */
+    word-wrap: break-word; /* Garante que palavras longas também quebrem para a linha seguinte */
+    overflow-wrap: break-word; /* Força palavras a quebrarem quando necessário */
+    line-height: 1.2; /* Ajuste o valor conforme necessário */
+}
+
+.gridColuna-postarTelaInicial-professor div img{
+    width: 120%;
+    margin-inline: auto;
+}
+
+.descricaoParagrafo-postarTelaInicial-professor{
+    color: #6b6b6b !important;
+    margin-bottom: 4px !important;
+}
+
+@media (max-width:1200px){
+    .gridTextoEsquerdo-postarTelaInicial-professor{
+        grid-row-gap: 8px;
+    }
+}
+
+@media (max-width:1165px){
+    .paragrafo2-postarTelaInicial-professor h4{
+        font-size: 12px;
+    }
+
+    .textoDireitaTop-postarTelaInicial-professor h4{
+        font-size: 12px;
+    }
+
+    .gridTextoDireitoBottom-postarTelaInicial-professor div h4{
+        font-size: 12px;
+    }
+
+    .gridTextoEsquerdo-postarTelaInicial-professor{
+        grid-row-gap: 2px;
+        padding-right: 12px;
+    }
+
+    .gridColuna-postarTelaInicial-professor div h4{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 1023.90px){
+
+    .folhaJornal-postagemTelaInicial-professor{
+        display: none;
+    }
+
+    .conteudoPostagem-postagemTelaInicial-professor{
+        display: none;
+    }
+
+    .containerPostagem-postagemTelaInicial-professor{
+        display: none;
+    }
+}

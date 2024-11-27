@@ -1,0 +1,856 @@
+/* Estilo global */
+body {
+  font-family: 'Oswald', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Cabeçalho */
+.userComum-listaArtigo-header {
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 1000;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.userComum-listaArtigo-header .userComum-line-blue {
+  height: 80px;
+  background-color: #312CBF;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.userComum-listaArtigo-header h2 {
+  font-family: 'Oswald', sans-serif;
+  position: relative;
+  z-index: 1;
+  color: white;
+  font-size: 45px;
+  margin-top: 15px;
+  margin-left: 450px;
+}
+
+.userComum-listaArtigo-header img.userComum-img-menu {
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+}
+
+/* Barra de Pesquisa */
+.userComum-search-bar-container {
+  display: flex;
+  align-items: center;
+  margin-left: 200px;
+  margin-top: 10px;
+}
+
+.userComum-search-bar {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #312CBF;
+  border: 1px solid #ccc;
+  width: 200px;
+  height: 35px;
+  color: white;
+}
+
+.userComum-search-bar::placeholder {
+  color: white;
+}
+
+.userComum-search-icon {
+  position: absolute;
+  left: 1280px;
+  height: 30px !important;
+}
+
+/* Seção Artigos */
+.userComum-listaArtigo-articles {
+  font-family: 'Oswald', sans-serif;
+  margin-top: 20px;
+  padding-left: 50px;
+}
+
+.userComum-listarArtigo-articles-text {
+  font-size: 14px;
+  color: #888;
+}
+
+.userComum-listaArtigo-articles-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.userComum-article {
+  display: flex;
+  margin-bottom: 35px;
+}
+
+.userComum-article img {
+  width: 250px;
+  height: 180px;
+  margin-right: 20px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Seção Galeria */
+.userComum-listarArtigo-gallery-section {
+  font-family: 'Oswald', sans-serif;
+  margin-top: 20px;
+  margin-right: 100px;
+}
+
+.userComum-listarArtigo-gallery {
+  width: 100%;
+  height: auto;
+}
+
+.userComum-listarArtigo-gallery img {
+  width: 300px;
+  height: 300px;
+}
+
+.userComum-listarArtigo-gallery-section h3 {
+  font-weight: bold;
+  margin-left: 0;
+}
+
+/* Container para Artigos e Galeria */
+.userComum-content-grid {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.userComum-listaArtigo-articles {
+  flex: 2;
+}
+
+.userComum-listaArtigo-articles,
+.userComum-listarArtigo-gallery-section {
+  flex: 1;
+}
+
+.userComum-article {
+  display: flex;
+  margin-bottom: 35px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+.userComum-article:last-child {
+  border-bottom: none;
+}
+
+.userComum-listarArtigo-line-separator {
+  height: 1px;
+  background-color: #ddd;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Seção Mais Lidos */
+.userComum-listarArtigos-popular-section {
+  font-family: 'Oswald', sans-serif;
+  margin-top: 20px;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  max-width: 100%;
+  width: auto;
+  background-color: #f9f9f9;
+  margin-right: 150px;
+  height: 595px;
+  overflow-y: auto;
+}
+
+.userComum-listaArtigo-popular-list {
+  list-style: none;
+  padding: 0;
+}
+
+.userComum-listaArtigo-popular-item {
+  margin-bottom: 10px;
+}
+
+.userComum-listarArtigo-popular-item-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.userComum-serComum-listarArtigo-img-popular-list {
+  width: 120px;
+  height: 120px;
+}
+
+.userComum-listarArtigo-author-text {
+  font-size: 14px;
+  color: #888;
+}
+
+
+
+
+
+
+
+
+            /* DONE */
+@media (min-width: 990px)  {
+
+  .userComum-listaArtigo-header h2 {
+    font-size: 35px;
+    margin-left: 350px;
+    margin-top: 15px;
+    text-align: left;
+  }
+
+  .userComum-search-bar-container {
+    margin-left: 40px;
+    justify-content: flex-start;
+    margin-top: 10px;
+
+  }
+
+  .userComum-search-bar {
+    width: 180px;
+  }
+
+  .userComum-search-icon {
+    position: absolute;
+    left: 905px;
+  }
+
+  .userComum-listarArtigos-popular-section {
+    max-width: 100%;
+    width: auto;
+    margin-right: 15px;
+    height: 600px;
+    overflow-y: auto;
+  }
+}
+
+                /* DONE */
+/* Responsividade para telas de 770px a 880px */
+@media (min-width: 770px) and (max-width: 880px) {
+  /* .userComum-listaArtigo-header img.userComum-img-menu {
+    display: none; 
+  } */
+
+  .userComum-listaArtigo-header h2 {
+    font-size: 35px;
+    margin-left: 200px;
+    margin-top: 15px;
+    text-align: left;
+  }
+
+  .userComum-search-bar-container {
+    margin-left: 20px;
+    justify-content: flex-start;
+    margin-top: 10px;
+    position: relative;
+  }
+
+  .userComum-search-bar {
+    width: 180px;
+  }
+
+  .userComum-search-icon {
+    position: absolute;
+    left: 145px;
+  }
+
+  .userComum-listaArtigo-articles {
+    width: 80%;
+    padding-left: 40px;
+  }
+
+  .userComum-article {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+  }
+
+  .userComum-article img {
+    width: 300px !important;
+    height: 150px !important;
+  }
+
+  .userComum-content-grid {
+    flex-direction: row;
+    gap: 15px;
+    justify-content: space-between;
+  }
+
+  .userComum-listarArtigo-conteudoartigo h4{
+    font-size: 15px;
+  }
+
+  .userComum-listarArtigo-articles-text{
+    font-size: 10px !important;
+  }
+
+  .userComum-listarArtigo-conteudoartigo p{
+    font-size: 12px;
+  }
+  
+  .userComum-listarArtigo-gallery-section {
+    width: 70%;
+    margin-left: -25px;
+  }
+
+  .userComum-listarArtigo-gallery img {
+    width: 150px !important;
+    height: 150px !important;
+    max-width: 100%;
+  }
+
+  /* Seção Mais Lidos */
+  .userComum-listarArtigos-popular-section {
+    width: 100%;
+    margin-left: -30px;
+    margin-right: 10px;
+  }
+
+  /* Ajustes nas imagens do grid */
+  .userComum-content-grid img {
+    width: 100px;
+    height: 100px;
+    max-width: 220px;
+  }
+
+  .userComum-listarArtigos-popular-section {
+    max-width: 100%;
+    width: auto;
+    margin-right: 15px;
+    height: 550px;
+    overflow-y: auto;
+  }
+}
+                  /* DONE */
+@media (min-width: 880px) and (max-width: 990px) {
+  /* .userComum-listaArtigo-header img.userComum-img-menu {
+    display: none;
+  } */
+
+  .userComum-menu, .userComum-navigation {  
+    display: none;
+  }
+
+  .userComum-listaArtigo-header h2 {
+    font-size: 35px; 
+    margin-left: 200px; 
+    margin-top: 15px;
+    text-align: left; 
+  }
+
+  .userComum-listarArtigo-conteudoartigo p{
+    font-size: 15px !important ;
+  }
+
+  .userComum-listarArtigo-popular-item-content img{
+    height: 105px !important;
+    width: 105px !important;
+  }
+
+  .userComum-listaArtigo-header img {
+    width: 100%;  
+    height: auto;  
+    max-width: 30px; 
+  }
+
+  .userComum-search-bar-container {
+    margin-left: 20px; 
+    justify-content: flex-start; 
+    margin-top: 10px;
+    position: relative; 
+  }
+
+  .userComum-search-bar {
+    width: 180px;
+  }
+
+  .userComum-search-icon {
+    position: absolute;
+    left: 145px;  
+  }
+
+  .userComum-listaArtigo-articles {
+    width: 90%;
+    padding-left: 40px;
+  }
+
+  .userComum-article {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+  }
+
+  .userComum-article img {
+    width: 200px !important; 
+    height: 150px !important;  
+  }
+
+  .userComum-content-grid {
+    flex-direction: row; 
+    gap: 15px;
+    justify-content: space-between;
+  }
+
+  /* Ajuste para a galeria */
+  .userComum-listarArtigo-gallery-section {
+    width: 70%; 
+    margin-left: -25px;
+  }
+
+  /* Ajuste para as imagens da galeria */
+  .userComum-listarArtigo-gallery img {
+    width: 100%;  /* A imagem se ajusta ao container */
+    height: auto;  /* Mantém a proporção */
+    max-width: 100%;  /* Limita o tamanho da imagem ao seu container */
+  }
+
+  /* Ajuste para a seção "Mais Lidos" */
+  .userComum-listarArtigos-popular-section {
+    width: 100%;
+    margin-left: -30px; 
+    margin-right: 10px;
+  }
+
+  /* Ajuste nas imagens dentro do grid */
+  .userComum-content-grid img {
+    width: 100%;
+    height: auto;
+    max-width: 220px;  /* Limita o tamanho máximo da imagem */
+  }
+}
+
+  @media (max-width: 770px) {
+
+    /* Esconder a imagem de menu na header */
+    .userComum-listaArtigo-header img.userComum-img-menu {
+      display: none;
+    }
+
+    /* Ajustar título da lista de artigos */
+    .userComum-listaArtigo-header h2 {
+      font-size: 28px;
+      margin-left: 150px; /* Ajuste da margem */
+      margin-top: 15px;
+      text-align: left;
+    }
+
+    /* Ajustes para a barra de pesquisa */
+    .userComum-search-bar-container {
+      margin-left: 10px;
+      justify-content: flex-start;
+      margin-top: 10px;
+      position: relative;
+    }
+
+    .userComum-search-bar {
+      width: 150px; /* Largura da barra de pesquisa */
+    }
+
+    .userComum-search-icon {
+      position: absolute;
+      left: 115px; /* Posição do ícone de busca */
+    }
+
+    /* Ajuste na lista de artigos */
+    .userComum-listaArtigo-articles {
+      width: 100%; /* Usa toda a largura disponível */
+      padding-left: 10px; /* Ajuste do padding */
+    }
+
+  
+    .userComum-article {
+      display: flex; 
+      flex-direction: row; 
+      align-items: center; 
+      margin-bottom: 15px;
+      justify-content: flex-start; 
+    }
+
+
+    .userComum-article img {
+      width: 180px !important;
+      height: auto; 
+      margin-right: 15px;
+    }
+
+    /* Ajustes nos títulos dos artigos */
+    .userComum-listarArtigo-conteudoartigo h4 {
+      font-size: 14px; /* Tamanho da fonte */
+    }
+
+    /* Ajustes no texto dos artigos */
+    .userComum-listarArtigo-articles-text {
+      font-size: 12px !important; /* Tamanho da fonte do texto */
+    }
+
+    .userComum-listarArtigo-conteudoartigo p {
+      font-size: 14px; /* Tamanho do parágrafo */
+    }
+
+    /* Ajustes para a galeria de imagens */
+    .userComum-listarArtigo-gallery-section {
+      width: 100%; /* Usa toda a largura disponível */
+      margin-left: 0;
+    }
+
+    .userComum-listarArtigo-gallery img {
+      width: 250px !important;
+      height: auto;
+      max-width: 100%; /* Garante que a imagem não ultrapasse o container */
+    }
+
+    /* Ajuste na seção Mais Lidos */
+    .userComum-listarArtigos-popular-section {
+      width: 100%; /* Usa 100% da largura */
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .userComum-listarArtigo-popular-item-text{
+      font-size: 15px !important;
+    }
+
+    .userComum-listaArtigo-popular-item img {
+      width: 100px !important; /* Largura da imagem */
+      height: auto;
+    }
+
+    /* Ajuste nas imagens dentro do grid */
+    .userComum-content-grid img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+    }
+
+    /* Esconder o menu e navegação para telas pequenas */
+    .userComum-menu, .userComum-navigation {
+      display: none;
+    }
+
+    .userComum-listarArtigos-popular-section {
+      max-width: 100%;
+      width: auto;
+      margin-right: 15px;
+      height: 550px;
+      overflow-y: auto;
+    }
+
+  }
+
+  @media (max-width: 670px) {
+
+    /* Ajuste na lista de artigos */
+    .userComum-listaArtigo-articles {
+      width: 100%; /* Usa toda a largura disponível */
+      padding-left: 10px; /* Ajuste do padding */
+    }
+  
+    .userComum-article img {
+      width: 150px !important;
+      height: auto; 
+      margin-right: 15px;
+    }
+  
+    /* Ajustes nos títulos dos artigos */
+    .userComum-listarArtigo-conteudoartigo h4 {
+      font-size: 15px; /* Tamanho da fonte */
+    }
+  
+    /* Ajustes no texto dos artigos */
+    .userComum-listarArtigo-articles-text {
+      font-size: 10px !important; /* Tamanho da fonte do texto */
+    }
+  
+    .userComum-listarArtigo-conteudoartigo p {
+      font-size: 10px; /* Tamanho do parágrafo */
+    }
+  
+    .userComum-listarArtigo-popular-item-text {
+      font-size: 10px !important;
+    }
+  
+    .userComum-listaArtigo-popular-item img {
+      width: 80px !important; /* Largura da imagem */
+      height: auto;
+    }
+  
+    .userComum-listarArtigo-author-text {
+      font-size: 10px !important;
+    }
+  
+    /* Esconder a galeria e a seção "Mais Lidos" quando a tela for menor que 670px */
+    .userComum-listarArtigo-gallery-section,
+    .userComum-listarArtigos-popular-section {
+      display: none;
+    }
+  }
+  
+
+  @media (max-width: 564px) {
+      .userComum-listaArtigo-header img.userComum-img-menu {
+        display: none;
+      }
+
+      .userComum-listaArtigo-header h2 {
+        font-size: 25px;
+        margin-left: 110px; /* Ajuste da margem */
+        margin-top: 25px;
+        text-align: left;
+      }
+    
+      /* Ajustes para a barra de pesquisa */
+      .userComum-search-bar-container {
+        margin-left: 10px;
+        justify-content: flex-start;
+        margin-top: 10px;
+        position: relative;
+      }
+    
+      .userComum-search-bar {
+        width: 150px; /* Largura da barra de pesquisa */
+      }
+    
+      .userComum-search-icon {
+        position: absolute;
+        left: 115px; /* Posição do ícone de busca */
+      }
+  }
+
+  @media (max-width: 496px) {
+    /* Esconder imagem do menu */
+    .userComum-listaArtigo-header img.userComum-img-menu {
+      display: none;
+    }
+  
+    /* Ajuste do título da lista de artigos */
+    .userComum-listaArtigo-header h2 {
+      font-size: 20px;
+      margin-left: 90px; /* Ajuste da margem */
+      margin-top: 25px;
+      text-align: left;
+    }
+  
+    /* Barra de pesquisa */
+    .userComum-search-bar-container {
+      margin-left: 20px;
+      justify-content: flex-start;
+      margin-top: 15px;
+      position: relative;
+    }
+  
+    .userComum-search-bar {
+      width: 120px; /* Largura da barra de pesquisa */
+      height: 30px;
+    }
+  
+    .userComum-search-icon {
+      position: absolute;
+      left: 85px; /* Posição do ícone de busca */
+    }
+  
+    /* Ajuste no texto da seção Mais Lidos */
+    .userComum-listarArtigo-popular-item-text {
+      font-size: 10px !important;
+    }
+  
+    /* Ajuste da imagem na seção Mais Lidos */
+    .userComum-listaArtigo-popular-item img {
+      width: 60px !important;
+      height: auto;
+    }
+  
+    .userComum-listarArtigos-popular-section {
+      max-width: 100%;
+      width: auto;
+      background-color: #f9f9f9;
+      height: 440px;
+      overflow-y: auto;
+    }
+
+    .userComum-listarArtigo-conteudoartigo{
+     padding-left: 5px;
+    }
+  
+    /* Ajustes para a imagem do artigo */
+    .userComum-article img {
+      width: 120px !important;
+      height: auto;
+      margin-right: 0; /* Removendo o espaço entre a imagem e o texto */
+    }
+  
+    /* Ajuste no conteúdo do artigo */
+    .userComum-listarArtigo-conteudoartigo h4 {
+      font-size: 13px; /* Tamanho da fonte do título */
+      margin: 0; /* Remover a margem */
+      padding: 0; /* Remover o padding */
+    }
+  
+    .userComum-listarArtigo-articles-text {
+      font-size: 8px !important; /* Tamanho do texto do artigo */
+      margin: 0; /* Remover a margem */
+      padding: 0; /* Remover o padding */
+    }
+  
+    .userComum-listarArtigo-conteudoartigo p {
+      font-size: 9px; /* Tamanho do parágrafo */
+      margin: 0; /* Remover a margem */
+      padding: 0; /* Remover o padding */
+    }
+  
+    /* Garantir que o texto dentro do artigo tenha espaçamento mínimo */
+    .userComum-article {
+      display: flex;
+      flex-direction: row; /* Imagem e texto lado a lado */
+      align-items: center; /* Alinhamento vertical do conteúdo */
+      margin-bottom: 15px; /* Espaçamento entre os artigos */
+      justify-content: flex-start; /* Alinhamento à esquerda */
+    }
+  
+    .userComum-listaArtigo-articles {
+      padding-left: 10px;
+      width: 100%;
+    }
+
+    .userComum-listarArtigo-gallery img {
+      width: 130px !important;
+      height: auto;
+      max-width: 100%;
+    }
+  
+  }
+  
+  @media (max-width: 413px) {
+    .userComum-listaArtigo-header img.userComum-img-menu {
+      display: none;
+    }
+  
+    .userComum-listaArtigo-header h2 {
+      font-size: 20px;
+      margin-left: 50px; 
+      margin-top: 25px;
+      text-align: left;
+    }
+
+    .userComum-search-bar-container {
+      margin-left: 20px;
+      justify-content: flex-start;
+      margin-top: 15px;
+      position: relative;
+    }
+  
+    .userComum-search-bar {
+      width: 120px; 
+      height: 25px;
+    }
+  
+    .userComum-search-icon {
+      height: 20px !important;
+      position: absolute;
+      left: 85px; /* Posição do ícone de busca */
+    }
+
+    .userComum-article img {
+      width: 100px !important;
+      height: auto;
+      margin-right: 0; /* Removendo o espaço entre a imagem e o texto */
+    }
+
+    .userComum-listarArtigo-conteudoartigo h4 {
+      font-size: 11px; /* Tamanho da fonte do título */
+      margin: 0; /* Remover a margem */
+      padding: 0; /* Remover o padding */
+    }
+  
+    .userComum-listarArtigo-articles-text {
+      font-size: 7px !important; /* Tamanho do texto do artigo */
+      margin: 0; /* Remover a margem */
+      padding: 0; /* Remover o padding */
+    }
+  
+    .userComum-listarArtigo-conteudoartigo p {
+      font-size: 9px; /* Tamanho do parágrafo */
+      margin: 0; /* Remover a margem */
+      padding: 0; /* Remover o padding */
+    }
+  }
+
+  @media (max-width: 373px) {
+
+        .userComum-listaArtigo-header img.userComum-img-menu {
+          display: none;
+        }
+      
+        .userComum-listaArtigo-header h2 {
+          font-size: 20px;
+          margin-left: 20px; /* Ajuste da margem */
+          margin-top: 25px;
+          text-align: left;
+        }
+      
+        /* Barra de pesquisa */
+        .userComum-search-bar-container {
+          margin-left: 10px;
+          justify-content: flex-start;
+          margin-top: 15px;
+          position: relative;
+        }
+      
+        .userComum-search-bar {
+          width: 120px; /* Largura da barra de pesquisa */
+          height: 30px;
+        }
+  }
+
+  @media (max-width: 333px) {
+    .userComum-listaArtigo-header img.userComum-img-menu {
+      display: none;
+    }
+  
+    .userComum-listaArtigo-header h2 {
+      font-size: 18px;
+      margin-left: 10px; /* Ajuste da margem */
+      margin-top: 25px;
+      text-align: left;
+    }
+  
+    /* Barra de pesquisa */
+    .userComum-search-bar-container {
+      margin-left: 15px;
+      justify-content: flex-start;
+      margin-top: 15px;
+      position: relative;
+    }
+  
+    .userComum-search-bar {
+      width: 100px; /* Largura da barra de pesquisa */
+      height: 20px;
+      font-size: 12px; /* Tamanho da fonte na barra de pesquisa */
+    }
+
+    .userComum-search-icon {
+      position: absolute;
+      height: 20px;
+      width: 15px;
+      left: 75px; /* Posição do ícone de busca */
+    }
+  
+  }
+  

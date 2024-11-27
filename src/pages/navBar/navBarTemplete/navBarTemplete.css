@@ -1,0 +1,197 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garantir que padding e borda sejam incluídos nas dimensões do elemento */
+}
+
+.containerTemplete{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    background-color: rgb(233, 232, 232);
+}
+
+.navbar-texto{
+    border: 4.7px solid #FFDC22;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+
+.navbar-texto h1{
+    font-family: "Oswald", sans-serif;
+    font-size: 40px;
+    margin-left: 60px;
+    margin-top: 10px;
+}
+
+.navbar-texto h6{
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 3px;
+    margin-left: 34px;
+    margin-top: 5px;
+}
+
+.nav-visualizar-buttom {
+    font-family: "Oswald", sans-serif;
+    font-size: 13px;
+    display: flex;
+    position: relative;
+    float: right;
+    bottom: 60px;
+}
+
+.nav-visualizar-buttom i{
+    font-size: 30px;
+}
+
+.button-icon-visualizar{
+    background-color: transparent;
+    display: flex;
+    height: 21px;
+    width: 29vh;
+    border: none;
+}
+
+.button-icon-visualizar p{
+    color: black;
+    font-size: 2vh;
+    margin-top: -0.7vh;
+}
+
+.button-icon-visualizar i{
+    color: black;
+    margin-top: -1vh;
+}
+
+.button-icon-visualizar:hover,.button-icon-visualizar:focus{
+    background-color: rgba(182, 182, 181, 0);
+}
+
+.navbar-aluno-edits-jornal {
+    display: flex;
+    margin-top: 15px;
+}
+
+.navbar-aluno-edits-jornal h1{
+    font-weight: 700;
+    font-family: "Rajdhani", sans-serif;
+    text-align: center;
+    margin-left: 300px;
+}
+
+.navbar-aluno-edits-jornal i{
+    font-size: 40px;
+}
+
+.navbar-aluno-edits-jornal button{
+    border: none;
+    background-color: transparent;
+    border-radius: 30px;
+}
+
+/* Grid ajustado */
+.aluno_templete2-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Colunas iguais */
+    grid-template-rows: repeat(3, 1fr) 1fr; /* Ajustando os dois últimos para ocupar toda a largura */
+    grid-gap: 20px; /* Espaçamento entre os elementos */
+    padding: 20px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.aluno_templete2-text1, 
+.aluno_templete2-img1, 
+.aluno_templete2-img2, 
+.aluno_templete2-text2, 
+.aluno_templete2-text3, 
+.aluno_templete2-img3 {
+    background-color: transparent; /* Sem fundo branco */
+    padding: 10px;
+    height: 20vh;
+}
+
+/* Estilização dos textareas */
+.aluno_templete2-text1 textarea,
+.aluno_templete2-text2 textarea,
+.aluno_templete2-text3 textarea {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    border: solid 4px #a0a0a068;
+    resize: none; /* Desativa redimensionamento */
+}
+
+/* Estilização dos inputs de arquivo */
+.aluno_templete2-img1 input,
+.aluno_templete2-img2 input,
+.aluno_templete2-img3 input {
+    width: 100%;
+    height: 100%;
+   
+}
+
+/* Classes de imagem com fundo mais escuro */
+.aluno_templete2-img1, 
+.aluno_templete2-img2, 
+.aluno_templete2-img3 {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    background-color: rgba(134, 134, 134, 0.585); /* Fundo mais escuro para as imagens */
+    border-radius: 1vh;
+}
+
+/* Últimos dois elementos ocupando toda a largura */
+.aluno_templete2-text3 {
+    grid-column: 1 / span 2; /* Ocupar as duas colunas */
+}
+
+.aluno_templete2-img3 {
+    grid-column: 1 / span 2; /* Ocupar as duas colunas */
+}
+
+
+/* Esconder o input de arquivo original */
+.aluno_templete2-img1 input[type="file"], 
+.aluno_templete2-img2 input[type="file"], 
+.aluno_templete2-img3 input[type="file"] {
+    display: none;
+}
+
+/* Estilo para o botão personalizado */
+.custom-file-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+    width: 30%;
+    box-sizing: border-box;
+}
+
+.custom-file-label:hover {
+    background-color: #ffffff;
+}
+
+/* almentar os elementos */
+
+.aluno_templete2-text1, 
+.aluno_templete2-img1, 
+.aluno_templete2-img2, 
+.aluno_templete2-text2, 
+.aluno_templete2-text3, 
+.aluno_templete2-img3 {
+    height: calc(20vh + 30px); /* Aumenta a altura em 30px */
+}
+
+/* tela direita */
+
+.aluno_templete-rightscreen{
+    background-color: rgb(255, 255, 255);
+}

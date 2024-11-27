@@ -1,0 +1,87 @@
+.aluno_dashboard_container_principal {
+  display: flex;
+  flex-direction: column;
+  /* Empilha por padrão */
+  height: 100vh;
+}
+
+.dashAlunoNewContentPrincipalGridLayout {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+.lado-esquerdoDashAlunoNew{
+  grid-area: 1 / 1 / 2 / 2 !important; 
+}
+.lado-direitoDashAlunoNew{
+  grid-area: 1 / 2 / 2 / 3 !important;
+}
+
+/* Barra de navegação fixa no topo */
+.navBarAluno_telaDash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  /* Garante que fique acima de tudo */
+  /* Define uma cor de fundo */
+  border-bottom: 1px solid #ddd;
+  /* Opcional: separa visualmente */
+}
+
+/* Conteúdo principal abaixo da barra de navegação */
+.lado-esquerdoDashAlunoNew,
+.lado-direitoDashAlunoNew {
+  flex: 1;
+  padding: 10px;
+  height: calc(100vh - 60px);
+  /* Altura total menos a altura da barra de navegação */
+  overflow-y: auto;
+  /* Permite rolagem se necessário */
+}
+
+.lado-esquerdoDashAlunoNew {
+  border-right: 1px solid #ddd;
+  /* Linha divisória entre os lados */
+}
+
+.container-conteudo {
+  display: flex;
+  flex-direction: row;
+  /* Os lados ficam lado a lado */
+  margin-top: 60px;
+  /* Espaço para a barra de navegação */
+  height: 100%;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .container-conteudo {
+    flex-direction: column;
+    /* Empilha o lado esquerdo e direito */
+  }
+
+  .lado-esquerdoDashAlunoNew {
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    /* Linha divisória horizontal */
+  }
+}
+
+@media (max-width: 480px) {
+  .navBarAluno_telaDash {
+    display: block;
+    /* Continua visível */
+  }
+
+  .lado-esquerdoDashAlunoNew,
+  .lado-direitoDashAlunoNew {
+    padding: 5px;
+    /* Reduz o espaçamento em telas menores */
+    height: auto;
+    /* Ajusta automaticamente a altura */
+  }
+}

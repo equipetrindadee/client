@@ -1,0 +1,233 @@
+
+/* Card para notificações normais */
+.button_notificacoes_aluno {
+    background-color: transparent;
+    border: 1px solid #FF0000; /* Vermelho */
+    margin-block: 10px;
+    margin-inline: 2.5rem;
+    width: 95%;
+    border-radius: 10px;
+  }
+  
+  .button_notificacoes_aluno:hover {
+    /* Sem hover */
+    background-color: transparent;
+    border: 1px solid #FF0000 !important; /* Vermelho */
+  }
+  
+  .button_notificacoes_aluno_estrutura {
+    display: grid;
+    grid-template-columns: 0.11fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+  
+  /* Estilos do sistema */
+  .sistema-button {
+    border: 1px solid #FF0000; /* Vermelho */
+  }
+  
+  .sistema-footer-button {
+    color: #FF0000; /* Vermelho */
+  }
+  
+  .sistema-close-button {
+    color: #FF0000; /* Vermelho */
+  }
+  
+  .imagem-perfil-universal img {
+    width: 65px !important; /* Largura fixa */
+    height: 65px !important; /* Altura fixa */
+    object-fit: cover !important; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 50% !important; /* Deixa as imagens redondas */
+    max-width: 65px !important;
+    min-width: 65px !important;
+    margin-right: 10px !important;
+  }
+  
+  .button_notificacoes_aluno_conteudo_img { 
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  
+  .button_notificacoes_aluno_conteudo_texto { 
+    grid-area: 1 / 2 / 2 / 3; 
+    color: black;
+    margin: auto 0;
+    text-align: left; 
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  
+  .button_notificacoes_aluno_conteudo_texto h3 {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  .button_notificacoes_aluno_conteudo_texto p {
+    width: 100%;
+    color: #FF0000; /* Vermelho */
+    font-size: 18px;
+  }
+  
+  /* Modal */
+  .modal_notificacoes_aluno_estrutura {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.3fr 1fr 0.2fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+  
+  .modal_notificacoes_aluno_conteudo_texto p {
+    color: #FF0000; /* Vermelho */
+  }
+  
+  .modal_notificacoes_aluno_textarea {
+    width: 100%; 
+    height: 150px;
+    resize: none;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #FF0000 !important; /* Vermelho */
+    border-radius: 10px;
+    font-size: 18px;
+  }
+  
+  /* Remover o efeito hover para o botão no rodapé do modal */
+  .modal_notificacoes_aluno_footer button {
+    color: #FF0000; /* Vermelho */
+    font-size: 22px;
+    font-weight: 700;
+  }
+  
+  .modal_notificacoes_aluno_footer button:hover {
+    border: none;
+    color: #FF0000; /* Vermelho */
+  }
+  
+  /* Remover hover nos ícones */
+  .modal_notificacoes_aluno_footer_hands i:hover {
+    color: inherit; /* Não altera a cor no hover */
+  }
+  
+
+.modal_notificacoes_aluno_conteudo_img { 
+    grid-area: 1 / 1 / 2 / 2;
+ }
+ .modal_notificacoes_aluno_conteudo_img img {
+    width: 25vw; /* A largura da imagem será 10% da largura da viewport */
+    max-width: 100px; /* Define um tamanho máximo para evitar que a imagem fique muito grande */
+    min-width: 50px; /* Define um tamanho mínimo para evitar que fique muito pequena */
+    border-radius: 50%;
+    height: auto; /* Mantém a proporção da imagem */
+}
+.imagem-perfil-universal_modal img {
+    width: 80px !important; /* Largura fixa */
+    height: 80px !important; /* Altura fixa */
+    object-fit: cover !important; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 50% !important; /* Deixa as imagens redondas */
+    max-width: 80px !important;
+    min-width: 80px !important;
+    margin-right: 10px !important;
+}
+
+.modal_notificacoes_aluno_conteudo_texto { 
+    grid-area: 1 / 2 / 2 / 3; 
+    color: black;
+    margin: auto 0;
+    text-align: left; 
+    font-size: 1.1rem;
+    font-weight: 700;
+
+}
+.modal_notificacoes_aluno_conteudo_texto h3{
+    width: 100%;
+    
+} 
+.modal_notificacoes_aluno_conteudo_texto p{
+    width: 100%;
+    color: #FF0000 !important;
+}
+
+.modal_notificacoes_aluno_botao_fechar{
+    grid-area: 1 / 3 / 2 / 4; 
+    margin: auto ;
+}
+.modal_notificacoes_aluno_botao_fechar button{
+    background-color: transparent;
+    border: none;
+}
+.modal_notificacoes_aluno_botao_fechar button:hover {
+    background-color: transparent;
+    border: none;
+}
+.modal_notificacoes_aluno_botao_fechar button i{
+    font-size: 32px;
+    color: #FF0000 !important;
+}
+
+.modal_notificacoes_aluno_textarea{
+    width: 100%; 
+    height: 150px;
+    resize: none;
+    padding: 10px;
+    box-sizing: border-box;
+     border:1px solid #FF0000 !important;
+     border-radius: 10px;
+
+     font-size: 18px; /* Aumente o tamanho da fonte do textarea */
+}
+.modal_notificacoes_aluno_textarea:hover{
+    border: 1px solid #FF0000 !important;
+    border-radius: 10px;
+}
+
+.modal_notificacoes_aluno_footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modal_notificacoes_aluno_footer button {
+    color: #FF0000;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.modal_notificacoes_aluno_footer button:hover {
+    border: none;
+    color: #FF0000 !important;
+}
+
+.modal_notificacoes_aluno_footer_hands {
+    font-size: 32px;
+    width: 15%;
+    display: flex; /* Para alinhar os ícones em linha */
+    justify-content: space-between; /* Espaçamento entre os ícones */
+}
+
+.modal_notificacoes_aluno_footer_hands i {
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    transition: color 0.3s; /* Animação suave ao mudar de cor */
+}
+
+
+  
+@media (max-width: 768px) {
+    .imagem-perfil-universal img {
+        width: 50px !important; /* Largura fixa */
+        height: 50px !important; /* Altura fixa */
+        max-width: 50px !important;
+        min-width: 50px !important;
+    }
+    
+    .button_notificacoes_aluno_conteudo_texto h3{
+        font-size: 18px;
+    } 
+    .button_notificacoes_aluno_conteudo_texto p{
+        font-size: 15px; /* Aumente este valor conforme necessário */   }
+    
+}

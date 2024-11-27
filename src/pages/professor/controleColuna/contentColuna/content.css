@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rajdhani:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* INPUT */
+.search-containerMaster{
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+    position: relative;
+    width: 40px; /* Tamanho inicial do input */
+    transition: width 0.3s ease; /* Suaviza a transição de expansão */
+}
+
+.search-containerMaster.expandedMaster {
+    width: 250px; /* Tamanho do input ao expandir */
+}
+
+.search-inputMaster{
+    width: 100%;
+    justify-content: center !important;
+   
+    padding: 2px 35px 8px 10px; /* Espaçamento para o ícone e texto */
+    font-size: 14px;
+    border-radius: 5px;
+    border: 2px solid #000;
+    font-family: "Montsserrat", sans-serif;
+    outline: none;
+    transition: all 0.3s ease; /* Suaviza a transição ao expandir */
+}
+
+.search-inputMaster::placeholder {
+    color: black;
+}
+
+.search-iconMaster {
+    position: absolute;
+    right: 5px; /* Ajusta a posição do ícone */
+    font-size: 20px;
+    color: black;
+}
+
+/* headerControleColunas */
+
+.btn{
+    margin-bottom: 0 !important;
+    
+}
+.contentColunaHeaderContentProfessor-titleH1 {
+    font-family: "Oswald", sans-serif !important;
+    font-size: 38px !important;
+}
+
+.contentColunaHeaderContentProfessor {
+    width: 100% !important;
+}
+
+.contentColunaHeaderContentProfessor-actionsButtons {
+    display: flex !important;
+    margin-bottom: 1rem !important;
+}
+
+.contentColunaContentProfessor {
+    display: flex !important;
+    position: relative !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+    align-items: center !important;
+}
+
+.contentColunaHeaderContentProfessor-buttonCriarColuna {
+    background-color: #F2CB05 !important;
+    border: none !important;
+    align-items: center !important;
+    font-size: 17px !important;
+    font-family: "Rajdhani", sans-serif !important;
+    font-weight: 800 !important;
+    padding: 5px !important;
+    border-radius: 5px !important;
+}
+
+.contentColunaHeaderContentProfessor-buttonCriarColuna:hover {
+    background-color: #F2CB04 !important;
+}
+
+.contentColunaHeaderContentProfessor-buttonCriarColuna:focus {
+    background-color: #F2CB04 !important;
+}
+
+.contentColunaHeaderContentProfessor-interDiv {
+    position: relative !important;
+    align-items: center !important;
+    display: flex !important;
+    justify-content: space-between !important;
+}
+
+.contentColunaHeaderContentProfessor-buttonCriarUsuario {
+    background-color: black !important;
+    color: white !important;
+    font-family: "Rajdhani", sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 17px !important;
+    justify-content: center !important;
+    border-radius: 5px !important;
+    border: none !important;
+    margin-left: 1rem !important;
+    align-items: center !important;
+    padding: 5px !important;
+}
+
+.contentColunaHeaderContentProfessor-actionsButtons {
+    align-items: end !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.contentColunaHeaderContentProfessor-lineBottom {
+    width: 100% !important;
+    height: 1px !important;
+    background-color: black !important;
+}
+
+
+
+
+.contentColunaHeaderContentProfessor-buttonsContent {
+    display: flex !important;
+}
+
+.criarColunaInputColor {
+    width: 30% !important;
+    height: 30px !important;
+}
+
+.createColumnMiniContainer {
+    margin: 10px !important;
+    border: 1px gray !important;
+}
+
+.createColumnMiniContainer {
+    width: 290px !important;
+    height: 180px !important;
+    box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 10px !important;
+}
+
+.createColumnMiniContainer-Header { 
+    border-radius: 10px 10px 0px 0px !important;
+    height: 40px !important;
+}
+
+.createColumnNameColumn {
+    background-color: #fff !important;
+    position: relative !important;
+    margin: 2rem auto !important;
+    width: 60% !important;
+    border-radius: 5px !important;
+    border: 1px #D9D9D9 solid !important;
+}
+
+.NameColumn {
+    position: relative !important;
+    text-align: center !important;
+    font-family: "Oswald", sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+}
+
+.createColumnNameColumn {
+    top: 2rem !important;
+    text-align: center !important;
+    padding: 5px !important;
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+}
+
+.userIconControleColuna {
+    color: #A6A5A5 !important;
+    font-size: 15px !important;
+    margin-right: 5px !important;
+}
+
+.createColumnMiniContainer-bodyContentNumberOfMembers {
+    color: #D9D9D9 !important;
+    font-size: 15px !important;
+    margin-right: 3px !important;
+}
+
+.createColumnMiniContainer-bodyContentDescription {
+    position: relative !important;
+    color: #D9D9D9 !important;
+    font-size: 15px !important;
+    bottom: 2px !important;
+}
+
+.irParaColunaDirecionamento {
+    color: #A6A5A5 !important;
+    font-weight: 800 !important;
+    font-size: 13px !important;
+    margin-bottom: 2px !important;
+}
+
+.createColumnMiniContainer-bodyContentAmountPart {
+    display: flex !important;
+    text-align: center !important;
+}
+
+.editControleColuna {
+    margin-right: 2px !important;
+}
+
+.createColumnFooterIconsFunctions {
+    display: flex !important;
+    position: relative !important;
+    font-size: 16px !important;
+    bottom: 5px !important;
+    justify-content: space-between !important;
+}
+
+.createColumnMiniContainer-bodyContent {
+    flex-grow: 1 !important; /* Permite que o conteúdo do body cresça e ocupe o espaço disponível */
+    display: flex !important;
+    margin-top: 3rem !important;
+    flex-direction: column !important;
+    justify-content: center !important; /* Centraliza o conteúdo verticalmente */
+    align-items: center !important; /* Centraliza o conteúdo horizontalmente */
+    text-align: center !important;
+}
+.buttonSalvarColuna{
+    position: relative;
+    padding-left: px;
+    text-align: center !important;
+    justify-content: center !important;
+}
+/* Footer sempre no final */
+.createColumnMiniContainer-Footer {
+    display: flex !important;
+    justify-content: space-between !important;
+    padding-top: 3px !important;
+    margin-top: auto !important; /* Empurra o footer para o final do card */
+    border-top: 1px solid #ddd !important;
+    padding: 8px !important;
+}
+
+.createColumnFooterIconsFunctions {
+    display: flex !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+}
+
+.createColumnFooterIconsFunctionsLeftPart {
+    color: #A6A5A5 !important;
+    justify-content: center !important;
+    text-align: left !important;
+}
+
+.createColumnFooterIconsFunctionsRightPart {
+    color: #A6A5A5 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.restaurarColunaMiniContent {
+    filter: opacity(25%) !important;
+}
+
+
+

@@ -1,0 +1,219 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+}
+
+/* leftSide TitlePresentatationAplication */
+.loginPage-header-line {
+    width: 100%;
+    height: 2px;
+    background-color: #FBBC04;
+}
+
+.loginPage-header {
+    position: relative;
+    margin: 0 auto;
+    color: white;
+}
+
+.loginPage-header-title {
+    font-family: "Oswald", sans-serif;
+    font-size: 43px;
+}
+
+.loginPage-header-subtitle {
+    letter-spacing: 5px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 200;
+}
+
+/* end */
+.divLoginContainerPage {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 100vh;
+}
+
+.leftLogin {
+    position: relative; /* Necessário para o pseudo-elemento */
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    grid-area: 1 / 1 / 2 / 2;
+    align-items: center;
+    background-image: url('../../../../public/img/meninoBackGroundLoginGeneral.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.leftLogin::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(-180deg, rgba(0, 0, 0, 0.893) 0%, rgba(255, 255, 255, 0) 41%);
+    z-index: 1; /* Coloca o gradient acima da imagem */
+}
+
+.leftLogin > * {
+    position: relative; /* Para que o conteúdo fique acima do pseudo-elemento */
+    z-index: 2; /* Garante que o conteúdo fique acima do gradient */
+}
+
+.logoLogin-leftSide {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.rightLogin {
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.loginPage-contentRigth-forms {
+    width: 60%;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.rightLoginSide-FormsTitle {
+    font-family: "Oswald", sans-serif;
+    font-size: 38px;
+    margin-top: -7rem;
+    margin-bottom: 5rem;
+}
+
+
+
+.loginPage-contentRigth-label {
+    margin-bottom: 5px;
+    text-align: left;
+    font-family: "Montsserrat",sans-serif;
+    font-size: 15px;
+}
+
+.loginPage-contentRigth-input{
+    margin-bottom: 16px;
+    font-weight: 500;
+    font-family: "Montsserrat", sans-serif;
+    width: 100%;
+    padding: 10px;
+    font-size: 13px;
+    border: 1px solid #A6A5A5;
+    border-radius: 4px;
+}
+
+.loginPage-contentRigth-botton {
+    margin-top: 5rem;
+    padding: 8px;
+    background-color: #000000;
+    color: #FBBC04;
+    border: none;
+    font-size: 15px;
+    width: 60%;
+    font-family: "Oswald",sans-serif;
+    font-weight: 800;
+    cursor: pointer;
+
+    
+    overflow: hidden;
+    position: relative;
+    z-index: 20;
+
+    &:after {
+        background-color: #FBBC04;
+        content: "";
+        height: 155px;
+        left: -75px;
+        opacity: .5;
+        position: absolute;
+        top: -50px;
+        transform: rotate(35deg);
+        transition: all 1050ms cubic-bezier(0.19, 1, 0.22, 1);
+        width: 50px;
+        z-index: -10;
+      }
+}
+
+.loginPage-contentRigth-botton:hover {
+  &:after {
+    left: 120%;
+    transition: all 1050ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+}
+.rightLogin-contentFooter-MoreInformationA{
+   color: #000000;
+   font-size: 15px;
+   cursor: pointer;
+   text-decoration: none;
+   font-family: "Montsserrat",sans-serif;
+   font-weight: 700;
+   text-align: left;
+}
+.rightLogin-contentFooter-MoreInformation{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+.rightLogin-contentFooter-Icons{
+    color: #000000;
+    font-size: 25px;
+    margin: 1rem;
+}
+.rightLogin-contentFooter{
+    align-items: center;
+}
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .divLoginContainerPage {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+
+    .leftLogin {
+        display: none;
+        /* Oculta a parte esquerda em dispositivos móveis */
+    }
+
+    .rightLogin {
+        width: 100%;
+        grid-area: 1 / 1 / 2 / 2;
+    }
+}
+@media (max-width: 490px) {
+    .rightLogin-contentFooter-MoreInformation{
+        flex-direction: column;
+       
+    }
+    .rightLogin-contentFooter-MoreInformationA{
+        text-align: center;
+    }
+}

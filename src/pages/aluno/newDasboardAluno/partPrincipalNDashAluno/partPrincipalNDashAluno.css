@@ -1,0 +1,14 @@
+.containerPartPrincipalNDashAlunoHeaderPart{
+    position:relative;
+    display: flex;
+    justify-content: space-between;
+}
+.partPrincipalNDashAluno__colSide{
+    display:flex;
+   justify-content: space-between;
+    width: 100%;
+}
+.containerSecondNewDashAluno{
+display: flex;
+
+}

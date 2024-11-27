@@ -1,0 +1,302 @@
+/* lado direito */
+.aluno_dashboard_ladoDireito{
+  height: 90.75vh;
+
+
+  position: fixed;
+/* Fixa a div na tela */
+top: 42%;
+/* Move a div para o meio da tela verticalmente */
+left: 84%;
+/* Move a div para o meio da tela horizontalmente */
+transform: translate(-50%, -45%);
+/* Ajusta a posição para o verdadeiro centro da div */
+width: 80%;
+/* Define a largura da div de forma responsiva */
+max-width: 430px;
+/* Limita a largura máxima da div */
+padding: 20px;
+/* Adiciona um padding ao redor do conteúdo */
+box-shadow: none;
+/* Adiciona uma sombra leve */
+border-radius: 8px;
+/* Adiciona bordas arredondadas */
+box-sizing: border-box;
+/* Inclui padding e border na largura total */
+}
+
+
+/* lado direito */
+
+/* perfil */
+
+
+
+/* calendario oficial */
+.aluno_dashboard_div_calendario{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  
+}
+.aluno_dashboard_calendario{
+  width: 100%;
+  height: 90%;    
+}
+
+/* barra estetica */
+.aluno_dashboard_barra_estetica{
+  background-color: #000;
+  width: 280px;
+  height: 2px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+/* progresso */
+.aluno_dashboard_progresso{
+  height: 30%;
+}
+.aluno_dashBoard_progresso_scroll {
+  max-height: 100%; /* Defina a altura máxima */
+  overflow-y: auto; /* Habilita a barra de rolagem vertical */
+  scrollbar-width: thin; /* Para navegadores Firefox */
+  scrollbar-color: transparent transparent; /* Cor da barra de rolagem e do trilho */
+}
+
+/* Estilização da barra de rolagem para Chrome, Edge e Safari */
+.aluno_dashBoard_progresso_scroll::-webkit-scrollbar {
+width: 8px; /* Largura da barra de rolagem */
+}
+
+.aluno_dashBoard_progresso_scroll::-webkit-scrollbar-thumb {
+background-color: transparent; /* Inicialmente transparente */
+border-radius: 10px;
+}
+
+.aluno_dashBoard_progresso_scroll::-webkit-scrollbar-thumb:hover {
+background-color: rgba(0, 0, 0, 0.5); /* Cor ao passar o mouse */
+}
+
+.aluno_dashBoard_progresso_scroll::-webkit-scrollbar-track {
+background: transparent; /* Fundo transparente */
+}
+
+
+.aluno_dashBoard_progresso_topo h4{
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* cards progresso */
+.aluno_dashBoard_progresso_cards_grupo {
+display: flex;
+flex-direction: column;
+}
+
+.aluno_dashboard_progresso_cards {
+/* Fundo transparente */
+background-color: #41BFB3;
+/* Borda fina */
+border-radius: 10px;
+/* Bordas arredondadas */
+width: 35.5rem;
+height: 70px;
+
+}
+
+.aluno_dashboard_progresso_cards img {
+border-radius: 50%;
+position: relative;
+top: 3%;
+left: 15%;
+}
+
+.WiImg img {
+width: 55px;
+height: 55px;
+background: #7D877F;
+}
+
+.aluno_dashboard_progresso_cards_parent {
+display: grid;
+grid-template-columns: 0.1fr 1fr;
+grid-template-rows: 1fr;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+margin: 0.5rem;
+}
+
+.aluno_dashboard_progresso_cards_div_img {
+grid-area: 1 / 1 / 3 / 2;
+
+}
+
+.aluno_dashboard_progresso_cards_div_text {
+grid-area: 1 / 2 / 2 / 3;
+color: #fff;
+}
+
+.aluno_dashboard_progresso_cards_div_text h3 {
+font-size: 10px;
+font-weight: 800;
+}
+
+.aluno_dashboard_progresso_cards_div_text p {
+font-size: 14px;
+font-weight: 600;
+color: #41BFB3;
+}
+
+/* Responsibilidade */
+
+/* Para telas menores que 1280px */
+@media (max-width: 1280px) {
+.aluno_dashboard_ladoDireito{
+  left: 83%;
+}
+}
+
+/* Para telas menores que 1024px */
+@media (max-width: 1024px) {
+.aluno_dashboard_ladoDireito{
+  left: 81.5%;
+  max-width: 350px;
+}
+ /* barra estetica */
+ .aluno_dashboard_barra_estetica{
+  width: 250px;  
+}
+.aluno_dashboard_div_calendario{
+  height: 40%;
+}
+/* progresso */
+.aluno_dashboard_progresso{
+  height: 35%;
+}
+
+.aluno_dashboard_progresso_cards {
+  width: 29rem;
+}
+}
+
+@media (max-width: 840px) {
+.aluno_dashboard_ladoDireito{
+  left: 85.5%;
+  max-width: 300px;
+}
+ /* barra estetica */
+ .aluno_dashboard_barra_estetica{
+  width: 200px;  
+}
+.aluno_dashboard_div_calendario{
+  height: 54%;
+}
+/* progresso */
+
+.aluno_dashboard_progresso_cards {
+  width: 23.5rem;
+}
+}
+
+/* Para telas menores que 768px (tablets) */
+@media (max-width: 768px) {
+.aluno_dashboard_ladoDireito{
+  left: 86.5%;
+  max-width: 220px;
+}
+/* barra estetica */
+.aluno_dashboard_barra_estetica{
+background-color: #000;
+width: 130px;
+height: 2px;
+border-radius: 10px;
+margin: 0 auto;
+}
+
+/* progresso */
+.aluno_dashboard_progresso{
+height: 35%;
+}
+.aluno_dashBoard_progresso_topo h4{
+font-size:20px;
+}
+.aluno_dashboard_progresso_cards {
+  width: 16rem;
+  height: 50px;
+}
+
+.pie-chart {
+  /* Ajuste o tamanho do gráfico de pizza */
+  width: 50px !important; /* Largura do gráfico de pizza */
+  height: 70px !important; /* Altura do gráfico de pizza */
+} 
+.aluno_dashboard_progresso_cards_div_text h3 {
+  font-size: 9px;
+  font-weight: 600;
+}
+.aluno_dashboard_progresso_cards_div_text p {
+  font-size: 12px;
+}
+}
+
+/* Para telas menores que 480px (smartphones) */
+@media (max-width: 480px) {
+.aluno_dashboard_ladoDireito{
+  left: 50%;
+  top: 50%;
+  max-width: 400px !important;
+ 
+}
+.cardPerfil-ladoDireito{
+  display: none;
+}
+.aluno_dashboard_calendario{
+  display: none;  
+}
+
+/* barra estetica */
+.aluno_dashboard_barra_estetica{
+display: none;  
+}
+/* progresso */
+.aluno_dashboard_progresso{
+  height: 35%;
+}
+
+.aluno_dashBoard_progresso_topo h4{
+font-size:25px;
+}
+.aluno_dashboard_progresso_cards {
+  width: 28rem;
+  height: 65px;
+}
+
+.pie-chart {
+  /* Ajuste o tamanho do gráfico de pizza */
+  width: 60px !important; /* Largura do gráfico de pizza */
+  height: 85px !important; /* Altura do gráfico de pizza */
+} 
+.aluno_dashboard_progresso_cards_div_text h3 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+}
+.aluno_dashboard-carousel-item {
+margin-bottom: 20px; /* For spacing between items */
+}
+@media (max-width: 391px) {
+.aluno_dashboard_ladoDireito{
+  max-width: 300px;
+}
+.aluno_dashboard_progresso_cards {
+  width: 24rem;
+}
+}
+@media (max-width: 344px) {
+.aluno_dashboard_progresso_cards {
+  width: 22.5rem;
+}
+}

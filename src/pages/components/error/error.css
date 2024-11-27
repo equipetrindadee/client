@@ -1,0 +1,27 @@
+.admin-error-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.admin-error-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.admin-error-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+p{
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem; 
+    text-align: center; 
+    padding: 1rem; 
+}
+    

@@ -1,0 +1,185 @@
+/* Estilo do Card principal */
+.comentariosReagidos_cardReagido {
+  background-color: #ffffff;
+  /* Fundo branco */
+  border: none !important;
+  justify-content: space-between;
+  width: 100%;
+  color: #fff;
+  /* Texto branco */
+  padding: 10px;
+  padding-left: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  /* Sombra */
+  align-items: center;
+}
+
+.comentariosReagidosDivBodyInside {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Imagem do usuário */
+.comentariosReagidos_userImage {
+  width: 55px;
+  height: 55px;
+}
+
+/* E-mail */
+.comentariosReagidos_email {
+  font-size: 11px;
+  font-family: "Montserrat", sans-serif;
+  color: #fbbc04;
+  /* Cor amarela */
+  font-weight: bold;
+  text-align: left;
+  padding: 0;
+}
+
+.faleConoscoModalHistoricoDeMensagemTitle {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+}
+
+.faleConoscoModalHistoricoDeMensagemTitleStrong {
+  font-size: 18px;
+  font-family: "Oswald", sans-serif;
+}
+
+.faleConoscoModalHistoricoDeMensagemTitleP {
+  font-family: "Montsserrat", sans-serif;
+  font-size: 15px;
+}
+
+.faleConoscoModalHistoricoDeMensagemtext-white {
+  color: white !important;
+  text-align: end;
+  font-size: 15px;
+}
+.faleConoscoModalHistoricoDeMensagemHeader{
+  justify-content: space-between;
+}
+
+/* Botão de status */
+.comentariosReagidos_statusBtn {
+  font-size: 10px;
+  font-family: 'Montserrat', sans-serif;
+  color: #000000;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  text-align: left;
+  padding: 0;
+  border-bottom: 2px solid black;
+  /* Linha preta embaixo */
+}
+
+.comentariosReagidos_statusBtn:hover {
+  border-bottom: 2px solid #fbbc04;
+  /* Linha amarela no hover */
+}
+
+/* Ícone de coração ativo */
+.comentariosReagidos_reactBtn.active i.bi-heart.liked {
+  color: red;
+}
+
+/* Botão ativo */
+.comentariosReagidos_reactBtn.active {
+  color: #fbbc04;
+}
+
+/* Botões de reação */
+.comentariosReagidos_reactBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #000000;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.comentariosReagidos_reactBtn:hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #000000 !important;
+  border: none;
+  background-color: white !important;
+  cursor: pointer;
+}
+
+.comentariosReagidos_reactBtn i:hover {
+  color: black;
+  /* Mudança de cor no hover */
+}
+
+/* Ícone de coração ativo */
+
+/* Alinhamento dos ícones de reação */
+.iconsComentariosReagidosFlexEnd {
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1024px) {
+  .comentariosReagidos_cardReagido {
+    padding: 10px;
+    width: 100% !important;
+  }
+
+  .comentariosReagidos_userImage {
+    width: 40px;
+    height: 40px;
+  }
+
+  .comentariosReagidos_statusBtn {
+    font-size: 10px;
+  }
+
+  .comentariosReagidos_email {
+    font-size: 12px;
+  }
+
+  .comentariosReagidos_reactBtn {
+    font-size: 16px;
+  }
+}
+
+/* Responsivo até 768px */
+@media (max-width: 768px) {
+  .comentariosReagidos_cardReagido {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    width: 100% !important;
+  }
+
+  .comentariosReagidos_userImage {
+    margin-bottom: 10px;
+  }
+
+  .comentariosReagidos_reactBtn {
+    font-size: 14px;
+  }
+
+  .comentariosReagidos_email {
+    font-size: 11px;
+  }
+
+  .comentariosReagidos_statusBtn {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 1410px) {
+  .iconsComentariosReagidosFlexEnd {
+    flex-direction: column !important;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,281 @@
+k.fale-conosco-container {
+  height: 90vh; /* Altura ajustada para deixar um espaço no topo */
+  position: absolute; /* Posiciona a div para ajustes */
+  bottom: 0; /* Alinha a div ao rodapé */
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.conteudo_fale-conosco {
+  max-height: 95%; /* Limita a altura máxima da div de conteúdo */
+  gap: 6px;
+}
+
+.subtitulo_fale-conosco {
+  font-family: Montserrat;
+  font-weight: 900;
+  color: #333;
+  margin-left: 35px;
+  font-size: 17px;
+}
+ 
+.text-center_fale-conosco{
+  font-family: Oswald;
+  font-size: 35px;
+  text-align: center;
+}
+
+.fale_conosco-input-group {
+  display: flex;
+  flex-direction: column;
+  width: 100% !important; 
+}
+
+.fale_conosco-input-group input {
+  width: 92% !important;
+  height: 50px;
+  border: solid 2px #D9D9D9 !important;
+  border-radius: 10px;
+}
+
+.fale_conosco-span{
+  font-family: Montserrat;
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.input-group-reduzido textarea{
+  max-width: 92%; 
+  height: 100px;
+  border: solid 2px #ced4da;
+  border-radius: 8px;
+}
+
+.input-group-reduzido h5{
+ margin-left: 30px;
+ font-family: Montserrat;
+ font-weight: 800;
+}
+
+.fale_conosco-dropdown-custom {
+  border: 1px solid #ced4da;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.fale_conosco-imagem img {
+  object-fit: cover;
+}
+
+/* Estilo personalizado para o botão ativo */
+.fale_conosco-btn-ativo {
+  background-color: #ff69b4 !important; /* Cor de fundo rosa */
+  color: white !important; /* Cor do texto branco */
+  border-color: #ff69b4; /* Bordas também em rosa */
+}
+
+/* Estilos para os botões de "Tipo de Comentário" */
+.fale_conosco-tipo-comment {
+  width: 170px;
+  min-height: 35px;
+  transition: background-color 0.3s ease;
+  background-color: #ffffff;
+  color: #EA0C68;
+  border: solid 2px #D9D9D9;
+  border-radius: 9px;
+  display: flex; /* Flexbox para centralizar conteúdo */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+.fale_conosco-tipo-comment p {
+  font-family: Montserrat;
+  font-size: 15px;
+  font-weight: 800;
+  margin: 0; /* Remove qualquer margem para centralização */
+  text-align: center; /* Garante que o texto fique centralizado dentro do <p> */
+}
+
+/* Remoção de hover colorido */
+.fale_conosco-tipo-comment:hover {
+  background-color: #EA0C68 !important; /* Remove o fundo colorido ao passar o mouse */
+  color: #ffffff;
+  border-color: #EA0C68;
+}
+
+.button_fale-avisar{
+  background-color: #EA0C68 !important;
+  color: #ffffff;
+  border-color: #EA0C68 !important;
+  display: flex; /* Flexbox para centralizar conteúdo */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  margin-right: 4vh;
+  width: 100px;
+  height: 30px;
+}
+
+.button_fale-avisar p{
+  font-family: Montserrat;
+  font-size: 13px;
+  font-weight: 800;
+  margin: 0; /* Remove qualquer margem para centralização */
+  text-align: center;
+}
+
+.button_fale-avisar:hover {
+  background-color: #EA0C68!important; 
+  color: #ffffff;
+  border-color: #EA0C68;
+}
+
+/* Estilos atualizados para o dropdown */
+.fale_conosco-dropdown-custom {
+  border: 1px solid #ced4da;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%; /* Garantir que ocupe toda a largura disponível */
+}
+
+.Conosco_dropdown-lista .dropdown-toggle {
+  width: 90% !important; /* Garante que o dropdown ocupe toda a largura disponível */
+  height: 50px;
+  border: solid 2px #D9D9D9 !important;
+  border-radius: 10px;
+  background-color: #ffffff !important;
+  color: #333 !important;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  box-sizing: border-box; /* Garantir que padding não afete a largura total */
+  margin-left: 25px;
+}
+
+.Conosco_dropdown-lista h5 {
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat;
+  font-weight: 900;
+  color: #333;
+  font-size: 17px;
+}
+
+.Conosco_dropdown-lista .dropdown-menu {
+  width: 95% !important; /* Garante que o menu de dropdown ocupe 100% da largura */
+  max-width: 100%;
+  padding: 0;
+  box-sizing: border-box; /* Garantir que padding não afete a largura */
+}
+
+
+.Conosco_dropdown-lista .dropdown-item {
+  font-family: Montserrat;
+  font-weight: 800;
+  font-size: 15px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 100%; /* Itens ocupando toda a largura do dropdown */
+  margin-left: 0;
+  margin-bottom: 2px;
+  border: solid 2px #D9D9D9;
+  border-radius: 10px;
+  padding: 8px;
+  transition: background-color 0.3s;
+}
+
+.Conosco_dropdown-lista .dropdown-item:hover {
+  background-color: #c4c4c4; /* Cor de fundo ao passar o mouse */
+}
+
+.modal-header-custom {
+  background-color: #f8f9fa;
+  text-align: center;
+  font-weight: bold;
+}
+
+.modal-body-custom{
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.modal-title-custom {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+@media (max-width: 1075px) {
+  /* Ajustes para telas menores que 1075px */
+  .Conosco_dropdown-lista .dropdown-toggle {
+    width: 100%; /* Garante que o dropdown ocupe toda a largura */
+    font-size: 14px; /* Diminui o tamanho da fonte */
+  }
+
+  .Conosco_dropdown-lista .dropdown-item {
+    font-size: 13px; /* Diminui o tamanho da fonte nos itens */
+  }
+}
+
+@media (max-width: 768px) {
+  .fale-conosco-container {
+    padding: 10px; /* Menos espaçamento em telas menores */
+  }
+
+  .conteudo_fale-conosco {
+    flex-direction: column; /* Coloca os itens em coluna */
+    align-items: center; /* Centraliza os itens */
+  }
+
+  .fale_conosco-input-group,
+  .input-group-reduzido,
+  .tipos-comentario-conosco {
+    width: 100%; /* Ocupa 100% em telas pequenas */
+    margin-bottom: 10px; /* Espaçamento entre elementos */
+  }
+
+  .fale_conosco-imagem {
+    display: none; /* Oculta a imagem em telas pequenas */
+  }
+
+  .Conosco_dropdown-lista .dropdown-toggle {
+    width: 100%; /* Garante que o dropdown ocupe toda a largura disponível */
+    font-size: 12px; /* Diminui ainda mais o tamanho da fonte */
+  }
+
+  .Conosco_dropdown-lista .dropdown-item {
+    font-size: 12px; /* Diminui o tamanho da fonte nos itens */
+    height: 30px; /* Ajusta a altura dos itens */
+  }
+}
+
+@media (max-width: 576px) {
+
+  .Conosco_dropdown-lista .dropdown-toggle {
+    width: 100%; /* Garante que o dropdown ocupe toda a largura disponível */
+    font-size: 11px; /* Diminui o tamanho da fonte ainda mais */
+  }
+
+  .Conosco_dropdown-lista .dropdown-item {
+    font-size: 11px; /* Diminui o tamanho da fonte nos itens */
+    height: 28px; /* Ajusta a altura dos itens */
+  }
+  .subtitulo_fale-conosco {
+    font-size: 14px; /* Reduz o tamanho da fonte */
+  }
+
+  .fale_conosco-tipo-comment p {
+    font-size: 12px; /* Reduz o tamanho do texto */
+  }
+
+  .button_fale-avisar p {
+    font-size: 12px; /* Reduz o tamanho do texto do botão */
+  }
+  .fale_conosco-dropdown-custom {
+    width: 100%; /* Garante que o dropdown ocupe toda a largura em telas menores */
+    max-width: 100%; /* Ajusta o tamanho máximo do dropdown para a largura da tela */
+  }
+}

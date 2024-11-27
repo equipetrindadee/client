@@ -1,0 +1,60 @@
+/* Estilos */
+
+.professor_controleUsuario_modalExcluir-title{
+    letter-spacing: 1px !important; /* Adiciona 2px de espaço entre as letras */
+    font-family: 'Oswald' !important;
+    font-size: 24px !important;
+    font-weight: 400 !important ;
+}
+.professor_controleUsuario_modalExcluir-contentText {
+    color: #414141 !important;
+    font-size: 15px;
+    font-family: 'Arimo' ;
+    text-align: justify !important;
+}
+
+.professor_controleUsuario_modalExcluir-footer {
+    border: none !important;
+    font-family: 'Oswald' !important;
+    /* background-color: red !important; */
+}
+
+.professor_controleUsuario_modalExcluir-buttonPositivo {
+    background-color: transparent !important;
+    border: 1px #FBBC04 solid !important;
+    color: #FBBC04 !important;
+    font-size: 15px;
+    width: 20%;
+}
+
+.professor_controleUsuario_modalExcluir-buttonPositivo:hover {
+    background-color: transparent !important;
+    border: 1px #FBBC04 solid !important;
+    color: #FBBC04 !important;
+    font-size: 15px;
+}
+
+.professor_controleUsuario_modalExcluir-buttonNegativo {
+    background-color: #FBBC04 !important;
+    border: none !important;
+    color: white;
+    font-size: 15px;
+    width: 20%;
+}
+
+@media (max-width: 812px) and (min-width: 769px) {
+    .professor_controleUsuario_modalExcluir-button {
+        background-color: #000000;
+        border-color: #000000;
+        color: white;
+        border-radius: 50%;
+        font-size: 20px;
+        width: 35px;
+        height: 35px;
+    }
+
+    .professor_controleUsuario_modalExcluir-button i {
+        font-size: 17px;
+        padding: 1px;
+    }
+}

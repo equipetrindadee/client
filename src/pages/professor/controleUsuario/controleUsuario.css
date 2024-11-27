@@ -1,0 +1,864 @@
+.professor_controlUser-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: calc(100% - 85px);
+  margin-left: auto;
+
+}
+
+.professor_controlUser-Container.expanded {
+  opacity: 1;
+  /* Visível quando expandido */
+  pointer-events: auto;
+  /* Permite a interação quando visível */
+  height: auto;
+  /* Ajuste automático para o conteúdo */
+  background-color: rgb(255, 0, 0);
+  /* Para melhorar a visibilidade */
+  padding: 10px;
+  /* Espaçamento interno */
+  border-radius: 5px;
+  /* Bordas arredondadas */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Sombra para destaque */
+}
+
+.professor_controlUser-contentHeader {
+  width: 100%;
+}
+
+.professor_controlUser-contentHeader-interDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.professor_controlUser-contentHeader-titleContent {
+  width: auto;
+}
+
+.professor_controlUser-contentHeader-titleH1 {
+  font-family: "Oswald", sans-serif;
+  font-size: 38px;
+}
+
+.professor_controlUser-contentHeader-actionsButtons {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  justify-content: flex-end !important;
+  width: 25%;
+}
+ 
+.contentColunaHeaderContentControleUser-actionsButtonsSearch {
+  border: 1px #000 solid;
+  padding: 9px;
+  width: 30px;
+  font-size: 15px;
+  height: 3rem;
+  margin-right: 1rem;
+  color: black;
+  border-radius: 5px;
+  transition: .5s;
+}
+
+.contentColunaHeaderContentControleUser-actionsButtonsSearch:hover {
+  width: 200px;
+}
+
+.contentColunaHeaderContentControleUser-actionsButtonsSearch::placeholder {
+  color: white;
+  font-size: 15px;
+} 
+
+
+.professor_controlUser-contentHeader-search-container.expanded {
+  width: 250px;
+  height: 40px;
+}
+
+.professor_controlUser-contentHeader-search-input {
+  flex: 1 !important;
+  height: 100%;
+  padding: 0px 4rem 0 1rem !important;
+  border: none;
+  outline: none;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.professor_controlUser-contentHeader-search-container.expanded .professor_controlUser-contentHeader-search-input {
+  opacity: 1;
+}
+
+.professor_controlUser-contentHeader-search-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 20px !important;
+  cursor: pointer !important;
+}
+
+.professor_controlUser-contentHeader-buttonsContent {
+  min-width: 120px;
+  height: 40px;
+  margin-right: 10%;
+}
+
+.professor_controlUser-contentHeader-buttonsContent button {
+  width: 100%;
+}
+
+.professor_controlUser-contentHeader-lineBottom {
+  width: 100% !important;
+  height: 2px;
+  background-color: black !important;
+}
+
+/*  Css da Tabela */
+ .user-control-container-tabela {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  /* background-color: red !important; */
+  margin-top:1%;
+  width: 100%; /* Garante que o contêiner ocupe 100% da largura */
+
+}
+
+/* Wrapper da tabela */
+.user-control-table-wrapper {
+  overflow-x: auto;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+/* Tabela */
+.user-control-table {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  width: 100%;
+  height: 33vh;
+  border-collapse: collapse;
+  /* background-color: transparent !important; */
+}
+/* .user-control-table-header{
+  width: 100vw !important;
+  /* background-color: #312CBF; 
+  padding: 1000px !important;             /* O espaço interno (padding) ao redor do conteúdo 
+
+    border-bottom: 3px solid black;  /* Linha preta abaixo do cabeçalho 
+  
+} */
+
+.user-control-table-header {
+  border-bottom: 3px solid black; /* Borda inferior do <thead> */
+  padding-bottom: 10px;           /* Adiciona espaçamento dentro do <thead> abaixo da borda */
+  margin-bottom: 5px;             /* Adiciona margem abaixo do <thead> para distanciar da linha de colunas */
+}
+
+.user-control-table-header th {
+  padding: 15px;                  /* Ajusta o padding para aumentar o espaço dentro das células */
+  text-align: center;             /* Alinha o texto ao centro */
+}
+
+
+
+.linhaPreta-Table {
+  background-color: black;   /* Cor da linha */
+  height: 3px !important;               /* Regula a espessura (aumente ou diminua esse valor conforme necessário) */
+  width: 100%;               /* Garante que a linha ocupe toda a largura da tabela */
+  margin: 0;                 /* Remove qualquer margem que possa interferir */
+  padding: 0;                /* Remove qualquer padding */
+}
+
+/* Cabeçalho da tabela */
+.user-control-table thead th {
+  text-align: center;
+  padding: 0.75rem;
+  vertical-align: middle;
+  background-color: transparent !important;
+  color: black;
+  border-right: 2.5px solid rgb(0, 0, 0);
+  /* Mantém a borda direita */
+  border-bottom: none;
+  /* Remove a borda inferior */
+  padding-bottom: 0.5rem;
+  
+  /* Espaçamento entre o conteúdo do cabeçalho e a borda */
+}
+
+/* Adiciona a linha preta abaixo do cabeçalho cobrindo toda a largura */
+
+
+/* Células da tabela */
+.user-control-table td {
+  text-align: center;
+  padding: 2.77rem;
+  vertical-align: middle;
+  border-bottom: 2px solid #D9D9D9;
+  border-left: none;
+  /* Remove borda lateral esquerda */
+  border-right: none;
+  /* Remove borda lateral direita */
+}
+
+/* Ajustes para borda mais próxima da borda horizontal */
+.user-control-table th,
+.user-control-table td {
+  padding-top: 1rem;
+  /* Reduz o espaçamento superior */
+  padding-bottom: 1rem;
+  /* Reduz o espaçamento inferior */
+}
+
+/* Imagem de perfil */
+.user-profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  /* Torna a imagem de perfil circular */
+}
+
+/* Botões */
+.user-badge {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: rgb(0, 0, 0) !important;
+}
+
+.user-badge-english,
+.user-badge-palavreando,
+.user-badge-escola {
+  width: 25vh;
+  height: 35px;
+  font-weight: bold;
+  font-size: 13px;
+  border-radius: 6px;
+}
+
+.user-badge-english:hover {
+  background-color: #312CBF;
+  border-color: #312CBF;
+  color: white;
+}
+
+.user-badge-palavreando:hover {
+  background-color: #FFDC22;
+  border-color: #FFDC22;
+}
+
+.user-badge-escola:hover {
+  background-color: #F2357B !important;
+}
+
+.btn-user-badge-english {
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  width: 265px;
+  height: 43px;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+.professor_ControleUsuario-nameColum {
+  text-align: center !important;
+  padding-top: 2%;
+}
+
+
+.btn-btn-secondary-user-badge-palavreando {
+  background-color: #FFDC22;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  width: 265px;
+  height: 43px;
+}
+
+.btn-btn-danger-user-badge-escola {
+  background-color: #F2357B;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  width: 265px;
+  height: 43px;
+}
+
+
+/* Botões de controle */
+
+.professor_tabela-ControleUusário-editar {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: 100%;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+.professor_tabela-ControleUusário-editar i{
+  font-size: 20px;
+  margin: 0 auto !important;
+}
+.content-button-editaredel{
+  /* margin-left: 50%; */
+  /* background-color: red !important; */
+  width: 100% !important;
+  height: 100% !important;
+  display: grid;
+grid-template-columns: repeat(2, 50%);
+grid-template-rows: 100%;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+
+.content-button-editaredel button{
+  width: 42px;
+  height: 42px;
+  margin-top: 1rem !important;
+  margin: 0 auto ;
+}
+
+.content-button-editaredel i{
+  font-size: 20px;
+  margin: 0 auto !important;
+}
+
+
+.buttonModalEditarUsuario {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+  color: white;
+  border-radius: 100%;
+  /* font-size: 17px; */
+  
+  /* margin: 0 auto !important; */
+/* margin-left: 50px !important; */
+}
+.buttonModalEditarUsuario i{
+/* margin-top: 12% !important; */
+}
+
+.buttonModalExcluirUsuario {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+  color: white;
+  border-radius: 100%;
+  /* font-size: 15px; */
+  margin: 0 auto !important;
+  align-items: center;
+ 
+}
+
+/* .contentColunaHeaderContentProfessor-buttonCriarUsuario button{
+  width: 200px;
+} */
+
+.user-control-btn,
+.user-control-delete-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.user-control-btn {
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+.user-control-delete-btn {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border: none;
+}
+
+.user-control-btn:hover,
+.user-control-delete-btn:hover {
+  opacity: 0.8;
+}
+
+/* Imagem Perfil */
+
+.imgPerfil-tabelaUsuario {
+  width: 45%;
+  height: 45%;
+  border-radius: 10px;
+}
+
+.professor_ControleUser-tableNameUser::first-letter {
+  text-transform: uppercase;
+  align-items: start !important;
+
+}
+
+.professor_ControleUser-tableCategoriaUser::first-letter {
+  text-transform: uppercase;
+  align-items: start !important;
+
+}
+
+/* MODAL EDITAR*/
+.imgProfileContainerModalEditarUsuario {
+  display: flex;
+  flex-direction: column;
+  border-bottom: none !important;
+
+}
+
+.contentColunaHeaderContentProfessor-buttonEditarUsuario {
+  background-color: rgb(0, 0, 0);
+  border-color: #000000;
+  color: white;
+  font-size: 25px;
+  border-radius: 50%;
+  width: 39px;
+  height: 39px;
+}
+
+.userNotImgEditarUsuario {
+  font-size: 120px;
+  color: #A6A5A5;
+}
+
+.profileImgCircleEtitarUsuarioReceiveImg {
+  width: 100px;
+  /* Defina o tamanho desejado */
+  height: 100px;
+  /* Defina o tamanho desejado */
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  /* Cor de fundo quando não há imagem */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -1rem;
+  /* Espaçamento entre os círculos */
+}
+
+.modalBodyContainerEditarUsuario {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalHeaderCloseButtonCriarUsuario {
+  padding-right: 20px;
+  padding-top: 20px;
+  border-bottom: none !important;
+}
+
+
+.profileImgCriarUsuarioModal {
+  width: 100%;
+  height: auto;
+}
+
+.profileImgCircleInputImgCriarUsuario {
+  display: flex;
+  justify-content: center;
+}
+
+.profileImgCircleSelectorImgCriarUsuario {
+  position: relative;
+  top: -1.5rem;
+  right: -2.7rem;
+  width: 30px;
+  /* Tamanho do círculo do seletor */
+  height: 30px;
+  /* Tamanho do círculo do seletor */
+  border-radius: 50%;
+  background-color: #000;
+  /* Cor de fundo do seletor */
+  display: flex;
+  color: white;
+  font-size: 13px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  /* Indica que é clicável */
+}
+
+.divAcceptImgProfileLineCriarUsuario {
+  background-color: #000;
+  height: 2px;
+  width: 90%;
+}
+
+.imgProfileTitleModalCriarUsuario {
+  position: relative;
+  margin-top: 10px;
+  color: #FBBC04;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+
+}
+
+.modalFooterContainerCriarUsuario {
+  align-items: center;
+  justify-content: center;
+  border-top: none !important;
+}
+
+.buttonControleDeColunaModalCriarUsuarioCriar {
+  background-color: #000;
+  color: white;
+  font-family: "Oswald", sans-serif;
+  font-size: 17px;
+  text-align: center;
+  width: 40%;
+  border: none !important;
+}
+
+.buttonControleDeColunaModalCriarUsuarioCriar:hover {
+  background-color: #000 !important;
+  color: white !important;
+  font-family: "Oswald", sans-serif !important;
+  font-size: 15px;
+
+  border: none !important;
+}
+
+.labelControleColunaCriarUsuario {
+  font-family: "Montsserrat", sans-serif !important;
+  font-weight: 600;
+  color: #000;
+  font-size: 15px;
+}
+
+.inputControleColunaCriarUsuario {
+  border: 1px #D9D9D9 solid;
+
+  height: 3.5rem;
+  font-family: "Montsserrat", sans-serif;
+  font-size: 15px;
+  padding-left: 10px;
+
+
+}
+
+.form-control:focus {
+  border: 1px #D9D9D9 solid !important;
+  box-shadow: none !important;
+  background-color: none !important;
+}
+
+.formContentModalBody {
+  position: relative;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.formContentModalBody {
+  width: 90%;
+}
+
+.firstRadialGroupCriarUsuarioControleColuna {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 1.5rem;
+}
+
+.secondRadialGroupCriarUsuarioControleColuna {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 1.5rem;
+
+}
+
+.criarUsuarioControleColunasCampoObrigatorio {
+  color: #D00808;
+  font-family: "Montsserrat", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.typeUserControleColuna .form-check-input {
+  width: 15px;
+  height: 15px;
+}
+
+.typeUserControleColuna .form-check-label {
+  font-family: "Montsserrat", sans-serif;
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+.typeUserControleColuna .form-check-input:checked {
+  background-color: black !important;
+  border-color: #000 !important;
+}
+
+.typeUserControleColuna {
+  margin: 10px;
+}
+
+.typeUserControleColuna .form-check-input:focus {
+  background-color: black !important;
+  border-color: #000 !important;
+  box-shadow: none !important;
+}
+
+.dropdownChoiceControleColunaCriarUsuario {
+  border: 1px #D9D9D9 solid;
+  height: 3.5rem;
+  font-family: "Montsserrat", sans-serif;
+  font-size: 15px;
+  width: 100%;
+  color: #000;
+  font-weight: 600;
+  padding-left: 10px;
+  margin-bottom: 1rem;
+  background-color: white !important;
+  text-align: left;
+}
+
+.dropdownMenuControleColunaCriarUsuario {
+  width: 100%;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+
+}
+
+.dropdownItemControleColunaCriarUsuario {
+  font-family: "Montsserrat", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  border: 1px #D9D9D9 solid;
+  border-radius: 5px;
+  list-style: none;
+  height: 35px;
+
+}
+
+.dropdown-item::before {
+  display: none !important;
+}
+
+.dropdownChoiceControleColunaCriarUsuario:hover {
+  color: black !important;
+  background-color: white !important;
+  border: 1px #D9D9D9 solid !important;
+}
+
+dropdownChoiceControleColunaCriarUsuario:focus {
+  color: black !important;
+  background-color: white !important;
+  border: 1px #D9D9D9 solid !important;
+}
+
+.secondRadialGroupCriarUsuarioControleColunaFormCheck {
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+}
+
+.secondRadialGroupCriarUsuarioControleColunaFormCheck label {
+  font-family: "Montsserrat", sans-serif;
+  font-weight: 700;
+
+}
+
+.secondRadialGroupCriarUsuarioControleColunaP {
+  color: #A6A5A5;
+  font-weight: 800;
+  font-size: 10px;
+  margin-left: 15px;
+}
+
+
+/*Responsividade Botão DELETAR  */
+@media (max-width: 812px) and (min-width: 769px) {
+  .buttonModalExcluirUsuario {
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+    color: white;
+    border-radius: 50%;
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .buttonModalExcluirUsuario i {
+    font-size: 17px;
+    padding: 1px;
+
+
+  }
+
+}
+
+/*Responsividade HEADER  */
+@media (max-width: 768px) {
+  .professor_controlUser-container {
+    display: none !important;
+  }
+
+  .professor_controlUser-contentHeader-titleH1 {
+    font-size: 28px;
+    /* Ajuste o tamanho da fonte em telas menores */
+  }
+}
+
+
+/* Responsividade Tabela */
+/* Faixa para telas médias (992px a 1200px) */
+@media (max-width: 1267px) and (min-width: 952px) {
+
+  .user-control-table td,
+  .user-control-table th {
+    font-size: 14px;
+    padding: 1rem;
+  }
+
+  .imgPerfil-tabelaUsuario {
+    width: 60px;
+    height: 60px;
+  }
+
+  .btn-user-badge-english,
+  .btn-btn-secondary-user-badge-palavreando,
+  .btn-btn-danger-user-badge-escola {
+    width: 22vh;
+    height: 40px;
+    font-size: 12px;
+  }
+
+  .linhaPreta-Table {
+    background-color: #000000;
+    height: 2px;
+    width: 250%;
+    margin-top: 10px;
+  }
+}
+
+
+@media (max-width: 951px) and (min-width: 813px) {
+
+  .user-control-table td,
+  .user-control-table th {
+    font-size: 14px;
+    padding: 1rem;
+  }
+
+  .imgPerfil-tabelaUsuario {
+    width: 60px;
+    height: 60px;
+  }
+
+  .btn-user-badge-english,
+  .btn-btn-secondary-user-badge-palavreando,
+  .btn-btn-danger-user-badge-escola {
+    width: 22vh;
+    height: 40px;
+    font-size: 12px;
+  }
+
+  .linhaPreta-Table {
+    background-color: #000000;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 812px) and (min-width: 769px) {
+
+  .user-control-table td,
+  .user-control-table th {
+    font-size: 11px;
+    /* Diminui o tamanho da fonte */
+    padding: 0.75rem;
+  }
+
+  .imgPerfil-tabelaUsuario {
+    width: 50px;
+    /* Reduz o tamanho da imagem de perfil */
+    height: 50px;
+  }
+
+  .btn-user-badge-english,
+  .btn-btn-secondary-user-badge-palavreando,
+  .btn-btn-danger-user-badge-escola {
+    width: 18vh;
+    /* Ajusta o tamanho dos botões */
+    height: 35px;
+    font-size: 10px;
+    /* Diminui o tamanho da fonte dos botões */
+  }
+
+  .linhaPreta-Table {
+    background-color: #000000;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .user-control-table td,
+  .user-control-table th {
+    font-size: 10px;
+    /* Reduz ainda mais o tamanho da fonte */
+    padding: 0.5rem;
+    /* Ajuste de espaçamento */
+  }
+
+  .imgPerfil-tabelaUsuario {
+    width: 40px;
+    /* Reduz ainda mais o tamanho da imagem */
+    height: 40px;
+  }
+
+  .btn-user-badge-english,
+  .btn-btn-secondary-user-badge-palavreando,
+  .btn-btn-danger-user-badge-escola {
+    width: 15vh;
+    /* Ajuste o tamanho dos botões */
+    height: 30px;
+    font-size: 9px;
+    /* Diminui o tamanho da fonte dos botões */
+  }
+
+  .linhaPreta-Table {
+    background-color: #000000;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* Ajuste de margens e padding para melhorar layout em telas pequenas */
+  .user-control-container-tabela {
+    padding: 0.5rem;
+    /* Reduz o padding geral do container */
+  }
+}

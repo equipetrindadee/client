@@ -1,0 +1,26 @@
+/* Estilo do layout geral */
+.controleColunaContainer {
+    display: flex !important;
+    height: 100vh !important; /* Define o tamanho da tela inteira */
+    position: relative !important;
+}
+
+/* Estilo para a div que contém a barra de navegação */
+.navBarWrapper {
+    width: 3rem !important; /* Define a largura da barra de navegação */
+    background-color: #312CBF !important; /* Cor de fundo */
+    position: fixed !important; /* Fixa no lado esquerdo */
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    z-index: 1000 !important; 
+}
+
+/* Estilo para a div que contém o conteúdo */
+.contentWrapper {
+    margin-left: 8rem !important; /* Espaço deixado pela barra de navegação */
+    width: 200rem !important; /* Preenche o restante da tela */
+    padding: 20px !important; /* Espaçamento interno */
+    position: relative !important; /* Conteúdo fica abaixo da navbar */
+    z-index: 1 !important;
+}

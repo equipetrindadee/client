@@ -1,0 +1,521 @@
+:root{
+    font-size: 10px;
+}
+
+.section-processodePostagem {
+    padding: 2rem;
+}
+
+.title-processodePostagem {
+    font-size: 6rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+}
+
+.subtitle-processodePostagem {
+    font-size: 2.5rem;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin-bottom: .5rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+}
+
+.linha-processodePostagem{
+      width: 30%;
+      height: 2px;
+      background-color: #FFD914;
+      border-radius: 0.25rem;
+      margin-inline: auto;
+      margin-bottom: 3rem;
+}
+
+.top-Educador{
+    width: 100%;
+
+}
+
+.content-processodePostagem {
+    background-color: white;
+    border-radius: 0.5rem;
+    width: 100%;
+    text-align: center;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+
+}
+
+.artigo-title-processodePostagem {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.25rem;
+}
+
+.infoJornal-processodePostagem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    border: 1px solid #D9D9D9;
+    margin-left: auto !important;
+    margin-bottom: 2rem;
+}
+
+.autor-processorPostagem {
+    height: 3.125rem !important;
+    width: 30%;
+    border-radius: 50% !important;
+    margin-right: auto !important;
+    margin-left: 5rem !important;
+    margin-top: 1rem !important;
+    display: flex !important;
+    text-align: start !important;
+    background-color: transparent !important;
+}
+
+.autor-processorPostagem img{
+    width: 20% !important;
+    padding-top: 0px !important;
+}
+
+.imagemAutor-processodePostagem{
+    width: 20% !important;
+    padding-top: 0px;
+}
+
+.nome-processodePostagem {
+    margin-top: 0.3rem;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0px;
+    margin-left: 0.5rem;
+}
+
+.data-processodePostagem {
+    font-size: 0.875rem;
+    color: gray;
+    margin-left: 0.5rem;
+}
+
+.audio-processorPostagem{
+    margin-right: auto;
+    margin-top: 2rem;
+    color: #D9D9D9;
+    width: 90%;
+    margin-inline: auto;
+    display: flex;
+}
+
+.audio-processorPostagem i{
+    font-size: 3rem;
+    margin-left: auto;
+}
+
+.linhaAudio-processorPostagem{
+    width: 90%;
+    height: 5px;
+    margin-top: 1.2rem;
+    margin-right: auto;
+    background-color: #A6A5A5;
+}
+
+.titlecontent-processorPostagem{
+    font-weight: 800;
+    margin-top: 1.5rem;
+    margin-bottom: 1.2rem;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.firstParagrafo-processorPostagem{
+    width: 90%;
+    text-align: start;
+    display: flex;
+    margin-top: 1.5rem;
+}
+
+.campoTexto1-processorPostagem{
+    width: 50%;
+    font-size: 14px;
+    margin-top: 1.6rem;
+    margin-right: auto;
+    text-align: justify;
+}
+
+.campoImagem1-processorPostagem{
+    width: 45%;
+    height: 18rem;
+    background-color: #D9D9D9;
+    margin-inline: auto;
+}
+
+.segundoParagrafo-processorPostagem{
+    width: 90%;
+    text-align: center;
+    display: flex;
+    margin-top: 1.5rem;
+}
+
+.campoTexto2-processorPostagem{
+    width: 100%;
+    font-size: 14px;
+    margin-top: 1.4rem;
+    margin-inline: auto;
+}
+
+
+.terceiroParagrafo-processorPostagem{
+    background-color: #D9D9D9;
+    width: 90%;
+    height: 22rem;
+    display: flex;
+    text-align: left;
+    margin-top: 1.5rem;
+}
+
+.campoImagem2-processorPostagem{
+    background-color: #65A6F0;
+    width: 42%;
+    height: 18rem;
+    margin-inline: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.campoTexto3-processorPostagem{
+    width: 50%;
+    font-size: 14px;
+    padding: 15px;
+    margin-top: 1.6rem;
+    padding-inline: 0 !important;
+    margin-bottom: 0 !important;
+    margin-inline: auto;
+    text-align: justify;
+}
+
+.quartoParagrafo-processorPostagem{
+    width: 90%;
+    height: 22rem;
+    display: flex;
+    text-align: left;
+    margin-top: 1.5rem;
+}
+
+.campoImagem3-processorPostagem{
+    background-color: #D9D9D9;
+    width: 42%;
+    height: 18rem;
+    margin-inline: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.campoTexto4-processorPostagem{
+    width: 50%;
+    font-size: 14px;
+    margin-top: 1.6rem;
+    padding-inline: 0 !important;
+    margin-bottom: 0 !important;
+    margin-inline: auto;
+    text-align: justify;
+}
+
+.fotter-processorPostagem{
+    width: 90% !important;
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: start;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.saibaMais-processoPostagem{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    text-align: start;
+    color: #312CBF;
+    font-weight: 700;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.areaColunista-processodePostagem{
+    background-color: #41BFB3;
+    margin-top: 1rem;
+    width: 18% !important;
+    height: 25vh;
+    margin-inline: 2rem !important;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.titleAreaColunista-processodePostagem{
+    color: white;
+    font-family: 'Oswald', 'sans-serif';
+    margin-top: 2rem;
+}
+
+.buttoEnviar-processodePostagem{
+    font-family: 'Oswald', 'sans-serif';
+    font-weight: 500;
+    font-size: 13px;
+
+    padding: 1rem;
+    margin-top: 1rem;
+    border: none;
+    width: 90%;
+    border-radius: 5px;
+    margin-inline: auto;
+    background-color: white;
+}
+
+.buttoEditar-processodePostagem{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    height: 43px;
+    padding: 1rem;
+    margin-top: 1rem;
+    border: none;
+    width: 90%;
+    border-radius: 5px;
+    margin-inline: auto;
+    background-color: white;
+    z-index: 9;
+    justify-content: space-between;
+    text-align: start;
+    display: flex;
+}
+
+.modalPergunta-processoPostagem{
+    border: none;
+    padding-inline: 15px;
+}
+
+.titleModal-enviar-processoPostagem{
+    font-size: 10px;
+    font-weight: 700 !important;
+}
+
+.buttonFechar-Modal-processoPostagem{
+    margin-left: auto;
+    border: none;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: transparent;
+    color: #FF2222;
+}
+
+.buttonNao-modal-processoPostagem{
+    background-color: #FF0000;
+    border: #FF0000 1px solid;
+    font-size: 15px;
+    font-family: 'Oswald', 'sans-serif';
+    width: 100px !important;
+}
+
+.buttonNao-modal-processoPostagem:hover{
+    background-color: #FF0000 !important;
+    border: #FF0000 1px solid;
+    font-family: 'Oswald', 'sans-serif' !important;
+}
+
+.buttonSim-modal-processoPostagem{
+    background-color: #ffffff;
+    border: #FF0000 1px solid;
+    color: #FF0000;
+    font-size: 15px;
+    font-family: 'Oswald', 'sans-serif';
+    width: 100px !important;
+}
+
+.buttonSim-modal-processoPostagem:hover{
+    background-color: #ffffff;
+    border: #FF0000 1px solid;
+    color: #FF0000;
+    font-family: 'Oswald', 'sans-serif' !important;
+}
+
+.fecharPergunta-modal-processoPostagem{
+    border-bottom: #000 1px solid;
+}
+
+.footerPergunta-modal-processoPostagem{
+    border-top: 1px solid #F2CB05;
+}
+
+.modalParabens-processoPostagem{
+    border: 1px solid #41BFB3;
+    padding-bottom: 7px;
+}
+
+.modal-fechar-processoPostagem{
+    border-bottom: 0px !important;
+}
+
+.buttonFechar-Modal2-processoPostagem{
+    margin-left: auto;
+    height: 20px;
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: transparent;
+    color: #41BFB3;
+}
+
+.info-body-processoPostagem{
+    width: 90%;
+    margin-inline: auto;
+}
+
+.info-modal-processoPostagem h1{
+    font-family: 'Oswald', 'sans-serif';
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.info-modal-processoPostagem p{
+    font-family: 'Oswald', 'sans-serif';
+    font-size: 15px;
+    font-weight: 500;
+    color: #414141;
+    margin-bottom: 10px;
+}
+
+.buttonPergunta-Active-processoPostagem{
+    background-color: #69FF5C;
+    pointer-events: none !important;
+}
+
+.buttonEditar-Active-processoPostagem{
+    background-color: #D9D9D9;
+    cursor: pointer !important;
+    pointer-events: none !important;
+}
+
+.errorCelular-processoPostagem{
+    display: none;
+}
+
+@media (max-width: 1200px){
+
+    .campoTexto1-processorPostagem{
+        width: 50%;
+        font-size: 10px;
+    }
+
+    .campoTexto2-processorPostagem{
+        font-size: 10px;
+    }
+
+    .campoTexto3-processorPostagem{
+        width: 50%;
+        font-size: 10px;
+    }
+
+    .campoTexto4-processorPostagem{
+        width: 50%;
+        font-size: 10px;
+    }
+
+    .areaColunista-processodePostagem{
+        background-color: #41BFB3;
+        margin-top: 1rem;
+        width: 18% !important;
+        height: 22vh;
+        margin-inline: 2rem !important;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .titleAreaColunista-processodePostagem{
+        color: white;
+        font-family: 'Oswald', 'sans-serif';
+        margin-top: 2rem;
+        font-size: 20px;
+    }
+
+    .buttoEnviar-processodePostagem{
+        font-family: 'Oswald', 'sans-serif';
+        font-weight: 500;
+        font-size: 10px;
+    
+        padding: 1rem;
+        margin-top: 1rem;
+        border: none;
+        width: 90%;
+        border-radius: 5px;
+        margin-inline: auto;
+    }
+
+    .buttoEditar-processodePostagem{
+        font-family: 'Oswald', 'sans-serif';
+        font-weight: 500;
+        font-size: 10px;
+    
+        padding: 1rem;
+        margin-top: 1rem;
+        border: none;
+        width: 90%;
+        border-radius: 5px;
+        margin-inline: auto;
+    }
+
+    .title-processodePostagem {
+        font-size: 4rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 0;
+        font-family: 'Oswald', sans-serif;
+        font-weight: 700;
+    }
+
+    .subtitle-processodePostagem {
+        font-size: 1.7rem;
+        text-align: center;
+        margin-bottom: 0;
+        font-family: 'Oswald', sans-serif;
+        font-weight: 700;
+    }
+}
+
+@media (max-width: 707px){
+    .areaColunista-processodePostagem{
+        background-color: #41BFB3;
+        margin-top: 1rem;
+        width: 18% !important;
+        height: 28vh;
+        margin-inline: 2rem !important;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 678px){
+
+    .container-processodePostagem{
+        display: none;
+    }
+
+    .fullContainer-div-processoPostagem{
+        display: none;
+    }
+
+    .errorCelular-processoPostagem{
+        display: block;
+    }
+
+}

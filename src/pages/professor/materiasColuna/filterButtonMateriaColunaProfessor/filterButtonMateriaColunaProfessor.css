@@ -1,0 +1,94 @@
+:root{
+    --color-icon-revisao:#FEE55F;
+    --color-icon-concluido:#568FFE;
+    --color-icon-postados:#73FE5C;
+}
+/* Estilo para o botão */
+.professor_materiaColuna-filter-customButton {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    border: 2px solid #000 !important;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+    padding-left: 9px;
+    display: flex;
+    width: 9rem !important;
+    height: 3.5rem !important;
+}
+
+.professor_materiaColuna-filter-customButton:hover {
+    border: 2px solid #000 !important;
+}
+
+.professor_materiaColuna-filter-customButton i {
+    font-size: 18px;
+    text-align: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.professor_materiaColuna-filter-customButton p {
+    font-size: 20px;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: bold;
+}
+
+/* Container do menu */
+.professor_materiaColuna-filter-dropdown-menu {
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ececec;
+    border-radius: 5px;
+    padding: 10px;
+    width: 250px !important;
+    z-index: 1000;
+    margin-left: -15rem;
+    margin-top: 5%;
+}
+
+/* Estilo para as opções do menu */
+.professor_materiaColuna-filter-dropdown-item {
+    display: flex;
+    cursor: pointer;
+    border: 1px solid #ececec !important;
+    border-radius: 5px;
+    margin-top: 5%;
+    height: 4rem;
+    align-items: center;
+    text-align: center;
+}
+#icon-marked-revisao{
+    color:var(--color-icon-revisao) !important;
+}
+
+#icon-marked-concluido{
+    color:var(--color-icon-concluido) !important;
+}
+
+#icon-marked-postado{
+    color:var(--color-icon-postados) !important;
+}
+
+.professor_materiaColuna-filter-dropdown-item i {
+    font-size: 26px;
+    margin-right: 10px;
+}
+
+.professor_materiaColuna-filter-dropdown-item p {
+    font-size: 14px;
+    padding-left: 8px;
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.professor_materiaColuna-filter-dropdown-icon-check {
+    font-size: 2rem;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+

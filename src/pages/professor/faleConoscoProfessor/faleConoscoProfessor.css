@@ -1,0 +1,595 @@
+/* Div Principal */
+.faleConoscoProfessor_main {
+  padding: 20px;
+  width: 95%;
+  float: right;
+}
+
+button:hover {
+  background-color: none !important;
+  border: none !important;
+}
+
+/* Header */
+.faleConoscoProfessor_header {
+  margin-bottom: 20px;
+  position: relative;
+  font-family: 'Oswald';
+  font-size: 64px !important;
+}
+
+.gooutDeleteComment {
+  color: white;
+  font-size: 18px;
+  justify-content: flex-end;
+  text-align: end;
+  align-items: end;
+  position: relative;
+
+}
+
+.faleConoscoProfessor_header H1 {
+
+  font-family: 'Oswald';
+  font-size: 38px !important;
+}
+
+.faleConoscoProfessor_headerLine {
+  border-top: 3px solid black;
+  margin: 10px 0;
+  width: 100%;
+}
+.faleConoscoProfessorFilterButtonsTopOfPage{
+  display: flex;
+  justify-content: end;
+}
+/* Filtros */
+.professor_controlUser-contentHeader-buttonsContent {
+  display: flex;
+  justify-content: end;
+}
+
+.contentColunaHeaderContentFaleConoscoProfessor-actionsButtonsSearch {
+  border: 1px #000 solid;
+  padding: 9px;
+  width: 30px;
+  font-size: 15px;
+  height: 3rem;
+  margin-right: 1rem;
+  color: black;
+  border-radius: 5px;
+  transition: .5s;
+}
+
+.contentColunaHeaderContentFaleConoscoProfessor-actionsButtonsSearch:hover {
+  width: 200px; 
+}
+
+.contentColunaHeaderContentFaleConoscoProfessor-actionsButtonsSearch::placeholder {
+  color: white;
+  font-size: 15px;
+}
+
+
+
+/* Body */
+.faleConoscoProfessor_body {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+/* Comentários */
+.faleConoscoProfessor_comentarios {
+  flex: 0.6 1;
+  margin-top: 2rem;
+}
+
+.faleConoscoProfessor_h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.faleConoscoProfessor_h2 {
+  font-size: 32px;
+  font-family: 'Oswald' !important;
+  font-weight: bold;
+}
+
+/* Cards */
+.faleConoscoProfessor_cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+.faleConoscoProfessor_categoria{
+  padding: 4px;
+  margin-top: 5px;
+  width: 100px !important;
+  height: 30px;
+  justify-content: center;
+  border-radius: 3px;
+  background-color: white;
+  
+}
+.faleConoscoProfessorCategoriaTagName{
+  position: relative;
+  margin: 0 auto;
+  color:black;
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+  justify-content: center;
+  text-transform: uppercase !important;
+}
+.faleConoscoProfessor_card {
+  background-color: #fbbc04;
+  /* Amarelo do card */
+  width: 90%;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  margin-bottom: 1% !important;
+
+  /* Limitar o tamanho do texto */
+  overflow: hidden;
+  /* Esconde o texto excedente */
+  text-overflow: ellipsis;
+  /* Adiciona os três pontinhos "..." */
+}
+
+.faleConoscoProfessor_content {
+  /* background-color: #333; */
+  width: 100%;
+  display: grid;
+  grid-template-columns: 5% 90%;
+  grid-template-rows: 100%;
+  grid-column-gap: 5px;
+  grid-row-gap: 0px;
+
+}
+
+.professor_info {
+  padding-left: 20px;
+}
+
+/* Header do Card */
+.faleConoscoProfessor_cardHeader {
+  display: flex;
+  /* Mantenha o display flex */
+  justify-content: space-between;
+  /* Espalhe os itens horizontalmente */
+  align-items: center;
+  /* Alinhe verticalmente */
+  /* background-color: #fcdcdc; */
+}
+
+.faleConoscoProfessor_profileImage {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px
+}
+
+.faleConoscoProfessor_emailWrapper {
+  display: flex;
+  /* Alterado para flex */
+  flex-direction: column;
+  /* Alinhe o email e a tag verticalmente */
+  justify-content: center;
+  /* Alinhe ao centro verticalmente */
+  margin-left: 10px;
+  /* Adicione um espaço à esquerda */
+}
+
+.faleConoscoProfessor_emailWrapper>span {
+  margin-right: 5px;
+  /* Espaçamento entre o e-mail e a tag */
+}
+
+.faleConoscoProfessor_email {
+  font-weight: bold;
+  font-family: "Montsserrat", sans-serif;
+  color: black;
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.faleConoscoProfessor_tag {
+  background-color: white;
+  color: black;
+  padding: 5px 10px;
+  font-weight: 600;
+  font-family: "Oswald", sans-serif;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 5px;
+  width: 100px;
+}
+.changeFontFamilyFaleConoscoMontsserrat{
+  font-family: "Montsserrat",sans-serif;
+  font-size: 15px;
+}
+.contentColunaHeaderContentFaleConoscoProfessor-actionsButtonsSearchIcone{
+  position: relative;
+  top: 2px;
+  
+  font-size: 25px;
+  font-weight: 500;
+  font-family: "Oswald", sans-serif;
+}
+
+/* Botão Coração */
+.faleConoscoProfessor_heartButton {
+  background: none;
+  border: none;
+  margin-left: auto;
+  /* Faz o botão coração se mover para a direita */
+}
+
+.faleConoscoProfessor_heartButton i {
+  color: red;
+  font-size: 20px;
+}
+
+/* Body do Card */
+.faleConoscoProfessor_cardBody {
+  margin-top: 10px;
+}
+
+.faleConoscoProfessor_previewText {
+  font-size: 14px;
+  line-height: 1.5;
+  height: 45px;
+  font-family: "Montsserrat", sans-serif;
+  overflow: hidden;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.faleConoscoProfessorMensagemResponse{
+ 
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap !important;
+  
+}
+
+/* Linha entre Card Body e Card Footer */
+.faleConoscoProfessor_line {
+  height: 1px;
+  /* Altura da linha */
+  background-color: #000000;
+  /* Cor da linha */
+  margin: 10px 0;
+  /* Margem acima e abaixo da linha */
+  width: 100%;
+  /* Largura total do card */
+  border-radius: 2px;
+  /* Arredondar os cantos da linha, se desejado */
+}
+
+/* Footer do Card */
+
+.faleConoscoProfessor_cardFooter {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  /* Espaça os itens entre si */
+  align-items: center;
+  /* Alinha verticalmente */
+}
+
+.faleConoscoProfessor_cardFooter-button-sublinhado {
+  color: #000000;
+  border: none !important;
+  text-decoration: underline;
+  background-color: transparent !important;
+  font-size: 12px;
+  font-family: 'Montserrat';
+  font-weight: bold;
+
+}
+
+.faleConoscoProfessor_cardFooter-button-sublinhado:hover {
+  color: #000000;
+}
+
+.faleConoscoProfessor_cardFooter-button-sublinhado:focus {
+  color: #000000;
+}
+
+.faleConoscoProfessor_buttonGroup {
+  display: flex;
+  /* Permite que os botões sejam alinhados lado a lado */
+  gap: 10px;
+  /* Espaçamento entre os botões no grupo */
+}
+
+
+.faleConoscoProfessor_card_button {
+  font-size: 12px;
+  background-color: transparent;
+  border: none;
+  color: black;
+}
+
+.faleConoscoProfessor_card_button i {
+  font-size: 16px;
+}
+
+/* Comentários Reagidos */
+
+/* Comentários Reagidos */
+.faleConoscoProfessor_comentariosReagidos {
+  position: sticky;
+  top: 20px;
+  /* Ajuste a distância do topo da página */
+  flex: 0.3;
+  background-color: #000000;
+  margin-top: 6.4rem;
+  padding: 20px;
+  border-radius: 10px;
+  max-height: 500px;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  scrollbar-width: none;
+}
+
+/* Remove a barra de rolagem no Webkit browsers (Chrome, Safari, Edge) */
+.faleConoscoProfessor_comentariosReagidos::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Cards de Comentários Reagidos */
+.faleConoscoProfessor_cardsReagidos {
+  display: flex;
+  flex-direction: column;
+  /* gap: 10px; */
+  max-height: calc(4 * 120px);
+  /* Calcula a altura para mostrar apenas 4 cards (ajuste se necessário) */
+  /* Scroll para ver mais comentários */
+}
+
+/* Altura dos cards individuais de comentários */
+.ComentariosReagidos {
+  height: 120px;
+  /* Altura fixa para cada comentário */
+}
+
+
+.faleConoscoProfessor_comentariosReagidos h2 {
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-family: "Oswald";
+  font-weight: bold;
+}
+.iconeFaleConoscoLixoMMC{
+  color: white !important;
+}
+
+.faleConoscoProfessor_reagidosHeaderLine {
+  border-top: 2px solid rgb(255, 255, 255);
+  margin: 10px 0;
+}
+
+/* Modal */
+.faleConoscoProfessor_modal .modal-content {
+  background-color: #000;
+  color: white;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.faleConoscoProfessor_modalHeader {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: none;
+  margin-top: 10px;
+  width: 100%;
+  margin-left: 10px;
+}
+
+.faleConoscoProfessor_modalHeader button {
+  align-items: end;
+}
+
+.faleConoscoProfessor_modalHeader img {
+  border: 1px solid white;
+}
+
+.faleConoscoProfessor_modalHeader .close {
+  color: white;
+}
+
+/* Textarea */
+.faleConoscoProfessor_textArea {
+  width: 90%;
+  color: #000;
+  font-weight: 700;
+  font-family: "Montsserrat", sans-serif;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 5px;
+  resize: none;
+}
+
+/* Atualizações nas imagens de perfil e avatar */
+.faleConoscoProfessor_avatarWrapper {
+  background-color: aqua;
+  border-radius: 50%;
+  padding: 2px;
+  width: 50px;
+  height: 50px;
+}
+
+.faleConoscoProfessor_avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+/* Alterações nas Reações */
+.faleConoscoProfessor_reactionsContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.faleConoscoProfessor_heartButton {
+  background-color: transparent;
+  border: none;
+}
+
+.ModalVerMessageCompletaP {
+  font-size: 13px;
+  padding: 10px;
+  font-family: "Montsserrat", sans-serif;
+}
+
+.faleConoscoProfessor_heartIcon {
+  font-size: 20px;
+  color: red;
+}
+
+/* Botão no Modal */
+.faleConoscoProfessor_heartModalButton {
+  background: none;
+  border: none;
+  background-color: none !important;
+  font-size: 19px;
+  justify-content: space-between;
+}
+
+.iconeFaleConoscoLixo {
+  margin-left: 8px;
+}
+
+.faleConoscoProfessor_closeButton {
+  background: black !important;
+  border: none;
+  font-size: 24px;
+  color: white;
+}
+
+.modalFaleConoscoButtonsFooter {
+  display: flex !important;
+  justify-content: space-between !important;
+  border-top: 1px solid black !important;
+
+}
+
+.modalFaleConoscoModalDeleteBody {
+
+  margin-top: -3rem;
+}
+
+.modalFaleConoscoModalDeleteBody p {
+  color: #000;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+}
+
+.modalFaleConoscoModalDeleteHeader {
+  display: flex;
+  justify-content: end;
+  border-bottom: none !important;
+  color: #000;
+
+}
+
+.modalFaleConoscoButtonsFooterNao {
+  background-color: white !important;
+  color: #000;
+  font-weight: 800;
+  width: 20%;
+  border: 1px solid black;
+  font-size: 15px;
+  font-family: "Oswald", sans-serif;
+}
+
+.modalFaleConoscoButtonsFooterNao:hover {
+  background-color: white !important;
+  color: #000;
+  font-weight: 800;
+  width: 20%;
+  border: 1px solid black;
+  font-size: 15px;
+  font-family: "Oswald", sans-serif;
+}
+
+.modalFaleConoscoButtonsFooterSim {
+  font-size: 15px;
+  font-family: "Oswald", sans-serif;
+  color: white;
+  border: 1px solid black;
+  width: 20%;
+  background-color: black !important;
+}
+
+.gooutDelete {
+  color: #fbbc04;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.respondeUsuarioFaleConosco {
+  font-size: 22px !important;
+}
+
+.faleConoscoProfessorFooterOpenChat {
+  border: none !important;
+}
+
+.text-whiteFaleConoscoProfessorChatOpen {
+  font-size: 13px;
+}
+.faleConoscoProfessorHeartButton{
+  color: white;
+  font-size: 16px;
+  margin-right: 5px;
+}
+.modalFaleConoscoButtonsFooterNaoP{
+  position: relative !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+.modalFaleConoscoButtonsFooterSimP{
+  position: relative !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+
+}
+
+.modalResponder-falaConosco-professor{
+  background-color: black !important;
+  color: white !important;
+  border: 1px solid white !important;
+}
+
+
+/* Responsividade */
+@media (max-width: 870px) {
+  .faleConoscoProfessor_body {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .faleConoscoProfessor_filtros input {
+    width: 100%;
+  }
+
+  .faleConoscoProfessor_cards,
+  .faleConoscoProfessor_comentariosReagidos {
+    max-width: 100%;
+  }
+}

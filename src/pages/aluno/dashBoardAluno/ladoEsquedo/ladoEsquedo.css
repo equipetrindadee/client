@@ -1,0 +1,506 @@
+/* lado esquerdo */
+.aluno_dashboard_ladoEsquerdo {
+  height: 80vh;
+
+  position: fixed;
+  /* Fixa a div na tela */
+  top: 48%;
+  /* Move a div para o meio da tela verticalmente */
+  left: 50%;
+  /* Move a div para o meio da tela horizontalmente */
+  transform: translate(-70%, -45%);
+  /* Ajusta a posição para o verdadeiro centro da div */
+  width: 70% ;
+  /* Define a largura da div de forma responsiva */
+  
+  
+  /* Adiciona um padding ao redor do conteúdo */
+  box-shadow: none;
+  /* Adiciona bordas arredondadas */
+  box-sizing: border-box;
+
+  z-index: 999;
+
+}
+
+/* template */
+.aluno_dashboard_templates {
+  height: 70%;
+ 
+}
+
+/* CARROSSEL */
+.aluno_dashboard-carousel-row {
+  width: 85rem;
+  margin: 0 auto;
+  margin-block: 2rem;
+}
+
+.aluno_dashboard-carousel-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  justify-content: center; /* Centraliza o conteúdo */
+    align-items: center; /* Centraliza o conteúdo */
+    width: 100%; /* Garante que o grid ocupe todo o espaço */
+}
+.aluno_dashboard-carousel-row-responsivo{
+  display: none;
+}
+.aluno_dashboard-carousel-item {
+  width: 125px;
+  height: 18rem;
+  position: relative;
+  color: rgb(255, 255, 255);
+}
+
+
+.aluno_dashboard-carousel-item img {
+  width: 100%;
+  height: 100%;
+}
+
+.aluno_dashboard-carousel-item-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.aluno_dashboard-carousel-item-color1, .aluno_dashboard-carousel-item-color2, .aluno_dashboard-carousel-item-color3, .aluno_dashboard-carousel-item-color4,
+.aluno_dashboard-carousel-item-color5, .aluno_dashboard-carousel-item-color6, .aluno_dashboard-carousel-item-color7, .aluno_dashboard-carousel-item-color8{
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.aluno_dashboard-carousel-item-color1{
+     background-image: url("../../../../../public/img/templateTeste.svg");
+}
+.aluno_dashboard-carousel-item-color2{
+  background-image: url("../../../../../public/img/templateTeste.svg");
+}
+.aluno_dashboard-carousel-item-color3{
+  background-image: url("../../../../../public/img/templateTeste.svg");
+}
+.aluno_dashboard-carousel-item-color4{
+  background-image: url("../../../../../public/img/templateTeste.svg");
+}
+.aluno_dashboard-carousel-item-color6{
+  background-image: url("../../../../../public/img/templateTeste.svg");
+}
+.aluno_dashboard-carousel-item-color7{
+  background-image: url("../../../../../public/img/templateTeste.svg");
+}
+.aluno_dashboard-carousel-item-color8{
+  background-image: url("../../../../../public/img/templateTeste.svg");
+}
+.aluno_dashboard-carousel-item-color5 {
+ background-image: url("../../../../../public/img/templateTeste.svg");
+}
+
+/* notificações */
+.aluno_dashboard_notificacoes {
+  height: 30%;
+ 
+}
+
+/* Estilizando a barra de rolagem */
+.aluno_dashboard_notificacoes::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Fazendo o thumb (parte rolável) transparente */
+.aluno_dashboard_notificacoes::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 10px;
+}
+
+/* O fundo da barra também ficará transparente */
+.aluno_dashboard_notificacoes::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0); 
+}
+
+
+/* topo das notificações */
+.aluno_dashBoard_notificacoes_topo {
+  display: flex;
+  justify-content: space-between;
+  margin-inline: 2rem;
+}
+
+.aluno_dashBoard_notificacoes_topo h4 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.aluno_dashboard_notificacoes_topo_conteudo_input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #41BFB3;
+  /* Borda inferior fina */
+  border-radius: 0;
+  box-shadow: none;
+  width: 150px;
+
+}
+
+.aluno_dashboard_notificacoes_topo_conteudo_input:focus {
+  box-shadow: none;
+  border-color: #41BFB3;
+  /* Cor da borda quando focado */
+}
+
+.aluno_dashboard_notificacoes_topo_conteudo_btn {
+  background-color: transparent;
+  border: none;
+  color: #000;
+  /* Cor do ícone */
+  padding: 0;
+}
+
+.aluno_dashboard_notificacoes_topo_conteudo_btn:focus {
+  box-shadow: none;
+}
+
+.aluno_dashboard_notificacoes_topo_conteudo_btn i {
+  font-size: 18px;
+}
+
+
+/* cards notificações */
+.aluno_dashBoard_notificacoes_cards_grupo {
+  display: flex;
+  flex-direction: column;
+}
+
+.aluno_dashboard_notificacoes_cards {
+  /* Fundo transparente */
+  border: 1px solid #41BFB3 !important;
+  /* Borda fina */
+  border-radius: 10px;
+  /* Bordas arredondadas */
+  width: 94rem;
+  height: 70px;
+
+  margin-inline: 1.5rem;
+}
+
+.aluno_dashboard_notificacoes_cards img {
+  border-radius: 50%;
+  position: relative;
+  top: 3%;
+  left: 15%;
+}
+
+.aluno_dashboard_notificacoes_cards i {
+  font-size: 30px;
+  position: relative;
+  left: 20%;
+  color: red;
+
+}
+
+.WiImg img {
+  width: 55px;
+  height: 55px;
+  background: #7D877F;
+}
+
+.aluno_dashboard_notificacoes_cards_parent {
+  display: grid;
+  grid-template-columns: 0.1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin: 0.5rem;
+}
+
+.aluno_dashboard_notificacoes_cards_div_img {
+  grid-area: 1 / 1 / 3 / 2;
+
+}
+
+.aluno_dashboard_notificacoes_cards_div_text {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.aluno_dashboard_notificacoes_cards_div_text h3 {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.aluno_dashboard_notificacoes_cards_div_text p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #41BFB3;
+  float: left;
+}
+
+/* Responsibilidade */
+@media (max-width: 1280px) {
+  .aluno_dashboard_ladoEsquerdo{
+   position: fixed;
+  left: 48%;
+  transform: translate(-70%, -45%);
+  /* Ajusta a posição para o verdadeiro centro da div */
+  width: 80%;
+  /* Define a largura da div de forma responsiva */
+  max-width: 700px;
+  
+  }
+
+  /* template */
+.aluno_dashboard_templates {
+  height: 55%;
+}
+
+/* CARROSSEL */
+.aluno_dashboard-carousel-row {
+  width: 65rem;
+}
+
+.aluno_dashboard-carousel-item {
+  width: 105px;
+  height: 15rem;
+}
+
+/* notificações */
+.aluno_dashboard_notificacoes {
+  height: 35%;
+ 
+}
+
+/* topo das notificações */
+.aluno_dashBoard_notificacoes_topo h4 {
+  font-size: 25px;
+}
+
+.aluno_dashboard_notificacoes_cards {
+  width: 67rem;
+  height: 70px;
+  margin-inline: 0.5rem;
+}
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1024px) {
+
+  .aluno_dashboard_ladoEsquerdo{
+   left: 47%;
+   max-width: 550px;
+   }
+ 
+   /* template */
+ .aluno_dashboard_templates {
+   height: 50%;
+ }
+ 
+ /* CARROSSEL */
+ .aluno_dashboard-carousel-row {
+   width: 45rem;
+ }
+ .aluno_dashboard-carousel-item {
+   width: 70px;
+   height: 10rem;
+ }
+ 
+ /* notificações */
+ .aluno_dashboard_notificacoes {
+   height: 37%;
+ }
+ 
+ /* topo das notificações */
+ .aluno_dashBoard_notificacoes_topo h4 {
+   font-size: 22px;
+ }
+ 
+ .aluno_dashboard_notificacoes_cards {
+   width: 50rem;
+   height: 50px;
+   margin-inline: 1.5rem;
+ }
+ .aluno_dashboard_notificacoes_cards img {
+  top: 3%;
+  left: 5%;
+}
+
+.aluno_dashboard_notificacoes_cards i {
+  font-size: 25px;
+}
+
+.WiImg img {
+  width: 35px;
+  height: 35px;
+}
+.aluno_dashboard_notificacoes_cards_div_text{
+  position: relative;
+  top: -6px;
+  
+}
+.aluno_dashboard_notificacoes_cards_div_text h3{
+  font-size: 12px;
+}
+
+.aluno_dashboard_notificacoes_cards_div_text p {
+  font-size: 12px;
+}
+  
+}
+@media (max-width: 853px) {
+  .aluno_dashboard_ladoEsquerdo {
+    left: 47%;
+    top: 50%; 
+    max-width: 450px;
+    background-color: red;
+  }
+   /* CARROSSEL */
+   .aluno_dashboard-carousel-row {
+    width: 35rem;
+  }
+  .aluno_dashboard-carousel-item {
+    width: 65px;
+    height: 9rem;
+  }
+}
+@media (max-width: 840px) {
+  .aluno_dashboard_ladoEsquerdo{
+    left: 52%;
+    max-width: 500px;
+    }
+  
+    /* template */
+  .aluno_dashboard_templates {
+    height: 45%;
+  }
+  /* CARROSSEL */
+  .aluno_dashboard-carousel-row {
+    width: 40rem;
+  }
+  .aluno_dashboard-carousel-item {
+    width: 65px;
+    height: 9rem;
+  }
+
+  .aluno_dashboard-carousel-grid {
+    grid-template-columns: repeat(4.8, 1fr);
+  }
+  
+  /* notificações */
+  .aluno_dashboard_notificacoes {
+    height: 45%;
+  }
+  
+  /* topo das notificações */
+  .aluno_dashBoard_notificacoes_topo h4 {
+    font-size: 20px;
+  }
+  
+  .aluno_dashboard_notificacoes_cards {
+    width: 45rem;
+    height: 50px;
+    margin-inline: 1.5rem;
+  }
+
+ .aluno_dashboard_notificacoes_cards_div_text h3{
+   font-size: 10px;
+ }
+ 
+ .aluno_dashboard_notificacoes_cards_div_text p {
+   font-size: 10px;
+ }
+  
+}
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+  .aluno_dashboard_ladoEsquerdo{
+    top: 52%;
+    left: 55%;
+    max-width: 450px;
+    }
+  
+    /* template */
+  .aluno_dashboard_templates {
+    height: 50%;
+  }
+  
+  /* CARROSSEL */
+  .aluno_dashboard-carousel-row {
+    width: 35rem;
+  }
+  .aluno_dashboard-carousel-item {
+    width: 60px;
+    height: 8.5rem;
+  }
+  
+  /* notificações */
+  .aluno_dashboard_notificacoes {
+    height: 37%;
+  }
+  
+  /* topo das notificações */
+  .aluno_dashBoard_notificacoes_topo h4 {
+    font-size: 20px;
+  }
+  
+  .aluno_dashboard_notificacoes_cards {
+    width: 50rem;
+    height: 50px;
+   
+  }
+ 
+ .aluno_dashboard_notificacoes_cards_div_text{
+   position: relative;
+   top: -6px;
+   
+ }
+ .aluno_dashBoard_notificacoes_cards_grupo{
+  width: 100%;
+ 
+ }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 480px) {
+  .aluno_dashboard_ladoEsquerdo {
+    left: 65%;
+    top: 32%;
+    height: 48%;
+  }
+
+  /* template */
+  .aluno_dashboard_templates {
+    display: none;
+  }
+
+ /* notificações */
+.aluno_dashboard_notificacoes {
+  height: 75.5%;
+  margin-top: 20px;
+ 
+}
+
+/* topo das notificações */
+.aluno_dashBoard_notificacoes_topo {
+  display: flex;
+  justify-content: space-between;
+  margin-inline: 2rem;
+}
+
+.aluno_dashBoard_notificacoes_topo h4 {
+  font-size: 25px;
+  font-weight: 700;
+}
+.aluno_dashboard_notificacoes_topo_conteudo_input{
+  width: 80px;
+  margin-left: 20px;
+}
+
+
+ 
+}
+
+
