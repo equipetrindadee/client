@@ -224,7 +224,7 @@ export const Template3 = ({ selectedUser }) => {
                         <div className="conteudo-left-t3">
                             {/* Div Pai lado Esquerdo */}
                             <div className="campos-texts-t3">
-                                <div className="text1-t3 text1NameColumnReceiveTemplete1-t3 ">
+                            <div className="text1-t3 text1NameColumnReceiveTemplete1-t3">
                                     <textarea
                                         placeholder="Artigo 1"
                                         className="mediumWi-t3"
@@ -379,7 +379,7 @@ export const Template3 = ({ selectedUser }) => {
                             <div className="campos-t3">
                                 {/* // */}
                                 <div className="campo1-t3">
-                                    <p className="textValueReceiveTemplete1-t3 textWithBG-t3">{campo1Text}</p>
+                                    <p className="textValueReceiveTemplete1-t3 mediumWi-t3">{campo1Text}</p>
                                 </div>
                                 
                                 <div className="campo2-t3">
@@ -388,24 +388,18 @@ export const Template3 = ({ selectedUser }) => {
                                 <div className="campo3-t3">
                                     <p className="textValueReceiveTemplete1-t3">{campo2Text}</p>
                                 </div>
-                                
+
+
                                 <div className="campo4-t3">
-                                    <div className="campo4-card-t3">
-                                        {/* Imagem carregada para campo4 */}
-                                        {campo4Image && <img src={campo4Image} className="image-400w-t3" alt="Imagem do campo4" />}
-                                        <div className="texto-t3">
-                                            <p className="textValueReceiveTemplete1-t3 textWithBG-t3">{campo3Text}</p> {/* Texto do campo4 */}
-                                        </div>
+                                    <div className="texto-t3">
+                                        <p className="textValueReceiveTemplete1-t3 textWithBG-t3">{campo3Text}</p> {/* Texto do campo7 */}
                                     </div>
                                 </div>
-
-                                <div className="campo5-t3">
-                                    <div className="campo5-card-t3">
-                                        {/* Imagem carregada para campo5 */}
-                                        {campo5Image && <img src={campo5Image} className="image-400w-t3" alt="Imagem do campo5" />}
-
-                                    </div>
+                                
+                                <div className="campo5-t3 ">
+                                    {campo4Image && <img src={campo4Image} className="image-400w-t3" alt="Imagem carregada" />}
                                 </div>
+                                
                                 <div className="campo6-t3">
                                     <div className="texto-t3">
                                         <p className="textValueReceiveTemplete1-t3 textWithBG-t3">{campo4Text}</p> {/* Texto do campo7 */}

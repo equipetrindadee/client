@@ -377,6 +377,8 @@ export const Template2 = ({ selectedUser }) => {
 
                         <div className="conteudo-right-t2">
                             <div className="campos-t2">
+
+
                                 <div className="campo1-t2">
                                     <p className="textValueReceiveTemplete1-t2">{campo1Text}</p>
                                 </div>
@@ -396,18 +398,18 @@ export const Template2 = ({ selectedUser }) => {
                                     </div>
                                 </div>
 
-                                <div className="campo6-t2">
-                                    <div className="campo5-card-t2">
+                                <div className="campo6-t2 ">
+                                    
                                         {/* Imagem carregada para campo5 */}
                                         {campo5Image && <img src={campo5Image} className="image-400w-t2" alt="Imagem do campo5" />}
 
-                                    </div>
+                                    
                                 </div>
                                 <div className="campo6-t2">
                                     <div className="texto-t2">
                                         <p className="textValueReceiveTemplete1-t2 textWithBG-t2">{campo4Text}</p> {/* Texto do campo7 */}
                                     </div>
-                                </div>
+                                </div> 
                             </div>
                         </div>
 
