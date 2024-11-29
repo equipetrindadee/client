@@ -1,17 +1,83 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../partPrincipalNDashAluno/partPrincipalNDashAluno.css';
 import CardPerfil from '../../dashBoardAluno/componetsAluno/cardPerfil/index.js';
 import ModalPerfil from '../../dashBoardAluno/componetsAluno/modalPerfil/index.js';
-import { Timeline } from 'rsuite';
-import CreditCardIcon from '@rsuite/icons/legacy/CreditCard';
-import PlaneIcon from '@rsuite/icons/legacy/Plane';
-import TruckIcon from '@rsuite/icons/legacy/Truck';
-import UserIcon from '@rsuite/icons/legacy/User';
-import CheckIcon from '@rsuite/icons/legacy/Check';
+import { Button, Modal } from 'react-bootstrap';
+import api from "../../../../config/configApi.js";
 
-export const PartPrincipalDasboardAluno = () => {
+
+export const PartPrincipalDasboardAluno = ({ systemMessage, messageModal }) => {
+    const [show, setShow] = useState(false);
+    const [selectedNotification, setSelectedNotification] = useState(null);
+    const [respondClicks, setRespondClicks] = useState(0);
+    const [notifications, setNotifications] = useState([]);
+
+    useEffect(() => {
+        const fetchNotifications = async () => {
+            try {
+                const response = await api.get('/notificacoes');
+                setNotifications(response.data);
+            } catch (error) {
+                console.error("Erro ao buscar notificações:", error);
+            }
+        };
+
+        fetchNotifications();
+    }, []);
+
+    useEffect(() => {
+        setNotifications((prevNotifications) =>
+            prevNotifications.map((notification) =>
+                notification.name === 'Sistema'
+                    ? { ...notification, message: systemMessage || 'Mensagem do sistema:' }
+                    : notification
+            )
+        );
+    }, [systemMessage]);
+
+    const handleClose = () => {
+        setShow(false);
+        setRespondClicks(0);
+    };
+
+    const handleShow = (notification) => {
+        setShow(true);
+        setSelectedNotification(notification);
+    };
+
+    const handleRespond = async () => {
+        if (respondClicks === 1) {
+            // Deletar notificação do banco de dados
+            try {
+                await api.delete(`/notificacoes/${selectedNotification.id}`); // Supondo que `id` é o identificador da notificação
+                // Atualizar o estado local para remover a notificação deletada
+                setNotifications(notifications.filter((n) => n.id !== selectedNotification.id));
+                handleClose(); // Fecha o modal após a deleção
+            } catch (error) {
+                console.error("Erro ao deletar notificação:", error);
+            }
+        } else {
+            setRespondClicks(respondClicks + 1); // Incrementa o contador de cliques
+        }
+    };
+    const handleDeleteNotification = async () => {
+        if (selectedNotification) { // Verifica se há uma notificação selecionada
+            try {
+                const response = await api.delete(`/notificacoes/${selectedNotification.id}`);
+                if (!response.data.error) {
+                    alert("Card deletado com sucesso!");
+                    setNotifications(notifications.filter((n) => n.id !== selectedNotification.id)); // Remove do estado local
+                    handleClose(); // Fecha o modal após a exclusão
+                }
+            } catch (error) {
+                alert("Não foi possível deletar a notificação.");
+            }
+        }
+    };
+
+
     return (
         <div>
             <div className="containerSecondNewDashAluno">
@@ -39,14 +105,21 @@ export const PartPrincipalDasboardAluno = () => {
                     </div>
                     <div className="partPrincipalNDashAluno__notifications">
                         <h3 className="partPrincipalNDashAluno__notificationsTitle">Notificações</h3>
-                        {Array(3).fill().map((_, i) => (
-                            <div key={i} className="d-flex align-items-center p-3 mb-2 border rounded-3 partPrincipalNDashAluno__notification">
-                                <img src="https://placehold.co/40x40" alt="User profile" className="rounded-circle partPrincipalNDashAluno__notificationImg" />
+                        {notifications.map((notification, index) => (
+                            <div key={index} className={` aluno_dashboard_cards ${notification.isSystem ? 'sistema-card' : ''}`}>
+                                <Button
+                                    className={`button_notificacoes_aluno ${notification.isSystem ? 'sistema-button' : ''}`}
+                                    variant=""
+                                    onClick={() => handleShow(notification)}
+                                >
+                                <img src={notification.imgSrc} alt={`img${index}`} className="partPrincipalNDashAluno__notificationImg" />
                                 <div className="ms-4 partPrincipalNDashAluno__notificationText">
-                                    <p className="fw-bold mb-0 partPrincipalNDashAluno__notificationName">Fulana Ciclana de Silva</p>
-                                    <p className=" partPrincipalNDashAluno__notificationMessage">Te mandou uma notificação</p>
+                                    <p className="fw-bold mb-0 partPrincipalNDashAluno__notificationName">{notification.name}</p>
+                                    <p className=" partPrincipalNDashAluno__notificationMessage">{notification.message}</p>
                                 </div>
+                                </Button>
                             </div>
+                            
                         ))}
                     </div>
                 </div>
@@ -113,8 +186,10 @@ export const PartPrincipalDasboardAluno = () => {
                         </div>
                     </div>
                 </div>
+
             </div>
             <ModalPerfil />
+
         </div>
     );
 }
