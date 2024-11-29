@@ -5,95 +5,110 @@ import { Dropdown, ButtonGroup, DropdownButton } from "react-bootstrap";
 import "./formularioMaster.css";
 
 export const FormularioMaster = () => {
-  const [selectedType, setSelectedType] = useState("");
-  const [selectedColumn, setSelectedColumn] = useState("");
-  const [selectedYear, setSelectedYear] = useState("");
+  const [image, setImage] = useState(null); 
+
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImage(reader.result); 
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   return (
-    <div className="formularioMaster">
-      <h1 className="formularioMaster__title">Cadastrar</h1>
+    <div className="formularioMaster-container">
+      <header className="formularioMaster-header">
+        <h1 className="formularioMaster-title">Cadastrar</h1>
+        <span className="formularioMaster-brand">O EDUCADOR</span>
+      </header>
 
-      {/* Imagem de perfil */}
-      <div className="formularioMaster__profile-image">
-        <img src="https://via.placeholder.com/120" alt="Profile" />
-        <button className="formularioMaster__edit-button">
-          <i className="bi bi-pencil"></i>
-        </button>
-      </div>
-
-      {/* Campos do formulário */}
-      <div className="formularioMaster__input-group">
-        <input type="text" className="form-control" placeholder="Nome" />
-      </div>
-
-      <div className="formularioMaster__input-group">
-        <input type="email" className="form-control" placeholder="Email" />
-      </div>
-
-      <div className="formularioMaster__input-group">
-        <input
-          type="password"
-          className="form-control"
-          placeholder="Senha"
-        />
-        <input
-          type="password"
-          className="form-control"
-          placeholder="Confirmar senha"
-        />
-      </div>
-
-      {/* Dropdown para Tipo de usuário */}
-      <div className="formularioMaster__input-group">
-        <Dropdown as={ButtonGroup} onSelect={(e) => setSelectedType(e)}>
-          <DropdownButton
-            variant="secondary"
-            title={selectedType || "Tipo de usuário"}
-            id="dropdown-type"
+      <div className="formularioMaster-profile">
+        <div className="formularioMaster-profile-img-wrapper">
+          {image ? (
+            <img
+              src={image}
+              alt="Foto de perfil"
+              className="formularioMaster-profile-img"
+            />
+          ) : (
+            <i className="bi bi-person-circle formularioMaster-profile-icon"></i> 
+          )}
+          <button
+            className="formularioMaster-edit-button formularioMaster-edit"
+            onClick={() => document.getElementById('profileImageInput').click()} 
           >
-            <Dropdown.Item eventKey="Educador">Educador</Dropdown.Item>
-            <Dropdown.Item eventKey="Aluno">Aluno</Dropdown.Item>
-            <Dropdown.Item eventKey="Admin">Admin</Dropdown.Item>
-          </DropdownButton>
-        </Dropdown>
+            <i className="bi bi-pencil-fill  formularioMaster-icon"></i> 
+          </button>
+          <input
+            type="file"
+            id="profileImageInput"
+            className="form-control formularioMaster-file-input"
+            accept="image/*"
+            onChange={handleImageChange} 
+          />
+        </div>
       </div>
 
-      {/* Dropdown para Colunas */}
-      <div className="formularioMaster__input-group">
-        <Dropdown as={ButtonGroup} onSelect={(e) => setSelectedColumn(e)}>
-          <DropdownButton
-            variant="secondary"
-            title={selectedColumn || "Colunas"}
-            id="dropdown-columns"
-          >
-            <Dropdown.Item eventKey="1">1ª Coluna</Dropdown.Item>
-            <Dropdown.Item eventKey="2">2ª Coluna</Dropdown.Item>
-            <Dropdown.Item eventKey="3">3ª Coluna</Dropdown.Item>
-          </DropdownButton>
-        </Dropdown>
-      </div>
-
-      {/* Dropdown para Ano Escolar */}
-      <div className="formularioMaster__input-group">
-        <Dropdown as={ButtonGroup} onSelect={(e) => setSelectedYear(e)}>
-          <DropdownButton
-            variant="secondary"
-            title={selectedYear || "Ano escolar"}
-            id="dropdown-year"
-          >
-            <Dropdown.Item eventKey="2024">2024</Dropdown.Item>
-            <Dropdown.Item eventKey="2025">2025</Dropdown.Item>
-            <Dropdown.Item eventKey="2026">2026</Dropdown.Item>
-          </DropdownButton>
-        </Dropdown>
-      </div>
-
-      {/* Botão para cadastrar */}
-      <div className="formularioMaster__input-group">
-        <button className="btn btn-primary formularioMaster__submit-btn">
-          Cadastrar
-        </button>
-      </div>
+      <form className="formularioMaster-form">
+        <div className="mb-3">
+          <label htmlFor="nome" className="formularioMaster-label">Nome</label>
+          <input
+            type="text"
+            className="form-control formularioMaster-input"
+            id="nome"
+            placeholder=""
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="email" className="formularioMaster-label">Email</label>
+          <input
+            type="email"
+            className="form-control formularioMaster-input"
+            id="email"
+            placeholder=""
+          />
+        </div>
+        <div className="row g-3 mb-3">
+          <div className="col">
+            <label htmlFor="senha" className="formularioMaster-label">Senha</label>
+            <input
+              type="password"
+              className="form-control formularioMaster-input"
+              id="senha"
+              placeholder=""
+            />
+          </div>
+          <div className="col">
+            <label htmlFor="confirmSenha" className="formularioMaster-label">Confirmar senha</label>
+            <input
+              type="password"
+              className="form-control formularioMaster-input"
+              id="confirmSenha"
+              placeholder=""
+            />
+          </div>
+        </div>
+        <div className="mb-3">
+        <DropdownButton
+         as={ButtonGroup}
+         title="Selecione usuário"
+         id="tipoUsuario"
+         className="formularioMaster-dropdown-btn"
+         >
+        <Dropdown.Item className="formularioMaster-dropdown-item"><p>Aluno</p></Dropdown.Item>
+        <Dropdown.Item className="formularioMaster-dropdown-item"><p>Professor</p></Dropdown.Item>
+        <Dropdown.Item className="formularioMaster-dropdown-item"><p>administrador</p></Dropdown.Item>
+        </DropdownButton>
+        </div>
+        <div className="text-center">
+          <button type="submit" className="btn btn-primary formularioMaster-submit-button">
+            CADASTRAR
+          </button>
+        </div>
+      </form>
     </div>
   );
 };
