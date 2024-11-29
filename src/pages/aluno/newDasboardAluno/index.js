@@ -2,6 +2,8 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../../aluno/newDasboardAluno/controlePrincipalNDashAluno.css';
+import { Button, Modal } from 'react-bootstrap';
+import api from "../../../config/configApi.js";
 
 import SideNavBarNewAluno from '../../navBar/newNavBarSideBarAluno/index.js';
 import PartPrincipalDasboardAluno from '../newDasboardAluno/partPrincipalNDashAluno/index.js';

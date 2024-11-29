@@ -44,8 +44,13 @@ import DashBoardMaster from "../pages/master/DashBoardMaster/index.js";
 import ListarArtigo from "../pages/userComum/ListarArtigos/index.js";
 import MeuPerfil from "../pages/userComum/MeuPerfil/index.js";
 import SobreNos from "../pages/userComum/SobreNos/index.js";
+<<<<<<< HEAD
+import NewDashBoardAluno from "../pages/aluno/newDasboardAluno/index.js"
+import ContentPrincipalListMaster from "../pages/master/listarMaster/index.js";
+=======
 import NewDashBoardAluno from "../pages/aluno/newDasboardAluno/index.js";
 import FormularioMaster from "../pages/master/formularioMaster/index.js";
+>>>>>>> 031e908ef5f028967bd6dfdbea90b9ada146e8b3
 
 export default function RoutesAdmin() {
 
@@ -122,7 +127,11 @@ export default function RoutesAdmin() {
 
                 {/* master */}
                 <Route path='/master/Dashboard' element={<DashBoardMaster />} />
+<<<<<<< HEAD
+                <Route path="/master/listarUsuario" element={<ContentPrincipalListMaster/>}/>
+=======
                 <Route path='/master/FormularioMaster' element={<FormularioMaster />} />
+>>>>>>> 031e908ef5f028967bd6dfdbea90b9ada146e8b3
 
 
             </Routes>

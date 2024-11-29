@@ -1,0 +1,21 @@
+.master_listarUsuario-tableList-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.master_listarUsuario-tableList-table th,
+.master_listarUsuario-tableList-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.master_listarUsuario-tableList-table th {
+    color: #888;
+}
+
+.master_listarUsuario-tableList-table td i {
+    color: #1E88E5;
+    cursor: pointer;
+}

@@ -1,0 +1,136 @@
+.adicionarPagina-container{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.header-adicionarPagina-aluno{
+    width: 95%;
+    margin-inline: auto;
+    height: 60px;
+    margin-bottom: 10px;
+    border-bottom: 3px solid #FFDC22;
+    margin-top: 10px;
+}
+
+.header-adicionarPagina-aluno h2{
+    font-family: 'Oswald', 'sans-serif';
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: none;
+    margin-left: 70px;
+}
+
+.header-adicionarPagina-aluno h3{
+    font-family: 'Oswald', 'sans-serif';
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-left: 20px;
+}
+
+.gridTemplates-adicionarPagina-Aluno{
+    width: 85%;
+    display: grid;
+    grid-template-columns: repeat(4, 23.45%);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 30px;
+    margin-inline: auto;
+    grid-row-gap: 15px;
+}
+
+.template1 { 
+    grid-area: 1 / 1 / 2 / 2; 
+    text-align: center;
+    align-items: center;
+}
+
+.template1 img{
+    width: 70%;
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+}
+
+.template2 { 
+    grid-area: 1 / 2 / 2 / 3; 
+    text-align: center;
+    align-items: center;
+}
+
+.template2 img{
+    width: 70%;
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+}
+
+.template3 { 
+    grid-area: 1 / 3 / 2 / 4; 
+    text-align: center;
+    align-items: center;
+}
+
+.template3 img{
+    width: 70%;
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+}
+
+.template4 { 
+    grid-area: 1 / 4 / 2 / 5; 
+    text-align: center;
+    align-items: center;
+}
+
+.template4 img{
+    width: 70%;
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+}
+
+.template5 { 
+    grid-area: 2 / 1 / 3 / 2; 
+    text-align: center;
+    align-items: center;
+}
+
+.template5 img{
+    width: 70%;
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+}
+
+.template6 { 
+    grid-area: 2 / 2 / 3 / 3; 
+    text-align: center;
+    align-items: center;
+}
+
+.template6 img{
+    width: 70%;
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+}
+
+.template7 { 
+    grid-area: 2 / 3 / 3 / 4; 
+    text-align: center;
+    align-items: center;
+}
+
+.template7 img{
+    width: 70%;
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+}
+
+.template8 { 
+    grid-area: 2 / 4 / 3 / 5; 
+    text-align: center;
+    align-items: center;
+}
+
+.template8 img{
+    width: 70%;
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+}

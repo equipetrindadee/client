@@ -1,0 +1,76 @@
+.aluno_MeusArtigos-rightSide-Perfil {
+    border: none !important;
+}
+
+.aluno_MeusArtigos-rightSide-Perfil-infos {
+    /* background-image: url("../../../public/img/bg-perfil-semborda.svg"); */
+    background-image: url("../../../../../public/img/bg-perfil-semborda.svg");
+    width: 100% !important;
+    height: 23rem !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 20% 60%;
+    grid-template-rows: 100%;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    border: 1px solid #E1E1E1;
+    border-radius: 30px;
+
+}
+
+.aluno_MeusArtigos-rightSide-Perfil-button {
+    width: 100%;
+    height: 15%;
+    padding: 0;
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+    margin: 10%;
+    text-align: center;
+}
+
+.aluno_MeusArtigos-rightSide-Perfil-button:hover {
+    width: 100%;
+    height: 15%;
+    padding: 0;
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+}
+
+
+.aluno_MeusArtigos-rightSide-Perfil-button p {
+    color: #000;
+    font-family: "Montserrat";
+    font-size: 14px !important;
+    font-weight: bold;
+    margin: 0 auto;
+    padding: 0 auto !important;
+}
+
+.aluno_MeusArtigos-rightSide-Perfil-body-info {
+    text-align: center !important;
+    font-family: "Montserrat";
+}
+
+.aluno_MeusArtigos-rightSide-Perfil-body-info img {
+    margin: 10% 0 0 0 !important;
+    width: 100%;
+    height: 60%;
+}
+
+.aluno_MeusArtigos-rightSide-Perfil-body-info h5 {
+    margin: 6% 0 0 0 !important;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+@media (max-width: 1000px){
+    .aluno_MeusArtigos-rightSide-Perfil-button p {
+        color: #000;
+        font-family: "Montserrat";
+        font-size: 10px !important;
+        font-weight: bold;
+        margin: 0 auto;
+        padding: 0 auto !important;
+    }    
+}

@@ -21,30 +21,36 @@ export const DashBoardMaster = () => {
             <div className="DashBoardMaster-content">
                 <header className="DashBoardMaster-header">
                     <h1>Dashboard</h1>
-                    <h2>O Educador</h2>
+                    <h2>O EDUCADOR</h2>
                 </header>
 
-                <div className="DashBoardMaster-grids">
-                    <div className="DashBoardMaster-card"> {/* Curtidas */}
-                        <i className="bi bi-hand-thumbs-up"></i>
-                        <h3>300</h3>
-                        <p>Curtidas</p>
+                <div className='dashboardMaster-Container-master'>
+
+                    <h1>Dashboard</h1>
+
+                    <div className="DashBoardMaster-grids">
+                        <div className="DashBoardMaster-card"> {/* Curtidas */}
+                            <i className="bi bi-hand-thumbs-up"></i>
+                            <h3>300</h3>
+                            <p>Curtidas</p>
+                        </div>
+                        <div className="DashBoardMaster-card"> {/* Matérias */}
+                            <i className="bi bi-book"></i>
+                            <h3>12</h3>
+                            <p>Matérias</p>
+                        </div>
+                        <div className="DashBoardMaster-card"> {/* Cadastros */}
+                            <i className="bi bi-person"></i>
+                            <h3>437</h3>
+                            <p>Cadastros</p>
+                        </div>
+                        <div className="DashBoardMaster-card"> {/* Edições */}
+                            <i className="bi bi-send"></i>
+                            <h3>120</h3>
+                            <p>Edições</p>
+                        </div>
                     </div>
-                    <div className="DashBoardMaster-card"> {/* Matérias */}
-                        <i className="bi bi-book"></i>
-                        <h3>12</h3>
-                        <p>Matérias</p>
-                    </div>
-                    <div className="DashBoardMaster-card"> {/* Cadastros */}
-                        <i className="bi bi-person"></i>
-                        <h3>437</h3>
-                        <p>Cadastros</p>
-                    </div>
-                    <div className="DashBoardMaster-card"> {/* Edições */}
-                        <i className="bi bi-send"></i>
-                        <h3>120</h3>
-                        <p>Edições</p>
-                    </div>
+
                 </div>
 
                 <div className="DashBoardMaster-bottom-section">
