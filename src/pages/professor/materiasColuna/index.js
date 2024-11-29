@@ -83,9 +83,7 @@ function MateriaColuna() {
 
         .filter(pub => filter === 'Todos' || pub.status === filter)
         .filter(pub =>
-            (pub.title && pub.title.toLowerCase().includes(searchQuery.toLowerCase())) ||
-            (pub.author && pub.author.toLowerCase().includes(searchQuery.toLowerCase()))
-            (pub.author && pub.author.toLowerCase().includes(searchQuery.toLowerCase()))
+            (pub.title && pub.title.toLowerCase().includes(searchQuery.toLowerCase()))
         );
 
 

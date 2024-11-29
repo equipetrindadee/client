@@ -41,6 +41,7 @@ export const RevisaoT1 = ({ selectedUser }) => {
     const [searchQuery, setSearchQuery] = useState('');
     const [filter, setFilter] = useState('Todos');
     const [texts, setTexts] = useState([]); // Declare o estado texts aqui
+    const [title, setTitle] = useState([]);
 
     const rightSideRef = useRef(null);
 
@@ -67,8 +68,14 @@ export const RevisaoT1 = ({ selectedUser }) => {
         });
     };
 
-    const filteredPublications = publications
-        .filter(pub => filter === 'Todos' || pub.status === filter)
+    const banenrImg = localStorage.getItem("imageColumn");
+    const selectedPublicationId = localStorage.getItem("selectedPublicationId");
+    console.log(banenrImg)
+
+    // Filtra as publicações para encontrar aquela que corresponde ao id do localStorage
+    const filteredPublication = publications
+        .filter(pub => pub.id === selectedPublicationId)  // Filtra pela publicação com o id correspondente
+        .filter(pub => filter === 'Todos' || pub.status === filter)  // Filtro adicional de status
         .filter(pub =>
             (pub.title && pub.title.toLowerCase().includes(searchQuery.toLowerCase())) ||
             (pub.author && pub.author.toLowerCase().includes(searchQuery.toLowerCase()))
@@ -89,19 +96,20 @@ export const RevisaoT1 = ({ selectedUser }) => {
                     // Verifica se o campo 'text' é um array e o armazena
                     if (Array.isArray(data.texts)) {
                         setTexts(data.texts); // Armazena o array no estado
-                        console.log("Texto da publicação:", data.texts); // Mostra todos os textos no console
+                     
                     } else {
                         setTexts([data.texts]); // Converte para array se não for um
-                        console.log("Texto da publicação:", [data.texts]); // Mostra o texto como array no console
+                     
 
                     }
 
                     setUserName(data.author || "Autor não encontrado"); // Exibe o autor
                     setColumName(data.coluna || "Coluna não encontrada");
+                    setTitle(data.title || "Title não encontrado"); // Exibe o autor
                     setUserId(selectedPublicationId); // Armazena o ID da publicação
-                    console.log(`Publicação selecionada: F(ID: ${selectedPublicationId})`);
+                 
                 } else {
-                    console.log("Nenhum documento encontrado para o ID:", selectedPublicationId);
+                   
                 }
 
             } catch (error) {
@@ -122,9 +130,9 @@ export const RevisaoT1 = ({ selectedUser }) => {
             await updateDoc(docRef, {
                 texts: texts // Aqui atualiza o array inteiro
             });
-            console.log("Textos salvos com sucesso!");
+          
         } catch (error) {
-            console.error("Erro ao salvar os textos:", error);
+          
         }
     };
 
@@ -132,7 +140,7 @@ export const RevisaoT1 = ({ selectedUser }) => {
 
 
 
-    console.log(texts, "aqui")
+  
 
     useEffect(() => {
         const fetchUserData = async () => {
@@ -248,7 +256,7 @@ export const RevisaoT1 = ({ selectedUser }) => {
         try {
             // Exemplo de como salvar os textos
             await saveTextsToDatabase(texts); // Substitua por sua lógica de salvamento
-            console.log("Textos salvos com sucesso!");
+          
             // Redireciona ou limpa o estado após o sucesso
         } catch (error) {
             console.error("Erro ao salvar os textos:", error);
@@ -275,8 +283,8 @@ export const RevisaoT1 = ({ selectedUser }) => {
                         <textarea
                             className="title-t1"
                             placeholder="Digite o Título"
-                            value={valueTitle}
-                            onChange={handleValueTilte}
+                            value={title} // Valor controlado pelo estado
+                            onChange={(e) => setTitle(e.target.value)} // Atualiza o estado ao editar
                             maxLength="30"
                         />
                         <p>{valueTitle.length}/30</p>
@@ -388,8 +396,12 @@ export const RevisaoT1 = ({ selectedUser }) => {
                                     <textarea
                                         placeholder="qrCode1"
                                         className="mediumWi-t1"
-                                        value={qrCodeText1}
-                                        onChange={handleqrcode1}
+                                        value={texts[4] || ''}
+                                        onChange={(e) => {
+                                            const updatedTexts = [...texts];
+                                            updatedTexts[4] = e.target.value;
+                                            setTexts(updatedTexts);
+                                        }}
                                         maxLength="30"
                                     />
                                     <p>{qrCodeText1.length}/30</p>
@@ -410,8 +422,12 @@ export const RevisaoT1 = ({ selectedUser }) => {
                                     <textarea
                                         placeholder="qrCode2"
                                         className="mediumWi-t1"
-                                        value={qrCodeText2}
-                                        onChange={handleqrcode2}
+                                        value={texts[5] || ''}
+                                        onChange={(e) => {
+                                            const updatedTexts = [...texts];
+                                            updatedTexts[5] = e.target.value;
+                                            setTexts(updatedTexts);
+                                        }}
                                         maxLength="30"
                                     />
                                     <p>{qrCodeText2.length}/30</p>
@@ -449,7 +465,7 @@ export const RevisaoT1 = ({ selectedUser }) => {
                     <div className="header-right-t1">
                         {/* barra colorida */}
                         <div className="barra-topo-header-right-t1">
-                            <img src="../img/logo.svg" alt="imagem topo" />
+                            <img src={banenrImg} alt="imagem topo" />
                         </div>
                     </div>
 
@@ -457,19 +473,23 @@ export const RevisaoT1 = ({ selectedUser }) => {
                         <div className="mid-header-right-t1">
                             <div className="info-mid-header-right-t1">
                                 <img src="../img/processoPostagemJornalista.svg" alt="imagem pessoa" />
-                                {filteredPublications.map((item) => (
+                                {filteredPublication.length > 0 && (
                                     <div className="escrita-mid-header-right-t1">
-                                        <h4 className='nameUserTemplete1WriterRightPart-t1'>{item.author} </h4>
-                                        <p className='nameUserTemplete1WriterRightPartDate-t1'>01/01/2001</p>
+                                        <h4 className='nameUserTemplete1WriterRightPart-t1'>
+                                            {filteredPublication[0].author}  {/* Exibe o autor da publicação filtrada */}
+                                        </h4>
+                                        <p className='nameUserTemplete1WriterRightPartDate-t1'>
+                                            01/01/2001 {/* Coloque a data correta, se disponível */}
+                                        </p>
                                     </div>
-                                ))}
+                                )}
                             </div>
                         </div>
                         {/* <audio className="audio-right-t1" controls autoPlay preload="metadata">
                             <source src="" type="audio/mpeg" />
                         </audio> */}
 
-                        <h1 className="titleNameColumnReceiveTemplete1-t1">{valueTitle}</h1>
+                        <h1 className="titleNameColumnReceiveTemplete1-t1">{title}</h1>
 
                         <div className="conteudo-right-t1">
                             <div className="campos-t1">

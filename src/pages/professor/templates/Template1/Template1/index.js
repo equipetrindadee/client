@@ -1,22 +1,13 @@
 import React, { useState, useEffect } from "react";
-import {
-    collection, addDoc, getFirestore,
-    doc,
-    getDoc,
-    setDoc,
-    updateDoc,
-    onSnapshot,
-    arrayUnion,
-    increment
-} from 'firebase/firestore'; // Importando a função para adicionar documentos
-import { db } from '../../../../../config/firebaseImgConfig'; // Importando a configuração do Firebase
-import "../Template1/t1.css"; // Importando o CSS
+import { collection, addDoc, getFirestore, doc, getDoc } from 'firebase/firestore'; 
+import { db } from '../../../../../config/firebaseImgConfig'; 
+import "../Template1/t1.css"; 
 import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from "react-router-dom";
-
+import api from "../../../../../config/configApi"; // Importando a configuração da API
 
 export const Template1 = ({ selectedUser }) => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const [campo1Text, setTextcampo1] = useState('');
     const [campo2Text, setTextCampo2] = useState('');
     const [campo3Text, setTextCampo3] = useState('');
@@ -35,19 +26,15 @@ export const Template1 = ({ selectedUser }) => {
     const [qrCodeText2, setQrCodeText2] = useState('');
     const [userColum, setColumName] = useState('');
 
-
-
     useEffect(() => {
         const fetchUserData = async () => {
             const storedToken = localStorage.getItem('token');
-
             if (storedToken) {
                 try {
                     const decoded = jwtDecode(storedToken);
                     const userId = decoded.id;
                     const docRef = doc(db, "users", userId);
                     const docSnap = await getDoc(docRef);
-
                     if (docSnap.exists()) {
                         const data = docSnap.data();
                         setUserName(data.name || "Nome não encontrado");
@@ -55,19 +42,14 @@ export const Template1 = ({ selectedUser }) => {
                         setUserId(userId); // Armazena o ID do usuário logado
                         console.log(`Usuário logado: F(ID: ${userId})`);
                     }
-
                 } catch (error) {
                     console.error("Erro ao decodificar o token ou consultar o Firestore:", error);
                 }
             }
         };
-
         fetchUserData();
     }, []);
 
-    // const handleNavigateProcesso{
-
-    // }
     const handleTextChange = (event) => {
         setTextcampo1(event.target.value);
     };
@@ -75,9 +57,11 @@ export const Template1 = ({ selectedUser }) => {
     const handleText4Change = (event) => {
         setTextCampo2(event.target.value);
     };
+
     const handleValueAuthor = (event) => {
         setValueTitle = setUserName;
     };
+
     const handleValueStatus = (event) => {
         const newValue = event.target.value;
         if (newValue.length <= 30) {
@@ -91,8 +75,6 @@ export const Template1 = ({ selectedUser }) => {
             setValueTitle(newValue);
         }
     };
-
-
 
     const handleqrcode1 = (event) => {
         const newValue = event.target.value;
@@ -125,6 +107,7 @@ export const Template1 = ({ selectedUser }) => {
     const handleImageUpload = (event, setImagePreview, elementId) => {
         const file = event.target.files[0];
         if (file && file.type.startsWith('image/')) {
+            setCampo5Image(file); // Armazena o arquivo selecionado
             const reader = new FileReader();
             reader.onloadend = () => {
                 setImagePreview(reader.result);
@@ -142,53 +125,58 @@ export const Template1 = ({ selectedUser }) => {
         }
     };
 
-    // Função para enviar os dados para o Firestore
+    // Função para enviar os dados para a rota backend
     const handleSubmit = async (event) => {
         event.preventDefault(); // Impede o envio padrão do formulário
 
-        // Coleta os valores dos textareas
-        const dataToSave = {
-            numberTemplate: "1",
-            title: valueTitle,
-            author: userName,
-            status: "Revisão",
-            coluna: userColum,
-            texts: [
-                campo1Text, // Artigo 1
-                campo2Text,     // Artigo 2
-                campo3Text,// Artigo 3
-                campo4Text,// Artigo 4
-                qrCodeText1, // QR Code 1
-                qrCodeText2  // QR Code 2
+        // Prepara os dados para envio
+        const formData = new FormData();
+        formData.append('numberTemplate', "1");
+        formData.append('title', valueTitle);
+        formData.append('author', userName);
+        formData.append('status', "Revisão");
+        formData.append('coluna', userColum);
+        formData.append('texts', JSON.stringify([
+            campo1Text, // Artigo 1
+            campo2Text, // Artigo 2
+            campo3Text, // Artigo 3
+            campo4Text, // Artigo 4
+        ]));
+        formData.append('qrCodeText1', qrCodeText1);
+        formData.append('qrCodeText2', qrCodeText2);
 
-            ],
-            timestamp: new Date() // Adicionando a data e hora atuais
+        // Adiciona a imagem ao FormData, se existir
+        if (campo5Image) {
+            formData.append('image', campo5Image);
+        }
 
-        };
         try {
-            // Referência à coleção do Firestore onde os dados serão armazenados
-            const collectionRef = collection(db, 'edicao'); // Substitua pelo seu nome de coleção
+            // Envia os dados para a rota backend usando sua API configurada
+            const response = await api.post('/jornal', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data', // Define o tipo de conteúdo
+                },
+            });
 
-            // Adiciona os dados como um novo documento
-            await addDoc(collectionRef, dataToSave);
-
-            // Limpa os campos após o envio
-            setTextcampo1('');
-            setTextCampo2('');
-            setTextCampo3('');
-            setTextCampo4('');
-            setValueTitle('');
-            setQrCodeText1('');
-            setQrCodeText2('');
-
-
-            alert('Dados enviados com sucesso!');
+            if (response.status === 201) {
+                alert('Dados enviados com sucesso!');
+                // Limpa os campos após o envio
+                setTextcampo1('');
+                setTextCampo2('');
+                setTextCampo3('');
+                setTextCampo4('');
+                setValueTitle('');
+                setQrCodeText1('');
+                setQrCodeText2('');
+                setCampo5Image(null);
+            } else {
+                alert('Erro ao enviar os dados.');
+            }
         } catch (error) {
             console.error("Erro ao enviar os dados:", error);
-            alert('Erro ao enviar os dados.');
+            alert('Erro ao conectar com o servidor.');
         }
     };
-
 
     return (
         <div className="main-t1">
@@ -252,7 +240,6 @@ export const Template1 = ({ selectedUser }) => {
                                     />
                                     <p>{campo2Text.length}/460</p>
                                 </div>
-
 
                                 <div className="text4-t1 btn-bg-t1" id="text4BtnBg">
                                     <input
@@ -409,7 +396,6 @@ export const Template1 = ({ selectedUser }) => {
                                     <div className="campo5-card-t1">
                                         {/* Imagem carregada para campo5 */}
                                         {campo5Image && <img src={campo5Image} className="image-400w-t1" alt="Imagem do campo5" />}
-
                                     </div>
                                 </div>
                                 <div className="campo6-t1">
@@ -431,7 +417,6 @@ export const Template1 = ({ selectedUser }) => {
             </div>
         </div>
     );
-
 };
 
 export default Template1;
