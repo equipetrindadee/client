@@ -139,9 +139,6 @@ export const RevisaoT1 = ({ selectedUser }) => {
 
 
 
-
-  
-
     useEffect(() => {
         const fetchUserData = async () => {
             const storedToken = localStorage.getItem('token');
