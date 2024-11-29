@@ -1,0 +1,40 @@
+.master_listarUsuario-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.master_listarUsuario-header h1 {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 36px;
+    margin: 0;
+}
+
+.master_listarUsuario-header-searchFilter {
+    display: flex;
+    align-items: center;
+}
+
+.master_listarUsuario-header-searchFilter input {
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.master_listarUsuario-header-searchFilter button {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.master_listarUsuario-header-searchFilter button i {
+    margin-right: 5px;
+}
+
+.master_listarUsuario-header-title {
+    font-size: 24px;
+    font-weight: bold;
+}

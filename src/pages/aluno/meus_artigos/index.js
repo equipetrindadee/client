@@ -1,74 +1,238 @@
 // MainPage.js
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 import '../meus_artigos/meus_artigos.css'; // Inclua o arquivo CSS que você criará abaixo
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBaraluno from '../../navBar/navBarAluno';
+import NavBaralunoMobile from '../../navBar/navBarAlunoMobile';
+import SideNavBarNewAluno from '../../navBar/newNavBarSideBarAluno/index.js';
+import ModalPerfil from '../componetsAluno/modalPerfil';
+import CardPerfil from '../componetsAluno/cardPerfil';
 
 function Meus_artigos() {
+
+ 
+    const [mostrarNavbarMobile, setMostrarNavbarMobile] = useState(false);
+    const [mostrarNavbarAluno, setmostrarNavbarAluno] = useState(true);
+  
+  
+    
+    // Função que verifica o tamanho da tela e ajusta a visibilidade da NavBaralunoMobile
+    const verificarTamanhoTela = () => {
+      if (window.innerWidth <= 820) {
+        setMostrarNavbarMobile(true); // Mostra a navbar mobile se a largura for <= 768px
+        setmostrarNavbarAluno(false)
+      } else {
+        setMostrarNavbarMobile(false); // Esconde a navbar mobile se a largura for maior que 768px
+        
+      }
+    };
+  
+    useEffect(() => {
+      verificarTamanhoTela(); // Verifica o tamanho da tela ao montar o componente
+      window.addEventListener('resize', verificarTamanhoTela); // Adiciona o evento de redimensionamento da tela
+  
+      return () => {
+        window.removeEventListener('resize', verificarTamanhoTela); // Remove o evento ao desmontar o componente
+      };
+    }, []);
+    
     return (
-        <div className="container-fluid">
-            <NavBaraluno />
-            <div className="row">
-                <main className="col-md-9 ms-sm-auto col-lg-10 px-4 main-content">
-                    {/* Contêiner para o título e a barra de pesquisa */}
-                    <div className="header-container">
-                        <h1 className="page-title">MEUS ARTIGOS</h1>
-                        <div className="search-bar-container">
-                            <div className="search-wrapper">
-                                <input
-                                    type="text"
-                                    className="form-control search-bar"
-                                    placeholder="Pesquisar..."
-                                />
-                                <i className="bi bi-search search-icon"></i>
-                            </div>
-                        </div>
+  
+      <div class="container-fluid"> 
+  
+        {/* <NavBaraluno></NavBaraluno> 
+        {mostrarNavbarMobile && <NavBaralunoMobile />}
+        {mostrarNavbarAluno && <NavBaraluno />}*/}
+        <SideNavBarNewAluno/>
+  
+        <div class="row aluno_MeusArtigos-container">
+  
+          {/* LEFT SIDE */}
+          <div class="col-md-8 aluno_MeusArtigos-content">
+            <div class="card my-4 aluno_MeusArtigos-card">
+              <div class="card-body aluno_MeusArtigos-cardBody">
+  
+                {/* Barra de Pesquisa */}
+                <div className='row aluno_MeusArtigos-searchBar'>
+  
+                  <h3 class="card-title">MEUS ARTIGOS</h3>
+  
+                  <div class="input-group mb-3 aluno_MeusArtigos-searchBar-input">
+  
+                    <input type="text" class="form-control" placeholder="" />
+  
+                    <div class="input-group-append aluno_MeusArtigos-searchBar-button">
+  
+                      <button class="btn " type="button">
+                      <i class="bi bi-search"></i>
+  
+                      </button>
+  
                     </div>
-                    <div className="content-wrapper">
-                        <div className="sections">
-                            {[...Array(5)].map((_, index) => (
-                                <div key={index} className="section mb-4">
-                                    <img src={`https://via.placeholder.com/150`} alt="Imagem" className="section-img" />
-                                    <div className="section-content">
-                                        <h3>The new way of english {index + 1}</h3>
-                                        <div className="profile">
-                                            <img src={`https://via.placeholder.com/50`} alt="Perfil" className="profile-img" />
-                                            <p>Ciclana dos Santos Luise  {index + 1}</p>
-                                        </div>
-                                        <h4>Há 4 dias</h4>
-                                    </div>
-                                </div>
-                            ))}
+  
+                  </div>
+  
+                </div>
+                
+                {/* Meus Atigos - Mateerias */}
+                <div class="row">
+                  <div class="col-md-12 mb-4">
+                    <div class="card aluno_MeusArtigos-card-Materia">
+                      <img src="../img/foto_meusArtigos.svg" class="card-img-top-meusArtigos" alt="Imagem do Artigo" />
+                      <div class="card-body aluno_MeusArtigos-cardBody-Materia">
+                        <h5 class="card-title  aluno_MeusArtigos-cardTitle-Materia">The new way of english</h5>
+                        <div class='aluno_MeusArtigos-cardUser-Materia'>
+                          <img src="../../../img/ft-Perfil.svg" class="aluno_MeusArtigos-cardImg-Materia" alt="Foto de Perfil" />
+                          <p class="card-text  aluno_MeusArtigos-cardSubTitle-Materia">Ciclana dos Santos Luise</p>
                         </div>
-                        <div className="right-side-container d-flex flex-column">
-                            <div className="right-top-container mb-4">
-                                <div className="right-top-content">
-                                    <button className="btn btn-primary">Botão</button>
-                                    <img src={`https://via.placeholder.com/100`} alt="Imagem" className="right-top-img" />
-                                    <h4>Título da Imagem</h4>
-                                </div>
-                            </div>
-                            <div className="right-bottom-container">
-                                <div className="heart-container">
-                                    <p>Texto importante</p>
-                                    <span className="heart-icon">❤️</span>
-                                </div>
-                                <div className="info-box">
-                                    <span className="info-box-title">Título</span>
-                                    <i className="bi bi-info-circle info-icon"></i>
-                                    <span className="info-box-number">123</span>
-                                </div>
-                                <div className="info-box">
-                                    <span className="info-box-title">Título</span>
-                                    <i className="bi bi-info-circle info-icon"></i>
-                                    <span className="info-box-number">123</span>
-                                </div>
-                            </div>
-                        </div>
+  
+                        <button className='buttonContinuarEditando-button-meusArtigos'>Continuar editando</button>
+                      </div>
+                      {/* <div className='aluno_MeusArtigos-row'></div> */}
+                      <div class="aluno_MeusArtigos-row"></div>
                     </div>
-                </main>
+                    <div class="card aluno_MeusArtigos-card-Materia">
+                      <img src="../img/foto_meusArtigos.svg" class="card-img-top-meusArtigos" alt="Imagem do Artigo" />
+                      <div class="card-body aluno_MeusArtigos-cardBody-Materia">
+                        <h5 class="card-title  aluno_MeusArtigos-cardTitle-Materia">The new way of english</h5>
+                        <div class='aluno_MeusArtigos-cardUser-Materia'>
+                          <img src="../../../img/ft-Perfil.svg" class="aluno_MeusArtigos-cardImg-Materia" alt="Foto de Perfil" />
+                          <p class="card-text  aluno_MeusArtigos-cardSubTitle-Materia">Ciclana dos Santos Luise</p>
+                        </div>
+  
+                        <button className='buttonContinuarEditando-button-meusArtigos'>Continuar editando</button>
+                      </div>
+                      {/* <div className='aluno_MeusArtigos-row'></div> */}
+                      <div class="aluno_MeusArtigos-row"></div>
+                    </div>
+  
+                    <div class="card aluno_MeusArtigos-card-Materia">
+                      <img src="../img/foto_meusArtigos.svg" class="card-img-top-meusArtigos" alt="Imagem do Artigo" />
+                      <div class="card-body aluno_MeusArtigos-cardBody-Materia">
+                        <h5 class="card-title  aluno_MeusArtigos-cardTitle-Materia">The new way of english</h5>
+                        <div class='aluno_MeusArtigos-cardUser-Materia'>
+                          <img src="../../../img/ft-Perfil.svg" class="aluno_MeusArtigos-cardImg-Materia" alt="Foto de Perfil" />
+                          <p class="card-text  aluno_MeusArtigos-cardSubTitle-Materia">Ciclana dos Santos Luise</p>
+                        </div>
+  
+                        <p class="card-text aluno_MeusArtigos-cardData-Materia">Há 4 dias</p>
+                      </div>
+                      {/* <div className='aluno_MeusArtigos-row'></div> */}
+                      <div class="aluno_MeusArtigos-row"></div>
+                    </div>
+  
+                    <div class="card aluno_MeusArtigos-card-Materia">
+                      <img src="../img/foto_meusArtigos.svg" class="card-img-top-meusArtigos" alt="Imagem do Artigo" />
+                      <div class="card-body aluno_MeusArtigos-cardBody-Materia">
+                        <h5 class="card-title  aluno_MeusArtigos-cardTitle-Materia">The new way of english</h5>
+                        <div class='aluno_MeusArtigos-cardUser-Materia'>
+                          <img src="../../../img/ft-Perfil.svg" class="aluno_MeusArtigos-cardImg-Materia" alt="Foto de Perfil" />
+                          <p class="card-text  aluno_MeusArtigos-cardSubTitle-Materia">Ciclana dos Santos Luise</p>
+                        </div>
+  
+                        <p class="card-text aluno_MeusArtigos-cardData-Materia">Há 4 dias</p>
+                      </div>
+                      {/* <div className='aluno_MeusArtigos-row'></div> */}
+                      <div class="aluno_MeusArtigos-row"></div>
+                    </div>
+                  </div>
+                 
+                </div>
+              </div>
             </div>
+          </div>
+          
+          {/* Right SIDE */}
+          <div class="col-md-4 aluno_MeusArtigos-rightSide">
+            <div class="card my-4 aluno_MeusArtigos-rightSide-Perfil">
+             <CardPerfil/>
+            </div>
+            
+            <div class="card my-4 aluno_MeusArtigos-rightSide-MaisLidos">
+              <div class="card-body aluno_MeusArtigos-rightSide-MaisLidos-card-body">
+                <div className='aluno_MeusArtigos-rightSide-MaisLidos-title'>
+                  <h3 class="card-title">MAIS LIDOS</h3>
+                  <i class='bx bx-heart'></i>
+                </div>
+  
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex aluno_MeusArtigos-rightSide-MaisLidos-materias">
+                    <div className='aluno_MeusArtigos-rightSide-MaisLidos-materias-number'>
+                      <p>1</p>
+                    </div>
+                    <div className='aluno_MeusArtigos-rightSide-MaisLidos-materias-title'>
+                      <h4>The travel for L.A</h4>
+                      <h5>The travel for L.A</h5>
+                    </div>
+                    <div className='aluno_MeusArtigos-rightSide-MaisLidos-materias-icon'>
+                      <i class="bi bi-eye"></i>
+                    </div>
+  
+                  </li>
+                  <li class="list-group-item d-flex aluno_MeusArtigos-rightSide-MaisLidos-materias">
+                    <div className='aluno_MeusArtigos-rightSide-MaisLidos-materias-number'>
+                      <p>1</p>
+                    </div>
+                    <div className='aluno_MeusArtigos-rightSide-MaisLidos-materias-title'>
+                      <h4>The travel for L.A</h4>
+                      <h5>The travel for L.A</h5>
+                    </div>
+                    <div className='aluno_MeusArtigos-rightSide-MaisLidos-materias-icon'>
+                      <i class="bi bi-eye"></i>
+                    </div>
+  
+                  </li>
+                  <li class="list-group-item d-flex aluno_MeusArtigos-rightSide-MaisLidos-materias">
+                    <div className='aluno_MeusArtigos-rightSide-MaisLidos-materias-number'>
+                      <p>1</p>
+                    </div>
+                    <div className='aluno_MeusArtigos-rightSide-MaisLidos-materias-title'>
+                      <h4>The travel for L.A</h4>
+                      <h5>The travel for L.A</h5>
+                    </div>
+                    <div className='aluno_MeusArtigos-rightSide-MaisLidos-materias-icon'>
+                      <i class="bi bi-eye"></i>
+                    </div>
+  
+                  </li>
+                  <li class="list-group-item d-flex aluno_MeusArtigos-rightSide-MaisLidos-materias">
+                    <div className='aluno_MeusArtigos-rightSide-MaisLidos-materias-number'>
+                      <p>1</p>
+                    </div>
+                    <div className='aluno_MeusArtigos-rightSide-MaisLidos-materias-title'>
+                      <h4>The travel for L.A</h4>
+                      <h5>The travel for L.A</h5>
+                    </div>
+                    <div className='aluno_MeusArtigos-rightSide-MaisLidos-materias-icon'>
+                      <i class="bi bi-eye"></i>
+                    </div>
+  
+                  </li>
+                  <li class="list-group-item d-flex aluno_MeusArtigos-rightSide-MaisLidos-materias">
+                    <div className='aluno_MeusArtigos-rightSide-MaisLidos-materias-number'>
+                      <p>1</p>
+                    </div>
+                    <div className='aluno_MeusArtigos-rightSide-MaisLidos-materias-title'>
+                      <h4>The travel for L.A</h4>
+                      <h5>The travel for L.A</h5>
+                    </div>
+                    <div className='aluno_MeusArtigos-rightSide-MaisLidos-materias-icon'>
+                      <i class="bi bi-eye"></i>
+                    </div>
+  
+                  </li>
+  
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          {/* Modal em si */}
+          <ModalPerfil/>
+  
         </div>
+      </div>
+  
     );
 }
 

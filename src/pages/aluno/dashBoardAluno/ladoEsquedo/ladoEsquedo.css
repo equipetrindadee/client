@@ -141,17 +141,21 @@
   background-color: transparent;
   border: none;
   border-bottom: 2px solid #41BFB3;
-  /* Borda inferior fina */
   border-radius: 0;
   box-shadow: none;
   width: 150px;
+}
 
+.aluno_dashboard_notificacoes_topo_conteudo_input {
+  font-size: 13px;
+  font-weight: 500;
 }
 
 .aluno_dashboard_notificacoes_topo_conteudo_input:focus {
-  box-shadow: none;
-  border-color: #41BFB3;
-  /* Cor da borda quando focado */
+  outline: none !important; /* Remove a borda padrão de foco do navegador */
+  border: none !important; /* Remove todas as bordas, exceto a inferior */
+  border-bottom: 2px solid #41BFB3 !important; /* Mantém a borda inferior */
+  box-shadow: none; /* Remove qualquer sombra adicional */
 }
 
 .aluno_dashboard_notificacoes_topo_conteudo_btn {

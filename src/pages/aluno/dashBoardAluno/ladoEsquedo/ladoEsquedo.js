@@ -114,7 +114,7 @@ export const LadoEsquedo = () => {
                     <div className="aluno_dashboard_notificacoes_pesquisa d-flex align-items-center">
                         <input
                             type="text"
-                            className="form-control aluno_dashboard_notificacoes_topo_conteudo_input"
+                            className="aluno_dashboard_notificacoes_topo_conteudo_input"
                         />
                         <button className="btn aluno_dashboard_notificacoes_topo_conteudo_btn">
                             <i className="bi bi-search"></i>

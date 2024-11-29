@@ -24,6 +24,7 @@ export const Template4 = ({ selectedUser }) => {
     const [imagePreview, setImagePreview] = useState(null);
     const [userId, setUserId] = useState('');
     const [campo5Image, setCampo5Image] = useState(null);
+    const [campo6Image, setCampo6Image] = useState(null);
     const [campo4Image, setCampo4Image] = useState(null);
     const [code1Image, setcode1Image] = useState(null);
     const [code2Image, setcode2Image] = useState(null);
@@ -267,7 +268,7 @@ export const Template4 = ({ selectedUser }) => {
                                 </div>
 
                                     {/* imagem 2 */}
-                                <div className="text5-t4 btn-bg-t4 text1NameColumnReceiveTemplete1-t4">
+                                <div className="text5-t4 btn-bg-t4 text1NameColumnReceiveTemplete1-t4" id="text6BtnBg">
                                 <input
                                         className="upImg-t4 file-input-t4"
                                         type="file"
@@ -279,26 +280,26 @@ export const Template4 = ({ selectedUser }) => {
                                 </div>
 
                                     {/* imagem 3 */}
-                                <div className="text6-t4 btn-bg-t4" id="text6BtnBg">
+                                <div className="text6-t4 btn-bg-t4" id="text5BtnBg">
                                     <input
                                         className="upImg-t4 file-input-t4"
                                         type="file"
-                                        id="campo4ImageUpload"
+                                        id="campo3ImageUpload"
                                         accept="image/*"
-                                        onChange={(e) => handleImageUpload(e, setCampo5Image, 'text6BtnBg')}
+                                        onChange={(e) => handleImageUpload(e, setCampo6Image, 'text5BtnBg')}
                                     />
-                                    <label htmlFor="campo4ImageUpload" className="file-label-t4">Escolher Imagem</label>
+                                    <label htmlFor="campo3ImageUpload" className="file-label-t4">Escolher Imagem</label>
                                 </div>
 
                                 <div className="text7-t4 text1NameColumnReceiveTemplete1-t4">
-                                <textarea
+                                    <textarea
                                         placeholder="Artigo 4"
                                         className="mediumWi-t4"
-                                        value={campo2Text}
-                                        onChange={handleText4Change}
-                                        maxLength="460"
+                                        value={campo4Text}
+                                        onChange={handleCampo7TextChange}
+                                        maxLength="460" // Limite de caracteres no textarea
                                     />
-                                    <p>{campo2Text.length}/460</p>
+                                    <p>{campo4Text.length}/460</p>
                                 </div>
                             </div>
                         </div>
@@ -365,7 +366,7 @@ export const Template4 = ({ selectedUser }) => {
 
             {/* lado direito */}
             <div className="right-side-t4 lado2-t4">
-                <div className="main-right-t4">
+                <div className="main-right-t4 ">
                     {/* cabeçalho direita */}
                     <div className="header-right-t4">
                         {/* barra colorida */}
@@ -404,24 +405,40 @@ export const Template4 = ({ selectedUser }) => {
                                 <div className="campo3-t4">
                                     <p className="textValueReceiveTemplete1-t4">{campo2Text}</p>
                                 </div>
-                                <div className="campo4-t4">
-                                    <div className="campo4-card-t4">
-                                        {/* Imagem carregada para campo4 */}
-                                        {campo4Image && <img src={campo4Image} className="image-400w-t4" alt="Imagem do campo4" />}
-                                        <div className="texto-t4">
-                                            <p className="textValueReceiveTemplete1-t4 textWithBG-t4">{campo3Text}</p> {/* Texto do campo4 */}
+
+                                {/* 3 imagens */}
+                               
+                                    <div className="campo4-t4 ">
+                                        <div className="campo4-card-t4 ">
+                                            {/* Imagem carregada para campo4 */}
+                                            {campo4Image && <img src={campo4Image} className="image-400w-t4" alt="Imagem do campo4" />}
+                                            <div className="texto-t4">
+                                                <p className="textValueReceiveTemplete1-t4 textWithBG-t4">{campo3Text}</p> {/* Texto do campo4 */}
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div className="campo5-t4">
-                                    <div className="campo5-card-t4">
-                                        {/* Imagem carregada para campo5 */}
-                                        {campo5Image && <img src={campo5Image} className="image-400w-t4" alt="Imagem do campo5" />}
-
+                                    <div className="campo5-t4">
+                                        <div className="campo4-card-t4 ">
+                                            {/* Imagem carregada para campo5 */}
+                                            {campo5Image && <img src={campo5Image} className="image-400w-t4" alt="Imagem do campo5" />}
+                                            <div className="texto-t4">
+                                                <p className="textValueReceiveTemplete1-t4 textWithBG-t4">{campo3Text}</p> {/* Texto do campo4 */}
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="campo6-t4">
+                                    <div className="campo6-t4">
+                                        <div className="campo4-card-t4 ">
+                                            {/* Imagem carregada para campo6 */}
+                                            {campo6Image && <img src={campo6Image} className="image-400w-t4" alt="Imagem do campo5" />}
+                                            <div className="texto-t4">
+                                                <p className="textValueReceiveTemplete1-t4 textWithBG-t4">{campo3Text}</p> {/* Texto do campo4 */}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {/* fim div 3 imagens */}
+
+                                <div className="campo7-t4">
                                     <div className="texto-t4">
                                         <p className="textValueReceiveTemplete1-t4 textWithBG-t4">{campo4Text}</p> {/* Texto do campo7 */}
                                     </div>

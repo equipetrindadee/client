@@ -1,0 +1,129 @@
+/* Estilo para a barra superior */
+.aluno_navBarMobile-Superior{
+    /* background-color: #41BFB3; */
+}
+.aluno_navBarMobile-SuperiorTitle{
+    font-family: 'Oswald';
+    font-size: 20px;
+}
+.aluno_navBarMobile-button{
+    /* background-color: #41BFB3; */
+    border: none;
+    margin-left: -10%;
+}
+.aluno_navBarMobile-button i{
+  font-size: 30px;
+}
+
+/* Estilo para a barra inferior */
+.aluno_navBarMobile-Inferior {
+    position: fixed;
+    bottom: 0%;
+    left: 0;
+    width: 100%; /* Para ocupar toda a largura da tela */
+    height: 8%; /* Altura fixa */
+    background-color: #41BFB3;
+    box-shadow: 0 -2px 5px rgba(184, 44, 44, 0.1);
+    z-index: 1000;
+    display: flex; /* Flexbox para alinhamento */
+    justify-content: space-around; /* Espaçamento entre os ícones */
+    border-radius: 10px;
+    padding: 0 1%; /* Para dar um pouco de espaçamento nas laterais */
+}
+
+/* Ícone dentro do botão não selecionado */
+.aluno_navBarMobile-icon i {
+    font-size: 30px; /* Tamanho fixo do ícone */
+    color: #fff; /* Cor padrão dos ícones (branco) */
+    margin-top: 5% !important;
+}
+
+/* Ícone dentro do botão selecionado */
+.aluno_navBarMobile-icon.selected i {
+    color: #41BFB3; /* Cor do ícone quando selecionado (verde) */
+}
+
+/* Ajustes nos ícones para que o quadrado mantenha o tamanho adequado */
+.aluno_navBarMobile-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vw; /* Ajuste para largura relativa */
+    height: 4.5rem; /* Altura fixa */
+    margin-top: -5px !important;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s; /* Suaviza a transição de cor */
+}
+
+/* Mantém o fundo branco quando selecionado */
+.aluno_navBarMobile-icon.selected {
+    background-color: white; /* Fundo branco */
+}
+
+/* Ajustes para tablets */
+@media (max-width: 1280px) {
+    .aluno_navBarMobile-Superior-logo img{
+        width: 30% !important;
+        height: 40% !important;
+    }
+
+    .aluno_navBarMobile-icon {
+        width: 55px; /* Largura fixa para ícones em tablets */
+        height: 55px; /* Altura fixa para manter a forma quadrada */
+    }
+
+    .aluno_navBarMobile-icon i{
+        font-size: 35px;
+    }
+}
+@media (max-width: 1180px) {
+    .aluno_navBarMobile-Superior-logo img{
+        width: 20% !important;
+        height: 40% !important;
+    }
+    .aluno_navBarMobile-icon {
+        width: 60px; /* Largura fixa para ícones em tablets */
+        height: 60px; /* Altura fixa para manter a forma quadrada */
+       
+    }
+
+    .aluno_navBarMobile-icon i{
+        font-size: 35px;
+    }
+}
+@media (max-width: 1024px) {
+    .aluno_navBarMobile-button i{
+        font-size: 40px;
+      }
+    .aluno_navBarMobile-Superior-logo img{
+        width: 30% !important;
+        height: 40% !important;
+    }
+    .aluno_navBarMobile-icon {
+        width: 70px; /* Largura fixa para ícones em tablets */
+        height: 70px; /* Altura fixa para manter a forma quadrada */
+       
+    }
+
+    .aluno_navBarMobile-icon i{
+        font-size: 35px;
+    }
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+    .aluno_navBarMobile-button i{
+        font-size: 30px;
+      }
+    .aluno_navBarMobile-Superior-logo img{
+        width: 20% !important;
+        height: 40% !important;
+    }
+    .aluno_navBarMobile-icon {
+        width: 50px; /* Ajuste conforme necessário */
+        height: 50px; /* Manter a forma quadrada */
+    }
+    .aluno_navBarMobile-icon i{
+        font-size: 30px;
+    }
+}

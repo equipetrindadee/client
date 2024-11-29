@@ -30,6 +30,7 @@ import Template4 from "../pages/professor/templates/Template4/Template4/index.js
 import UserComumPerfil from "../pages/userComum/userComumPerfil/index.js";
 import FaleConoscoProfessor from "../pages/professor/faleConoscoProfessor/index.js";
 import RevisaoT1 from '../pages/professor/templates/RevisãoT1/index.js'
+import RevisaoT2 from "../pages/professor/templates/RevisãoT2/index.js";
 import EditarTelaProf from "../pages/professor/editarTelaInicial/index.js";
 import ProcessodePostagemProfessor from "../pages/professor/processodePostagemProfessor/index.js"
 import PostagemTelaInicial from "../pages/professor/postagemTelaInicial/index.js"
@@ -42,8 +43,13 @@ import DashBoardMaster from "../pages/master/DashBoardMaster/index.js";
 import ListarArtigo from "../pages/userComum/ListarArtigos/index.js";
 import MeuPerfil from "../pages/userComum/MeuPerfil/index.js";
 import SobreNos from "../pages/userComum/SobreNos/index.js";
+<<<<<<< HEAD
+import NewDashBoardAluno from "../pages/aluno/newDasboardAluno/index.js"
+import ContentPrincipalListMaster from "../pages/master/listarMaster/index.js";
+=======
 import NewDashBoardAluno from "../pages/aluno/newDasboardAluno/index.js";
 import FormularioMaster from "../pages/master/formularioMaster/index.js";
+>>>>>>> 031e908ef5f028967bd6dfdbea90b9ada146e8b3
 
 export default function RoutesAdmin() {
 
@@ -109,6 +115,7 @@ export default function RoutesAdmin() {
 
                 <Route path='/PR' element={<PostagemRevisao />} />
                 <Route path='/t1R' element={<RevisaoT1 />} />
+                <Route path='/t2R' element={<RevisaoT2 />} />
                 <Route path='/processopostagemProfessor' element={<ProcessodePostagemProfessor />} />
 
 
@@ -118,7 +125,11 @@ export default function RoutesAdmin() {
 
                 {/* master */}
                 <Route path='/master/Dashboard' element={<DashBoardMaster />} />
+<<<<<<< HEAD
+                <Route path="/master/listarUsuario" element={<ContentPrincipalListMaster/>}/>
+=======
                 <Route path='/master/FormularioMaster' element={<FormularioMaster />} />
+>>>>>>> 031e908ef5f028967bd6dfdbea90b9ada146e8b3
 
 
             </Routes>

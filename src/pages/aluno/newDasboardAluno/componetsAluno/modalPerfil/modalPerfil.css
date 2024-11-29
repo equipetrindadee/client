@@ -1,0 +1,110 @@
+.aluno_MeusArtigos-rightSide-Modal-content{
+    /* background-color: #41BFB3; */
+    /* width: 10%; */
+    border-radius: 15px;
+    border: none !important;
+}
+
+.aluno_MeusArtigos-rightSide-Modal-img{
+    width: 25%;
+    /* background-color: red; */
+    margin: 0 auto;
+    margin-top: 1%;
+}
+.alunoModalDashRoundedImg{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+
+.aluno_MeusArtigos-rightSide-Modal-input{
+    /* background-color: aquamarine; */
+    /* margin-top: 5%; */
+    width: 90%;
+    margin: 0 auto;
+}
+
+.aluno_MeusArtigos-rightSide-Modal-input label{
+    /* background-color: rgb(102, 255, 0); */
+   font-size: 14px;
+   font-family: "Montserrat";
+   font-weight: 600;
+}
+
+.aluno_MeusArtigos-rightSide-Modal-input input{
+    /* background-color: rgb(102, 255, 0); */
+  height: 4rem;
+  border-radius: 10px;
+  height: 5rem;
+  font-size: 14px;
+  
+}
+.aluno_MeusArtigos-rightSide-Modal-input input:focus {
+    border-color: #d9d9d9 !important;   /* Muda a cor da borda para preto */
+    outline: none !important;         /* Remove o contorno externo */
+    box-shadow: 0 0 0px  !important; /* Adiciona sombra preta ao redor */
+}
+.aluno_MeusArtigos-rightSide-Modal-input input::placeholder{
+    /* background-color: rgb(102, 255, 0); */
+  font-family: "Arimo";
+  font-size: 14px;
+  font-weight: 400;
+  color: #767676;
+}
+.aluno_MeusArtigos-rightSide-Modal-input-textarea{
+    width: 90%;
+    margin: 0 auto;
+
+
+}
+.aluno_MeusArtigos-rightSide-Modal-input-textarea label{
+    font-size: 14px;
+    font-family: "Montserrat";
+    font-weight: 600;
+}
+
+.aluno_MeusArtigos-rightSide-Modal-input-textarea textarea{
+    border-radius: 10px;
+    font-size: 14px;
+    resize: none; /* Impede o redimensionamento */
+}
+
+.aluno_MeusArtigos-rightSide-Modal-input-textarea textarea:focus{
+    border-color: #d9d9d9 !important;   /* Muda a cor da borda para preto */
+    outline: none !important;         /* Remove o contorno externo */
+    box-shadow: 0 0 0px  !important; /* Adiciona sombra preta ao redor */
+
+}
+.aluno_MeusArtigos-rightSide-Modal-input-textarea-number{
+    color: #767676;
+    font-family: "Montserrat";
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 1rem;
+}
+
+.aluno_MeusArtigos-rightSide-Modal-footer{
+    /* background-color: #41BFB3; */
+    border: none !important;
+    font-family: 'Montserrat';
+}
+
+.aluno_MeusArtigos-rightSide-Modal-footer button{
+    /* margin: 10%; */
+    font-weight: 600 !important;
+    /* text-align: end; */
+    font-size: 14px;
+    margin-right: 5% !important;
+    margin-bottom:1rem ;
+    color:#41BFB3 ;
+}
+
+.aluno_MeusArtigos-rightSide-Modal-footer button:hover{
+    color:#41BFB3 ;
+}
+
+
+.aluno_MeusArtigos-rightSide-Modal-footer button:focus{
+    border:none !important;
+    color: #41BFB3;
+}
