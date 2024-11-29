@@ -1,0 +1,71 @@
+.formularioMaster {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .formularioMaster__title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .formularioMaster__profile-image {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .formularioMaster__profile-image img {
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .formularioMaster__edit-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .formularioMaster__input-group {
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .formularioMaster__input-group input {
+    width: 100%;
+  }
+  
+  .formularioMaster__input-group .form-control {
+    margin-bottom: 10px;
+  }
+  
+  .formularioMaster__input-group input[type="password"] {
+    margin-right: 10px;
+  }
+  
+  .formularioMaster__input-group .form-control:last-child {
+    margin-right: 0;
+  }
+  
+  /* Para os campos Senha e Confirmar Senha ficarem na mesma linha */
+  .formularioMaster__password-group {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .formularioMaster__submit-btn {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  button.btn-primary {
+    margin-top: 20px;
+  }
+  

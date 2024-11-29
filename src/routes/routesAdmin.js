@@ -42,7 +42,8 @@ import DashBoardMaster from "../pages/master/DashBoardMaster/index.js";
 import ListarArtigo from "../pages/userComum/ListarArtigos/index.js";
 import MeuPerfil from "../pages/userComum/MeuPerfil/index.js";
 import SobreNos from "../pages/userComum/SobreNos/index.js";
-import NewDashBoardAluno from "../pages/aluno/newDasboardAluno/index.js"
+import NewDashBoardAluno from "../pages/aluno/newDasboardAluno/index.js";
+import FormularioMaster from "../pages/master/formularioMaster/index.js";
 
 export default function RoutesAdmin() {
 
@@ -117,6 +118,7 @@ export default function RoutesAdmin() {
 
                 {/* master */}
                 <Route path='/master/Dashboard' element={<DashBoardMaster />} />
+                <Route path='/master/FormularioMaster' element={<FormularioMaster />} />
 
 
             </Routes>
