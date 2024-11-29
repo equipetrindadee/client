@@ -1,14 +1,157 @@
-.containerPartPrincipalNDashAlunoHeaderPart{
-    position:relative;
+/* Container principal que divide a tela em duas colunas */
+p{
+    margin-bottom: 0px;
+}
+.containerSecondNewDashAluno {
     display: flex;
     justify-content: space-between;
-}
-.partPrincipalNDashAluno__colSide{
-    display:flex;
-   justify-content: space-between;
     width: 100%;
 }
-.containerSecondNewDashAluno{
-display: flex;
 
+/* Coluna da esquerda (cards e notificações) */
+.leftColumnDashAlunoNew {
+    position: relative;
+    margin-top: 5rem;
+    width: 66%; /* Ajuste conforme necessário */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Coluna da direita (modal de perfil e progresso) */
+.rightColumnDashAlunoNew {
+    width: 30%; /* Ajuste conforme necessário */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end; /* Isso alinha os elementos ao final da coluna */
+    position: relative;
+}
+
+/* Estilo das notificações */
+.partPrincipalNDashAluno__notifications {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+/* Ajuste para o layout dos cards */
+.partPrincipalNDashAluno__cardRow {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+/* Estilo para o modal de perfil */
+.partPrincipalNDashAlunoModalPartPerfilDashAluno {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* Estilo do progresso */
+.partPrincipalNDashAluno__progressCard {
+    width: 100%;
+    margin-top: auto; /* Garante que o progresso fique alinhado ao final da coluna */
+}
+
+
+/* Ajustes para os itens de progresso */
+.partPrincipalDashboardAlunoNew-container {
+    width: 100%;
+}
+
+.partPrincipalDashboardAlunoNew-progress-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #2ec4b6;
+    padding: 15px;
+    border-radius: 8px;
+    color: white;
+}
+
+.partPrincipalDashboardAlunoNew-icon {
+    font-size: 30px;
+    margin-right: 20px;
+}
+
+.partPrincipalDashboardAlunoNew-text {
+    flex-grow: 1;
+}
+
+.partPrincipalDashboardAlunoNew-text h2 {
+    font-size: 16px;
+    margin: 0;
+}
+
+.partPrincipalDashboardAlunoNew-text p {
+    font-size: 14px;
+    margin: 5px 0 0;
+}
+
+/* progressso */
+.partPrincipalNDashAluno__progressTitle{
+    font-family: "Montsserrat", sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+.partPrincipalDashboardAlunoNew-textProgressoH2{
+    font-family: "Oswald", sans-serif;
+    font-size: 10px;
+}
+/* notificações */
+.partPrincipalNDashAluno__notificationsTitle{
+    font-family: "Montsserrat", sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+}
+.partPrincipalNDashAluno__notification{
+    border: 1.5px solid #2ec4b6 !important;
+    
+}
+.partPrincipalNDashAluno__notificationName{
+    font-family: "Oswald", sans-serif;
+    font-size: 17px;
+}
+.partPrincipalNDashAluno__notificationMessage{
+    font-size: 15px;
+    color: #D9D9D9;
+}
+/* timeline */
+.custom-timelineDashAlunoNew {
+    margin-top: 20px;
+    background-color: white; /* Fundo branco para a timeline */
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombras sutis */
+}
+
+/* Estilos para os itens da Timeline */
+.custom-timelineDashAlunoNew .rsuite-timeline-itemDashAlunoNew{
+    border-left: 3px solid #2ec4b6 !important; /* Linha de destaque verde (cor principal) */
+    padding-left: 15px !important;
+    margin-bottom: 20px !important;
+    transition: all 0.3s ease !important; /* Suaviza transições */
+}
+.custom-timelineDashAlunoNew .rsuite-timeline-itemDashAlunoNew p {
+    color: #333; /* Texto de cor escura para boa legibilidade */
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+/* Estilo para as datas na timeline */
+.custom-timelineDashAlunoNew .rsuite-timeline-itemDashAlunoNew p:first-child {
+    font-weight: bold;
+    color: #000; /* Cor preta para as datas */
+}
+/* Efeito hover sobre os itens da timeline */
+.custom-timelineDashAlunoNew .rsuite-timeline-itemDashAlunoNew:hover {
+    background-color: #f4f4f4; /* Leve fundo cinza ao passar o mouse */
+    border-left: 3px solid #2ec4b6; /* Reforça a linha verde */
+}
+
+/* Modificando a linha do ponto */
+.custom-timelineDashAlunoNew .rsuite-timeline-itemDashAlunoNew:last-child {
+    border-left: 3px solid #2ec4b6; /* Último item também tem a linha verde */
 }

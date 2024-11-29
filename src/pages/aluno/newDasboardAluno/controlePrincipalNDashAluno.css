@@ -16,8 +16,9 @@
 }
 
 .NewDashboardAluno__mainContent {
-    margin-left: 10%;
-    padding: 20px;
+    margin-left: 7%;
+    width: 90%;
+    padding: 10px;
 }
 
 @media (max-width: 768px) {
