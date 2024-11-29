@@ -31,29 +31,56 @@
 
 .DashBoardMaster-header h1 {
     font-family: 'Pattaya', cursive;
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: 30px !important;
+    font-weight: 500;
+}
+
+.DashBoardMaster-header h2 {
+    font-family: 'Oswald', 'sans-serif';
+    font-size: 25px !important;
+    font-weight: 600;
+}
+
+.dashboardMaster-Container-master h1{
+    width: 80%;
+    font-family: 'Pattaya', cursive;
+    font-size: 40px !important;
+    font-weight: 500;
 }
 
 .DashBoardMaster-grids {
+    width: 100%;
+    margin-inline: auto;
+    text-align: center;
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
+    height: 250px
 }
 
 .DashBoardMaster-card {
-    background-color: #89CFF0;
+    background-color: #3DCDEC;
     color: white;
     width: 22%;
     padding: 20px;
     text-align: center;
+    align-items: center;
     border-radius: 10px;
     font-size: 1.2rem;
 }
 
-.DashBoardMaster-card:nth-child(2) { background-color: #6495ED; }
-.DashBoardMaster-card:nth-child(3) { background-color: #4169E1; }
-.DashBoardMaster-card:nth-child(4) { background-color: #6A5ACD; }
+.DashBoardMaster-card:nth-child(2) { background-color: #3D98EC; }
+.DashBoardMaster-card:nth-child(3) { background-color: #3D64EC; }
+.DashBoardMaster-card:nth-child(4) { background-color: #6B3DEC; }
+
+.DashBoardMaster-card i{
+    font-size: 30px;
+}
+
+.DashBoardMaster-card p{
+    font-size: 20px;
+    margin-inline: auto;
+}
 
 .DashBoardMaster-bottom-section {
     display: flex;
