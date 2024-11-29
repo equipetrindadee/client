@@ -12,13 +12,13 @@ import {
 
 } from 'firebase/firestore'; // Importando a função para adicionar documentos
 import { db } from '../../../../config/firebaseImgConfig'
-import "../Template1/Template1/t1.css"
+import "../Template2/index.js"
 
 import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from "react-router-dom";
 
 
-export const RevisaoT1 = ({ selectedUser }) => {
+export const RevisaoT2 = ({ selectedUser }) => {
     const navigate = useNavigate()
     const [textValue, setTextValue] = useState('');
     const [imagePreview, setImagePreview] = useState(null);
@@ -534,4 +534,4 @@ export const RevisaoT1 = ({ selectedUser }) => {
 
 };
 
-export default RevisaoT1;
+export default RevisaoT2;

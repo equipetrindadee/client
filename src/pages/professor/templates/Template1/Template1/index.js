@@ -155,7 +155,7 @@ export const Template1 = ({ selectedUser }) => {
             coluna: userColum,
             texts: [
                 campo1Text, // Artigo 1
-                campo2Text,     // Artigo 2
+                campo2Text,// Artigo 2
                 campo3Text,// Artigo 3
                 campo4Text,// Artigo 4
                 qrCodeText1, // QR Code 1
