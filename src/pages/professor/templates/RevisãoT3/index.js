@@ -12,13 +12,13 @@ import {
 
 } from 'firebase/firestore'; // Importando a função para adicionar documentos
 import { db } from '../../../../config/firebaseImgConfig'
-import "../Template1/Template1/t1.css"
+import "../Template3/Template3/t3.css"
 
 import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from "react-router-dom";
 
 
-export const RevisaoT1 = ({ selectedUser }) => {
+export const RevisaoT3 = ({ selectedUser }) => {
     const navigate = useNavigate()
     const [textValue, setTextValue] = useState('');
     const [imagePreview, setImagePreview] = useState(null);
@@ -262,23 +262,23 @@ export const RevisaoT1 = ({ selectedUser }) => {
 
 
     return (
-        <div className="main-t1">
+        <div className="main-t3">
             {/* lado esquerdo */}
-            <div className="left-side-t1 lado1-t1">
+            <div className="left-side-t3 lado1-t3">
                 {/* header principal lado esquerdo */}
-                <header className="header-t1">
-                    <span className="header__Logo-t1">
-                        <h2 className='oEducadorTemplete1Title-t1'> O EDUCADOR</h2>
-                        <p className='oEducadorTemplete1SubTitle-t1'>TE MANTER INFORMADO É NOSSA MISSÃO</p>
+                <header className="header-t3">
+                    <span className="header__Logo-t3">
+                        <h2 className='oEducadorTemplete1Title-t3'> O EDUCADOR</h2>
+                        <p className='oEducadorTemplete1SubTitle-t3'>TE MANTER INFORMADO É NOSSA MISSÃO</p>
                     </span>
                     <p>VOLTAR PRÓXIMA PÁGINA <i className='bx bxs-chevron-right'></i></p>
                 </header>
 
                 {/* corpo lado esquerdo */}
-                <div className="body-left-t1">
+                <div className="body-left-t3">
                     <form onSubmit={handleSubmit}>
                         <textarea
-                            className="title-t1"
+                            className="title-t3"
                             placeholder="Digite o Título"
                             value={title} // Valor controlado pelo estado
                             onChange={(e) => setTitle(e.target.value)} // Atualiza o estado ao editar
@@ -287,16 +287,18 @@ export const RevisaoT1 = ({ selectedUser }) => {
                         <p>{valueTitle.length}/30</p>
 
                         {/* header esquerda com inputs */}
-                        <div className="header-left-t1">
-                            <div className="mid-header-left-t1"></div>
+                        <div className="header-left-t3">
+                            <div className="mid-header-left-t3"></div>
                         </div>
 
                         {/* conteúdo lado esquerdo */}
-                        <div className="conteudo-left-t1">
-                            <div className="campos-texts-t1">
-                                <div className="text1-t1 text1NameColumnReceiveTemplete1-t1">
+                        <div className="conteudo-left-t3">
+                            <div className="campos-texts-t3">
+                            <div className="text1-t3 text1NameColumnReceiveTemplete1-t3">
                                     <textarea
                                         placeholder="Artigo 1"
+                                        className="mediumWi-t3"
+                                        
                                         value={texts[0] || ''}
                                         onChange={(e) => {
                                             const updatedTexts = [...texts];
@@ -308,21 +310,21 @@ export const RevisaoT1 = ({ selectedUser }) => {
                                     <p>{(texts[0] || '').length}/460</p>
                                 </div>
 
-                                <div className="text2-t1 btn-bg-t1" id="text2BtnBg">
+                                <div className="text2-t3 btn-bg-t3" id="text2BtnBg">
                                     <input
-                                        className="upImg-t1 file-input-t1"
+                                        className="upImg-t3 file-input-t3"
                                         type="file"
                                         id="handleImageUpload"
                                         accept="image/*"
                                         onChange={(e) => handleImageUpload(e, setImagePreview, 'text2BtnBg')}
                                     />
-                                    <label htmlFor="handleImageUpload" className="file-label-t1">Escolher Imagem</label>
+                                    <label htmlFor="handleImageUpload" className="file-label-t3">Escolher Imagem</label>
                                 </div>
 
-                                <div className="text3-t1 text1NameColumnReceiveTemplete1-t1">
+                                <div className="text3-t3 text1NameColumnReceiveTemplete1-t3">
                                     <textarea
                                         placeholder="Artigo 2"
-                                        className="mediumWi-t1"
+                                        
                                         value={texts[1] || ''}
                                         onChange={(e) => {
                                             const updatedTexts = [...texts];
@@ -334,29 +336,20 @@ export const RevisaoT1 = ({ selectedUser }) => {
                                     <p>{(texts[1] || '').length}/460</p>
                                 </div>
 
-                                <div className="text6-t1 btn-bg-t1" id="text6BtnBg">
-                                    <input
-                                        className="upImg-t1 file-input-t1"
-                                        type="file"
-                                        id="campo5ImageUpload"
-                                        accept="image/*"
-                                        onChange={(e) => handleImageUpload(e, setCampo5Image, 'text6BtnBg')}
-                                    />
-                                    <label htmlFor="campo5ImageUpload" className="file-label-t1">Escolher Imagem</label>
-                                </div>
+                                
 
-                                <div className="text4-t1 btn-bg-t1" id="text4BtnBg">
+                                <div className="text4-t3 btn-bg-t3" id="text4BtnBg">
                                     <input
-                                        className="upImg-t1 file-input-t1"
+                                        className="upImg-t3 file-input-t3"
                                         type="file"
                                         id="campo6ImageUpload"
                                         accept="image/*"
                                         onChange={(e) => handleImageUpload(e, setCampo4Image, 'text4BtnBg')}
                                     />
-                                    <label htmlFor="campo6ImageUpload" className="file-label-t1">Escolher Imagem</label>
+                                    <label htmlFor="campo6ImageUpload" className="file-label-t3">Escolher Imagem</label>
                                 </div>
 
-                                <div className="text5-t1 text1NameColumnReceiveTemplete1-t1">
+                                <div className="text5-t3 text1NameColumnReceiveTemplete1-t3">
                                     <textarea
                                         placeholder="Artigo 3"
                                         value={texts[2] || ''}
@@ -370,9 +363,10 @@ export const RevisaoT1 = ({ selectedUser }) => {
                                     <p>{(texts[2] || '').length}/465</p>
                                 </div>
 
-                                <div className="text7-t1 text1NameColumnReceiveTemplete1-t1">
+                                <div className="text7-t3 text1NameColumnReceiveTemplete1-t3">
                                     <textarea
                                         placeholder="Artigo 4"
+                                        className="mediumWi-t3"
                                         value={texts[3] || ''}
                                         onChange={(e) => {
                                             const updatedTexts = [...texts];
@@ -387,12 +381,12 @@ export const RevisaoT1 = ({ selectedUser }) => {
 
                         </div>
 
-                        <div className="text-footer-t1">
-                            <div className="text-footer-info-t1">
-                                <div className="text8-t1 text1NameColumnReceiveTemplete1-t1">
+                        <div className="text-footer-t3">
+                            <div className="text-footer-info-t3">
+                                <div className="text8-t3 text1NameColumnReceiveTemplete1-t3">
                                     <textarea
                                         placeholder="qrCode1"
-                                        className="mediumWi-t1"
+                                        className="mediumWi-t3"
                                         value={texts[4] || ''}
                                         onChange={(e) => {
                                             const updatedTexts = [...texts];
@@ -404,21 +398,21 @@ export const RevisaoT1 = ({ selectedUser }) => {
                                     <p>{qrCodeText1.length}/30</p>
                                 </div>
 
-                                <div className="text9-t1 btn-bg-qrcode-t1" id="text9BtnBg">
+                                <div className="text9-t3 btn-bg-qrcode-t3" id="text9BtnBg">
                                     <input
-                                        className="upImg-t1 file-input-t1"
+                                        className="upImg-t3 file-input-t3"
                                         type="file"
                                         id="qrcode1"
                                         accept="image/*"
                                         onChange={(e) => handleImageUpload(e, setcode1Image, 'text9BtnBg')}
                                     />
-                                    <label htmlFor="qrcode1" className="file-label-qrcode-t1">QrCode1</label>
+                                    <label htmlFor="qrcode1" className="file-label-qrcode-t3">QrCode1</label>
                                 </div>
 
-                                <div className="text10-t1 text1NameColumnReceiveTemplete1-t1">
+                                <div className="text10-t3 text1NameColumnReceiveTemplete1-t3">
                                     <textarea
                                         placeholder="qrCode2"
-                                        className="mediumWi-t1"
+                                        className="mediumWi-t3"
                                         value={texts[5] || ''}
                                         onChange={(e) => {
                                             const updatedTexts = [...texts];
@@ -430,102 +424,102 @@ export const RevisaoT1 = ({ selectedUser }) => {
                                     <p>{qrCodeText2.length}/30</p>
                                 </div>
 
-                                <div className="text11-t1 btn-bg-qrcode-t1" id="text11BtnBg">
+                                <div className="text11-t3 btn-bg-qrcode-t3" id="text11BtnBg">
                                     <input
-                                        className="upImg-t1 file-input-t1"
+                                        className="upImg-t3 file-input-t3"
                                         type="file"
                                         id="qrcode2"
                                         accept="image/*"
                                         onChange={(e) => handleImageUpload(e, setcode2Image, 'text11BtnBg')}
                                     />
-                                    <label htmlFor="qrcode2" className="file-label-qrcode-t1">QrCode2</label>
+                                    <label htmlFor="qrcode2" className="file-label-qrcode-t3">QrCode2</label>
                                 </div>
 
                             </div>
 
-                            <div className="text12-t1">
-                                <button type="submit" className="send-btn-t1" href="/processopostagemProfessor">Salvar</button>
-                                <button onClick={handleNavigateToPostagem} className="send-btn-t1">Enviar</button>
+                            <div className="text12-t3">
+                                <button type="submit" className="send-btn-t3" href="/processopostagemProfessor">Salvar</button>
+                                <button onClick={handleNavigateToPostagem} className="send-btn-t3">Enviar</button>
                             </div>
                         </div>
                     </form>
 
                     {/* footer lado esquerdo */}
-                    <div className="footer-left-t1"></div>
+                    <div className="footer-left-t3"></div>
                 </div>
             </div>
 
             {/* lado direito */}
-            <div className="right-side-t1 lado2-t1" ref={rightSideRef}>
-                <div className="main-right-t1">
+            <div className="right-side-t3 lado2-t3" ref={rightSideRef}>
+                <div className="main-right-t3">
                     {/* cabeçalho direita */}
-                    <div className="header-right-t1">
+                    <div className="header-right-t3">
                         {/* barra colorida */}
-                        <div className="barra-topo-header-right-t1">
+                        <div className="barra-topo-header-right-t3">
                             <img src={banenrImg} alt="imagem topo" />
                         </div>
                     </div>
 
-                    <div className="body-right-t1">
-                        <div className="mid-header-right-t1">
-                            <div className="info-mid-header-right-t1">
+                    <div className="body-right-t3">
+                        <div className="mid-header-right-t3">
+                            <div className="info-mid-header-right-t3">
                                 <img src="../img/processoPostagemJornalista.svg" alt="imagem pessoa" />
                                 {filteredPublication.length > 0 && (
-                                    <div className="escrita-mid-header-right-t1">
-                                        <h4 className='nameUserTemplete1WriterRightPart-t1'>
+                                    <div className="escrita-mid-header-right-t3">
+                                        <h4 className='nameUserTemplete1WriterRightPart-t3'>
                                             {filteredPublication[0].author}  {/* Exibe o autor da publicação filtrada */}
                                         </h4>
-                                        <p className='nameUserTemplete1WriterRightPartDate-t1'>
+                                        <p className='nameUserTemplete1WriterRightPartDate-t3'>
                                             01/01/2001 {/* Coloque a data correta, se disponível */}
                                         </p>
                                     </div>
                                 )}
                             </div>
                         </div>
-                        {/* <audio className="audio-right-t1" controls autoPlay preload="metadata">
+                        {/* <audio className="audio-right-t3" controls autoPlay preload="metadata">
                             <source src="" type="audio/mpeg" />
                         </audio> */}
 
-                        <h1 className="titleNameColumnReceiveTemplete1-t1">{title}</h1>
+                        <h1 className="titleNameColumnReceiveTemplete1-t3">{title}</h1>
 
-                        <div className="conteudo-right-t1">
-                            <div className="campos-t1">
-                                <div className="campo1-t1">
-                                    <p className="textValueReceiveTemplete1-t1">{texts[0]}</p>
+                        <div className="conteudo-right-t3">
+                            <div className="campos-t3">
+                                <div className="campo1-t3">
+                                    <p className="textValueReceiveTemplete1-t3">{texts[0]}</p>
                                 </div>
-                                <div className="campo2-t1">
-                                    {imagePreview && <img src={imagePreview} className="image-400w-t1" alt="Imagem carregada" />}
+                                <div className="campo2-t3">
+                                    {imagePreview && <img src={imagePreview} className="image-400w-t3" alt="Imagem carregada" />}
                                 </div>
-                                <div className="campo3-t1">
-                                    <p className="textValueReceiveTemplete1-t1">{texts[1]}</p>
+                                <div className="campo3-t3">
+                                    <p className="textValueReceiveTemplete1-t3">{texts[1]}</p>
                                 </div>
-                                <div className="campo4-t1">
-                                    <div className="campo4-card-t1">
+                                <div className="campo4-t3">
+                                    <div className="campo4-card-t3">
                                         {/* Imagem carregada para campo4 */}
-                                        {campo4Image && <img src={campo4Image} className="image-400w-t1" alt="Imagem do campo4" />}
-                                        <div className="texto-t1">
-                                            <p className="textValueReceiveTemplete1-t1 textWithBG-t1">{texts[2]}</p> {/* Texto do campo4 */}
+                                        {campo4Image && <img src={campo4Image} className="image-400w-t3" alt="Imagem do campo4" />}
+                                        <div className="texto-t3">
+                                            <p className="textValueReceiveTemplete1-t3 textWithBG-t3">{texts[2]}</p> {/* Texto do campo4 */}
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="campo5-t1">
-                                    <div className="campo5-card-t1">
+                                <div className="campo5-t3">
+                                    <div className="campo5-card-t3">
                                         {/* Imagem carregada para campo5 */}
-                                        {campo5Image && <img src={campo5Image} className="image-400w-t1" alt="Imagem do campo5" />}
+                                        {campo5Image && <img src={campo5Image} className="image-400w-t3" alt="Imagem do campo5" />}
 
                                     </div>
                                 </div>
-                                <div className="campo6-t1">
-                                    <div className="texto-t1">
-                                        <p className="textValueReceiveTemplete1-t1 textWithBG-t1">{texts[3]}</p> {/* Texto do campo7 */}
+                                <div className="campo6-t3">
+                                    <div className="texto-t3">
+                                        <p className="textValueReceiveTemplete1-t3 textWithBG-t3">{texts[3]}</p> {/* Texto do campo7 */}
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         {/* footer lado direito */}
-                        <div className="footer-right-t1"></div>
+                        <div className="footer-right-t3"></div>
                     </div>
                 </div>
             </div>
@@ -534,4 +528,4 @@ export const RevisaoT1 = ({ selectedUser }) => {
 
 };
 
-export default RevisaoT1;
+export default RevisaoT3;
