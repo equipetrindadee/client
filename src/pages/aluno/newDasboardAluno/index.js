@@ -10,7 +10,7 @@ export const NewDashBoardAluno = () => {
     return (
         <div className="NewDashboardAluno">
             <div className="container-fluid NewDashboardAluno__content">
-                <div className="row">
+                <div className="">
                     <div className="col-3 col-md-2 NewDashboardAluno__sidebar">
                         <SideNavBarNewAluno />
                     </div>
