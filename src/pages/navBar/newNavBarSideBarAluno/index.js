@@ -6,7 +6,7 @@ const SideNavBarNewAluno = () => {
   const [isExpanded, setExpendState] = useState(false);
 
   const menuItems = [
-    { text: "TELA INICIAL", icon: "bx bxs-home", path: '/dash' },
+    { text: "TELA INICIAL", icon: "bx bxs-home", path: '/aluno/dasboardAluno' },
     { text: "CHAT", icon: "bx bx-message-square-dots bx-flip-horizontal", path: '/chat' },
     { text: "MEUS ARTIGOS", icon: "bx bx-columns bx-rotate-270", path:'/meusArtigos'},
     { text: "JORNAL", icon: "bx bx-book-open", path:'/' }

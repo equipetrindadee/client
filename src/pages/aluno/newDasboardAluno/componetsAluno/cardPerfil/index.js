@@ -12,27 +12,23 @@ const firebaseConfig = {
     apiKey: "AIzaSyBNIaO0le5Mn4UDxWX32YDoY_b4xNZikDg",
     authDomain: "reactfirebase-140c5.firebaseapp.com",
     projectId: "reactfirebase-140c5",
-  };
+};
   
-  // Inicialização do Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-  
+// Inicialização do Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-function CardPerfil() {
+function CardPerfilUserAlunoDescription() {
     const [alunos, setAlunos] = useState([]);
-   
 
     useEffect(() => {
         const fetchData = async () => {
           await fetchUserData();
-         
         };
         fetchData();
-      }, []);
-    
-      
-      const fetchUserData = async () => {
+    }, []);
+
+    const fetchUserData = async () => {
         const storedToken = localStorage.getItem('token');
         if (storedToken) {
             try {
@@ -40,7 +36,7 @@ function CardPerfil() {
                 const userId = decoded.id;
                 const docRef = doc(db, "users", userId);
                 const docSnap = await getDoc(docRef);
-    
+
                 if (docSnap.exists()) {
                     const userData = docSnap.data();
                     setAlunos(userData); // Salva apenas o usuário logado
@@ -50,22 +46,23 @@ function CardPerfil() {
             }
         }
     };
+
     return (
         <div>
             {alunos && (
-            <div key={alunos.id} className="card-body aluno_MeusArtigos-rightSide-Perfil-infos">
+            <div key={alunos.id} className="card-body cadPerfilUserAlunoDescription-infos">
                 <button
                     type="button"
-                    className="card-body aluno_MeusArtigos-rightSide-Perfil-button"
+                    className="card-body cadPerfilUserAlunoDescription-button"
                     data-bs-toggle="modal"
                     data-bs-target="#staticBackdrop"
                 >
                     <p>Perfil</p>
                 </button>
-                <div className="aluno_MeusArtigos-rightSide-Perfil-body-info">
+                <div className="cadPerfilUserAlunoDescription-body-info">
                     <img
                         src={alunos.imagemUrl}
-                        className="rounded-circle"
+                        className=""
                         width="50"
                         height="50"
                         alt="Imagem do Perfil"
@@ -73,10 +70,9 @@ function CardPerfil() {
                     <h5 className="card-title">{alunos.name}</h5> {/* Nome do usuário logado */}
                 </div>
             </div>
-        )}
-                
+            )}
         </div>
     )
 }
 
-export default CardPerfil;
+export default CardPerfilUserAlunoDescription;

@@ -5,7 +5,7 @@
     z-index: 2000 !important;
     justify-content: center !important;
     align-items: center !important;
-    height: 100vh !important; /* Altura da tela cheia */
+    height:70vh !important; /* Altura da tela cheia */
     overflow: hidden; /* Evita overflow se a imagem for maior que a tela */
     margin: 0; /* Remove margens */
     padding: 0; /* Remove preenchimento */

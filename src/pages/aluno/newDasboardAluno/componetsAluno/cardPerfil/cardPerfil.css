@@ -1,9 +1,8 @@
-.aluno_MeusArtigos-rightSide-Perfil {
+.cadPerfilUserAlunoDescription {
     border: none !important;
 }
 
-.aluno_MeusArtigos-rightSide-Perfil-infos {
-    /* background-image: url("../../../public/img/bg-perfil-semborda.svg"); */
+.cadPerfilUserAlunoDescription-infos {
     background-image: url("../../../../../../public/img/bg-perfil-semborda.svg");
     width: 100% !important;
     height: 17rem !important;
@@ -16,10 +15,9 @@
     grid-row-gap: 0px;
     border: 1px solid #E1E1E1;
     border-radius: 30px;
-
 }
 
-.aluno_MeusArtigos-rightSide-Perfil-button {
+.cadPerfilUserAlunoDescription-button {
     width: 100%;
     height: 18%;
     background-color: transparent !important;   
@@ -27,10 +25,9 @@
     border: 1px solid #d9d9d9;
     border-radius: 10px;
     margin: 10%;
-    
 }
 
-.aluno_MeusArtigos-rightSide-Perfil-button:hover {
+.cadPerfilUserAlunoDescription-button:hover {
     width: 100%;
     height: 18%;
     padding: 0;
@@ -38,8 +35,7 @@
     border-radius: 10px;
 }
 
-
-.aluno_MeusArtigos-rightSide-Perfil-button p {
+.cadPerfilUserAlunoDescription-button p {
     color: #000;
     font-family: "Montserrat";
     font-size: 15px;
@@ -48,48 +44,46 @@
     margin-block: 0.5rem;
 }
 
-.aluno_MeusArtigos-rightSide-Perfil-body-info {
+.cadPerfilUserAlunoDescription-body-info {
     text-align: center !important;
     font-family: "Montserrat";
 }
 
-.aluno_MeusArtigos-rightSide-Perfil-body-info img {
+.cadPerfilUserAlunoDescription-body-info img {
     margin: 10% 0 0 0 !important;
     width: 45%;
     height: 60%;
 }
 
-.aluno_MeusArtigos-rightSide-Perfil-body-info h5 {
+.cadPerfilUserAlunoDescription-body-info h5 {
     margin: 3% 0 0 0 !important;
     font-size: 25px;
     font-weight: bold;
 }
+
 @media (max-width: 768px) {
-    .aluno_MeusArtigos-rightSide-Perfil-infos {
-        /* background-image: url("../../../public/img/bg-perfil-semborda.svg"); */
+    .cadPerfilUserAlunoDescription-infos {
         background-image: url("../../../../../../public/img/bg-perfil-semborda.svg");
         width: 100% !important;
         height: 10rem !important;
-    
     }
-    .aluno_MeusArtigos-rightSide-Perfil-button {
+    .cadPerfilUserAlunoDescription-button {
         width: 110%;
         height: 22%;
         margin: 25%;
     }
-    .aluno_MeusArtigos-rightSide-Perfil-button p {
+    .cadPerfilUserAlunoDescription-button p {
         font-size: 13px;
         margin-inline: 1rem;
     }
     
-    .aluno_MeusArtigos-rightSide-Perfil-body-info img {
+    .cadPerfilUserAlunoDescription-body-info img {
         width: 100%;
         height: 55%;
     }
-    .aluno_MeusArtigos-rightSide-Perfil-body-info h5 {
+    .cadPerfilUserAlunoDescription-body-info h5 {
         margin: 3% 0 0 0 !important;
         font-size: 16px;
         font-weight: bold;
     }
-    
 }

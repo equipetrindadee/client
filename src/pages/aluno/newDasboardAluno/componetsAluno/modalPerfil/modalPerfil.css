@@ -46,7 +46,7 @@
 }
 .aluno_MeusArtigos-rightSide-Modal-input input::placeholder{
     /* background-color: rgb(102, 255, 0); */
-  font-family: "Arimo";
+  font-family: "Arimo", sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #767676;

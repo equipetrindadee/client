@@ -36,7 +36,7 @@ function Login() {
                 if (categoria === 'professor') {
                     navigate("/dashP");
                 } else if (categoria === 'aluno') {
-                    navigate("/dash");
+                    navigate("/aluno/dasboardAluno");
                 }else if (categoria === 'comum') {
                     navigate("/");
                 }
