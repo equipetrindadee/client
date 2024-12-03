@@ -5,7 +5,7 @@
 .cadPerfilUserAlunoDescription-infos {
     background-image: url("../../../../../../public/img/bg-perfil-semborda.svg");
     width: 100% !important;
-    height: 17rem !important;
+    
     background-repeat: no-repeat;
     background-size: cover;
     display: grid;
@@ -51,10 +51,13 @@
 
 .cadPerfilUserAlunoDescription-body-info img {
     margin: 10% 0 0 0 !important;
-    width: 45%;
-    height: 60%;
+    width: 45% !important;
+    height: 60% !important;
 }
-
+.aluno_MeusArtigos-rightSide-Perfil-body-info img {
+    width: 0px !important;
+    height: 0px !important;
+}
 .cadPerfilUserAlunoDescription-body-info h5 {
     margin: 3% 0 0 0 !important;
     font-size: 25px;

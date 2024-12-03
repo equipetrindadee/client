@@ -53,7 +53,7 @@ function CardPerfil() {
     return (
         <div>
             {alunos && (
-            <div key={alunos.id} className="card-body aluno_MeusArtigos-rightSide-Perfil-infos">
+            <div key={alunos.id} className="card-body aluno_dashAluno-rightSide-Perfil-infos">
                 <button
                     type="button"
                     className="card-body aluno_MeusArtigos-rightSide-Perfil-button"
@@ -62,7 +62,7 @@ function CardPerfil() {
                 >
                     <p>Perfil</p>
                 </button>
-                <div className="aluno_MeusArtigos-rightSide-Perfil-body-info">
+                <div className="aluno_dashAluno-rightSide-Perfil-body-info">
                     <img
                         src={alunos.imagemUrl}
                         className="rounded-circle"

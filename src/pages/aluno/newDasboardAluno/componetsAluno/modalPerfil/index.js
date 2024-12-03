@@ -89,6 +89,8 @@ function ModalPerfil() {
                   <img
                     src={alunos.imagemUrl}
                     className="alunoModalDashRoundedImg"
+                    width={50}
+                    height={50}
                     alt="Imagem do Artigo"
                   />
                 </div>
