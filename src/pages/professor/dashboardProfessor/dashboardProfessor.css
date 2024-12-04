@@ -7,7 +7,7 @@
 
 .celular-dashboar-Professor{
     display: none ;
-}
+} 
 
 .buttonNotFunction{
     display: none;
@@ -385,6 +385,43 @@ body::-webkit-scrollbar-thumb{
 
 /* Alteraçãp de design do scroll */
 
+/* Permitir rolagem, mas esconder a barra de rolagem */
+.cardRevisao-dashboard-Professor,
+.cardConclusao-dashboard-Professor,
+.cardPostado-dashboard-Professor,
+.cardNaoEntregue-dashboard-Professor {
+    width: 22%;
+    padding: 10px;
+    border: solid 1.4px #787878;
+    border-radius: 10px;
+    height: 335px;
+    overflow: auto; /* Permite rolagem quando necessário */
+}
+
+/* Esconder a barra de rolagem, mas permitir que ela funcione */
+.cardRevisao-dashboard-Professor::-webkit-scrollbar,
+.cardConclusao-dashboard-Professor::-webkit-scrollbar,
+.cardPostado-dashboard-Professor::-webkit-scrollbar,
+.cardNaoEntregue-dashboard-Professor::-webkit-scrollbar {
+    width: 6px;  /* Largura mínima da barra de rolagem */
+}
+
+/* Tornar a barra de rolagem transparente */
+.cardRevisao-dashboard-Professor::-webkit-scrollbar-thumb,
+.cardConclusao-dashboard-Professor::-webkit-scrollbar-thumb,
+.cardPostado-dashboard-Professor::-webkit-scrollbar-thumb,
+.cardNaoEntregue-dashboard-Professor::-webkit-scrollbar-thumb {
+    background: transparent;  /* Torna a barra de rolagem invisível */
+}
+
+/* Você também pode deixar a barra de rolagem sem cor de fundo */
+.cardRevisao-dashboard-Professor::-webkit-scrollbar-track,
+.cardConclusao-dashboard-Professor::-webkit-scrollbar-track,
+.cardPostado-dashboard-Professor::-webkit-scrollbar-track,
+.cardNaoEntregue-dashboard-Professor::-webkit-scrollbar-track {
+    background: transparent;  /* Faz o fundo da barra de rolagem desaparecer */
+}
+
 .colunasRevisao-dashboard-Professor{
     text-align: left;
     padding: 6px 12px;
@@ -585,6 +622,8 @@ body::-webkit-scrollbar-thumb{
     .cardNaoEntregue-dashboard-Professor{
         width: 40%;
     }
+
+    
 }
 
 @media (max-width:769px) {
@@ -594,11 +633,10 @@ body::-webkit-scrollbar-thumb{
 
     .celular-dashboar-Professor{
         display: block !important;
-        width: 100vw !important;
-        height: 100vh !important;
-        background-color: #024959 !important;
+        position: relative;
+        z-index: 1000 !important;
     }
-    .footer-dashboard-Professor{
+    /* .footer-dashboard-Professor{
         display: none;
     }
 
@@ -666,5 +704,5 @@ body::-webkit-scrollbar-thumb{
 
     .cardVisualizacao-dashboard-Professor{
         width: 90% !important;
-    }
+    } */
 }
