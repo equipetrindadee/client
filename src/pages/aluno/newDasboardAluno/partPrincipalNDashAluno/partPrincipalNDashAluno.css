@@ -1,29 +1,42 @@
 /* Container principal que divide a tela em duas colunas */
-p{
+p {
     margin-bottom: 0px;
 }
+
 .containerSecondNewDashAluno {
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
+.partPrincipalNDashAluno__cardCol {
+    margin: 5px;
+    border: 1px solid #D9D9D9;
+    cursor: pointer;
+}
+.partPrincipalNDashAluno__cardRow{
+    cursor: pointer;
+}
+
 /* Coluna da esquerda (cards e notificações) */
 .leftColumnDashAlunoNew {
     position: relative;
     margin-top: 5rem;
-    width: 66%; /* Ajuste conforme necessário */
+    width: 66%;
+    /* Ajuste conforme necessário */
     display: flex;
     flex-direction: column;
 }
 
 /* Coluna da direita (modal de perfil e progresso) */
 .rightColumnDashAlunoNew {
-    width: 30%; /* Ajuste conforme necessário */
+    width: 30%;
+    /* Ajuste conforme necessário */
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    justify-content: flex-end; /* Isso alinha os elementos ao final da coluna */
+    justify-content: flex-end;
+    /* Isso alinha os elementos ao final da coluna */
     position: relative;
 }
 
@@ -32,7 +45,8 @@ p{
     width: 100%;
     margin-top: 2rem;
 }
-.aluno_dashboard_cards{
+
+.aluno_dashboard_cards {
     display: flex;
 }
 
@@ -52,7 +66,8 @@ p{
 /* Estilo do progresso */
 .partPrincipalNDashAluno__progressCard {
     width: 100%;
-    margin-top: auto; /* Garante que o progresso fique alinhado ao final da coluna */
+    margin-top: auto;
+    /* Garante que o progresso fique alinhado ao final da coluna */
 }
 
 
@@ -91,32 +106,37 @@ p{
 }
 
 /* progressso */
-.partPrincipalNDashAluno__progressTitle{
+.partPrincipalNDashAluno__progressTitle {
     font-family: "Montsserrat", sans-serif;
     font-weight: 700;
     font-size: 21px;
     margin-top: 12px;
     margin-bottom: 12px;
 }
-.partPrincipalDashboardAlunoNew-textProgressoH2{
+
+.partPrincipalDashboardAlunoNew-textProgressoH2 {
     font-family: "Oswald", sans-serif;
     font-size: 10px;
 }
+
 /* notificações */
-.partPrincipalNDashAluno__notificationsTitle{
+.partPrincipalNDashAluno__notificationsTitle {
     font-family: "Montsserrat", sans-serif;
     font-weight: 700;
     font-size: 25px;
 }
-.partPrincipalNDashAluno__notification{
+
+.partPrincipalNDashAluno__notification {
     border: 1.5px solid #2ec4b6 !important;
-    
+
 }
-.partPrincipalNDashAluno__notificationName{
+
+.partPrincipalNDashAluno__notificationName {
     font-family: "Oswald", sans-serif;
     font-size: 17px;
 }
-.partPrincipalNDashAluno__notificationMessage{
+
+.partPrincipalNDashAluno__notificationMessage {
     font-size: 15px;
     color: #D9D9D9;
 }
@@ -125,10 +145,14 @@ p{
 .partPrincipalNDashAluno__notifications {
     width: 100%;
     margin-top: 2rem;
-    max-height: 300px; /* Limita a altura da seção */
-    overflow-y: auto; /* Permite rolagem vertical */
-    scrollbar-width: none; /* Oculta a barra de rolagem no Firefox */
-    -ms-overflow-style: none;  /* Oculta a barra de rolagem no IE/Edge */
+    max-height: 300px;
+    /* Limita a altura da seção */
+    overflow-y: auto;
+    /* Permite rolagem vertical */
+    scrollbar-width: none;
+    /* Oculta a barra de rolagem no Firefox */
+    -ms-overflow-style: none;
+    /* Oculta a barra de rolagem no IE/Edge */
 }
 
 /* Oculta a barra de rolagem no Chrome/Safari */
@@ -140,10 +164,14 @@ p{
 .partPrincipalNDashAluno__progressCard {
     width: 100%;
     margin-top: auto;
-    max-height: 300px; /* Limita a altura da seção de progresso */
-    overflow-y: auto; /* Permite rolagem vertical */
-    scrollbar-width: none; /* Oculta a barra de rolagem no Firefox */
-    -ms-overflow-style: none;  /* Oculta a barra de rolagem no IE/Edge */
+    max-height: 300px;
+    /* Limita a altura da seção de progresso */
+    overflow-y: auto;
+    /* Permite rolagem vertical */
+    scrollbar-width: none;
+    /* Oculta a barra de rolagem no Firefox */
+    -ms-overflow-style: none;
+    /* Oculta a barra de rolagem no IE/Edge */
 }
 
 /* Oculta a barra de rolagem no Chrome/Safari */
@@ -167,195 +195,232 @@ p{
     padding: 15px;
     border-radius: 8px;
     color: white;
-    flex-shrink: 0; /* Garante que os itens não encolham */
+    flex-shrink: 0;
+    /* Garante que os itens não encolham */
 }
 
-.partPrincipalNDashAluno__notificationImg{
-    width: 20px;
-    height: 20px;
+.partPrincipalNDashAluno__notificationImg {
+    width: 50px;
+    height: 50px;
     border-radius: 100%;
 }
+
 .button_notificacoes_aluno {
+    display: flex;
+    align-items: center;
+    
     background-color: transparent;
-    border: 1px solid #FF0000; /* Vermelho */
+    border: 1px solid #FF0000;
+    /* Vermelho */
     margin-block: 10px;
-    margin-inline: 2.5rem;
+    margin-inline: 0px !important;
     width: 95%;
     border-radius: 10px;
-  }
-  
-  .button_notificacoes_aluno:hover {
+}
+
+.button_notificacoes_aluno:hover {
     /* Sem hover */
     background-color: transparent;
-    border: 1px solid #FF0000 !important; /* Vermelho */
-  }
-  
-  .button_notificacoes_aluno_estrutura {
+    border: 1px solid #FF0000 !important;
+    /* Vermelho */
+}
+
+.button_notificacoes_aluno_estrutura {
     display: grid;
     grid-template-columns: 0.11fr 1fr;
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-  }
-  
-  /* Estilos do sistema */
-  .sistema-button {
-    border: 1px solid #FF0000; /* Vermelho */
-  }
-  
-  .sistema-footer-button {
-    color: #FF0000; /* Vermelho */
-  }
-  
-  .sistema-close-button {
-    color: #FF0000; /* Vermelho */
-  }
-  
-  .imagem-perfil-universal img {
-    width: 65px !important; /* Largura fixa */
-    height: 65px !important; /* Altura fixa */
-    object-fit: cover !important; /* Garante que a imagem preencha o espaço sem distorcer */
-    border-radius: 50% !important; /* Deixa as imagens redondas */
+}
+
+/* Estilos do sistema */
+.sistema-button {
+    border: 1px solid #FF0000;
+    /* Vermelho */
+}
+
+.sistema-footer-button {
+    color: #FF0000;
+    /* Vermelho */
+}
+
+.sistema-close-button {
+    color: #FF0000;
+    /* Vermelho */
+}
+
+.imagem-perfil-universal img {
+    width: 65px !important;
+    /* Largura fixa */
+    height: 65px !important;
+    /* Altura fixa */
+    object-fit: cover !important;
+    /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 50% !important;
+    /* Deixa as imagens redondas */
     max-width: 65px !important;
     min-width: 65px !important;
     margin-right: 10px !important;
-  }
-  
-  .button_notificacoes_aluno_conteudo_img { 
+}
+
+.button_notificacoes_aluno_conteudo_img {
     grid-area: 1 / 1 / 2 / 2;
-  }
-  
-  .button_notificacoes_aluno_conteudo_texto { 
-    grid-area: 1 / 2 / 2 / 3; 
+}
+
+.button_notificacoes_aluno_conteudo_texto {
+    grid-area: 1 / 2 / 2 / 3;
     color: black;
     margin: auto 0;
-    text-align: left; 
+    text-align: left;
     font-size: 1.1rem;
     font-weight: 700;
-  }
-  
-  .button_notificacoes_aluno_conteudo_texto h3 {
+}
+
+.button_notificacoes_aluno_conteudo_texto h3 {
     width: 100%;
     font-size: 20px;
     font-weight: 700;
-  }
-  
-  .button_notificacoes_aluno_conteudo_texto p {
+}
+
+.button_notificacoes_aluno_conteudo_texto p {
     width: 100%;
-    color: #FF0000; /* Vermelho */
+    color: #FF0000;
+    /* Vermelho */
     font-size: 18px;
-  }
-  
-  /* Modal */
-  .modal_notificacoes_aluno_estrutura {
+}
+
+/* Modal */
+.modal_notificacoes_aluno_estrutura {
     width: 100%;
     display: grid;
     grid-template-columns: 0.3fr 1fr 0.2fr;
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-  }
-  
-  .modal_notificacoes_aluno_conteudo_texto p {
-    color: #FF0000; /* Vermelho */
-  }
-  
-  .modal_notificacoes_aluno_textarea {
-    width: 100%; 
+}
+
+.modal_notificacoes_aluno_conteudo_texto p {
+    color: #FF0000;
+    /* Vermelho */
+}
+
+.modal_notificacoes_aluno_textarea {
+    width: 100%;
     height: 150px;
     resize: none;
     padding: 10px;
     box-sizing: border-box;
-    border: 1px solid #FF0000 !important; /* Vermelho */
+    border: 1px solid #FF0000 !important;
+    /* Vermelho */
     border-radius: 10px;
     font-size: 18px;
-  }
-  
-  /* Remover o efeito hover para o botão no rodapé do modal */
-  .modal_notificacoes_aluno_footer button {
-    color: #FF0000; /* Vermelho */
+}
+
+/* Remover o efeito hover para o botão no rodapé do modal */
+.modal_notificacoes_aluno_footer button {
+    color: #FF0000;
+    /* Vermelho */
     font-size: 22px;
     font-weight: 700;
-  }
-  
-  .modal_notificacoes_aluno_footer button:hover {
-    border: none;
-    color: #FF0000; /* Vermelho */
-  }
-  
-  /* Remover hover nos ícones */
-  .modal_notificacoes_aluno_footer_hands i:hover {
-    color: inherit; /* Não altera a cor no hover */
-  }
-  
-
-.modal_notificacoes_aluno_conteudo_img { 
-    grid-area: 1 / 1 / 2 / 2;
- }
- .modal_notificacoes_aluno_conteudo_img img {
-    width: 25vw; /* A largura da imagem será 10% da largura da viewport */
-    max-width: 100px; /* Define um tamanho máximo para evitar que a imagem fique muito grande */
-    min-width: 50px; /* Define um tamanho mínimo para evitar que fique muito pequena */
-    border-radius: 50%;
-    height: auto; /* Mantém a proporção da imagem */
 }
+
+.modal_notificacoes_aluno_footer button:hover {
+    border: none;
+    color: #FF0000;
+    /* Vermelho */
+}
+
+/* Remover hover nos ícones */
+.modal_notificacoes_aluno_footer_hands i:hover {
+    color: inherit;
+    /* Não altera a cor no hover */
+}
+
+
+.modal_notificacoes_aluno_conteudo_img {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.modal_notificacoes_aluno_conteudo_img img {
+    width: 25vw;
+    /* A largura da imagem será 10% da largura da viewport */
+    max-width: 100px;
+    /* Define um tamanho máximo para evitar que a imagem fique muito grande */
+    min-width: 50px;
+    /* Define um tamanho mínimo para evitar que fique muito pequena */
+    border-radius: 50%;
+    height: auto;
+    /* Mantém a proporção da imagem */
+}
+
 .imagem-perfil-universal_modal img {
-    width: 80px !important; /* Largura fixa */
-    height: 80px !important; /* Altura fixa */
-    object-fit: cover !important; /* Garante que a imagem preencha o espaço sem distorcer */
-    border-radius: 50% !important; /* Deixa as imagens redondas */
+    width: 80px !important;
+    /* Largura fixa */
+    height: 80px !important;
+    /* Altura fixa */
+    object-fit: cover !important;
+    /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 50% !important;
+    /* Deixa as imagens redondas */
     max-width: 80px !important;
     min-width: 80px !important;
     margin-right: 10px !important;
 }
 
-.modal_notificacoes_aluno_conteudo_texto { 
-    grid-area: 1 / 2 / 2 / 3; 
+.modal_notificacoes_aluno_conteudo_texto {
+    grid-area: 1 / 2 / 2 / 3;
     color: black;
     margin: auto 0;
-    text-align: left; 
+    text-align: left;
     font-size: 1.1rem;
     font-weight: 700;
 
 }
-.modal_notificacoes_aluno_conteudo_texto h3{
+
+.modal_notificacoes_aluno_conteudo_texto h3 {
     width: 100%;
-    
-} 
-.modal_notificacoes_aluno_conteudo_texto p{
+
+}
+
+.modal_notificacoes_aluno_conteudo_texto p {
     width: 100%;
     color: #FF0000 !important;
 }
 
-.modal_notificacoes_aluno_botao_fechar{
-    grid-area: 1 / 3 / 2 / 4; 
-    margin: auto ;
+.modal_notificacoes_aluno_botao_fechar {
+    grid-area: 1 / 3 / 2 / 4;
+    margin: auto;
 }
-.modal_notificacoes_aluno_botao_fechar button{
+
+.modal_notificacoes_aluno_botao_fechar button {
     background-color: transparent;
     border: none;
 }
+
 .modal_notificacoes_aluno_botao_fechar button:hover {
     background-color: transparent;
     border: none;
 }
-.modal_notificacoes_aluno_botao_fechar button i{
+
+.modal_notificacoes_aluno_botao_fechar button i {
     font-size: 32px;
     color: #FF0000 !important;
 }
 
-.modal_notificacoes_aluno_textarea{
-    width: 100%; 
+.modal_notificacoes_aluno_textarea {
+    width: 100%;
     height: 150px;
     resize: none;
     padding: 10px;
     box-sizing: border-box;
-     border:1px solid #FF0000 !important;
-     border-radius: 10px;
+    border: 1px solid #FF0000 !important;
+    border-radius: 10px;
 
-     font-size: 18px; /* Aumente o tamanho da fonte do textarea */
+    font-size: 18px;
+    /* Aumente o tamanho da fonte do textarea */
 }
-.modal_notificacoes_aluno_textarea:hover{
+
+.modal_notificacoes_aluno_textarea:hover {
     border: 1px solid #FF0000 !important;
     border-radius: 10px;
 }
@@ -380,34 +445,44 @@ p{
 .modal_notificacoes_aluno_footer_hands {
     font-size: 32px;
     width: 15%;
-    display: flex; /* Para alinhar os ícones em linha */
-    justify-content: space-between; /* Espaçamento entre os ícones */
+    display: flex;
+    /* Para alinhar os ícones em linha */
+    justify-content: space-between;
+    /* Espaçamento entre os ícones */
 }
 
 .modal_notificacoes_aluno_footer_hands i {
-    cursor: pointer; /* Muda o cursor para indicar que é clicável */
-    transition: color 0.3s; /* Animação suave ao mudar de cor */
+    cursor: pointer;
+    /* Muda o cursor para indicar que é clicável */
+    transition: color 0.3s;
+    /* Animação suave ao mudar de cor */
 }
 
 /* timeline */
 .custom-timelineDashAlunoNew {
     margin-top: 20px;
-    background-color: white; /* Fundo branco para a timeline */
+    background-color: white;
+    /* Fundo branco para a timeline */
     padding: 15px;
     width: 100%;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombras sutis */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Sombras sutis */
 }
 
 /* Estilos para os itens da Timeline */
-.custom-timelineDashAlunoNew .rsuite-timeline-itemDashAlunoNew{
-    border-left: 3px solid #2ec4b6 !important; /* Linha de destaque verde (cor principal) */
+.custom-timelineDashAlunoNew .rsuite-timeline-itemDashAlunoNew {
+    border-left: 3px solid #2ec4b6 !important;
+    /* Linha de destaque verde (cor principal) */
     padding-left: 15px !important;
     margin-bottom: 20px !important;
-    transition: all 0.3s ease !important; /* Suaviza transições */
+    transition: all 0.3s ease !important;
+    /* Suaviza transições */
 }
+
 .custom-timelineDashAlunoNew .rsuite-timeline-itemDashAlunoNew p {
-    color: #333; /* Texto de cor escura para boa legibilidade */
+    color: #333;
+    /* Texto de cor escura para boa legibilidade */
     font-size: 14px;
     margin: 5px 0;
 }
@@ -415,15 +490,25 @@ p{
 /* Estilo para as datas na timeline */
 .custom-timelineDashAlunoNew .rsuite-timeline-itemDashAlunoNew p:first-child {
     font-weight: bold;
-    color: #000; /* Cor preta para as datas */
+    color: #000;
+    /* Cor preta para as datas */
 }
+
 /* Efeito hover sobre os itens da timeline */
 .custom-timelineDashAlunoNew .rsuite-timeline-itemDashAlunoNew:hover {
-    background-color: #f4f4f4; /* Leve fundo cinza ao passar o mouse */
-    border-left: 3px solid #2ec4b6; /* Reforça a linha verde */
+    background-color: #f4f4f4;
+    /* Leve fundo cinza ao passar o mouse */
+    border-left: 3px solid #2ec4b6;
+    /* Reforça a linha verde */
 }
 
 /* Modificando a linha do ponto */
 .custom-timelineDashAlunoNew .rsuite-timeline-itemDashAlunoNew:last-child {
-    border-left: 3px solid #2ec4b6; /* Último item também tem a linha verde */
+    border-left: 3px solid #2ec4b6;
+    /* Último item também tem a linha verde */
+}
+
+/* modal */
+.modal_notificacoes_aluno_footer {
+    font-family: "Oswald", sans-serif !important;
 }

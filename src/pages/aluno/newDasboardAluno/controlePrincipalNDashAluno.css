@@ -1,4 +1,12 @@
 /* controlePrincipalNDashAluno.css */
+body, html {
+    overflow: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    /* Remove o scroll da página inteira */
+}
+
 .NewDashboardAluno__content {
     display: flex;
     min-height: 100vh;
@@ -7,7 +15,6 @@
 }
 
 .NewDashboardAluno__sidebar {
-    
     position: fixed;
     top: 0;
     left: 0;
@@ -18,8 +25,9 @@
 
 .NewDashboardAluno__mainContent {
     margin-left: 7%;
-    width: 90%;
+    width: 93%; /* Ajuste para preencher a largura restante */
     padding: 10px;
+    overflow: hidden; /* Desabilitar scroll */
 }
 
 @media (max-width: 768px) {
