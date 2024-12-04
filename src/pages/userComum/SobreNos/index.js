@@ -3,12 +3,12 @@ import "../../userComum/SobreNos/sobrenos.css";
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import NavbarUserComum from '../../navBar/navBarUserComum/index.js';
+/* import NavbarUserComum from '../../navBar/navBarUserComum/index.js'; */
 
 export const SobreNos = () => {
     return (
         <div>
-            <NavbarUserComum />
+            {/* <NavbarUserComum /> */}
             <div className="UserComum_SobreNos-SplitScreen">
                 <div className="UserComum_SobreNos-LeftSide"></div>
                 <div className="UserComum_SobreNos-RightSide">

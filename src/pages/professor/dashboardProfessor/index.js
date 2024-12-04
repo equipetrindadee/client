@@ -7,6 +7,7 @@ import NavBarProfessor from '../../navBar/navBarProfessor';
 import Calendario from '../../userComum/calendario';
 import { useNavigate } from 'react-router-dom';
 import Notificacoes from "../../aluno/dashBoardAluno/ladoEsquedo/notificacoes/notificacoes/index.js"
+import ErrorCelular from '../../components/error/index.js';
 
 import { getFirestore, collection, query, where, getDocs, doc, getDoc, addDoc } from 'firebase/firestore'; // Importando doc e getDoc
 import { db } from '../../../config/firebaseImgConfig';
@@ -394,8 +395,9 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
             {mostrarNavbarProf && <NavBarProf />}
             {mostrarNavbarMobile && <NavBarProfessor />}
 
-
-
+            <div className='celular-dashboar-Professor'>
+                <ErrorCelular />
+            </div>
 
             <div className="dashboard-content-Professor">
 
@@ -476,7 +478,7 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
                 {/* Fim Cards de Visualização do Professor, com carrossel Responsivo */}
 
                 {/* footer da tela professor */}
-                <footer className="footer-dashboard-Professor">
+                {/* <footer className="footer-dashboard-Professor">
 
                     <div className="calendario-dashboard-Professor">
                         <Calendario />
@@ -514,7 +516,7 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
 
                     </div>
 
-                </footer>
+                </footer> */}
                 {/*Fim do footer */}
 
             </div>

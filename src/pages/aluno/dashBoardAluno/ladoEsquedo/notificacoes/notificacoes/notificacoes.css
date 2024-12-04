@@ -9,6 +9,7 @@
     border-radius: 10px;
   }
   
+  
   .button_notificacoes_aluno:hover {
     /* Sem hover */
     background-color: transparent;
@@ -24,12 +25,12 @@
   }
   
   /* Estilos do sistema */
-  .sistema-button {
-    border: 1px solid #FF0000; /* Vermelho */
-  }
+ 
   
   .sistema-footer-button {
-    color: #FF0000; /* Vermelho */
+    color: #FF0000;
+    font-family: "Oswald", sans-serif; 
+    
   }
   
   .sistema-close-button {
@@ -89,9 +90,9 @@
     width: 100%; 
     height: 150px;
     resize: none;
+    font-family: "Montsserrat", sans-serif;
     padding: 10px;
-    box-sizing: border-box;
-    border: 1px solid #FF0000 !important; /* Vermelho */
+    border: none !important;
     border-radius: 10px;
     font-size: 18px;
   }
@@ -99,7 +100,7 @@
   /* Remover o efeito hover para o botão no rodapé do modal */
   .modal_notificacoes_aluno_footer button {
     color: #FF0000; /* Vermelho */
-    font-size: 22px;
+    font-size: 15px;
     font-weight: 700;
   }
   
@@ -175,13 +176,13 @@
     resize: none;
     padding: 10px;
     box-sizing: border-box;
-     border:1px solid #FF0000 !important;
+     
      border-radius: 10px;
 
      font-size: 18px; /* Aumente o tamanho da fonte do textarea */
 }
 .modal_notificacoes_aluno_textarea:hover{
-    border: 1px solid #FF0000 !important;
+    
     border-radius: 10px;
 }
 
@@ -213,7 +214,11 @@
     cursor: pointer; /* Muda o cursor para indicar que é clicável */
     transition: color 0.3s; /* Animação suave ao mudar de cor */
 }
-
+.modal_notificacoes_aluno_footerDashAlunoNewVersion{
+  font-family: "Oswald",sans-serif;
+  font-size: 20px !important;
+  color: #FF0000;
+}
 
   
 @media (max-width: 768px) {

@@ -39,7 +39,7 @@ import SubirImagem from "../../src/pages/subirImagem/subirImagem.js"
 import PostagemRevisao from "../pages/professor/postagemRevisao/index.js"
 import SideNavBarNewAluno from "../pages/navBar/newNavBarSideBarAluno/index.js";
 import Publicacao from "../pages/userComum/publicacao/index.js";
-import NavbarUserComum from "../pages/navBar/navBarUserComum/index.js";
+/* import NavbarUserComum from "../pages/navBar/navBarUserComum/index.js"; */
 import DashBoardMaster from "../pages/master/DashBoardMaster/index.js";
 import ListarArtigo from "../pages/userComum/ListarArtigos/index.js";
 import MeuPerfil from "../pages/userComum/MeuPerfil/index.js";
@@ -62,7 +62,6 @@ export default function RoutesAdmin() {
                 <Route path='/templete' element={<NavBarTemplete />} />
                 <Route path='/sidebar' element={<SideNavBar />} />
                 <Route path='/sidebarAluno' element={<SideNavBarNewAluno />} />
-                <Route path='/navBarComum' element={<NavbarUserComum />} />
 
 
 
