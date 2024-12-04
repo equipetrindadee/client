@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './EditarModal.css'; // Certifique-se de que o arquivo CSS esteja sendo importado corretamente
 
 // Importação do Firebase Firestore
-import { collection, getDocs, getFirestore } from 'firebase/firestore';
+import { collection, getDocs, getFirestore, updateDoc, doc } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
 
+// Inicialização do Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyBNIaO0le5Mn4UDxWX32YDoY_b4xNZikDg",
     authDomain: "reactfirebase-140c5.firebaseapp.com",
@@ -15,7 +16,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const EditarModal = ({ userId, closeModal }) => {
+const EditarModal = ({ user, closeModal }) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [category, setCategory] = useState('');
@@ -24,10 +25,10 @@ const EditarModal = ({ userId, closeModal }) => {
     const [isLimited, setIsLimited] = useState(false);
     const [confirmationMessage, setConfirmationMessage] = useState('');
     const [colunas, setColunas] = useState([]); // Estado para armazenar as colunas
+    const [isAdminConfirmationVisible, setIsAdminConfirmationVisible] = useState(false); // Novo estado para controle da confirmação
     const schoolYears = ['8°A do Ensino Fundamental', '8°B do Ensino Fundamental',
-        '9°A do Ensino Fundamental', '9°B do Ensino Fundamental',
-        '1°A do Ensino Médio', '1°B do Ensino Médio', '2°A do Ensino Médio',
-        '2°B do Ensino Médio', '3°A do Ensino Médio', '3°B do Ensino Médio', 'N/A']; // Array de anos escolares
+        '9°A do Ensino Fundamental', '9°B do Ensino Fundamental', '1°A do Ensino Médio', '1°B do Ensino Médio', 
+        '2°A do Ensino Médio', '2°B do Ensino Médio', '3°A do Ensino Médio', '3°B do Ensino Médio', 'N/A']; // Array de anos escolares
 
     // Função para buscar as colunas do Firestore
     const fetchColunas = async () => {
@@ -39,56 +40,94 @@ const EditarModal = ({ userId, closeModal }) => {
                 name: doc.data().columname, // Ajuste para usar 'columname' no lugar de 'name'
             }));
 
-            console.log(colunasData); // Verifique os dados que estão sendo recebidos
             setColunas(colunasData);
         } catch (error) {
             console.error('Erro ao buscar as colunas:', error);
         }
     };
 
+    // Função para preencher os dados do usuário no modal
+    useEffect(() => {
+        if (user) {
+            setName(user.name || '');
+            setEmail(user.email || '');
+            setCategory(user.category || '');
+            setDropdown2(user.dropdown2 || 'n/a');
+            setDropdownSchoolYear(user.dropdownSchoolYear || 'n/a');
+            setIsLimited(user.isLimited || false);
+        }
+    }, [user]); // O useEffect será executado sempre que a prop "user" mudar
+
     useEffect(() => {
         fetchColunas(); // Carregar as colunas quando o componente for montado
     }, []);
 
-    const handleSave = () => {
-        // Lógica para salvar as alterações no usuário
-        console.log({
-            userId,
-            name,
-            email,
-            category,
-            dropdown2, // Enviando o valor selecionado do segundo dropdown
-            dropdownSchoolYear, // Valor do dropdown de anos escolares
-            isLimited,
-        });
-
-        // Fechar o modal após salvar
-        closeModal();
+    // Função para salvar as alterações
+    const handleSave = async () => {
+        await saveUserData();
     };
 
+    // Função para salvar os dados do usuário no Firestore
+    const saveUserData = async () => {
+        try {
+            const userRef = doc(db, 'users', user.id);
+            await updateDoc(userRef, {
+                name,
+                email,
+                category,
+                dropdown2,
+                dropdownSchoolYear,
+                isLimited,
+            });
+
+            setConfirmationMessage('Usuário atualizado com sucesso!');
+            setTimeout(() => {
+                setConfirmationMessage('');
+                closeModal();
+            }, 2000); // Fechar o modal após 2 segundos
+        } catch (error) {
+            console.error('Erro ao atualizar o usuário:', error);
+        }
+    };
+
+    // Função para lidar com a mudança de categoria
     const handleCategoryChange = (e) => {
         const selectedCategory = e.target.value;
         setCategory(selectedCategory);
 
         // Se for "administrador" ou "comum", setar os valores dos dropdowns como 'n/a'
         if (selectedCategory === 'administrador' || selectedCategory === 'comum') {
-            setDropdown2('n/a');
-            setDropdownSchoolYear('n/a');
+            setDropdown2('n/a'); // Coluna será 'n/a'
+            setDropdownSchoolYear('n/a'); // Ano Escolar será 'n/a'
         } else {
-            setDropdown2('');
+            setDropdown2('');  // Limpa o valor do dropdown de coluna
             setDropdownSchoolYear(''); // Limpa o valor do dropdown de anos escolares
         }
-
-        if (selectedCategory !== 'administrador') {
-            setConfirmationMessage('');
+        
+        // Se for "administrador", exibe a confirmação automaticamente
+        if (selectedCategory === 'administrador') {
+            setIsAdminConfirmationVisible(true); // Exibir a confirmação
+        } else {
+            setIsAdminConfirmationVisible(false); // Esconder a confirmação
         }
+    };
+
+    // Função para confirmar a criação do administrador
+    const handleConfirmAdmin = async () => {
+        setIsAdminConfirmationVisible(false); // Esconde a confirmação
+        await saveUserData(); // Salva as alterações como "administrador"
+    };
+
+    // Função para cancelar a criação do administrador
+    const handleCancelAdmin = () => {
+        setIsAdminConfirmationVisible(false); // Fechar a confirmação sem salvar
     };
 
     return (
         <div className="master_listarUsuário-modalEditar-modal">
             <div className="master_listarUsuário-modalEditar-modal-content">
                 <span className="master_listarUsuário-modalEditar-close" onClick={closeModal}>&times;</span>
-                <h2 className="master_listarUsuário-modalEditar-modal-title">Editando o usuário ID: {userId}</h2>
+                <h2 className="master_listarUsuário-modalEditar-modal-title">Editando o usuário ID: {user.id}</h2>
                 <form className="master_listarUsuário-modalEditar-edit-form">
                     <div className="master_listarUsuário-modalEditar-form-group">
                         <label htmlFor="name">Nome:</label>
@@ -155,37 +194,54 @@ const EditarModal = ({ userId, closeModal }) => {
                         </div>
                     )}
 
-                    <div className="master_listarUsuário-modalEditar-form-group">
-                        <label htmlFor="school-year">Ano Escolar:</label>
-                        <select
-                            id="school-year"
-                            value={dropdownSchoolYear}
-                            onChange={(e) => setDropdownSchoolYear(e.target.value)}
-                            className="master_listarUsuário-modalEditar-select"
-                        >
-                            <option value="n/a">Selecione</option>
-                            {schoolYears.map((year, index) => (
-                                <option key={index} value={year}>{year}</option>
-                            ))}
-                        </select>
-                    </div>
+                    {/* Mostrar o dropdown de "Ano Escolar" somente se a categoria for "aluno" */}
+                    {category === 'aluno' && (
+                        <div className="master_listarUsuário-modalEditar-form-group">
+                            <label htmlFor="school-year">Ano Escolar:</label>
+                            <select
+                                id="school-year"
+                                value={dropdownSchoolYear}
+                                onChange={(e) => setDropdownSchoolYear(e.target.value)}
+                                className="master_listarUsuário-modalEditar-select"
+                            >
+                                <option value="n/a">Selecione</option>
+                                {schoolYears.map((year, index) => (
+                                    <option key={index} value={year}>
+                                        {year}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                    )}
 
-                    <div className="master_listarUsuário-modalEditar-form-group">
-                        <label htmlFor="dropdown2">Coluna:</label>
-                        <select
-                            id="dropdown2"
-                            value={dropdown2}
-                            onChange={(e) => setDropdown2(e.target.value)}
-                            className="master_listarUsuário-modalEditar-select"
-                        >
-                            <option value="n/a">Selecione</option>
-                            {colunas.map((coluna) => (
-                                <option key={coluna.id} value={coluna.name}>
-                                    {coluna.name}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
+                    {/* Mostrar a confirmação para "administrador" */}
+                    {isAdminConfirmationVisible && (
+                        <div className="master_listarUsuário-modalEditar-admin-confirmation">
+                            <p>Tem certeza de que deseja criar um administrador?</p>
+                            <button type="button" onClick={handleConfirmAdmin}>Sim, tenho certeza</button>
+                            <button type="button" onClick={handleCancelAdmin}>Cancelar</button>
+                        </div>
+                    )}
+
+                    {/* Coluna - Agora será renderizada apenas se a categoria não for 'administrador' ou 'comum' */}
+                    {category !== 'administrador' && category !== 'comum' && (
+                        <div className="master_listarUsuário-modalEditar-form-group">
+                            <label htmlFor="dropdown2">Coluna:</label>
+                            <select
+                                id="dropdown2"
+                                value={dropdown2}
+                                onChange={(e) => setDropdown2(e.target.value)}
+                                className="master_listarUsuário-modalEditar-select"
+                            >
+                                <option value="n/a">Selecione</option>
+                                {colunas.map((coluna) => (
+                                    <option key={coluna.id} value={coluna.name}>
+                                        {coluna.name}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                    )}
 
                     <button
                         type="button"

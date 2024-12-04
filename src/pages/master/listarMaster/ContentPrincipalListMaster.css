@@ -5,6 +5,13 @@
     display: flex;
 } */
 
+.master_listarMaster-ContentPrincipal{
+    width: 100vw !important;
+    height: auto !important;
+}
 
+.master_listarMaster-ContentPrincipal-content{
+    width: 95% !important;
+}
 
 
