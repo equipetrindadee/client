@@ -26,7 +26,8 @@
 .DashBoardMaster-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: end;
+    text-align: end;
 }
 
 .DashBoardMaster-header h1 {
@@ -39,13 +40,16 @@
     font-family: 'Oswald', 'sans-serif';
     font-size: 25px !important;
     font-weight: 600;
+    margin-left: auto;
 }
 
 .dashboardMaster-Container-master h1{
     width: 80%;
     font-family: 'Pattaya', cursive;
+    font-weight: 800;
     font-size: 40px !important;
     font-weight: 500;
+    margin-left: 20px;
 }
 
 .DashBoardMaster-grids {
@@ -77,9 +81,43 @@
     font-size: 30px;
 }
 
-.DashBoardMaster-card p{
+.DashBoardMaster-card h2{
     font-size: 20px;
+    font-family: 'Pattaya', 'sans-serif';
+    color: white;
     margin-inline: auto;
+}
+
+.notificacaoEdicao-dashboard-master{
+    border: 1px solid #6B3DEC !important;
+}
+
+.notificacaoEdicao-dashboard-master i{
+    color: #6B3DEC !important;
+}
+
+.notificacaoCadastro-dashboard-master{
+    border: 1px solid #3D64EC !important;
+}
+
+.notificacaoCadastro-dashboard-master i{
+    color: #3D64EC !important;
+}
+
+.notificacaoMateria-dashboard-master{
+    border: 1px solid #3D98EC !important;
+}
+
+.notificacaoMateria-dashboard-master i{
+    color: #3D98EC !important;
+}
+
+.notificacaoCurtida-dashboard-master{
+    border: 1px solid #3DCDEC !important;
+}
+
+.notificacaoCurtida-dashboard-master i{
+    color: #3DCDEC !important;
 }
 
 .DashBoardMaster-bottom-section {
@@ -87,11 +125,11 @@
     justify-content: space-between;
     align-items: flex-start; /* Alinha a seção do lado esquerdo mais acima */
     width: 100%;
-    margin-top: 20px; /* Dá mais espaço acima da seção de baixo */
 }
 
 .DashBoardMaster-notifications {
     width: 60%;
+
     font-size: 1rem;
 }
 
@@ -113,6 +151,7 @@
     margin-bottom: 10px;
     gap: 10px;
     font-size: 1rem;
+    font-weight: 800;
 }
 
 .DashBoardMaster-actions {

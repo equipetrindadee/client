@@ -1,0 +1,250 @@
+/* Rodapé Principal */
+.userComum-rodape-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  align-items: center;
+  padding: 50px;
+  background-color: #000;
+  width: 100%;
+  height: auto;
+}
+
+.userComum-rodape-footer h1 {
+  font-family: 'Oswald', sans-serif;  /* Aplica a fonte Oswald */
+  font-weight: 700;  /* Usando o peso 700 (negrito) */
+  color: #fff;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+/* Contêiner de contato */
+.userComum-rodape-contact-container {
+  min-width: 200px;
+}
+
+.userComum-rodape-contact-container h2 {
+  font-family: 'Inter-Bold', sans-serif;
+  font-size: 20px;
+  color: #fff;
+}
+
+/* Blocos de contato */
+.userComum-rodape-contact-email,
+.userComum-rodape-contact-number {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.userComum-rodape-contact-number {
+  height: 30px;
+}
+
+/* Alterando a cor do texto do email */
+.userComum-rodape-contact-email p {
+  font-family: 'Inter-Bold', sans-serif;
+  font-size: 15px;
+  color: rgb(255, 255, 255); /* Azul para o email */
+}
+
+/* Alterando a cor do texto do telefone */
+.userComum-rodape-contact-number p {
+  font-family: 'Inter-Bold', sans-serif;
+  font-size: 15px;
+  color: rgb(255, 255, 255); /* Vermelho para o telefone */
+}
+
+
+/* Responsividade para telas maiores que 991px (computadores e dispositivos grandes) */
+@media (min-width: 992px) {
+  .userComum-rodape-footer {
+    gap: 30px; /* Aumenta o espaçamento entre os elementos */
+    padding: 30px;
+    display: flex; /* Flexbox para centralizar os itens */
+    flex-direction: row; /* Disposição dos itens em linha */
+    justify-content: space-between; /* Espaça os itens uniformemente */
+    align-items: flex-start; /* Alinha os itens no topo */
+    height: auto;
+  }
+
+  .userComum-rodape-footer h1 {
+    font-size: 40px;
+    padding-top: 15px;
+    text-align: left; /* Alinha o título à esquerda */
+  }
+
+  .userComum-rodape-contact-container {
+    min-width: 200px; /* Garante que o contêiner de cada bloco tenha um tamanho mínimo */
+    text-align: left; /* Alinha o texto à esquerda */
+    margin-bottom: 10px;
+  }
+
+  .userComum-rodape-contact-container h2 {
+    font-size: 20px;
+    margin-bottom: 5px; /* Ajusta o espaço abaixo do título */
+  }
+
+  .userComum-rodape-contact_email img,
+  .userComum-rodape-contact_number img {
+    height: 30px; /* Ajusta o tamanho dos ícones */
+  }
+
+  .userComum-rodape-contact_email p,
+  .userComum-rodape-contact_number p {
+    font-size: 14px;
+    margin: 0; /* Remove a margem extra entre os elementos */
+  }
+
+  .userComum-rodape-contact_email,
+  .userComum-rodape-contact_number {
+    display: flex; /* Exibe os ícones e texto em linha */
+    align-items: center; /* Alinha os ícones com os textos */
+    justify-content: flex-start; /* Alinha os ícones e textos à esquerda */
+    text-align: left; /* Alinha o texto à esquerda */
+    margin-top: 5px;
+  }
+
+  .userComum-rodape-contact_number {
+    margin-top: 15px;
+  }
+
+  .userComum-rodape-contact_number img {
+    height: 30px; /* Ajusta a altura da imagem do telefone */
+  }
+
+  .userComum-rodape-contact_number p {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+}
+
+/* Responsividade para telas médias (entre 768px e 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .userComum-rodape-footer {
+    gap: 15px;
+    padding: 15px;
+    display: flex; /* Flexbox para centralizar os itens */
+    flex-direction: column; /* Alinha os itens verticalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    height: auto; /* Ajusta a altura automaticamente */
+  }
+
+  .userComum-rodape-footer h1 {
+    font-size: 50px;
+    padding-top: 15px;
+    text-align: center; /* Centraliza o título */
+  }
+
+  .userComum-rodape-contact-container {
+    min-width: 100%; /* Garante que o contêiner de contato ocupe toda a largura */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens dentro do contêiner */
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    margin-bottom: 10px;
+  }
+
+  .userComum-rodape-contact-container h2 {
+    font-size: 23px;
+    margin-bottom: 5px; /* Ajusta o espaço abaixo do título */
+  }
+
+  .userComum-rodape-contact_email img,
+  .userComum-rodape-contact_number img {
+    height: 25px; /* Ajusta o tamanho dos ícones */
+  }
+
+  .userComum-rodape-contact_email p,
+  .userComum-rodape-contact_number p {
+    font-size: 13px;
+    margin: 0; /* Remove a margem extra entre os elementos */
+  }
+
+  .userComum-rodape-contact_email,
+  .userComum-rodape-contact_number {
+    display: flex; /* Exibe os ícones e texto em linha */
+    align-items: center; /* Alinha os ícones com os textos */
+    justify-content: center; /* Centraliza horizontalmente */
+    text-align: center; /* Centraliza o texto */
+    margin-top: 5px;
+  }
+
+  .userComum-rodape-contact_number {
+    margin-top: 15px;
+  }
+
+  .userComum-rodape-contact_number img {
+    height: 35px; /* Ajusta a altura da imagem do telefone */
+  }
+
+  .userComum-rodape-contact_number p {
+    margin-top: 8px;
+    font-size: 13px;
+  }
+}
+
+
+
+/* Responsividade para telas pequenas (menos de 768px) */
+@media screen and (max-width: 767px) {
+  .userComum-rodape-footer {
+    gap: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto; /* Ajusta a altura automaticamente */
+    justify-content: center; /* Garante que os elementos fiquem centralizados verticalmente */
+  }
+
+  .userComum-rodape-footer h1 {
+    font-size: 30px;
+    text-align: center; /* Centraliza o título */
+    padding-top: 15px;
+  }
+
+  .userComum-rodape-contact-container {
+    min-width: 100%; /* A largura do contêiner de contato será 100% */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens dentro do contêiner */
+    justify-content: center;
+    text-align: center; /* Centraliza o texto */
+    margin: 10px 0;
+  }
+
+  .userComum-rodape-contact-container h2 {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+
+  .userComum-rodape-contact_email p,
+  .userComum-rodape-contact_number p {
+    font-size: 13px; /* Ajuste do tamanho do texto */
+    margin: 0;
+  }
+
+  .userComum-rodape-contact_email,
+  .userComum-rodape-contact_number {
+    display: flex;
+    align-items: center; /* Centraliza o conteúdo dentro dos blocos de contato */
+    justify-content: center; /* Garante que o texto e o ícone fiquem centralizados */
+    margin-top: 5px;
+  }
+
+  .userComum-rodape-contact_number {
+    margin-top: 10px;
+  }
+
+  .userComum-rodape-contact_number img,
+  .userComum-rodape-contact_email img {
+    height: 20px; /* Diminuindo o tamanho da imagem */
+    margin-right: 5px; /* Espaço entre o ícone e o texto */
+  }
+
+  .userComum-rodape-contact_number p {
+    margin-top: 5px;
+  }
+}

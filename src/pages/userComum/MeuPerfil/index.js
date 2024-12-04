@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import NavbarUserComum from "../../navBar/navBarUserComum/index.js";
+/* import NavbarUserComum from "../../navBar/navBarUserComum/index.js"; */
 
 import './meuperfil.css';
 
@@ -115,7 +115,7 @@ const MeuPerfil = () => {
     return (
         <>
            <div>
-            <NavbarUserComum/>
+{/*             <NavbarUserComum/> */}
            </div>
 
             
