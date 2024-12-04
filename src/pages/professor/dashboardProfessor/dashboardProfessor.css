@@ -5,6 +5,10 @@
     width: 100%;
 }
 
+.celular-dashboar-Professor{
+    display: none ;
+}
+
 .buttonNotFunction{
     display: none;
 }
@@ -584,6 +588,16 @@ body::-webkit-scrollbar-thumb{
 }
 
 @media (max-width:769px) {
+    .container-dashboard-Professor{
+        display: none !important;
+    }
+
+    .celular-dashboar-Professor{
+        display: block !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background-color: #024959 !important;
+    }
     .footer-dashboard-Professor{
         display: none;
     }
