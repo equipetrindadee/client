@@ -76,6 +76,8 @@ export const Template4 = ({ selectedUser }) => {
     const handleText4Change = (event) => {
         setTextCampo2(event.target.value);
     };
+
+    
     const handleValueAuthor = (event) => {
         setValueTitle = setUserName;
     };
@@ -293,7 +295,7 @@ export const Template4 = ({ selectedUser }) => {
 
                                 <div className="text7-t4 text1NameColumnReceiveTemplete1-t4">
                                     <textarea
-                                        placeholder="Artigo 4"
+                                        placeholder="Artigo 3"
                                         className="mediumWi-t4"
                                         value={campo4Text}
                                         onChange={handleCampo7TextChange}
@@ -301,6 +303,7 @@ export const Template4 = ({ selectedUser }) => {
                                     />
                                     <p>{campo4Text.length}/460</p>
                                 </div>
+                                
                             </div>
                         </div>
 
@@ -423,7 +426,7 @@ export const Template4 = ({ selectedUser }) => {
                                             {/* Imagem carregada para campo5 */}
                                             {campo5Image && <img src={campo5Image} className="image-400w-t4" alt="Imagem do campo5" />}
                                             <div className="texto-t4">
-                                                <p className="textValueReceiveTemplete1-t4 textWithBG-t4">{campo3Text}</p> {/* Texto do campo4 */}
+                                                <p className="textValueReceiveTemplete1-t4 textWithBG-t4">{campo3Text}</p> {/* Texto do campo5 */}
                                             </div>
                                         </div>
                                     </div>
@@ -432,17 +435,16 @@ export const Template4 = ({ selectedUser }) => {
                                             {/* Imagem carregada para campo6 */}
                                             {campo6Image && <img src={campo6Image} className="image-400w-t4" alt="Imagem do campo5" />}
                                             <div className="texto-t4">
-                                                <p className="textValueReceiveTemplete1-t4 textWithBG-t4">{campo3Text}</p> {/* Texto do campo4 */}
+                                                <p className="textValueReceiveTemplete1-t4 textWithBG-t4">{campo3Text}</p> {/* Texto do campo6 */}
                                             </div>
                                         </div>
                                     </div>
-                                {/* fim div 3 imagens */}
+                                {/* fim  3 imagens */}
 
-                                <div className="campo7-t4">
-                                    <div className="texto-t4">
-                                        <p className="textValueReceiveTemplete1-t4 textWithBG-t4">{campo4Text}</p> {/* Texto do campo7 */}
-                                    </div>
+                                <div className="campo7-t4 ">
+                                        <p className="textValueReceiveTemplete1-t4 textWithBG-t4 ">{campo4Text}</p> {/* Texto do campo7 */}
                                 </div>
+                                
                             </div>
                         </div>
 
