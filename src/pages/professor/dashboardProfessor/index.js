@@ -443,7 +443,15 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
                     <i className="bi bi-caret-left-fill arrowLeft arrowCards-Dashboard-Professor" onClick={cardDashPrev}></i>
 
                     {visibleitemsCardDash.map((item) => (
-                        <div key={item.id} className={item.card}>
+                        <div
+                        key={item.id}
+                        className={`${item.card}`}
+                        style={{
+                            height: item.colunas.length > 0 
+                                ? `${Math.min(item.colunas.length + 400, 520)}px` // Se o tamanho ultrapassar 520px, ele não aumenta mais
+                                : '22%', // Se não houver colunas, a altura será 22%
+                        }}
+                        >
                             <div className={item.logo}>
                                 <i className={item.iconeLogoCard}></i>
                             </div>
