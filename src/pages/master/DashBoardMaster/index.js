@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import "../../master/DashBoardMaster/dashboardmaster.css";
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -7,7 +7,31 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 export const DashBoardMaster = () => {
     const [showSearch, setShowSearch] = useState(false);
+    const searchRef = useRef(null); // Criando uma referência para o input de pesquisa
+    const buttonRef = useRef(null); // Criando uma referência para o botão de pesquisa
     const [showFilter, setShowFilter] = useState(false);
+
+    const handleClickOutside = (event) => {
+        // Verifica se o clique foi fora do input e do botão
+        if (
+          searchRef.current &&
+          !searchRef.current.contains(event.target) &&
+          buttonRef.current &&
+          !buttonRef.current.contains(event.target)
+        ) {
+          setShowSearch(false); // Esconde o campo de pesquisa
+        }
+      };
+    
+      useEffect(() => {
+        // Adiciona o listener de evento para cliques fora do input
+        document.addEventListener("click", handleClickOutside);
+    
+        // Limpa o listener quando o componente for desmontado
+        return () => {
+          document.removeEventListener("click", handleClickOutside);
+        };
+      }, []);
 
     return (
         <div className="DashBoardMaster-container">
@@ -65,13 +89,30 @@ export const DashBoardMaster = () => {
                     </section>
 
                     <div className="DashBoardMaster-actions">
-                        <button onClick={() => setShowSearch(!showSearch)} className="DashBoardMaster-search-icon">
-                            <i className="bi bi-search"></i>
-                        </button>
-                        {showSearch && <input type="text" placeholder="Pesquisar..." className="DashBoardMaster-search-bar" />}
+
+                        <div className="barraPesquisa-dashboard-master">
+                            <button
+                                ref={buttonRef} // Atribui a referência ao botão
+                                onClick={(e) => {
+                                e.stopPropagation(); // Impede que o clique no botão seja propagado
+                                setShowSearch(!showSearch);
+                                }}
+                                className="DashBoardMaster-search-icon"
+                            >
+                                <i className="bi bi-search"></i>
+                            </button>
+                            {showSearch && (
+                                <input
+                                ref={searchRef} // Atribui a referência ao input
+                                type="text"
+                                placeholder="Pesquisar..."
+                                className="DashBoardMaster-search-bar"
+                                />
+                            )}
+                        </div>
 
                         <button onClick={() => setShowFilter(!showFilter)} className="DashBoardMaster-filter-icon">
-                            <i className="bi bi-funnel"></i> Filtro
+                            <i class="bi bi-funnel-fill"></i> Filtro
                         </button>
                         {showFilter && (
                             <div className="DashBoardMaster-filter-dropdown">

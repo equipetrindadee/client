@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col } from 'react-bootstrap';
-import { getFirestore, doc, updateDoc, getDoc } from "firebase/firestore";  
+import { getFirestore, doc, updateDoc, getDoc,collection, addDoc} from "firebase/firestore";  
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../areaProfessor/areaProfessor.css';
@@ -25,27 +25,53 @@ export const AreaProfessor = () => {
     const handleCloseModalConcluido = () => setShowModalConcluido(false);
 
     const processoPostar = () => {
-        setPostarClass('buttoEnviar-processodePostagem-postado');
-        setAvisoPostarClass('materiaPostada-processoPostagem');
+        // Atualiza o estado para refletir o processo de postagem
+        setPostarClass("buttoEnviar-processodePostagem-postado");
+        setAvisoPostarClass("materiaPostada-processoPostagem");
         setConcluidoPostado(true);
-        setConcluidoClass('');
-        setAvisoConcluidoClass('');
+        setConcluidoClass("");
+        setAvisoConcluidoClass("");
         setVoltarParaEditar(true);
         setPostadoAviso(true);
         handleCloseModal();
-
+    
+        // Verifica se há um ID de publicação selecionado
         if (selectedPublicationId) {
             const db = getFirestore();
             const edicaoRef = doc(db, "edicao", selectedPublicationId);
-
-            updateDoc(edicaoRef, {
-                status: 'Postado',
-            })
+    
+            // Atualiza o status na coleção 'edicao'
+            updateDoc(edicaoRef, { status: "Postado" })
                 .then(() => {
-                    console.log("Status atualizado com sucesso!");
+                    console.log("Status atualizado com sucesso na coleção 'edicao'.");
+    
+                    // Obter os dados da publicação na coleção 'edicao'
+                    return getDoc(edicaoRef);
+                })
+                .then((edicaoDoc) => {
+                    if (edicaoDoc.exists()) {
+                        const edicaoData = edicaoDoc.data();
+    
+                        // Adicionar o documento na coleção 'jornal' apenas se o status for 'Postado'
+                        if (edicaoData.status === "Postado") {
+                            const jornalCollection = collection(db, "jornal");
+    
+                            return addDoc(jornalCollection, {
+                                ...edicaoData, // Copia os dados do documento original
+                                dataPostagem: new Date(), // Adiciona a data de postagem
+                            });
+                        } else {
+                            console.warn("O status não é 'Postado'. Nenhuma ação realizada na coleção 'jornal'.");
+                        }
+                    } else {
+                        console.error("Documento na coleção 'edicao' não encontrado.");
+                    }
+                })
+                .then(() => {
+                    console.log("Documento adicionado com sucesso à coleção 'jornal'.");
                 })
                 .catch((error) => {
-                    console.error("Erro ao atualizar o status: ", error);
+                    console.error("Erro ao processar postagem:", error);
                 });
         } else {
             console.error("ID da publicação não encontrado.");

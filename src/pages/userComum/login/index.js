@@ -13,31 +13,38 @@ function Login() {
     const { singIn } = useContext(Context);
     const navigate = useNavigate();
 
+    
     const handleLogin = async () => {
         setLoading(true);
         setError("");
-
+    
         try {
             // Verificação do que está sendo enviado
             console.log("Email:", email);
             console.log("Password:", password);
-
+    
             const response = await api.post('/login', { email, password });
-            const { token, categoria, coluna,acesso} = response.data;
-
-            localStorage.setItem('token', token);
-            localStorage.setItem('UserCategoria', categoria);
-            localStorage.setItem('UserColuna', coluna);
-            localStorage.setItem('UserAcesso', acesso);
+            const { token, categoria, coluna, acesso } = response.data;
+    
+            sessionStorage.setItem('token', token);
+            sessionStorage.setItem('UserCategoria', categoria);
+            sessionStorage.setItem('UserColuna', coluna);
+            sessionStorage.setItem('UserAcesso', acesso);
+            
+            // localStorage.setItem('token', token);
+            // localStorage.setItem('UserCategoria', categoria);
+            // localStorage.setItem('UserColuna', coluna);
+            // localStorage.setItem('UserAcesso', acesso);
             api.defaults.headers.Authorization = `Bearer ${token}`;
             singIn(true);
-
+    
             setTimeout(() => {
+                // Redireciona para a página de acordo com a categoria
                 if (categoria === 'professor') {
                     navigate("/dashP");
                 } else if (categoria === 'aluno') {
                     navigate("/aluno/dasboardAluno");
-                }else if (categoria === 'comum') {
+                } else if (categoria === 'comum') {
                     navigate("/");
                 }
             }, 1000);
@@ -108,4 +115,8 @@ function Login() {
     );
 }
 
+<<<<<<< HEAD
+export default Login;   
+=======
 export default Login;
+>>>>>>> e4f5bbe2996a1ebe906da77f13efba69189417b3

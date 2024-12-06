@@ -47,7 +47,11 @@ import SobreNos from "../pages/userComum/SobreNos/index.js";
 import NewDashBoardAluno from "../pages/aluno/newDasboardAluno/index.js"
 import FormularioMaster from "../pages/master/formularioMaster/index.js";
 import ContentPrincipalListMaster from "../pages/master/listarMaster/index.js";
+<<<<<<< HEAD
 import ListarMasterdois from "../pages/master/ListarMasterdois/index.js";
+=======
+import LogoutButton from "../pages/userComum/Logout/index.js";
+>>>>>>> d90629d6e843d1e25da32e2b0e1f3d9a81236afe
 
 
 export default function RoutesAdmin() {
@@ -92,6 +96,7 @@ export default function RoutesAdmin() {
 
                 {/* Telas UserComum */}
                 <Route path='/login' element={<Login />} />
+                <Route path='/logout' element={<LogoutButton />} />
                 <Route path='/cadastro' element={<Cadastro />} />
                 <Route path='/userComum/colunistaUsuario' element={<ColunistaUsuario />} />
                 <Route path='/userComum/faleConosco' element={<FaleConosco />} />
