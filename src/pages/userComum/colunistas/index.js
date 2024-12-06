@@ -5,7 +5,7 @@ import FlipMove from 'react-flip-move'; // Importa a biblioteca
 import { motion } from 'framer-motion'; // Importa o Framer Motion
 import { Modal, Button, Form } from 'react-bootstrap'; // Importa componentes do Bootstrap
 import { Dropdown } from 'react-bootstrap';
-import NavbarUserComum from '../../navBar/navBarUserComum';
+/* import NavbarUserComum from '../../navBar/navBarUserComum'; */
 
 
 function ColunistaUsuario() {
@@ -106,7 +106,7 @@ function ColunistaUsuario() {
 
   return (
     <div className="usercomum-container-colunistas">
-      <NavbarUserComum/>
+{/*       <NavbarUserComum/> */}
       {/* Botão para criar um novo colunista */}
       {/* <div className="button-containercolunista">
         <Button variant="primary" onClick={handleShowModal}>

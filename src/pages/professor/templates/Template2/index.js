@@ -213,7 +213,7 @@ export const Template2 = ({ selectedUser }) => {
                             onChange={handleValueTilte}
                             maxLength="30"
                         />
-                        <p>{valueTitle.length}/30</p>
+                        
 
                         {/* header esquerda com inputs */}
                         <div className="header-left-t2">
@@ -228,9 +228,9 @@ export const Template2 = ({ selectedUser }) => {
                                         placeholder="Artigo 1"
                                         value={campo1Text}
                                         onChange={handleTextChange}
-                                        maxLength="460"
+                                        maxLength="400"
                                     />
-                                    <p>{campo1Text.length}/460</p>
+                                    <p>{campo1Text.length}/400</p>
                                 </div>
                                 <div className="text2-t2 btn-bg-t2" id="text2BtnBg">
                                     <input
@@ -401,7 +401,7 @@ export const Template2 = ({ selectedUser }) => {
                                 <div className="campo6-t2 ">
                                     
                                         {/* Imagem carregada para campo5 */}
-                                        {campo5Image && <img src={campo5Image} className="image-400w-t2" alt="Imagem do campo5" />}
+                                        {campo5Image && <img src={campo5Image} className="image-400w-t2 " alt="Imagem do campo5" />}
 
                                     
                                 </div>

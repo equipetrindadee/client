@@ -50,10 +50,10 @@ function CardPerfilUserAlunoDescription() {
     return (
         <div>
             {alunos && (
-            <div key={alunos.id} className="card-body cadPerfilUserAlunoDescription-infos">
+            <div key={alunos.id} className="cadPerfilUserAlunoDescription-infos">
                 <button
                     type="button"
-                    className="card-body cadPerfilUserAlunoDescription-button"
+                    className="cadPerfilUserAlunoDescription-button"
                     data-bs-toggle="modal"
                     data-bs-target="#staticBackdrop"
                 >

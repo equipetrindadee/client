@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import "../../master/DashBoardMaster/dashboardmaster.css";
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -20,7 +21,6 @@ export const DashBoardMaster = () => {
 
             <div className="DashBoardMaster-content">
                 <header className="DashBoardMaster-header">
-                    <h1>Dashboard</h1>
                     <h2>O EDUCADOR</h2>
                 </header>
 
@@ -30,24 +30,24 @@ export const DashBoardMaster = () => {
 
                     <div className="DashBoardMaster-grids">
                         <div className="DashBoardMaster-card"> {/* Curtidas */}
-                            <i className="bi bi-hand-thumbs-up"></i>
+                            <i class='bx bxs-like' ></i>
                             <h3>300</h3>
-                            <p>Curtidas</p>
+                            <h2>Curtidas</h2>
                         </div>
                         <div className="DashBoardMaster-card"> {/* Matérias */}
-                            <i className="bi bi-book"></i>
+                            <i class='bx bxs-book' ></i>
                             <h3>12</h3>
-                            <p>Matérias</p>
+                            <h2>Matérias</h2>
                         </div>
                         <div className="DashBoardMaster-card"> {/* Cadastros */}
-                            <i className="bi bi-person"></i>
+                            <i class='bx bx-walk'></i>
                             <h3>437</h3>
-                            <p>Cadastros</p>
+                            <h2>Cadastros</h2>
                         </div>
                         <div className="DashBoardMaster-card"> {/* Edições */}
-                            <i className="bi bi-send"></i>
+                            <i class='bx bxs-paper-plane'></i>
                             <h3>120</h3>
-                            <p>Edições</p>
+                            <h2>Edições</h2>
                         </div>
                     </div>
 
@@ -57,10 +57,10 @@ export const DashBoardMaster = () => {
                     <section className="DashBoardMaster-notifications">
                         <h3>Notificações</h3>
                         <ul>
-                            <li><i className="bi bi-send"></i> Uma nova edição foi postada</li>
-                            <li><i className="bi bi-person"></i> Um novo usuário foi cadastrado</li>
-                            <li><i className="bi bi-book"></i> Uma nova matéria foi concluída</li>
-                            <li><i className="bi bi-hand-thumbs-up"></i> Nova curtida</li>
+                            <li className='notificacaoEdicao-dashboard-master'><i class='bx bxs-paper-plane'></i> Uma nova edição foi postada</li>
+                            <li className='notificacaoCadastro-dashboard-master'><i class='bx bx-walk'></i> Um novo usuário foi cadastrado</li>
+                            <li className='notificacaoMateria-dashboard-master'><i class='bx bxs-book' ></i> Uma nova matéria foi concluída</li>
+                            <li className='notificacaoCurtida-dashboard-master'><i class='bx bxs-like' ></i> Nova curtida</li>
                         </ul>
                     </section>
 

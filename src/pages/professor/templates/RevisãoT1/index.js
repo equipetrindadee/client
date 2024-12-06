@@ -284,7 +284,7 @@ export const RevisaoT1 = ({ selectedUser }) => {
                             onChange={(e) => setTitle(e.target.value)} // Atualiza o estado ao editar
                             maxLength="30"
                         />
-                        <p>{valueTitle.length}/30</p>
+                        
 
                         {/* header esquerda com inputs */}
                         <div className="header-left-t1">
@@ -303,9 +303,9 @@ export const RevisaoT1 = ({ selectedUser }) => {
                                             updatedTexts[0] = e.target.value;
                                             setTexts(updatedTexts);
                                         }}
-                                        maxLength="460"
+                                        maxLength="400"
                                     />
-                                    <p>{(texts[0] || '').length}/460</p>
+                                    <p>{(texts[0] || '').length}/400</p>
                                 </div>
 
                                 <div className="text2-t1 btn-bg-t1" id="text2BtnBg">
@@ -365,9 +365,9 @@ export const RevisaoT1 = ({ selectedUser }) => {
                                             updatedTexts[2] = e.target.value;
                                             setTexts(updatedTexts);
                                         }}
-                                        maxLength="465"
+                                        maxLength="365"
                                     />
-                                    <p>{(texts[2] || '').length}/465</p>
+                                    <p>{(texts[2] || '').length}/365</p>
                                 </div>
 
                                 <div className="text7-t1 text1NameColumnReceiveTemplete1-t1">
@@ -521,11 +521,41 @@ export const RevisaoT1 = ({ selectedUser }) => {
                                         <p className="textValueReceiveTemplete1-t1 textWithBG-t1">{texts[3]}</p> {/* Texto do campo7 */}
                                     </div>
                                 </div>
+
+                                
                             </div>
+                            
                         </div>
 
                         {/* footer lado direito */}
-                        <div className="footer-right-t1"></div>
+                        <div className="footer-right-t1">
+                            {/* parte dos QRcodes */}
+                            {/* QRcode 1 */}
+                            <div className="QRcode-1-footer">
+                                <div className="campo9-t1">
+                                    <div className="texto-t1">
+                                        <p className="textValueReceiveTemplete1-t1 textWithBG-t1 LinkQRcode">{texts[4]}</p> {/* Texto do campo8 */}
+                                    </div>
+                                </div>
+                                <div className="campo10-t1">
+                                    {/* Imagem carregada para campo9 */}
+                                    {code1Image && <img src={code1Image} className="image-400w-t1 imgQRcodes" alt="Imagem do campo9" />}
+                                </div>
+                            </div>
+                            {/* QRcode 2 */}
+                            <div className="QRcode-2-footer">
+                                <div className="campo11-t1">
+                                    <div className="texto-t1">
+                                        <p className="textValueReceiveTemplete1-t1 textWithBG-t1 LinkQRcode">{texts[5]}</p> {/* Texto do campo10*/}
+                                    </div>
+                                </div>
+                                <div className="campo8-t1">
+                                    {/* Imagem carregada para campo11 */}
+                                    {code2Image && <img src={code2Image} className="image-400w-t1 imgQRcodes" alt="Imagem do campo11" />}
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
