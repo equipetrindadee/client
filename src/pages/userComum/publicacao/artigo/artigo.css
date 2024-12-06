@@ -7,9 +7,11 @@
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     font-family: 'Libre Baskerville';
-    font-size: 17px;
+    font-size: 15px !important;
     text-align: justify;
   }
+
+
   
   .user_publicacao-materia-title {
     grid-column: 1 / -1;
@@ -24,7 +26,11 @@
   
   .user_publicacao-materia-text-esquerdo,
   .user_publicacao-materia-text-centro {
-    padding: 3rem 2rem;
+    padding: 10% 2rem;
+  }
+
+  .user_publicacao-materia-text-esquerdo p{
+    font-size: 1.8rem;
   }
   
   .user_publicacao-materia-img-direito,
@@ -41,7 +47,12 @@
   .user_publicacao-materia-paragrafo,
   .user_publicacao-materia-paragrafo-inferior {
     grid-column: 1 / -1;
-    padding: 3rem 2rem;
+    padding: 10% 2rem;
+  }
+
+  .user_publicacao-materia-paragrafo-inferior {
+    padding: 10% 2rem;
+    padding-top: 0%;
   }
   
   .user_publicacao-materia-footer {
@@ -50,17 +61,24 @@
     gap: 20px;
     width: 100%;
   }
+
+
   
   .user_publicacao-materia-footer-item {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
+
+  .user_publicacao-materia-footer-img{
+    text-align: center;
+  }
   
   .user_publicacao-materia-footer-img img {
     width: 100%;
     max-width: 150px;
     height: auto;
+    margin-inline: auto;
   }
   
   .user_publicacao-materia-footer-text {
@@ -113,6 +131,14 @@
     .user_publicacao-materia-footer-text {
       margin-left: 0;
       /* Remover margem no responsivo */
+    }
+
+    .user_publicacao-materia-text-esquerdo p{
+      font-size: 1.4rem;
+    }
+
+    .user_publicacao-materia p{
+      font-size: 1.4rem;
     }
   
    
