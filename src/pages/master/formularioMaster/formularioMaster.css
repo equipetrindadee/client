@@ -1,18 +1,25 @@
+.formularioMaster-body{
+  display: grid;
+  grid-template-columns: 1% 90%;
+  grid-template-rows: 100%;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
 .formularioMaster-container {
-  max-width: 96% !important;
+  width: 104% !important;
   margin-left: 10vh;
-  padding: 136px;
+  padding: 17px 90px !important;
   background-color: #fff;
-  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 730px !important;
 }
 
 .formularioMaster-header {
   display: flex;
-  margin-top: -70px;
+  margin-top: 0px;
   justify-content: space-between;
   align-items: center;
-  
 }
 
 .formularioMaster-title {
@@ -42,6 +49,7 @@
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
+  margin-bottom: 100px !important;
 }
 
 .formularioMaster-profile-icon {
@@ -54,7 +62,7 @@ align-items: center;
 }
 
 .formularioMaster-edit {
-margin-bottom: 17px;
+margin-bottom: 20px;
 }
 
 .formularioMaster-edit-button {
@@ -78,7 +86,8 @@ margin-bottom: 17px;
 }
 
 .formularioMaster-form {
-  margin-top: 20px;
+  position: relative;
+  margin-bottom: 40px !important;
 }
 
 .formularioMaster-label {
@@ -92,16 +101,51 @@ margin-bottom: 17px;
   border-color: #D9D9D9;
   border-radius: 5px;
   padding: 10px;
-  height: 6vh;
-
+  height: 6vh;   
 }
 
-.formularioMaster-dropdown {
-  max-height: 20% !important;
+.formularioMaster-input:hover{
+  border-color: #6846EF;
 }
 
-.formularioMaster-dropdown .dropbtn{
+.FormularioMaster-dropdown-custom{
   background-color: white;
+  color: black;
+  border: 2px solid;
+  border-color: #D9D9D9;
+  border-radius: 7px;
+  width: 100%;
+  height: 43px;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.FormularioMaster-dropdown-custom:hover{
+  background-color: #6846EF;
+  color: white;
+}
+
+.formularioMaster-dropdown-Menu{
+  width: 100% !important;
+}
+
+.FormularioMaster-dropdown-Item{
+  border: 1.5px solid;
+  border-color: #D9D9D9;
+  border-radius: 6px;
+  padding: 10px 5px;
+  margin-top: 6px;
+  margin-left: 11px !important;
+  width: 98% !important;
+}
+
+.FormularioMaster-dropdown-Item:hover{
+  border-color: #6846EF;
+}
+
+.FormularioMaster-dropdown-Item p{
+  font-size: 17px;
 }
 
 .formularioMaster-submit-button {
@@ -120,4 +164,41 @@ margin-bottom: 17px;
 .formularioMaster-submit-button:hover{
   background-color: #6846EF;
   border-color: #6846EF;
+}
+
+.formularioMaster-administrador-msg {
+  color: red;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  width: 400px;
+  word-break: normal;
+}
+
+.formularioMaster-Limitado,
+.formularioMaster-Ilimitado{
+  font-family: Montserrat;
+  font-size: 10px;
+}
+
+.formularioMaster-Ilimitado{
+  margin-left: 5px;
+}
+
+.formularioMaster-Limitado{
+  margin-left: 5px;
+}
+
+.fomularioMaster-Nopcolunista,
+.formularioMaster-Colunista{
+  font-family: Montserrat;
+  font-size: 10px;
+}
+
+.formularioMaster-Colunista{
+  margin-left: 5px;
+}
+
+.fomularioMaster-Nopcolunista{
+  margin-left: 5px;
 }
