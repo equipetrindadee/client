@@ -41,7 +41,7 @@ function ModalPerfil() {
   };
 
   const fetchUserData = async () => {
-    const storedToken = localStorage.getItem('token');
+    const storedToken = sessionStorage.getItem('token');
     if (storedToken) {
       try {
         const decoded = jwtDecode(storedToken);

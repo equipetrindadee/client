@@ -51,7 +51,7 @@ export const NavBarAluno = () => {
                     <li>
                         <Link to="#" className="iconeLogoutNavBarAluno" onClick={handleLogout}>
                             <i className='bi bi-box-arrow-right iNBAluno'></i>
-                            {!isSidebarHidden && <span className="logoutNavBarAlunoSair">SAIR</span>}
+                            {!isSidebarHidden && <span className="logoutNavBarAlunoSair">SAtttIR</span>}
                         </Link>
                     </li>
                 </ul>
@@ -59,5 +59,6 @@ export const NavBarAluno = () => {
         </div>
     );
 };
+
 
 export default NavBarAluno;

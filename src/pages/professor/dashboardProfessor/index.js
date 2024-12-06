@@ -45,16 +45,22 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
         // Verifica o acesso do usuário
         if (acesso === "ilimitado") {
             // Salva o nome da coluna no localStorage
-            localStorage.setItem("ColumName", colunaName);
-            localStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color); // Salvando a cor também
+            // Salva o nome da coluna no sessionStorage
 
+            sessionStorage.setItem("ColumName", colunaName);
+            sessionStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color); // Salvando a cor também
+            // localStorage.setItem("ColumName", colunaName);
+            // localStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color); // Salvando a cor também
+    
             // Navega para a página /MateriaColuna
             navigate("/MateriaColuna");
         } else if (acesso === 'limitado') {
             // Verifica se a colunaName é a mesma que a coluna do usuário
             if (colunaName === colunasC) {
-                localStorage.setItem("ColumName", colunaName);
-                localStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color);
+                sessionStorage.setItem("ColumName", colunaName);
+                sessionStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color);
+                // localStorage.setItem("ColumName", colunaName);
+                // localStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color);
                 navigate("/MateriaColuna");
             } else {
                 alert("Você não tem permissão para acessar esta tela. Você só pode acessar a coluna na qual está registrado.");
@@ -62,7 +68,9 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
         }
     };
     const fetchUserName = async () => {
-        const storedToken = localStorage.getItem('token');
+        const storedToken = sessionStorage.getItem('token');
+        // const storedToken = localStorage.getItem('token');
+
 
         if (storedToken) {
             try {
@@ -116,7 +124,9 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
     };
 
     const fetchColunas = async () => {
-        const storedToken = localStorage.getItem('token');
+        // const storedToken = localStorage.getItem('token');
+        const storedToken = sessionStorage.getItem('token');
+
         if (storedToken) {
             try {
                 const decoded = jwtDecode(storedToken);
@@ -484,14 +494,13 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
 
                         <i className="bi bi-caret-right-fill arrowRight arrowCards-Dashboard-Professor" onClick={cardDashNext}></i>
                     </div>
-</div>
+
 
 
                     {/* Fim Cards de Visualização do Professor, com carrossel Responsivo */}
 
                     {/* footer da tela professor */}
                     {/* <footer className="footer-dashboard-Professor">
-                    
 
         <div className="calendario-dashboard-Professor">
             <Calendario />
@@ -523,28 +532,21 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
 
                 <h3 className='nomeEdicao-dashboard-Professor'>EDIÇÃO DE MAIO</h3>
 
-            {visibleColunas.map((coluna, index) => (
-                            <a
-                                key={index}
-                                className="coluna divColuna-dashboard-professor"
-                                style={{ backgroundColor: colunas.find(c => c.columname === coluna)?.color }} // Define a cor de fundo
-                                onClick={() => handleClick(coluna)} // Chama a função de clique
-                            >
-                                <h3 className='titleColunas-dashboard-professor'>{coluna}</h3>
-                                <i className="bi bi-play-circle-fill buttonColunas-dashboard-professor"></i>
-                            </a>
-                        ))}
-                    </div>
-                    <i className="bi bi-caret-right-fill arrowRight" onClick={handleNext}></i>
-                </div>
-                {/* Fim do Carrossel Topo */}
 
-                    {/* Cards de Visualização do Professor, com carrossel Responsivo */}
+{/* 
+            </div>
 
-                {/* </div>
-                <div> */}
+        </div>
+
+    </footer> */} 
+                    {/*Fim do footer */}
 
                 </div>
+
+            </div>
+            <div>
+
+            </div>
         </body>
 
     );
