@@ -32,6 +32,7 @@ function CardPerfil() {
       }, []);
     
       
+<<<<<<< HEAD
         const fetchUserData = async () => {
             const storedToken = localStorage.getItem('token');
             if (storedToken) {
@@ -47,6 +48,20 @@ function CardPerfil() {
                     }
                 } catch (error) {
                     console.error("Erro ao decodificar o token ou consultar o Firestore:", error);
+=======
+      const fetchUserData = async () => {
+        const storedToken = sessionStorage.getItem('token');
+        if (storedToken) {
+            try {
+                const decoded = jwtDecode(storedToken);
+                const userId = decoded.id;
+                const docRef = doc(db, "users", userId);
+                const docSnap = await getDoc(docRef);
+    
+                if (docSnap.exists()) {
+                    const userData = docSnap.data();
+                    setAlunos(userData); // Salva apenas o usuário logado
+>>>>>>> e4f5bbe2996a1ebe906da77f13efba69189417b3
                 }
             }
     };
