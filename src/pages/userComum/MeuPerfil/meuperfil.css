@@ -197,7 +197,7 @@ body {
 .usercomum_meuperfil-header-background {
     position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 30vh;
     background-image: url('../../../../public/img/bgFaleConoscoUserComum.svg');
     background-size: cover;
     background-position: center;
@@ -467,9 +467,8 @@ body {
 }
 
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: start;
+    .usercomum_meuperfil-header-background{
+        height: 100vh;
     }
 
     .mobile-menu {

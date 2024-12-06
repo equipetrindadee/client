@@ -55,10 +55,9 @@ export const LandPage = () => {
         </div>
         <div className='home_header-left'>
           <ul style={{ marginBottom: '0rem' }}>
-            <a><li className='home_li-1'><span>Fale Conosco</span><img src='../img/fale_conosco-img.svg' alt="Fale Conosco" /></li></a>
+            <a href='/userComum/faleConosco'><li className='home_li-1'><span>Fale Conosco</span><img src='../img/fale_conosco-img.svg' alt="Fale Conosco" /></li></a>
             <a><li className='home_li-2'><span>Colunistas</span><img src='../img/colunistas-img.svg' alt="Colunistas" /></li></a>
             <a><li className='home_li-3'><span>Sobre nós</span><img src='../img/sobre_nos-img.svg' alt="Sobre Nós" /></li></a>
-            <a><li className='home_li-4'><span>Inglês</span><img src='../img/ingles_translate-img.svg' alt="Inglês" /></li></a>
             <a><li className='home_li-5'><span>Log in</span><img src='../img/login-img.svg' alt="Log In" /></li></a>
           </ul>
         </div>

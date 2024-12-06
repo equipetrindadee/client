@@ -522,7 +522,7 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
 
                 <h3 className='nomeEdicao-dashboard-Professor'>EDIÇÃO DE MAIO</h3>
 
-<<<<<<< HEAD
+<
                 <button className='buttonEdicao-dashboard-Professor'>Baixar Arquivo</button>
 =======
                 {/* Carrossel do Topo, tela Professor */}
@@ -633,13 +633,8 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
 
                 </footer> */}
                 {/*Fim do footer */}
->>>>>>> 5abe64af25a3e9dd09cafefd548595af1e57d3de
 
-            </div>
-
-        </div>
-
-    </footer> */}
+        
                     {/*Fim do footer */}
 
                 </div>
