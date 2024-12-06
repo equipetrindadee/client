@@ -277,7 +277,7 @@ export const Template2 = ({ selectedUser }) => {
 
                                 <div className="text6-t2 btn-bg-t2" id="text6BtnBg">
                                     <input
-                                        className="upImg-t2 file-input-t2"
+                                        className="upImg-t2 file-input-t2 "
                                         type="file"
                                         id="campo5ImageUpload"
                                         accept="image/*"
@@ -398,26 +398,40 @@ export const Template2 = ({ selectedUser }) => {
                                     </div>
                                 </div>
 
-                                <div className="campo6-t2 ">
-                                    
+                                <div className="campo6-t2">                                
                                         {/* Imagem carregada para campo5 */}
                                         {campo5Image && <img src={campo5Image} className="image-400w-t2 " alt="Imagem do campo5" />}
-
-                                    
                                 </div>
-                                <div className="campo6-t2">
-                                    <div className="texto-t2">
-                                        <p className="textValueReceiveTemplete1-t2 textWithBG-t2">{campo4Text}</p> {/* Texto do campo7 */}
-                                    </div>
-                                </div> 
+                                
                             </div>
                         </div>
 
                         <div className="footer-right-t2">
-                            <p className="textValueReceiveTemplete1-t2">{qrCodeText1}</p>
-                            {code1Image && <img src={code1Image} className="image-150w-t2" alt="QrCode1" />}
-                            <p className="textValueReceiveTemplete1-t2">{qrCodeText2}</p>
-                            {code2Image && <img src={code2Image} className="image-150w-t2" alt="QrCode2" />}
+                            {/* parte dos QRcodes */}
+                            {/* QRcode 1 */}
+                            <div className="QRcode-1-footer">
+                                <div className="campo9-t1">
+                                    <div className="texto-t1">
+                                        <p className="textValueReceiveTemplete1-t1 textWithBG-t1 LinkQRcode">{qrCodeText1}</p> {/* Texto do campo8 */}
+                                    </div>
+                                </div>
+                                <div className="campo10-t1">
+                                    {/* Imagem carregada para campo9 */}
+                                    {code1Image && <img src={code1Image} className="image-400w-t1 imgQRcodes" alt="Imagem do campo9" />}
+                                </div>
+                            </div>
+                            {/* QRcode 2 */}
+                            <div className="QRcode-2-footer">
+                                <div className="campo11-t1">
+                                    <div className="texto-t1">
+                                        <p className="textValueReceiveTemplete1-t1 textWithBG-t1 LinkQRcode">{qrCodeText2}</p> {/* Texto do campo10*/}
+                                    </div>
+                                </div>
+                                <div className="campo8-t1">
+                                    {/* Imagem carregada para campo11 */}
+                                    {code2Image && <img src={code2Image} className="image-400w-t1 imgQRcodes" alt="Imagem do campo11" />}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

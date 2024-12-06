@@ -1,9 +1,19 @@
 import React, { useState } from "react";
 import "../newNavBarSideBarAluno/SideBarAlunoNavBar.css"
 import "boxicons/css/boxicons.min.css";
+import { useNavigate } from "react-router-dom";
 
 const SideNavBarNewAluno = () => {
   const [isExpanded, setExpendState] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+      // Limpar tudo do sessionStorage
+      sessionStorage.clear();
+      
+      // Redireciona para a página de login
+      navigate('/login');
+  };
 
   const menuItems = [
     { text: "TELA INICIAL", icon: "bx bxs-home", path: '/aluno/dasboardAluno' },
@@ -36,7 +46,7 @@ const SideNavBarNewAluno = () => {
           ))}
         </div>
       </div>
-      <div className="navBarSideBarUserAlunoNewMt-nav-footer">
+      <div className="navBarSideBarUserAlunoNewMt-nav-footer" onClick={handleLogout}>
         <i className='bx bx-log-out bx-flip-horizontal'></i>
         {isExpanded && (
           <div className="navBarSideBarUserAlunoNewMt-nav-details">

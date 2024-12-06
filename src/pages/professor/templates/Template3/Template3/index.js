@@ -213,7 +213,7 @@ export const Template3 = ({ selectedUser }) => {
                             onChange={handleValueTilte}
                             maxLength="30"
                         />
-                        <p>{valueTitle.length}/30</p>
+                        
 
                         {/* header esquerda com inputs */}
                         <div className="header-left-t3">
@@ -359,7 +359,7 @@ export const Template3 = ({ selectedUser }) => {
                         <div className="mid-header-right-t3">
                             <div className="info-mid-header-right-t3">
                                 <img src="../img/processoPostagemJornalista.svg" alt="imagem pessoa" />
-                                <div className="escrita-mid-header-right-t3">
+                          <div className="escrita-mid-header-right-t3">
                                     <h4 className='nameUserTemplete1WriterRightPart-t3'>{userName}</h4>
                                     <p className='nameUserTemplete1WriterRightPartDate-t3'>01/01/2001</p>
                                 </div>
@@ -368,9 +368,9 @@ export const Template3 = ({ selectedUser }) => {
                     </div>
 
                     <div className="body-right-t3">
-                        <audio className="audio-right-t3" controls autoPlay preload="metadata">
+                        {/* <audio className="audio-right-t3" controls autoPlay preload="metadata">
                             <source src="" type="audio/mpeg" />
-                        </audio>
+                        </audio> */}
 
                         <h1 className="titleNameColumnReceiveTemplete1-t3">{valueTitle}</h1>
 
@@ -409,10 +409,31 @@ export const Template3 = ({ selectedUser }) => {
                         </div>
 
                         <div className="footer-right-t3">
-                            <p className="textValueReceiveTemplete1-t3">{qrCodeText1}</p>
-                            {code1Image && <img src={code1Image} className="image-150w-t3" alt="QrCode1" />}
-                            <p className="textValueReceiveTemplete1-t3">{qrCodeText2}</p>
-                            {code2Image && <img src={code2Image} className="image-150w-t3" alt="QrCode2" />}
+                             {/* parte dos QRcodes */}
+                            {/* QRcode 1 */}
+                            <div className="QRcode-1-footer">
+                                <div className="campo9-t1">
+                                    <div className="texto-t1">
+                                        <p className="textValueReceiveTemplete1-t1 textWithBG-t1 LinkQRcode">{qrCodeText1}</p> {/* Texto do campo8 */}
+                                    </div>
+                                </div>
+                                <div className="campo10-t1">
+                                    {/* Imagem carregada para campo9 */}
+                                    {code1Image && <img src={code1Image} className="image-400w-t1 imgQRcodes" alt="Imagem do campo9" />}
+                                </div>
+                            </div>
+                            {/* QRcode 2 */}
+                            <div className="QRcode-2-footer">
+                                <div className="campo11-t1">
+                                    <div className="texto-t1">
+                                        <p className="textValueReceiveTemplete1-t1 textWithBG-t1 LinkQRcode">{qrCodeText2}</p> {/* Texto do campo10*/}
+                                    </div>
+                                </div>
+                                <div className="campo8-t1">
+                                    {/* Imagem carregada para campo11 */}
+                                    {code2Image && <img src={code2Image} className="image-400w-t1 imgQRcodes" alt="Imagem do campo11" />}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

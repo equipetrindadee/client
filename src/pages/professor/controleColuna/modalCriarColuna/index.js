@@ -12,6 +12,7 @@ function ModalCriarColuna() {
     const [imagePreview, setImagePreview] = useState(''); // Estado para pré-visualizar a imagem
     const [isSaving, setIsSaving] = useState(false); // Estado para controlar o botão "Salvar"
     const [imageError, setImageError] = useState(''); // Estado para armazenar erros de imagem
+    const [isImageValid, setIsImageValid] = useState(true); // Estado para verificar se a imagem é válida
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -51,6 +52,7 @@ function ModalCriarColuna() {
         if (file && file.type === 'image/png') {
             setImageColumn(file);
             setImageError(''); // Limpa qualquer erro anterior
+            setIsImageValid(true); // Marca a imagem como válida
 
             // Gerar pré-visualização da imagem
             const objectUrl = URL.createObjectURL(file);
@@ -59,6 +61,7 @@ function ModalCriarColuna() {
             setImageColumn(null); // Reseta o arquivo se não for .png
             setImagePreview(''); // Reseta a pré-visualização
             setImageError('Por favor, envie apenas imagens no formato .png.'); // Exibe a mensagem de erro
+            setIsImageValid(false); // Marca a imagem como inválida
         }
     };
 
@@ -137,7 +140,7 @@ function ModalCriarColuna() {
                     <Button 
                         className='buttonSalvarColuna' 
                         onClick={handleSave}
-                        disabled={isSaving} // Desativa o botão enquanto estiver salvando
+                        disabled={isSaving || !isImageValid} // Desativa o botão se não for uma imagem válida
                     >
                         <p className='buttonSalvarColunaP'>
                             {isSaving ? 'Aguarde...' : 'SALVAR'} {/* Exibe "Aguarde..." enquanto está salvando */}

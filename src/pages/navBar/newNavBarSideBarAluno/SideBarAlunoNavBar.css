@@ -33,6 +33,7 @@
     font-size: 30px;
     font-family: "Oswald", sans-serif;
     cursor: pointer;
+    color: var(--primaryColorMasrterWhite);
 }
 
 .navBarSideBarUserAlunoNewMt-side-nav-container-NX {

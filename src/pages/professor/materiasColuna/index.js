@@ -11,6 +11,7 @@ import FilterButtonMateriaColunaProfessor from './filterButtonMateriaColunaProfe
 import { Navigate, useNavigate } from 'react-router-dom';
 
 
+
 function MateriaColuna() {
 
     const navigate = useNavigate()
@@ -244,7 +245,7 @@ function MateriaColuna() {
 
                                             <div className="professor-materiaColuna-publication-cardInner" >
                                                 <div>
-                                                    <img src="../img/ft_artigo.svg" className="professor-materiaColuna-card-img-top-meusArtigos" alt="Imagem do Artigo" />
+                                                    <img src="../img/imgPadraoNewsletterPreview.svg" className="professor-materiaColuna-card-img-top-meusArtigos" alt="Imagem do Artigo" />
                                                 </div>
                                                 <div className='professor-materiaColuna-publicationCardBody'>
                                                     <Card.Body>
@@ -254,8 +255,8 @@ function MateriaColuna() {
 
                                                         <Card.Text>
                                                             <div className="professor-materiaColuna-author-info">
-                                                                <img src={item.imagemUrl} alt="Imagem do Autor" className="professor-materiaColuna-author-image" />
-                                                                <p className="professor-materiaColuna-author-name">{"item.author " || 'Autor Desconhecido'}</p>
+                                                                <img src={item.authorImage} alt="Imagem do Autor" className="professor-materiaColuna-author-image" />
+                                                                <p className="professor-materiaColuna-author-name">{item.author}</p>
 
                                                             </div>
 
