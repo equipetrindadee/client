@@ -13,6 +13,7 @@ import { db } from '../../../../../config/firebaseImgConfig'; // Importando a co
 import "../Template1/t1.css"; // Importando o CSS
 import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from "react-router-dom";
+import api from '../../../../../config/configApi.js'
 
 
 export const Template1 = ({ selectedUser }) => {
@@ -146,46 +147,45 @@ export const Template1 = ({ selectedUser }) => {
     const handleSubmit = async (event) => {
         event.preventDefault(); // Impede o envio padrão do formulário
 
-        // Coleta os valores dos textareas
-        const dataToSave = {
-            numberTemplate: "1",
-            title: valueTitle,
-            author: userName,
-            status: "Revisão",
-            coluna: userColum,
-            texts: [
-                campo1Text, // Artigo 1
-                campo2Text,// Artigo 2
-                campo3Text,// Artigo 3
-                campo4Text,// Artigo 4
-                qrCodeText1, // QR Code 1
-                qrCodeText2  // QR Code 2
+        // Prepara os dados para envio
+        const formData = new FormData();
+        formData.append('numberTemplate', "1");
+        formData.append('title', valueTitle);
+        formData.append('author', userName);
+        formData.append('status', "Revisão");
+        formData.append('coluna', userColum);
+        formData.append('texts', JSON.stringify([
+            campo1Text, // Artigo 1
+            campo2Text, // Artigo 2
+            campo3Text, // Artigo 3
+            campo4Text, // Artigo 4
+        ]));
+        formData.append('qrCodeText1', qrCodeText1);
+        formData.append('qrCodeText2', qrCodeText2);
 
-            ],
-            timestamp: new Date() // Adicionando a data e hora atuais
+        // Adiciona a imagem ao FormData, se existir
+        if (campo5Image) {
+            formData.append('image', campo5Image);
+        }
 
-        };
         try {
-            // Referência à coleção do Firestore onde os dados serão armazenados
-            const collectionRef = collection(db, 'edicao'); // Substitua pelo seu nome de coleção
+            // Teste de comunicação com a API (modifique a URL se necessário)
+            const response = await api.post('/marcelaob', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data', // Define o tipo de conteúdo
+                },
+            });
 
-            // Adiciona os dados como um novo documento
-            await addDoc(collectionRef, dataToSave);
+            console.log('Resposta do servidor:', response); // Mostra a resposta do servidor
 
-            // Limpa os campos após o envio
-            setTextcampo1('');
-            setTextCampo2('');
-            setTextCampo3('');
-            setTextCampo4('');
-            setValueTitle('');
-            setQrCodeText1('');
-            setQrCodeText2('');
-
-
-            alert('Dados enviados com sucesso!');
+            if (response.status === 201) {
+                alert('Dados enviados com sucesso!');
+            } else {
+                alert('Erro ao enviar os dados.');
+            }
         } catch (error) {
             console.error("Erro ao enviar os dados:", error);
-            alert('Erro ao enviar os dados.');
+            alert('Erro ao conectar com o servidor.');
         }
     };
 
@@ -213,7 +213,7 @@ export const Template1 = ({ selectedUser }) => {
                             onChange={handleValueTilte}
                             maxLength="30"
                         />
-                        <p>{valueTitle.length}/30</p>
+                        
 
                         {/* header esquerda com inputs */}
                         <div className="header-left-t1">
@@ -270,9 +270,9 @@ export const Template1 = ({ selectedUser }) => {
                                         placeholder="Artigo 3"
                                         value={campo3Text}
                                         onChange={handlecampo3TextChange}
-                                        maxLength="465" // Limite de caracteres no textarea
+                                        maxLength="365" // Limite de caracteres no textarea
                                     />
-                                    <p>{campo3Text.length}/465</p>
+                                    <p>{campo3Text.length}/365</p>
                                 </div>
 
                                 <div className="text6-t1 btn-bg-t1" id="text6BtnBg">
@@ -421,10 +421,31 @@ export const Template1 = ({ selectedUser }) => {
                         </div>
 
                         <div className="footer-right-t1">
-                            <p className="textValueReceiveTemplete1-t1">{qrCodeText1}</p>
-                            {code1Image && <img src={code1Image} className="image-150w-t1" alt="QrCode1" />}
-                            <p className="textValueReceiveTemplete1-t1">{qrCodeText2}</p>
-                            {code2Image && <img src={code2Image} className="image-150w-t1" alt="QrCode2" />}
+                            {/* parte dos QRcodes */}
+                            {/* QRcode 1 */}
+                            <div className="QRcode-1-footer">
+                                <div className="campo9-t1">
+                                    <div className="texto-t1">
+                                        <p className="textValueReceiveTemplete1-t1 textWithBG-t1 LinkQRcode">{qrCodeText1}</p> {/* Texto do campo8 */}
+                                    </div>
+                                </div>
+                                <div className="campo10-t1">
+                                    {/* Imagem carregada para campo9 */}
+                                    {code1Image && <img src={code1Image} className="image-400w-t1 imgQRcodes" alt="Imagem do campo9" />}
+                                </div>
+                            </div>
+                            {/* QRcode 2 */}
+                            <div className="QRcode-2-footer">
+                                <div className="campo11-t1">
+                                    <div className="texto-t1">
+                                        <p className="textValueReceiveTemplete1-t1 textWithBG-t1 LinkQRcode">{qrCodeText2}</p> {/* Texto do campo10*/}
+                                    </div>
+                                </div>
+                                <div className="campo8-t1">
+                                    {/* Imagem carregada para campo11 */}
+                                    {code2Image && <img src={code2Image} className="image-400w-t1 imgQRcodes" alt="Imagem do campo11" />}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

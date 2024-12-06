@@ -25,7 +25,7 @@
     background-color: transparent !important;   
     padding: 0;
     border: 1px solid #d9d9d9;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 10%;
     
 }
@@ -40,18 +40,19 @@
 
 
 .aluno_MeusArtigos-rightSide-Perfil-button p {
+    position: relative;
+    text-align: center;
     color: #000;
     font-family: "Montserrat";
     font-size: 15px;
     font-weight: bold;
-    margin-inline: 1.75rem;
-    margin-block: 0.5rem;
+  
 }
 
 .aluno_dashAluno-rightSide-Perfil-body-info {
     position: relative;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
     justify-content: center;
    font-weight: 600;
     text-align: center !important;
@@ -63,7 +64,7 @@
 
     margin:0 auto!important;
     width: 120px;
-    height: 100px;
+    height: 120px;
 }
 
 .aluno_dashAluno-rightSide-Perfil-body-info h5 {

@@ -1,290 +1,358 @@
-import React, { useEffect, useState } from 'react';
-import "../../userComum/LandPage/LandPage.css";
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Carousel } from 'react-bootstrap';
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import React, { useState, useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+/* import NavbarUserComum from '../../navBar/navBarUserComum'; */
+import { Navigation } from 'swiper/modules';
+import 'bootstrap/dist/css/bootstrap.min.css';  // Importando o CSS do Bootstrap
+import './LandPage.css';  // Seu CSS personalizado
+import 'swiper/css'; // Importa os estilos básicos do Swiper
+/* import faleConoscoImg from '../img/fale_conosco-img.svg'; */
+/* import colunistasImg from '../img/colunistas-img.svg'; */
+/* import sobreNosImg from '../img/sobre_nos-img.svg'; */
+/* import inglesTranslateImg from '../img/ingles_translate-img.svg'; */
+/* import loginImg from '../img/login-img.svg'; */
+/* import galleryItemFirstImg from '../img/gallery_item_first-img.svg' */
+/* import galleryItemTopImg from '../img/gallery_item_top-img.svg' */
+/* import galleryItemBottomImg from '../img/gallery_item_bottom-img.svg' */
+/* import galleryItemLastImg from '../img/gallery_item_last-img.svg' */
+/* import contactEmailImg from '../img/contact_email-img.svg' */
+/* import contactNumberImg from '../img/contact_number-img.svg' */
+/* import carouselRightArrow from '../img/carousel_right-arrow.svg' */
+/* import carouselLeftArrow from '../img/carousel_left-arrow.svg' */
 
 export const LandPage = () => {
-    const [activeButton, setActiveButton] = useState(null);
+  const images = [
+    { src: "https://via.placeholder.com/300x300", alt: "Image 1", className: "large" },
+    { src: "https://via.placeholder.com/300x200", alt: "Image 2", className: "medium" },
+    { src: "https://via.placeholder.com/400x400", alt: "Image 3", className: "small" },
+    { src: "https://via.placeholder.com/300x400", alt: "Image 4", className: "large" },
+    { src: "https://via.placeholder.com/300x500", alt: "Image 5", className: "medium" },
+  ];
 
-    useEffect(() => {
-        const updateDate = () => {
-            const now = new Date();
-            const day = String(now.getDate()).padStart(2, '0');
-            const month = String(now.getMonth() + 1).padStart(2, '0');
-            const year = now.getFullYear();
-            document.getElementById('user_landPage-header-date').textContent = `${day}/${month}/${year}`;
-        };
+  const items = [
+    { color: '#CFA7F5', text: 'Além do livro' },
+    { color: '#D64D4D', text: 'Além das fronteiras' },
+    { color: '#AFF78D', text: 'Educação em foco' },
+    { color: '#624CF5', text: 'Monthly dose of english' },
+    { color: '#F5E14C', text: 'Palavreando' },
+    { color: '#A37452', text: 'Aventuras na história' },
+    { color: '#65CCC9', text: 'Biofímica em ação' },
+  ];
 
-        updateDate();
-    }, []);
+  // Definindo o estado para armazenar a data
+  const [currentDate, setCurrentDate] = useState('');
 
-    const handleClick = (buttonName) => {
-        setActiveButton(buttonName);
-    };
+  useEffect(() => {
+    const date = new Date(); // Cria uma nova instância de data
+    const formattedDate = date.toLocaleDateString('pt-BR'); // Formata a data no formato DD/MM/YYYY
+    setCurrentDate(formattedDate); // Atualiza o estado com a data formatada
+  }, []); // O array vazio faz com que o efeito execute apenas uma vez quando o componente é montado
 
-    const texts = [
-        'Além do livro',
-        'Além das fronteiras',
-        'Educação em foco',
-        'Monthly dose of english',
-        'Palavreando',
-        'Aventuras na história',
-        'Biofímíca em ação',
-        'Livro 8',
-        'Livro 9'
-    ];
-
-    return (
-        <div>
-            <header className="user_landPage-header">
-                <div className="user_landPage-header-date-container">
-                    <span id="user_landPage-header-date"></span>
-                </div>
-                <div className="user_landPage-header-buttons">
-                    <button
-                        className={`user_landPage-header-button ${activeButton === 'fale-conosco' ? 'active' : ''}`}
-                        onClick={() => handleClick('fale-conosco')}
-                    >
-                        Fale Conosco
-                        <i className='bx bxs-conversation'></i>
-                    </button>
-                    <button
-                        className={`user_landPage-header-button ${activeButton === 'colunistas' ? 'active' : ''}`}
-                        onClick={() => handleClick('colunistas')}
-                    >
-                        Colunistas
-                        <i className="bi bi-journal-bookmark-fill"></i>
-                    </button>
-                    <button
-                        className={`user_landPage-header-button ${activeButton === 'sobre-nos' ? 'active' : ''}`}
-                        onClick={() => handleClick('sobre-nos')}
-                    >
-                        Sobre Nós
-                        <i className="bi bi-people-fill"></i>
-                    </button>
-                    <button
-                        className={`user_landPage-header-button ${activeButton === 'ingles' ? 'active' : ''}`}
-                        onClick={() => handleClick('ingles')}
-                    >
-                        Inglês
-                        <i className="bi bi-translate"></i>
-                    </button>
-                    {/* <button
-                        className={`user_landPage-header-button ${activeButton === 'login' ? 'active' : ''}`}
-                        // onClick={() => handleClick('/login')}
-                        href="/login"
-                    >
-                        Log in
-                        <i className="bi bi-box-arrow-right"></i>
-                    </button> */}
-                    <a href="/login">Ir para a tela de login</a>
-                </div>
-            </header>
-
-            <div className="user_landPage-footer">
-                <div className="user_landPage-footer-line"></div>
-                <div className="user_landPage-footer-content">
-                    <h1 className="user_landPage-footer-title">O EDUCADOR</h1>
-                    <h2 className="user_landPage-footer-subtitle">TE MANTER INFORMADO É NOSSA MISSÃO</h2>
-                </div>
-                <div className="user_landPage-footer-line"></div>
-            </div>
-
-            {/* Carrossel */}
-            {/* <div className="user_landPage-carousel-row">
-                <Carousel
-                    indicators={false}
-                    controls={true}
-                    prevIcon={<i className="bi bi-chevron-left"></i>}
-                    nextIcon={<i className="bi bi-chevron-right"></i>}
-                >
-                    {[...Array(2)].map((_, index) => (
-                        <Carousel.Item key={index}>
-                            <div className="user_landPage-carousel-grid">
-                                {texts.slice(index * 7, index * 7 + 7).map((text, idx) => (
-                                    <div key={idx} className={`user_landPage-carousel-item user_landPage-carousel-item-color${index * 7 + idx + 1}`}>
-                                        <p className='user_LandPage-carousel-text'>{text}</p>
-
-                                    </div>
-                                ))}
-                            </div>
-                        </Carousel.Item>
-                    ))}
-                </Carousel>
-            </div> */}
-
-            {/* Jornal */}
-            <div className="user_landPage-jornal-container">
-                <div className="user_landPage-jornal">
-
-                    <div className="user_landPage-jornal-left">
-                        <h2 className='user_landPage-news-title'>Grêmio Estudantil</h2>
-                        <h4 className='.user_landPage-news-subtitle'>Subtítulo aqui</h4>
-                        <p className='user_landPage-news-text'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-                        <p className='user_landPage-news-date'>Há 2 dias</p>
-
-                        <h4 className='.user_landPage-news-subtitle'>Subtítulo de outra notícia</h4>
-                        <p className='user_landPage-news-text'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-                        <p className='user_landPage-news-date'>Há 3 dias</p>
-
-                    </div>
-
-
-
-
-                    <div className="user_landPage-jornal-right-grid">
-
-                        <div className="user_landPage-jornal-right">
-
-                            <div className="user_LandPage-jornal-right-image">
-                                <img src="../img/landpage1.svg" alt="Descrição da Imagem" className="user_landPage-jornal-image" />
-                                <p>Texto adicional que aparece abaixo da imagem no lado direito.</p>
-
-                            </div>
-                            <div className="user_landPage-jornal-right-content">
-
-                                <div className="user_landPage-jornal-right-text">
-                                    <h4><strong>Where does it come from?</strong></h4>
-                                    <p style={{ color: '#A6A5A5' }}>Retirado e adaptado do site da BBC NEWS</p>
-                                </div>
-
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-                                <p className='user_landPage-news-date'>Há 4 dias</p>
-                            </div>
-                        </div>
-
-                        <div className="user_landPage-jornal-right-2">
-
-
-                            <div className="user_landPage-jornal-right-content">
-
-                                <div className="user_landPage-jornal-right-text">
-                                    <h4><strong>Where does it come from?</strong></h4>
-                                    <p style={{ color: '#A6A5A5' }}>Retirado e adaptado do site da BBC NEWS</p>
-                                </div>
-
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-                                <p className='user_landPage-news-date'>Há 4 dias</p>
-                            </div>
-                            <div className="user_LandPage-jornal-right-image-2">
-                                <img src="../img/landpage2.svg" alt="Descrição da Imagem" className="user_landPage-jornal-image-2" />
-                                <p>Texto adicional que aparece abaixo da imagem no lado direito.</p>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <section>
-                <div className="user_LandPage-galeria">
-                    <h1 className="TypeUser_landPage-title-Component">Galeria</h1>
-                    <p className="TypeUser_landPage-subtitle-Component">TODAS AS FOTOS FORAM RETIRADOS DO NOSSO ARQUIVO PESSOAL </p>
-
-                    <div className="TypeUser_landPage-gridContainer-Component">
-                        <div className="TypeUser_landPage-gridItem1-Component">
-                            <img src="../img/landpage3.svg" alt="Imagem 1" />
-                        </div>
-                        <div className="TypeUser_landPage-gridItem2-Component">
-                            <img src="../img/landpage4.svg" alt="Imagem 2" />
-                        </div>
-                        <div className="TypeUser_landPage-gridItem3-Component">
-                            <img src="../img/landpage5.svg" alt="Imagem 3" />
-                        </div>
-                        <div className="TypeUser_landPage-gridItem4-Component">
-                            <img src="../img/landpage6.svg" alt="Imagem 4" />
-                        </div>
-                    </div>
-                </div>
-
-
-
-            </section>
-
-
-            <div className="TypeUser_landPage-bannerWrapper-Component">
-                <p className="TypeUser_landPage-bannerText-Component">Aconteceu na escola</p>
-            </div>
-
-            <div className="TypeUser_landPage-threeColumnWrapper-Component">
-                <div className="TypeUser_landPage-sectionWrapper-Component-1">
-                    <h2 className="TypeUser_landPage-title-Component-faixa">What is Lorem Ipsum?</h2>
-                    <p className="TypeUser_landPage-text-Component-faixa">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-                    <p className="TypeUser_landPage-dateText-Component-faixa">Há dois dias</p>
-                </div>
-
-                <div className="TypeUser_landPage-sectionWrapper-Component-2">
-                    <h2 className="TypeUser_landPage-title-Component-faixa">What is Lorem Ipsum?</h2>
-                    <p className="TypeUser_landPage-text-Component-faixa">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-                    <p className="TypeUser_landPage-dateText-Component-faixa">Há três dias</p>
-                </div>
-
-                <div className="TypeUser_landPage-sectionWrapper-Component">
-                    <img className="TypeUser_landPage-image-Component" src="../img/landpage7.svg" alt="Descrição da Imagem" />
-                </div>
-
-
-                <div class="TypeUser_landPage-buttonWrapper-Component">
-                    <span class="TypeUser_landPage-buttonText-Component">IR PARA COLUNA</span>
-                    <i class="bi bi-arrow-right TypeUser_landPage-buttonIcon-Component"></i>
-                </div>
-
-            </div>
-
-            <footer class="TypeUser_footerWrapper-Component">
-
-                <div class="TypeUser_footerLeft-Component">
-                    <div class="TypeUser_footerLeftTitle-Component">O EDUCADOR</div>
-                    <div class="TypeUser_footerSocialIcons-Component">
-                        <a href="https://instagram.com" target="_blank" class="TypeUser_footerIcon-Component">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                        <a href="https://youtube.com" target="_blank" class="TypeUser_footerIcon-Component">
-                            <i class="bi bi-youtube"></i>
-                        </a>
-                        <a href="https://facebook.com" target="_blank" class="TypeUser_footerIcon-Component">
-                            <i class="bi bi-facebook"></i>
-                        </a>
-                    </div>
-                </div>
-
-                {/* <!-- Right side: Contact and sections --> */}
-                <div class="TypeUser_footerRight-Component">
-
-                    <div class="TypeUser_footerSection-Component">
-                        <div class="TypeUser_footerSectionTitle-Component">Contato</div>
-                        <div class="TypeUser_footerSectionItem-Component">
-                            <i class="bi bi-envelope-fill TypeUser_footerSectionItemIcon-Component"></i>
-                            <span>email@exemplo.com</span>
-                        </div>
-                        <div class="TypeUser_footerSectionItem-Component">
-                            <i class="bi bi-telephone-fill TypeUser_footerSectionItemIcon-Component"></i>
-                            <span>(11) 1234-5678</span>
-                        </div>
-                    </div>
-
-
-                    <div class="TypeUser_footerSection-Component">
-                        <div class="TypeUser_footerSectionTitle-Component">Seção 2</div>
-                        <a href="#" class="TypeUser_footerSectionItem-Component">Link 1</a>
-                        <a href="#" class="TypeUser_footerSectionItem-Component">Link 2</a>
-                        <a href="#" class="TypeUser_footerSectionItem-Component">Link 3</a>
-                    </div>
-
-
-                    <div class="TypeUser_footerSection-Component">
-                        <div class="TypeUser_footerSectionTitle-Component">Seção 3</div>
-                        <a href="#" class="TypeUser_footerSectionItem-Component">Link 1</a>
-                        <a href="#" class="TypeUser_footerSectionItem-Component">Link 2</a>
-                        <a href="#" class="TypeUser_footerSectionItem-Component">Link 3</a>
-                    </div>
-                </div>
-            </footer>
+  return (
+    <div className="container-fluid home">
+      <header className='home_header'>
+        <div className='home_date'>
+          <span>{currentDate}</span>
         </div>
-    );
+        <div className='home_header-left'>
+          <ul style={{ marginBottom: '0rem' }}>
+            <a><li className='home_li-1'><span>Fale Conosco</span><img src='../img/fale_conosco-img.svg' alt="Fale Conosco" /></li></a>
+            <a><li className='home_li-2'><span>Colunistas</span><img src='../img/colunistas-img.svg' alt="Colunistas" /></li></a>
+            <a><li className='home_li-3'><span>Sobre nós</span><img src='../img/sobre_nos-img.svg' alt="Sobre Nós" /></li></a>
+            <a><li className='home_li-4'><span>Inglês</span><img src='../img/ingles_translate-img.svg' alt="Inglês" /></li></a>
+            <a><li className='home_li-5'><span>Log in</span><img src='../img/login-img.svg' alt="Log In" /></li></a>
+          </ul>
+        </div>
+      </header>
+      <div class="container-sm home_1">
+        <nav className='home_main-title'>
+          <h2 className='home_title'>O EDUCADOR</h2>
+          <span className='home_subtitle'>TE MANTER INFORMADO É A NOSSA MISSÃO</span>
+        </nav>
+        <div className='carousel_container'>
+          <div style={{ maxWidth: '1800px', margin: '0 auto', position: 'relative' }}>
+            <Swiper
+              modules={[Navigation]} 
+              navigation={{
+                prevEl: '.custom-prev', // Botão "Anterior"
+                nextEl: '.custom-next', // Botão "Próximo"
+              }}
+              spaceBetween={20}
+              slidesPerView={6}
+              loop={true} // Torna o carrossel infinito
+              breakpoints={{
+                1024: { slidesPerView: 5 }, // Desktops maiores
+                768: { slidesPerView: 3 },  // Tablet
+                480: { slidesPerView: 2 },  // Celular
+                320: { slidesPerView: 2 },  // Pequenos dispositivos
+              }}
+            >
+              {items.map((item, index) => (
+                <SwiperSlide key={index}>
+                  <div
+                    style={{
+                      backgroundColor: item.color,
+                      borderRadius: '8px',
+                      padding: '20px',
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      color: '#fff',
+                      fontFamily: 'Rajdhani-Bold',
+                      fontSize: '15px',
+                      height: '80px',
+                    }}
+                  >
+                    {item.text}
+                    <span style={{ fontSize: '24px' }}>▶</span>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            {/* Botão "Anterior" */}
+            <button
+              className='custom-prev'
+              style={{
+                position: 'absolute',
+                top: '50%',
+                left: '-40px',
+                transform: 'translateY(-50%)',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                zIndex: 10,
+              }}
+            >
+              <img
+                src='../img/carousel_left-arrow.svg' // Certifique-se que a variável carouselLeftArrow está definida corretamente
+                alt="Anterior"
+                style={{ width: '24px', height: '24px' }}
+              />
+            </button>
+
+            {/* Botão "Próximo" */}
+            <button
+              className='custom-next'
+              style={{
+                position: 'absolute',
+                top: '50%',
+                right: '-40px',
+                transform: 'translateY(-50%)',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                zIndex: 10,
+              }}
+            >
+              <img
+                src='../img/carousel_right-arrow.svg' // Certifique-se que a variável carouselRightArrow está definida corretamente
+                alt="Próximo"
+                style={{ width: '24px', height: '24px' }}
+              />
+            </button>
+          </div>
+        </div>
+        <div className='container-sm home_2'>
+          <aside className='home_aside'>
+            <div className='home_aside-content'>
+              <h2>Grêmio Estudantil</h2>
+              <h4>What is Lorem Ipsum?</h4>
+              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+              <span>Há 2 dias</span>
+            </div>
+            <div className='home_aside-content'>
+              <h4>What is Lorem Ipsum?</h4>
+              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+              <span>Há 2 dias</span>
+            </div>
+          </aside>
+          <article className='home_article'>
+            <div className='home_article-content' id='home_article-content-1'>
+              <div className='home_article_img-container_1'>
+                <div className='home_article_img'></div>
+                <span className='home_article_img-credits' style={{float: 'left'}}>BY NAOSEI FROM FALANO CICLANO</span>
+              </div>
+              <div className='home_article-text'>
+                <h4>Where does it come from?</h4>
+                <h5>Retirado e adaptado do site da BBC NEWS</h5>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                <span>Há 2 dias</span>
+              </div>
+            </div>
+            <div className='home_article-content' id='home_article-content-2'>
+              <div className='home_article-text'>
+                <h4>Where does it come from?</h4>
+                <h5>Retirado e adaptado do site da BBC NEWS</h5>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                <span>Há 2 dias</span>
+              </div>
+              <div className='home_article_img-container_2'>
+                <div className='home_article_img'></div>
+                <span className='home_article_img-credits' style={{float: 'right'}}>BY NAOSEI FROM FALANO CICLANO</span>
+              </div>
+            </div>
+
+            <div className='home_article-content' id='home_article-content-responsive-desktop'>
+              <div className='home_article-text'>
+                <h4>Where does it come from?</h4>
+                <h5>Retirado e adaptado do site da BBC NEWS</h5>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                <span>Há 2 dias</span>
+              </div>
+              <div className='home_article_img-container'>
+                <div className='home_article_img'></div>
+                <span className='home_article_img-credits' style={{float: 'right'}}>BY NAOSEI FROM FALANO CICLANO</span>
+              </div>
+            </div>
+
+            <div className='home_article-content' id='home_article-content-responsive'>
+              <div className='home_article_img-container'>
+                <div className='home_article_img'></div>
+                <span className='home_article_img-credits' style={{float: 'right'}}>BY NAOSEI FROM FALANO CICLANO</span>
+              </div>
+              <div className='home_article-text'>
+                <h4>Where does it come from?</h4>
+                <h5>Retirado e adaptado do site da BBC NEWS</h5>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                <span>Há 2 dias</span>
+              </div>
+            </div>
+          </article>
+        </div>
+        <section className="gallery_section">
+          <div className="gallery_section-text">
+            <h2 className="gallery_section-title">Galeria</h2>
+            <p className="gallery_section-subtitle">
+              TODAS AS FOTOS FORAM RETIRADAS DO NOSSO ARQUIVO PESSOAL
+            </p>
+          </div>
+
+          <div className="gallery-container desktop">
+            <div className="gallery-item first">
+              <img src='../img/gallery_item_first-img.svg' alt="First Large" />
+            </div>
+
+            <div className="gallery-item middle-top">
+              <img src='../img/gallery_item_top-img.svg' alt="Middle Top" />
+            </div>
+
+            <div className="gallery-item middle-bottom">
+              <img src='../img/gallery_item_bottom-img.svg' alt="Middle Bottom" />
+            </div>
+
+            <div className="gallery-item last">
+              <img src='../img/gallery_item_last-img.svg' alt="Last Large" />
+            </div>
+          </div>
+
+          <Swiper
+            className="gallery-container mobile"
+            spaceBetween={20}
+            slidesPerView={1}
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+            }}
+          >
+            <SwiperSlide>
+              <img src='../img/gallery_item_first-img.svg' alt="First Large" />
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <img src='../img/gallery_item_top-img.svg' alt="Middle Top" />
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <img src='../img/gallery_item_bottom-img.svg' alt="Middle Bottom" />
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <img src='../img/gallery_item_last-img.svg' alt="Last Large" />
+            </SwiperSlide>
+          </Swiper>
+        </section>
+        <article className='article_recent-news'>
+          <header className='article_recent-news-header'>
+            <h1>Aconteceu na escola</h1>
+          </header>
+          <div className='article_recent-news-container'>
+            <div className='article_recent-news-content_1'>
+              <div className='article_recent-news_text'>
+                <h4>What is Lorem Ipsum?</h4>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                <span>Há 2 dias</span>
+              </div>
+              <div className='article_recent-news_line'/>
+              <div className='article_recent-news_text'>
+                <h4>What is Lorem Ipsum?</h4>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                <span>Há 2 dias</span>
+              </div>
+            </div>
+            <div className='article_recent-news-content_2'>
+              <div className='article_recent-news-img'/>
+            </div>
+          </div>
+          <div className='go-to_button'>
+            <button class="go-to_animated-button">
+              <svg xmlns="http://www.w3.org/2000/svg" class="go-to_arr-2" viewBox="0 0 24 24">
+                <path
+                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                ></path>
+              </svg>
+              <span class="go-to_text">IR PARA COLUNA</span>
+              <span class="go-to_circle"></span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="go-to_arr-1" viewBox="0 0 24 24" fill='#fff'>
+                <path
+                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </article>
+      </div>
+      <footer className='home_footer'>
+        <h1>O EDUCADOR</h1>
+        <div className='contact_container'>
+          <h2>Contato</h2>
+          <div className='contact_email'>
+            <img src='../img/contact_email-img.svg'></img>
+            <p>admin@educaa.com.br</p>
+          </div>
+          <div className='contact_number'>
+          <img src='../img/contact_number-img.svg'></img>
+            <p>11 12345-6789</p>
+          </div>
+        </div>
+
+        <div className='contact_container'>
+          <h2>Contato</h2>
+          <div className='contact_email'>
+            <img src='../img/contact_email-img.svg'></img>
+            <p>admin@educaa.com.br</p>
+          </div>
+          <div className='contact_number'>
+          <img src='../img/contact_number-img.svg'></img>
+            <p>11 12345-6789</p>
+          </div>
+        </div>
+
+        <div className='contact_container'>
+          <h2>Contato</h2>
+          <div className='contact_email'>
+            <img src='../img/contact_email-img.svg'></img>
+            <p>admin@educaa.com.br</p>
+          </div>
+          <div className='contact_number'>
+          <img src='../img/contact_number-img.svg'></img>
+            <p>11 12345-6789</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
 }
 
 export default LandPage;

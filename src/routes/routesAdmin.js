@@ -31,6 +31,7 @@ import FaleConoscoProfessor from "../pages/professor/faleConoscoProfessor/index.
 import RevisaoT1 from '../pages/professor/templates/RevisãoT1/index.js'
 import RevisaoT2 from "../pages/professor/templates/RevisãoT2/index.js";
 import RevisaoT3 from "../pages/professor/templates/RevisãoT3/index.js";
+import RevisaoT4 from "../pages/professor/templates/RevisãoT4/index.js";
 import EditarTelaProf from "../pages/professor/editarTelaInicial/index.js";
 import ProcessodePostagemProfessor from "../pages/professor/processodePostagemProfessor/index.js"
 import PostagemTelaInicial from "../pages/professor/postagemTelaInicial/index.js"
@@ -38,7 +39,7 @@ import SubirImagem from "../../src/pages/subirImagem/subirImagem.js"
 import PostagemRevisao from "../pages/professor/postagemRevisao/index.js"
 import SideNavBarNewAluno from "../pages/navBar/newNavBarSideBarAluno/index.js";
 import Publicacao from "../pages/userComum/publicacao/index.js";
-import NavbarUserComum from "../pages/navBar/navBarUserComum/index.js";
+/* import NavbarUserComum from "../pages/navBar/navBarUserComum/index.js"; */
 import DashBoardMaster from "../pages/master/DashBoardMaster/index.js";
 import ListarArtigo from "../pages/userComum/ListarArtigos/index.js";
 import MeuPerfil from "../pages/userComum/MeuPerfil/index.js";
@@ -62,7 +63,6 @@ export default function RoutesAdmin() {
                 <Route path='/templete' element={<NavBarTemplete />} />
                 <Route path='/sidebar' element={<SideNavBar />} />
                 <Route path='/sidebarAluno' element={<SideNavBarNewAluno />} />
-                <Route path='/navBarComum' element={<NavbarUserComum />} />
 
 
 
@@ -115,6 +115,7 @@ export default function RoutesAdmin() {
                 <Route path='/t1R' element={<RevisaoT1 />} />
                 <Route path='/t2R' element={<RevisaoT2 />} />
                 <Route path='/t3R' element={<RevisaoT3 />} />
+                <Route path='/t4R' element={<RevisaoT4 />} />
                 <Route path='/processopostagemProfessor' element={<ProcessodePostagemProfessor />} />
 
 
