@@ -396,7 +396,7 @@
     text-align: justify !important;
     grid-area: 1 / 1 / 2 / 2;
     height: max-content;
-    max-width: 310px;
+    max-width: 330px;
     word-wrap: break-word;
     overflow-wrap: break-word;
     max-height: 200px;
@@ -486,7 +486,7 @@
 
 .campo4-card-t1 .texto-t1 {
     height: max-content;
-    max-width: 300px;
+    max-width: 320px;
     word-wrap: break-word;
     overflow-wrap: break-word;
     max-height: 200px;

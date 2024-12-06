@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './faleConosco.css';
-/* import NavbarUserComum from "../../navBar/navBarUserComum/index.js"; */
+ import NavbarUserComum from "../../navBar/navBarUserComum/index.js"; 
 import { Dropdown, Modal, Button } from 'react-bootstrap';
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
@@ -77,7 +77,7 @@ function FaleConosco() {
 
   return (
     <div>
-{/*       <NavbarUserComum /> */}
+      <NavbarUserComum />
       <div className="fale-conosco-container d-flex">
         <div className="conteudo_fale-conosco col-md-6 d-flex flex-column align-items-center justify-content-start p-3 mt-2">
           <h1 className="text-center_fale-conosco w-100 mb-2">FALE CONOSCO</h1>

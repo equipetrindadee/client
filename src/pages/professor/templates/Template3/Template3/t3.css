@@ -393,6 +393,7 @@
     word-wrap: break-word;
     overflow-wrap: break-word;
     max-height: 200px;
+    margin-top: 5rem;
 }
 
 .textValueReceiveTemplete1-t3 {
@@ -411,7 +412,7 @@
 }
 
 .campo3-t3 {
-    margin-top: 4rem;
+    margin-top: 0rem;
     text-align: justify !important;
     grid-area: 2 / 2 / 3 / 3;
     word-break: break-word;
@@ -424,6 +425,7 @@
     height: max-content;
     word-break: break-word;
     overflow-wrap: break-word;
+    margin-top: 2rem;
 }
 
 .campo5-t3 {
@@ -431,6 +433,7 @@
     height: max-content;
     word-break: break-word;
     overflow-wrap: break-word;
+    margin-top: 2rem;
 
 }
 
@@ -440,6 +443,7 @@
     height: max-content;
     word-break: break-word;
     overflow-wrap: break-word;
+    margin-top: 4rem;
 }
 
 .campo7-t3 {

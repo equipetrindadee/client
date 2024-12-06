@@ -3,10 +3,10 @@ import React, { useState,useEffect } from 'react';
 import '../meus_artigos/meus_artigos.css'; // Inclua o arquivo CSS que você criará abaixo
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBaraluno from '../../navBar/navBarAluno';
-import NavBaralunoMobile from '../../navBar/navBarAlunoMobile';
+
 import SideNavBarNewAluno from '../../navBar/newNavBarSideBarAluno/index.js';
-import ModalPerfil from '../componetsAluno/modalPerfil';
-import CardPerfil from '../componetsAluno/cardPerfil';
+import CardPerfil from '../dashBoardAluno/componetsAluno/cardPerfil/index.js';
+import ModalPerfil from '../dashBoardAluno/componetsAluno/modalPerfil/index.js';
 
 function Meus_artigos() {
 
@@ -78,7 +78,7 @@ function Meus_artigos() {
                 <div class="row">
                   <div class="col-md-12 mb-4">
                     <div class="card aluno_MeusArtigos-card-Materia">
-                      <img src="../img/foto_meusArtigos.svg" class="card-img-top-meusArtigos" alt="Imagem do Artigo" />
+                      <img src="../img/imgPadraoNewsletterPreview.svg" class="card-img-top-meusArtigos" alt="Imagem do Artigo" />
                       <div class="card-body aluno_MeusArtigos-cardBody-Materia">
                         <h5 class="card-title  aluno_MeusArtigos-cardTitle-Materia">The new way of english</h5>
                         <div class='aluno_MeusArtigos-cardUser-Materia'>

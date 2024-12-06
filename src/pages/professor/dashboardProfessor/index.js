@@ -45,16 +45,22 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
         // Verifica o acesso do usuário
         if (acesso === "ilimitado") {
             // Salva o nome da coluna no localStorage
-            localStorage.setItem("ColumName", colunaName);
-            localStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color); // Salvando a cor também
+            // Salva o nome da coluna no sessionStorage
+
+            sessionStorage.setItem("ColumName", colunaName);
+            sessionStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color); // Salvando a cor também
+            // localStorage.setItem("ColumName", colunaName);
+            // localStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color); // Salvando a cor também
     
             // Navega para a página /MateriaColuna
             navigate("/MateriaColuna");
         } else if (acesso === 'limitado') {
             // Verifica se a colunaName é a mesma que a coluna do usuário
             if (colunaName === colunasC) {
-                localStorage.setItem("ColumName", colunaName);
-                localStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color);
+                sessionStorage.setItem("ColumName", colunaName);
+                sessionStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color);
+                // localStorage.setItem("ColumName", colunaName);
+                // localStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color);
                 navigate("/MateriaColuna");
             } else {
                 alert("Você não tem permissão para acessar esta tela. Você só pode acessar a coluna na qual está registrado.");
@@ -62,7 +68,9 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
         }
     };
     const fetchUserName = async () => {
-        const storedToken = localStorage.getItem('token');
+        const storedToken = sessionStorage.getItem('token');
+        // const storedToken = localStorage.getItem('token');
+
 
         if (storedToken) {
             try {
@@ -116,7 +124,9 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
     };
 
     const fetchColunas = async () => {
-        const storedToken = localStorage.getItem('token');
+        // const storedToken = localStorage.getItem('token');
+        const storedToken = sessionStorage.getItem('token');
+
         if (storedToken) {
             try {
                 const decoded = jwtDecode(storedToken);
@@ -523,6 +533,7 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
                 <h3 className='nomeEdicao-dashboard-Professor'>EDIÇÃO DE MAIO</h3>
 
 <<<<<<< HEAD
+<
                 <button className='buttonEdicao-dashboard-Professor'>Baixar Arquivo</button>
 =======
                 {/* Carrossel do Topo, tela Professor */}
@@ -633,18 +644,33 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
 
                 </footer> */}
                 {/*Fim do footer */}
+<<<<<<< HEAD
 >>>>>>> 5abe64af25a3e9dd09cafefd548595af1e57d3de
+=======
+
+        
+=======
+
+>>>>>>> 07b75f853abfe50a096439256c2d1b28872fa06b
 {/* 
             </div>
 
         </div>
 
+<<<<<<< HEAD
     </footer> */} */}
+=======
+<<<<<<< HEAD
+        {/* </footer> */} 
+=======
+    </footer> */} 
+>>>>>>> e4f5bbe2996a1ebe906da77f13efba69189417b3
+>>>>>>> 07b75f853abfe50a096439256c2d1b28872fa06b
                     {/*Fim do footer */}
 
-                </div>
+                {/* </div>
 
-            </div>
+            </div> */}
             <div>
 
             </div>

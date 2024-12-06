@@ -20,7 +20,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .DashBoardMaster-header {
@@ -88,12 +88,20 @@
     margin-inline: auto;
 }
 
+.DashBoardMaster-card h3{
+    font-family: 'Pattaya', 'sans-serif';
+    font-weight: normal;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 .notificacaoEdicao-dashboard-master{
     border: 1px solid #6B3DEC !important;
 }
 
 .notificacaoEdicao-dashboard-master i{
     color: #6B3DEC !important;
+    font-size: 1.5rem;
 }
 
 .notificacaoCadastro-dashboard-master{
@@ -102,6 +110,7 @@
 
 .notificacaoCadastro-dashboard-master i{
     color: #3D64EC !important;
+    font-size: 1.5rem;
 }
 
 .notificacaoMateria-dashboard-master{
@@ -110,6 +119,7 @@
 
 .notificacaoMateria-dashboard-master i{
     color: #3D98EC !important;
+    font-size: 1.5rem;
 }
 
 .notificacaoCurtida-dashboard-master{
@@ -118,6 +128,7 @@
 
 .notificacaoCurtida-dashboard-master i{
     color: #3DCDEC !important;
+    font-size: 1.5rem;
 }
 
 .DashBoardMaster-bottom-section {
@@ -150,8 +161,9 @@
     border-radius: 5px;
     margin-bottom: 10px;
     gap: 10px;
-    font-size: 1rem;
-    font-weight: 800;
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-family: 'Roboto', 'sans-serif';
 }
 
 .DashBoardMaster-actions {
@@ -164,12 +176,43 @@
     top: -20px; /* Move a barra de pesquisa e filtro mais para cima */
 }
 
-.DashBoardMaster-search-icon,
-.DashBoardMaster-filter-icon {
+.DashBoardMaster-search-icon {
     background: none;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
+}   
+
+.DashBoardMaster-search-icon:focus{
+    outline: none;
+    border: none;
+}
+
+.DashBoardMaster-filter-icon {
+    background: none;
+    border: 1px solid #6846EF;
+    padding: 3px 10px;
+    padding-top: 6px;
+    border-radius: 10px;
+    font-size: 1.7rem;
+    font-family: 'Rajdhani', 'sans-serif';
+    font-weight: 700;
+    color: #6846EF;
+    cursor: pointer;
+}
+
+.DashBoardMaster-filter-icon:hover {
+    background: none;
+    border: 1px solid #6846EF !important;
+    padding: 3px 10px;
+    padding-top: 6px;
+    border-radius: 10px;
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+.DashBoardMaster-filter-icon i{
+    color: #6846EF;
 }
 
 .DashBoardMaster-search-bar {
@@ -181,6 +224,36 @@
     border-radius: 5px;
 }
 
+.barraPesquisa-dashboard-master{
+    border: 1px solid #46C7EF;
+    border-radius: 7px;
+    padding-inline: 7px;
+    padding-top: 7px;
+    padding-bottom: 5px;
+}
+
+.barraPesquisa-dashboard-master input{
+    border: none;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 1.5rem;
+}
+
+.barraPesquisa-dashboard-master input:focus {
+    outline: none; /* Remove o contorno padrão de foco */
+    border: none;  /* Garante que a borda fique invisível ao focar */
+}
+
+.barraPesquisa-dashboard-master input:checked{
+    border: none;
+}
+
+.barraPesquisa-dashboard-master i{
+    font-size: 1.4rem;
+    margin-top: 8px;
+    margin-inline: 7px;
+}
+
 .DashBoardMaster-filter-dropdown {
     position: absolute;
     top: 40px; /* Ajusta o dropdown para abrir logo abaixo do botão de filtro */
@@ -188,17 +261,21 @@
     background-color: white;
     border: 1px solid #6846EF;
     padding: 10px;
-    border-radius: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
     width: 150px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 5px 8px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
 .DashBoardMaster-filter-dropdown h4 {
     margin: 0 0 10px 0;
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-align: center;
+    padding: 6px 0px;
     color: #6846EF;
+    border: 1px solid #6846EF;
+    border-radius: 10px;
     font-weight: bold;
     font-family: 'Oswald';
 }
@@ -210,7 +287,14 @@
 
 .DashBoardMaster-filter-dropdown li {
     padding: 5px 0;
-    font-size: 1rem;
+    font-size: 1.4rem;
+    font-family: 'Oswald', 'sans-serif';
+    font-weight: 600;
     cursor: pointer;
     color: #333;
+    border: 1px solid #D9D9D9;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    border-radius: 7px;
+    padding-left: 7px;
 }

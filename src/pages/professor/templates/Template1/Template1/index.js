@@ -228,9 +228,9 @@ export const Template1 = ({ selectedUser }) => {
                                         placeholder="Artigo 1"
                                         value={campo1Text}
                                         onChange={handleTextChange}
-                                        maxLength="460"
+                                        maxLength="400"
                                     />
-                                    <p>{campo1Text.length}/460</p>
+                                    <p>{campo1Text.length}/400</p>
                                 </div>
                                 <div className="text2-t1 btn-bg-t1" id="text2BtnBg">
                                     <input
