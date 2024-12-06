@@ -46,6 +46,7 @@ import SobreNos from "../pages/userComum/SobreNos/index.js";
 import NewDashBoardAluno from "../pages/aluno/newDasboardAluno/index.js"
 import FormularioMaster from "../pages/master/formularioMaster/index.js";
 import ContentPrincipalListMaster from "../pages/master/listarMaster/index.js";
+import ListarMasterdois from "../pages/master/ListarMasterdois/index.js";
 
 
 export default function RoutesAdmin() {
@@ -120,11 +121,11 @@ export default function RoutesAdmin() {
                 <Route path='/imagem' element={<SubirImagem />} />
 
 
-
                 {/* master */}
                 <Route path='/master/Dashboard' element={<DashBoardMaster />} />
                 <Route path='/master/ListarUsuarios' element={<ContentPrincipalListMaster />} />
                 <Route path='/master/FormularioMaster' element={<FormularioMaster />} />
+                <Route path='/listar2' element={<ListarMasterdois />} />
 
 
 
