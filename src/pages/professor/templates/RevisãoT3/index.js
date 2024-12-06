@@ -284,7 +284,7 @@ export const RevisaoT3 = ({ selectedUser }) => {
                             onChange={(e) => setTitle(e.target.value)} // Atualiza o estado ao editar
                             maxLength="30"
                         />
-                        <p>{valueTitle.length}/30</p>
+                        
 
                         {/* header esquerda com inputs */}
                         <div className="header-left-t3">
@@ -512,7 +512,33 @@ export const RevisaoT3 = ({ selectedUser }) => {
                         </div>
 
                         {/* footer lado direito */}
-                        <div className="footer-right-t3"></div>
+                        <div className="footer-right-t3">
+                            {/* parte dos QRcodes */}
+                            {/* QRcode 1 */}
+                            <div className="QRcode-1-footer">
+                                <div className="campo9-t1">
+                                    <div className="texto-t1">
+                                        <p className="textValueReceiveTemplete1-t1 textWithBG-t1 LinkQRcode">{texts[4]}</p> {/* Texto do campo8 */}
+                                    </div>
+                                </div>
+                                <div className="campo10-t1">
+                                    {/* Imagem carregada para campo9 */}
+                                    {code1Image && <img src={code1Image} className="image-400w-t1 imgQRcodes" alt="Imagem do campo9" />}
+                                </div>
+                            </div>
+                            {/* QRcode 2 */}
+                            <div className="QRcode-2-footer">
+                                <div className="campo11-t1">
+                                    <div className="texto-t1">
+                                        <p className="textValueReceiveTemplete1-t1 textWithBG-t1 LinkQRcode">{texts[5]}</p> {/* Texto do campo10*/}
+                                    </div>
+                                </div>
+                                <div className="campo8-t1">
+                                    {/* Imagem carregada para campo11 */}
+                                    {code2Image && <img src={code2Image} className="image-400w-t1 imgQRcodes" alt="Imagem do campo11" />}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

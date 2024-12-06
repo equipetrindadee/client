@@ -639,12 +639,12 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
 
         </div>
 
-    </footer> */}
+        {/* </footer> */} 
                     {/*Fim do footer */}
 
-                </div>
+                {/* </div>
 
-            </div>
+            </div> */}
             <div>
 
             </div>
