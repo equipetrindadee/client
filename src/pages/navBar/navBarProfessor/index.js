@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation, useNavigate,Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import "../../navBar/navBarProfessor/navBarProfessor.css";
@@ -8,6 +8,15 @@ export const NavBarProfessor = ({ toggleNavBar }) => {
 
     const [isSidebarHidden, setIsSidebarHidden] = useState(true); // Start with sidebar hidden by default
     const location = useLocation();
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        // Limpar tudo do sessionStorage
+        sessionStorage.clear();
+        
+        // Redireciona para a página de login
+        navigate('/login');
+    };
 
     const menuItems = [
         { text: 'INÍCIO', path: '/dashP' },
@@ -18,21 +27,14 @@ export const NavBarProfessor = ({ toggleNavBar }) => {
         { text: 'FALE CONOSCO', path: '/faleConoscoProfessor' }
     ];
 
-    const handleLogout = () => {
-        window.location.href = '/';
-    };
-
-    // This function will no longer toggle the sidebar when a menu item is clicked.
-    // It will only be toggled with the image click.
     const handleMenuItemClick = () => {
         console.log("Navegando para a página, sidebar não será modificada.");
     };
 
-    // Toggle sidebar visibility when the logo is clicked
     const handleSidebarToggle = () => {
         setIsSidebarHidden(!isSidebarHidden);
     };
-
+    
     return (
         <div>
             <section id="sidebar" className={isSidebarHidden ? 'hide' : ''}>
@@ -59,11 +61,13 @@ export const NavBarProfessor = ({ toggleNavBar }) => {
                 </ul>
                 <ul className="logoutNavaBarProfessor">
                     <li>
-                        <Link to="#" className="iconeLogoutNavBarProfessor" onClick={handleLogout}>
+                        {/* Remover o Link e apenas usar o botão */}
+                        <button className="iconeLogoutNavBarProfessor" onClick={handleLogout}>
                             <i className='bi bi-box-arrow-right iNBP'></i>
                             {!isSidebarHidden && <span className="logoutNavaBarProfessorSair">SAIR</span>}
-                        </Link>
+                        </button>
                     </li>
+                
                 </ul>
             </section>
         </div>

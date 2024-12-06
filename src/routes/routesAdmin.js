@@ -47,6 +47,7 @@ import SobreNos from "../pages/userComum/SobreNos/index.js";
 import NewDashBoardAluno from "../pages/aluno/newDasboardAluno/index.js"
 import FormularioMaster from "../pages/master/formularioMaster/index.js";
 import ContentPrincipalListMaster from "../pages/master/listarMaster/index.js";
+import LogoutButton from "../pages/userComum/Logout/index.js";
 
 
 export default function RoutesAdmin() {
@@ -91,6 +92,7 @@ export default function RoutesAdmin() {
 
                 {/* Telas UserComum */}
                 <Route path='/login' element={<Login />} />
+                <Route path='/logout' element={<LogoutButton />} />
                 <Route path='/cadastro' element={<Cadastro />} />
                 <Route path='/userComum/colunistaUsuario' element={<ColunistaUsuario />} />
                 <Route path='/userComum/faleConosco' element={<FaleConosco />} />

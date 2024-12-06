@@ -45,16 +45,22 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
         // Verifica o acesso do usuário
         if (acesso === "ilimitado") {
             // Salva o nome da coluna no localStorage
-            localStorage.setItem("ColumName", colunaName);
-            localStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color); // Salvando a cor também
+            // Salva o nome da coluna no sessionStorage
+
+            sessionStorage.setItem("ColumName", colunaName);
+            sessionStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color); // Salvando a cor também
+            // localStorage.setItem("ColumName", colunaName);
+            // localStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color); // Salvando a cor também
     
             // Navega para a página /MateriaColuna
             navigate("/MateriaColuna");
         } else if (acesso === 'limitado') {
             // Verifica se a colunaName é a mesma que a coluna do usuário
             if (colunaName === colunasC) {
-                localStorage.setItem("ColumName", colunaName);
-                localStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color);
+                sessionStorage.setItem("ColumName", colunaName);
+                sessionStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color);
+                // localStorage.setItem("ColumName", colunaName);
+                // localStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color);
                 navigate("/MateriaColuna");
             } else {
                 alert("Você não tem permissão para acessar esta tela. Você só pode acessar a coluna na qual está registrado.");
@@ -62,7 +68,9 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
         }
     };
     const fetchUserName = async () => {
-        const storedToken = localStorage.getItem('token');
+        const storedToken = sessionStorage.getItem('token');
+        // const storedToken = localStorage.getItem('token');
+
 
         if (storedToken) {
             try {
@@ -116,7 +124,9 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
     };
 
     const fetchColunas = async () => {
-        const storedToken = localStorage.getItem('token');
+        // const storedToken = localStorage.getItem('token');
+        const storedToken = sessionStorage.getItem('token');
+
         if (storedToken) {
             try {
                 const decoded = jwtDecode(storedToken);
@@ -522,124 +532,17 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
 
                 <h3 className='nomeEdicao-dashboard-Professor'>EDIÇÃO DE MAIO</h3>
 
-<<<<<<< HEAD
-                <button className='buttonEdicao-dashboard-Professor'>Baixar Arquivo</button>
-=======
-                {/* Carrossel do Topo, tela Professor */}
-                <div className="carrosselDashboard-Professor">
-                    <i className="bi bi-caret-left-fill arrowLeft" onClick={handlePrev}></i>
-                    <div className={`colunaSlide-dashboard-professor ${isAnimatingLeft ? 'animatingLeft' : ''}${isAnimatingRight ? 'animatingRight' : ''}`}>
-                        {visibleColunas.map((coluna, index) => (
-                            <a
-                                key={index}
-                                className="coluna divColuna-dashboard-professor"
-                                style={{ backgroundColor: colunas.find(c => c.columname === coluna)?.color }} // Define a cor de fundo
-                                onClick={() => handleClick(coluna)} // Chama a função de clique
-                            >
-                                <h3 className='titleColunas-dashboard-professor'>{coluna}</h3>
-                                <i className="bi bi-play-circle-fill buttonColunas-dashboard-professor"></i>
-                            </a>
-                        ))}
-                    </div>
-                    <i className="bi bi-caret-right-fill arrowRight" onClick={handleNext}></i>
-                </div>
-                {/* Fim do Carrossel Topo */}
 
-                {/* Cards de Visualização do Professor, com carrossel Responsivo */}
-                <div className="cardVisualizacao-dashboard-Professor">
-                    <i className="bi bi-caret-left-fill arrowLeft arrowCards-Dashboard-Professor" onClick={cardDashPrev}></i>
-
-                    {visibleitemsCardDash.map((item) => (
-                        <div
-                        key={item.id}
-                        className={`${item.card}`}
-                        style={{
-                            height: item.colunas.length > 0 
-                                ? `${Math.min(item.colunas.length + 400, 520)}px` // Se o tamanho ultrapassar 520px, ele não aumenta mais
-                                : '22%', // Se não houver colunas, a altura será 22%
-                        }}
-                        >
-                            <div className={item.logo}>
-                                <i className={item.iconeLogoCard}></i>
-                            </div>
-
-                            <h3>{item.title}</h3>
-
-                            <div className={item.colunas}>
-                                {/* Filtra as colunas do item com base nas colunas permitidas */}
-                                {item.colunas
-                                    .filter(colunaData => colunasPermitidas.includes(colunaData.coluna))  // Filtrando colunas com base no acesso
-                                    .map((colunaData, index) => (
-                                        <div key={index} className='colunasVisualizacao-dashboard-Professor'>
-                                            <div className='allConteudo-colunas-dashboard-professor'>
-                                                <div className={`classNamePara${colunaData.coluna}`}> {/* Use a coluna para aplicar uma classe específica, se necessário */}
-                                                    <i className='bx bx-radio-circle-marked'></i>
-                                                </div>
-                                                <h3>{colunaData.coluna}</h3> {/* Exibindo o nome da coluna */}
-                                            </div>
-                                        </div>
-                                    ))}
-                            </div>
-
-                            <button className='buttonNotificar-dashboard-Professor' onClick={handleNotificarTodos}>NOTIFICAR TODOS</button>
-                        </div>
-                    ))}
-
-                    <i className="bi bi-caret-right-fill arrowRight arrowCards-Dashboard-Professor" onClick={cardDashNext}></i>
-                </div>
-
-
-
-                {/* Fim Cards de Visualização do Professor, com carrossel Responsivo */}
-
-                {/* footer da tela professor */}
-                {/* <footer className="footer-dashboard-Professor">
-
-                    <div className="calendario-dashboard-Professor">
-                        <Calendario />
-                    </div>
-
-                    <div className='linhaSeparadora-dashboard-Professor'></div>
-
-                    <div className="areaImpressão-dashboard-Professor">
-
-                        <h1>ÁREA DE IMPRESSÃO</h1>
-
-                        <div className='edicaoNova-dashboard-Professor'>
-
-                            <h3 className='nomeEdicao-dashboard-Professor'>EDIÇÃO DE JULHO</h3>
-
-                            <button className='buttonEdicao-dashboard-Professor'>Baixar Arquivo</button>
-
-                        </div>
-
-                        <div className='edicaoNova-dashboard-Professor'>
-
-                            <h3 className='nomeEdicao-dashboard-Professor'>EDIÇÃO DE JUNHO</h3>
-
-                            <button className='buttonEdicao-dashboard-Professor'>Baixar Arquivo</button>
-
-                        </div>
-
-                        <div className='edicaoNova-dashboard-Professor'>
-
-                            <h3 className='nomeEdicao-dashboard-Professor'>EDIÇÃO DE MAIO</h3>
-
-                            <button className='buttonEdicao-dashboard-Professor'>Baixar Arquivo</button>
-
-                        </div>
-
-                    </div>
-
-                </footer> */}
-                {/*Fim do footer */}
->>>>>>> 5abe64af25a3e9dd09cafefd548595af1e57d3de
-
+{/* 
             </div>
 
         </div>
 
+<<<<<<< HEAD
         {/* </footer> */} 
+=======
+    </footer> */} 
+>>>>>>> e4f5bbe2996a1ebe906da77f13efba69189417b3
                     {/*Fim do footer */}
 
                 {/* </div>
