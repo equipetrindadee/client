@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from "react-router-dom";
 
-/* import NavbarUserComum from "../../navBar/navBarUserComum/index.js"; */
+import NavbarUserComum from "../../navBar/navBarUserComum/index.js";
 
 import './meuperfil.css';
+
 
 // No componente CommentCard, modifique o JSX para incluir um div ao redor de name e date
 const CommentCard = ({ name, date, text, likes, responses }) => (
@@ -26,7 +28,10 @@ const CommentCard = ({ name, date, text, likes, responses }) => (
 );
 
 
+
+
 const MeuPerfil = () => {
+    const navigate = useNavigate();
     const [show, setShow] = useState(false);
     const [activeTab, setActiveTab] = useState("informacoes");
     const handleClose = () => setShow(false);
@@ -39,7 +44,16 @@ const MeuPerfil = () => {
     const [inputPhone, setInputPhone] = useState(phone);
     const [showConfirmation, setShowConfirmation] = useState(false);
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-    const [profileImage, setProfileImage] = useState("/img/profileee.svg"); 
+    const [profileImage, setProfileImage] = useState("/img/profileee.svg");
+
+
+    const handleLogout = () => {
+        // Limpar tudo do sessionStorage
+        sessionStorage.clear();
+        
+        // Redireciona para a página de login
+        navigate('/login');
+    }
 
     const handleSaveChangess = () => {
         setName(inputName);
@@ -74,7 +88,6 @@ const MeuPerfil = () => {
             likes: 3,
             responses: 1,
         },
-
     ];
 
     const handleNo = () => {
@@ -114,11 +127,9 @@ const MeuPerfil = () => {
 
     return (
         <>
-           <div>
-{/*             <NavbarUserComum/> */}
-           </div>
-
-            
+            <div>
+                <NavbarUserComum />
+            </div>
 
             <div className="usercomum_meuperfil-header-background"></div>
 
@@ -142,7 +153,7 @@ const MeuPerfil = () => {
                     <p><i className="bi bi-telephone-fill"></i> {phone}</p>
                     <p><i className="bi bi-clock"></i> desde 2011</p>
                     <p><i className="bi bi-heart-fill"></i> 21 curtidas</p>
-                    <button className="log-out-btn">Log Out</button>
+                    <button className="log-out-btn" onClick={handleLogout}>Log Out</button>
                 </div>
 
                 <div className="usercomum_meuperfil-profile-content">
@@ -151,14 +162,14 @@ const MeuPerfil = () => {
                             className={`usercomum_meuperfil-tab-btn ${activeTab === "informacoes" ? "active" : ""}`}
                             onClick={() => setActiveTab("informacoes")}
                         >
-                            Informações
+                            INFORMAÇÕES
                         </button>
-                        <button
+                        {/* <button
                             className={`usercomum_meuperfil-tab-btn ${activeTab === "comentarios" ? "active" : ""}`}
                             onClick={() => setActiveTab("comentarios")}
                         >
                             Comentários
-                        </button>
+                        </button> */}
                     </div>
 
                     {activeTab === "informacoes" ? (
@@ -198,26 +209,30 @@ const MeuPerfil = () => {
                                 </div>
                             )}
                         </>
-                    ) : (
-                        <div className="usercomum_meuperfil-section">
-                            <h1>COMENTÁRIOS</h1>
-                            <div className="usercomum_meuperfil-container">
+                    ) : null}
 
-                                <div className="usercomum_meuperfil-comments-section">
+                    {/* Comentado a parte do activeTab === "comentarios" */}
+                    {/* 
+{activeTab === "comentarios" ? (
+    <div className="usercomum_meuperfil-section">
+        <h1>COMENTÁRIOS</h1>
+        <div className="usercomum_meuperfil-container">
+            {/* Comentários estão comentados, por enquanto */}
+                    {/* <div className="usercomum_meuperfil-comments-section">
+                {comments.map((comment, index) => (
+                    <CommentCard key={index} {...comment} />
+                ))}
+            </div>
 
-                                    {comments.map((comment, index) => (
-                                        <CommentCard key={index} {...comment} />
-                                    ))}
-                                </div>
-                                <div className="usercomum_meuperfil-liked-section">
-                                    <h2>Matérias Curtidas</h2>
-                                    <p>Nenhuma Coluna selecionada</p>
-                                    
-                                    <div className="usercomum_meuperfil-sad-icon"><i class="bi bi-emoji-frown"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    )}
+            <div className="usercomum_meuperfil-liked-section">
+                <h2>Matérias Curtidas</h2>
+                <p>Nenhuma Coluna selecionada</p>
+                <div className="usercomum_meuperfil-sad-icon"><i className="bi bi-emoji-frown"></i></div>
+            </div>
+        </div> 
+    </div>
+) : null} 
+*/}
 
                 </div>
             </div>
