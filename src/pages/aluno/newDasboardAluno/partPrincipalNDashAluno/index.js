@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Importação necessária
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../partPrincipalNDashAluno/partPrincipalNDashAluno.css';
@@ -9,10 +10,21 @@ import api from "../../../../config/configApi.js";
 
 
 export const PartPrincipalDasboardAluno = ({ systemMessage, messageModal }) => {
+    const navigate = useNavigate(); // Hook para navegação
     const [show, setShow] = useState(false);
     const [selectedNotification, setSelectedNotification] = useState(null);
     const [respondClicks, setRespondClicks] = useState(0);
     const [notifications, setNotifications] = useState([]);
+    const handleRedirect = (path) => {
+        navigate(path); // Redireciona para a página correspondente
+    };
+
+    const cardImages = [
+        { src: "../img/dashAlunoTemplete1.png", path: "/t1" },
+        { src: "../img/dashAlunoTemplete2.png", path: "/t2" },
+        { src: "../img/dashAlunoTemplete3.png", path: "/t3" },
+        { src: "../img/dashAlunoTemplete4.png", path: "/t4" },
+    ];
 
     useEffect(() => {
         const fetchNotifications = async () => {
@@ -84,20 +96,19 @@ export const PartPrincipalDasboardAluno = ({ systemMessage, messageModal }) => {
                 {/* Coluna da esquerda (Cards e Notificações) */}
                 <div className="leftColumnDashAlunoNew">
                     <div className="partPrincipalNDashAluno__cardRow">
-                        {Array(4).fill().map((_, i) => (
-                            <div key={i} className="col partPrincipalNDashAluno__cardCol">
-                                <div className={`card ${i % 3 === 0 ? 'bg-purple-200' : i % 3 === 1 ? 'bg-primary' : 'bg-danger'} partPrincipalNDashAluno__card`}>
+                        {cardImages.map((card, i) => (
+                            <div
+                                key={i}
+                                className="col partPrincipalNDashAluno__cardCol"
+                                onClick={() => handleRedirect(card.path)} // Adicionado evento de clique
+                            >
+                                <div className="partPrincipalNDashAluno__card">
                                     <div className="card-body partPrincipalNDashAluno__cardBody">
-                                        <div className="d-flex align-items-center partPrincipalNDashAluno__userInfo">
-                                            <img src="https://placehold.co/30x30" alt="User profile" className="rounded-circle partPrincipalNDashAluno__userImg" />
-                                            <div className="ms-2 partPrincipalNDashAluno__userName">
-                                                <p className="fw-bold mb-0 partPrincipalNDashAluno__userNameText">User Name</p>
-                                                <p className="text-muted small partPrincipalNDashAluno__userTime">2 days ago</p>
-                                            </div>
-                                        </div>
-                                        <h5 className="card-title mt-2 partPrincipalNDashAluno__cardTitle">Title of the post</h5>
-                                        <p className="card-text partPrincipalNDashAluno__cardText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna.</p>
-                                        <img src="https://placehold.co/100x100" alt="Content image" className="img-fluid partPrincipalNDashAluno__contentImg" />
+                                        <img
+                                            src={card.src}
+                                            alt={`Card image ${i + 1}`}
+                                            className="img-fluid partPrincipalNDashAluno__contentImg"
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -112,17 +123,63 @@ export const PartPrincipalDasboardAluno = ({ systemMessage, messageModal }) => {
                                     variant=""
                                     onClick={() => handleShow(notification)}
                                 >
-                                <img src={notification.imgSrc} alt={`img${index}`} className="partPrincipalNDashAluno__notificationImg" />
-                                <div className="ms-4 partPrincipalNDashAluno__notificationText">
-                                    <p className="fw-bold mb-0 partPrincipalNDashAluno__notificationName">{notification.name}</p>
-                                    <p className=" partPrincipalNDashAluno__notificationMessage">{notification.message}</p>
-                                </div>
+                                    <img src={notification.imgSrc} alt={`img${index}`} className="partPrincipalNDashAluno__notificationImg" />
+                                    <div className="ms-4 partPrincipalNDashAluno__notificationText">
+                                        <p className="fw-bold mb-0 partPrincipalNDashAluno__notificationName">{notification.name}</p>
+                                        <p className=" partPrincipalNDashAluno__notificationMessage">{notification.message}</p>
+                                    </div>
                                 </Button>
                             </div>
-                            
+
                         ))}
                     </div>
                 </div>
+                <Modal show={show} onHide={handleClose}>
+                    <Modal.Header>
+                        <div className={`modal_notificacoes_aluno_estrutura DashAlunoNewVersion ${selectedNotification?.isSystem ? 'sistema-card' : ''}`}>
+                            <div className="modal_notificacoes_aluno_conteudo_img DashAlunoNewVersion imagem-perfil-universal_modal">
+                                <img src={selectedNotification?.imgSrc} alt="img" />
+                            </div>
+                            <div className="modal_notificacoes_aluno_conteudo_texto DashAlunoNewVersion">
+                                <h3>{selectedNotification?.name}</h3>
+                            </div>
+                            <div className="modal_notificacoes_aluno_botao_fechar DashAlunoNewVersion">
+                                <Button variant="" className={selectedNotification?.isSystem ? 'sistema-close-button' : ''} onClick={handleClose}>
+                                    <i class='bx bx-x'></i>
+                                </Button>
+                            </div>
+                        </div>
+                    </Modal.Header>
+
+                    <Modal.Body>
+                        <textarea
+                            className="modal_notificacoes_aluno_textarea
+                            DashAlunoNewVersion"
+                            value={selectedNotification?.messageModal || ''} // Usa o messageModal da notificação selecionada
+                            onChange={(e) => {
+                                if (selectedNotification) {
+                                    setSelectedNotification({
+                                        ...selectedNotification,
+                                        messageModal: e.target.value // Atualiza o messageModal conforme o usuário digita
+                                    });
+                                }
+                            }}
+                        />
+                    </Modal.Body>
+
+                    <Modal.Footer>
+                        <div className="modal_notificacoes_aluno_footer
+                        DashAlunoNewVersion">
+                            <Button
+                                variant=""
+                                className={selectedNotification?.isSystem ? 'sistema-footer-buttonDashAlunoNewVersion' : ''}
+                                onClick={handleDeleteNotification}
+                            >
+                                DELETAR NOTIFICAÇÃO
+                            </Button>
+                        </div>
+                    </Modal.Footer>
+                </Modal>
 
                 {/* Coluna da direita (Modal de Perfil e Progresso) */}
                 <div className="rightColumnDashAlunoNew">
@@ -148,11 +205,18 @@ export const PartPrincipalDasboardAluno = ({ systemMessage, messageModal }) => {
                             <p className='rsuite-timeline-itemDashAlunoNewP'> 10:20</p>
                             <p className='rsuite-timeline-itemDashAlunoNewColumnName' >Monthy dose of english</p>
                         </div>
+                        <div className='rsuite-timeline-itemDashAlunoNew'>
+                            <p className='rsuite-timeline-itemDashAlunoNewP'>23 de Março de 2024</p>
+                            <p className='rsuite-timeline-itemDashAlunoNewP'> 10:20</p>
+                            <p className='rsuite-timeline-itemDashAlunoNewColumnName' >Monthy dose of english</p>
+                        </div>
+
+
 
                     </div>
 
                     <div className="partPrincipalNDashAluno__progressCard">
-                        <h3 className="partPrincipalNDashAluno__progressTitle">Progresso</h3>
+                        {/* <h3 className="partPrincipalNDashAluno__progressTitle">Progresso</h3>
                         <div className="partPrincipalDashboardAlunoNew-container">
                             <div className="partPrincipalDashboardAlunoNew-progress-item">
                                 <div className="partPrincipalDashboardAlunoNew-icon">
@@ -183,7 +247,7 @@ export const PartPrincipalDasboardAluno = ({ systemMessage, messageModal }) => {
                                     <p className='partPrincipalDashboardAlunoNew-textProgressoP'>80% Concluído</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 

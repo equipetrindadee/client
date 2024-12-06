@@ -1,30 +1,120 @@
 import React, { useState } from 'react';
 import './listarartigos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavbarUserComum from "../../navBar/navBarUserComum/index.js";
-import Rodape from "../ListarArtigos/Rodape/index.js";
+/* import NavbarUserComum from "../../navBar/navBarUserComum/index.js"; */
+import Rodape from "../Rodape";
+import { useNavigate } from 'react-router-dom'; // Importando o useNavigate
 
 const ListarArtigo = () => {
-  const [show, setShow] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const navigate = useNavigate(); // Criando o hook de navegação
 
-  const handleShow = () => setShow(true);
+  const images = [
+    "../img/gallery.svg",
+    "../img/imgartigos.svg",
+    "../img/gallery.svg"
+  ];
+
+  // Dados dos artigos com títulos e textos originais
+  const artigos = [
+    {
+      id: 1,
+      title: "Where does it come from?",
+      author: "Nome do autor",
+      description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      date: "Há 2 dias",
+      image: "../img/imgartigos.svg"
+    },
+    {
+      id: 2,
+      title: "Where does it come from?",
+      author: "Nome do autor",
+      description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      date: "Há 2 dias",
+      image: "../img/imgartigos.svg"
+    },
+    {
+      id: 3,
+      title: "Where does it come from?",
+      author: "Nome do autor",
+      description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      date: "Há 2 dias",
+      image: "../img/imgartigos.svg"
+    },
+    {
+      id: 4,
+      title: "Where does it come from?",
+      author: "Nome do autor",
+      description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      date: "Há 2 dias",
+      image: "../img/imgartigos.svg"
+    },
+    {
+      id: 5,
+      title: "Where does it come from?",
+      author: "Nome do autor",
+      description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      date: "Há 2 dias",
+      image: "../img/imgartigos.svg"
+    }
+  ];
+
+  // Lista de artigos populares (mais lidos)
+  const popularArticles = [
+    {
+      id: 1,
+      title: "Quem executa o bloqueio do X caso Moraes ordene a...",
+      author: "Nome do autor",
+      image: "../img/popularlist.svg"
+    },
+    {
+      id: 2,
+      title: "Quem executa o bloqueio do X caso Moraes ordene a...",
+      author: "Nome do autor",
+      image: "../img/popularlist.svg"
+    },
+    {
+      id: 3,
+      title: "Quem executa o bloqueio do X caso Moraes ordene a...",
+      author: "Nome do autor",
+      image: "../img/popularlist.svg"
+    }
+  ];
+
+  // Função que lida com o clique no ícone de seta para voltar
+  const handleArrowClick = () => {
+    navigate(-1); // Isso irá levar o usuário à página anterior
+  };
+
+  // Função para navegar para o artigo específico
+  const handleArticleClick = (articleId) => {
+    navigate(`/artigo/${articleId}`); // Redireciona para a página do artigo
+  };
+
+  // Função para navegar para o artigo popular específico
+  const handlePopularArticleClick = (articleId) => {
+    navigate(`/artigo/${articleId}`); // Redireciona para a página do artigo popular
+  };
+
+  const handleDotClick = (index) => {
+    setCurrentIndex(index);
+  };
 
   return (
     <div className="userComum-listarArtigo-container">
-      {/* Navbar com o ícone de menu */}
-      <NavbarUserComum />
+{/*       <NavbarUserComum /> */}
       
       <section className="userComum-listaArtigo-header">
+        {/* Seta que chama a função handleArrowClick */}
         <img 
-          src="../img/menu.svg" 
-          className="userComum-img-menu" 
-          alt="Imagem do menu" 
-          onClick={handleShow}
+          src="../img/mdi_arrow-up.svg" 
+          className="userComum-img-arrow" 
+          alt="Imagem arrow" 
+          onClick={handleArrowClick} // Chama a função ao clicar na seta
         />
         <h2>Monthly dose of English</h2>
         <div className="userComum-line-blue"></div>
 
-        {/* Barra de Pesquisa com ícone de Lupa */}
         <div className="userComum-search-bar-container">
           <input 
             type="text" 
@@ -35,21 +125,27 @@ const ListarArtigo = () => {
         </div>
       </section>
 
-      {/* Conteúdo principal */}
       <section className="userComum-content-grid">
         <div className="userComum-content-left">
-          {/* Artigos */}
           <div className="userComum-listaArtigo-articles">
             <h3>ARTIGOS</h3>
             <div className="userComum-listaArtigo-articles-list">
-              {[...Array(5)].map((_, index) => (
-                <article key={index} className="userComum-article">
-                  <img src="../img/imgartigos.svg" className="userComum-img-character7" alt="Imagem do artigo" />
+              {artigos.map((article) => (
+                <article 
+                  key={article.id} 
+                  className="userComum-article" 
+                  onClick={() => handleArticleClick(article.id)} // Passa o ID do artigo
+                >
+                  <img 
+                    src={article.image} 
+                    className="userComum-img-character7" 
+                    alt="Imagem do artigo" 
+                  />
                   <div className="userComum-listarArtigo-conteudoartigo">
-                    <h4>Where does it come from?</h4>
-                    <p className="userComum-listarArtigo-articles-text">por Nome do autor</p>
-                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                    <p>Há 2 dias</p>
+                    <h4>{article.title}</h4>
+                    <p className="userComum-listarArtigo-articles-text">por {article.author}</p>
+                    <p>{article.description}</p>
+                    <p>{article.date}</p>
                   </div>
                 </article>
               ))}
@@ -57,27 +153,39 @@ const ListarArtigo = () => {
           </div>
         </div>
 
-        {/* Galeria e Mais Lidos */}
         <div className="userComum-content-right">
-          {/* Galeria */}
           <div className="userComum-listarArtigo-gallery-section">
             <h3>GALERIA</h3>
             <div className="userComum-listarArtigo-gallery">
-              <img src="../img/gallery.svg" className="userComum-img-gallery" alt="Imagem da gallery" />
+              <img 
+                src={images[currentIndex]} 
+                className="userComum-img-gallery" 
+                alt="Imagem da gallery"
+              />
+            </div>
+
+            {/* Dots for navigation */}
+            <div className="userComum-gallery-dots">
+              {images.map((_, index) => (
+                <span 
+                  key={index} 
+                  className={`userComum-dot ${currentIndex === index ? 'active' : ''}`} 
+                  onClick={() => handleDotClick(index)} 
+                />
+              ))}
             </div>
           </div>
 
-          {/* Mais Lidos */}
           <div className="userComum-listarArtigos-popular-section">
             <h3>MAIS LIDOS</h3>
             <ul className="userComum-listaArtigo-popular-list">
-              {[...Array(3)].map((_, index) => (
-                <li key={index} className="userComum-listaArtigo-popular-item">
+              {popularArticles.map((article) => (
+                <li key={article.id} className="userComum-listaArtigo-popular-item" onClick={() => handlePopularArticleClick(article.id)}>
                   <div className="userComum-listarArtigo-popular-item-content">
-                    <p className="userComum-listarArtigo-popular-item-text">Quem executa o bloqueio do X caso Moraes ordene a...</p>
-                    <img src="../img/popularlist.svg" className="userComum-serComum-listarArtigo-img-popular-list" alt="Imagem popular-list" />
+                    <p className="userComum-listarArtigo-popular-item-text">{article.title}</p>
+                    <img src={article.image} className="userComum-serComum-listarArtigo-img-popular-list" alt="Imagem popular-list" />
                   </div>
-                  <p className="userComum-listarArtigo-author-text">por Nome do autor</p>
+                  <p className="userComum-listarArtigo-author-text">por {article.author}</p>
                   <div className="userComum-listarArtigo-line-separator"></div>
                 </li>
               ))}

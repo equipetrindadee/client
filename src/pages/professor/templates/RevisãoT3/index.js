@@ -336,20 +336,7 @@ export const RevisaoT3 = ({ selectedUser }) => {
                                     <p>{(texts[1] || '').length}/460</p>
                                 </div>
 
-                                
-
-                                <div className="text4-t3 btn-bg-t3" id="text4BtnBg">
-                                    <input
-                                        className="upImg-t3 file-input-t3"
-                                        type="file"
-                                        id="campo6ImageUpload"
-                                        accept="image/*"
-                                        onChange={(e) => handleImageUpload(e, setCampo4Image, 'text4BtnBg')}
-                                    />
-                                    <label htmlFor="campo6ImageUpload" className="file-label-t3">Escolher Imagem</label>
-                                </div>
-
-                                <div className="text5-t3 text1NameColumnReceiveTemplete1-t3">
+                                <div className="text4-t3 text1NameColumnReceiveTemplete1-t3">
                                     <textarea
                                         placeholder="Artigo 3"
                                         value={texts[2] || ''}
@@ -363,7 +350,20 @@ export const RevisaoT3 = ({ selectedUser }) => {
                                     <p>{(texts[2] || '').length}/465</p>
                                 </div>
 
-                                <div className="text7-t3 text1NameColumnReceiveTemplete1-t3">
+                                <div className="text5-t3 btn-bg-t3" id="text4BtnBg">
+                                    <input
+                                        className="upImg-t3 file-input-t3"
+                                        type="file"
+                                        id="campo6ImageUpload"
+                                        accept="image/*"
+                                        onChange={(e) => handleImageUpload(e, setCampo4Image, 'text4BtnBg')}
+                                    />
+                                    <label htmlFor="campo6ImageUpload" className="file-label-t3">Escolher Imagem</label>
+                                </div>
+
+                                
+
+                                <div className="text6-t3 text1NameColumnReceiveTemplete1-t3">
                                     <textarea
                                         placeholder="Artigo 4"
                                         className="mediumWi-t3"
@@ -493,22 +493,15 @@ export const RevisaoT3 = ({ selectedUser }) => {
                                 <div className="campo3-t3">
                                     <p className="textValueReceiveTemplete1-t3">{texts[1]}</p>
                                 </div>
-                                <div className="campo4-t3">
-                                    <div className="campo4-card-t3">
-                                        {/* Imagem carregada para campo4 */}
-                                        {campo4Image && <img src={campo4Image} className="image-400w-t3" alt="Imagem do campo4" />}
+                                <div className="campo4-t3">                          
                                         <div className="texto-t3">
                                             <p className="textValueReceiveTemplete1-t3 textWithBG-t3">{texts[2]}</p> {/* Texto do campo4 */}
                                         </div>
-                                    </div>
                                 </div>
 
                                 <div className="campo5-t3">
-                                    <div className="campo5-card-t3">
                                         {/* Imagem carregada para campo5 */}
-                                        {campo5Image && <img src={campo5Image} className="image-400w-t3" alt="Imagem do campo5" />}
-
-                                    </div>
+                                        {campo4Image && <img src={campo4Image} className="image-400w-t3" alt="Imagem do campo5" />}
                                 </div>
                                 <div className="campo6-t3">
                                     <div className="texto-t3">

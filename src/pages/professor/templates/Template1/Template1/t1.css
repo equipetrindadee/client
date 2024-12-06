@@ -304,17 +304,24 @@
 
 .footer-right-t1 {
     width: 100%;
-    padding: 20px 20px 20px 80px;
+    padding: 20px 0px 20px 30px;
     margin-top: 10px;
     background-color: #312CBF;
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
-
+.QRcode-1-footer{
+    grid-area: 1 / 1 / 2 / 3;
+    display: flex;
+}
+.QRcode-2-footer{
+    display: flex;
+    grid-area: 1 / 3 / 2 / 5;
+}
 .saibaMaisTemplete1TitleFooter-t1 {
     color: #312CBF;
     font-family: "Rajdhani", sans-serif;
@@ -389,7 +396,7 @@
     text-align: justify !important;
     grid-area: 1 / 1 / 2 / 2;
     height: max-content;
-    max-width: 400px;
+    max-width: 310px;
     word-wrap: break-word;
     overflow-wrap: break-word;
     max-height: 200px;
@@ -402,8 +409,10 @@
 }
 
 .campo2-t1 {
-    grid-area: 1 / 2 / 2 / 3;
+    margin-top: 2rem;
+    grid-area: 1 / 2 / 3 / 3;
     max-height: max-content;
+    
 }
 
 .bg-img-t1 {
@@ -411,7 +420,7 @@
 }
 
 .campo3-t1 {
-    margin-top: 4rem;
+    margin-top: 6.5rem;
     text-align: justify !important;
     grid-area: 2 / 1 / 3 / 3;
     word-break: break-word;
@@ -424,6 +433,10 @@
     height: max-content;
     word-break: break-word;
     overflow-wrap: break-word;
+    
+}
+.campo4-t1 p{
+    width: 300px;
 }
 
 .campo5-t1 {
@@ -440,6 +453,7 @@
     height: max-content;
     word-break: break-word;
     overflow-wrap: break-word;
+    margin-top: -2rem;
 }
 
 .campo7-t1 {
@@ -472,10 +486,11 @@
 
 .campo4-card-t1 .texto-t1 {
     height: max-content;
-    max-width: 400px;
+    max-width: 300px;
     word-wrap: break-word;
     overflow-wrap: break-word;
     max-height: 200px;
+    margin-top: -5rem;
 }
 
 .fullWi-t1 {
@@ -572,6 +587,7 @@
 
 .text1-t1 {
     grid-area: 1 / 1 / 2 / 2;
+    margin-right: 20px;
 }
 
 .text2-t1 {
@@ -603,6 +619,7 @@
 }
 
 
+
 .text-footer-t1 {
     display: grid;
     grid-template-columns: 75% 25%;
@@ -630,6 +647,16 @@
     padding: 10px;
     height: 70px !important;
     width: 100%;
+}
+.imgQRcodes{
+    width: 80px !important;
+    height: 80px !important;
+}
+.LinkQRcode{
+    width: 150px !important;
+    word-wrap: break-word; /* Suporte legado */
+    margin-right: 20px;
+    
 }
 
 .text8-t1 {

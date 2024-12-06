@@ -34,14 +34,26 @@
     border: 1px solid #d9d9d9 !important;
     border-radius: 10px;
 }
-
-.cadPerfilUserAlunoDescription-button p {
+.cadPerfilUserAlunoDescription-button {
+    position: relative;
+    margin: 0 auto;
+    text-align: center !important;
     color: #000;
     font-family: "Montserrat";
     font-size: 15px;
     font-weight: bold;
-    margin-inline: 1.75rem;
-    margin-block: 0.5rem;
+    
+}
+
+.cadPerfilUserAlunoDescription-button p {
+    position: relative;
+    margin: 0 auto;
+    text-align: center !important;
+    color: #000;
+    font-family: "Montserrat";
+    font-size: 15px;
+    font-weight: bold;
+    
 }
 
 .cadPerfilUserAlunoDescription-body-info {

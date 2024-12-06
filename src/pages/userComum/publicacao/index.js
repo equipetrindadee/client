@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import '../publicacao/publicacao.css';
 import Commets from './comments';
 import Artigo from './artigo';
-import NavbarUserComum from "../../navBar/navBarUserComum/index.js"
+/* import NavbarUserComum from "../../navBar/navBarUserComum/index.js" */
 
 function Publicacao() {
     const navigate = useNavigate();
@@ -25,7 +25,7 @@ function Publicacao() {
     return (
         <div className='user_publicacao-container'>
             <header>
-                <NavbarUserComum/>
+{/*                 <NavbarUserComum/> */}
             </header>
             <div className="user_publicacao-banner">
                 <div className='user_publicacao-banner-img'>
