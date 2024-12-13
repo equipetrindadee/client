@@ -26,15 +26,15 @@ function Login() {
             const response = await api.post('/login', { email, password });
             const { token, categoria, coluna, acesso } = response.data;
     
-            sessionStorage.setItem('token', token);
-            sessionStorage.setItem('UserCategoria', categoria);
-            sessionStorage.setItem('UserColuna', coluna);
-            sessionStorage.setItem('UserAcesso', acesso);
+            // sessionStorage.setItem('token', token);
+            // sessionStorage.setItem('UserCategoria', categoria);
+            // sessionStorage.setItem('UserColuna', coluna);
+            // sessionStorage.setItem('UserAcesso', acesso);
             
-            // localStorage.setItem('token', token);
-            // localStorage.setItem('UserCategoria', categoria);
-            // localStorage.setItem('UserColuna', coluna);
-            // localStorage.setItem('UserAcesso', acesso);
+            localStorage.setItem('token', token);
+            localStorage.setItem('UserCategoria', categoria);
+            localStorage.setItem('UserColuna', coluna);
+            localStorage.setItem('UserAcesso', acesso);
             api.defaults.headers.Authorization = `Bearer ${token}`;
             singIn(true);
     
@@ -115,8 +115,4 @@ function Login() {
     );
 }
 
-<<<<<<< HEAD
 export default Login;   
-=======
-export default Login;
->>>>>>> e4f5bbe2996a1ebe906da77f13efba69189417b3

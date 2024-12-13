@@ -5,9 +5,8 @@ import Chat from '../chatComponet/index.js';
 import '../componetPrincipal/componet.css'; // Certifique-se de que o caminho está correto
 import NavBaraluno from '../../../navBar/navBarAluno/index.js';
 import NavBarProfessor from '../../../navBar/navBarProfessor/index.js';
-import SideNavBarNewAluno from '../../../navBar/newNavBarSideBarAluno/index.js';
 
-function ChatTeste() {
+function ChatProfessor() {
   const [selectedUser, setSelectedUser] = useState(null); // Inicializa como null para que o texto apareça inicialmente
 
   const handleUserSelect = (user) => {
@@ -17,9 +16,8 @@ function ChatTeste() {
   return (
     <div>
       {/* <NavBaraluno /> */}
-      <SideNavBarNewAluno />
 
-      {/* <NavBarProfessor /> */}
+      <NavBarProfessor />
       <div className="aluno_ChatAluno-container">
         <div className="aluno_ChatAluno-row">
           {/* Sidebar Component */}
@@ -37,4 +35,4 @@ function ChatTeste() {
   );
 }
 
-export default ChatTeste;
+export default ChatProfessor;

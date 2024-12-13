@@ -47,11 +47,11 @@ import SobreNos from "../pages/userComum/SobreNos/index.js";
 import NewDashBoardAluno from "../pages/aluno/newDasboardAluno/index.js"
 import FormularioMaster from "../pages/master/formularioMaster/index.js";
 import ContentPrincipalListMaster from "../pages/master/listarMaster/index.js";
-<<<<<<< HEAD
-import ListarMasterdois from "../pages/master/ListarMasterdois/index.js";
-=======
+// import ListarMasterdois from "../pages/master/ListarMasterdois/index.js";
+import ChatProfessor from "../pages/professor/chatTeste/componetPrincipal/index.js";
+
 import LogoutButton from "../pages/userComum/Logout/index.js";
->>>>>>> d90629d6e843d1e25da32e2b0e1f3d9a81236afe
+import MateriaColunaCarrossel from "../pages/professor/dashboardProfessor/materiasColuna/index.js";
 
 
 export default function RoutesAdmin() {
@@ -88,8 +88,11 @@ export default function RoutesAdmin() {
                 <Route path='/faleConoscoProfessor' element={<FaleConoscoProfessor />} />
                 <Route path='/dashP' element={<DashboardProfessor />} />
                 <Route path='/materiaColuna' element={<MateriaColuna />} />
+                <Route path='/materiaColunaCarrosel' element={<MateriaColunaCarrossel />} />
+
                 <Route path='/editarTelaInicialProfessor' element={<EditarTelaProf />} />
                 <Route path='/postagem/telaInicial' element={<PostagemTelaInicial />} />
+                <Route path='/chatProfessor' element={<ChatProfessor />} />
 
 
 
@@ -131,7 +134,7 @@ export default function RoutesAdmin() {
                 <Route path='/master/Dashboard' element={<DashBoardMaster />} />
                 <Route path='/master/ListarUsuarios' element={<ContentPrincipalListMaster />} />
                 <Route path='/master/FormularioMaster' element={<FormularioMaster />} />
-                <Route path='/listar2' element={<ListarMasterdois />} />
+                {/* <Route path='/listar2' element={<ListarMasterdois />} /> */}
 
 
 

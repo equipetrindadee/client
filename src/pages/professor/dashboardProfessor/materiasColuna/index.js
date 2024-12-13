@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './materiasColuna.css';
 import { Container, Row, Col, Card, Button, Dropdown, DropdownButton, Form, InputGroup } from 'react-bootstrap';
-import NavBarProfessor from '../../navBar/navBarProfessor';
-import Error from '../../components/error';
-import { db } from '../../../config/firebaseImgConfig';
+import NavBarProfessor from '../../../navBar/navBarProfessor';
+import ErrorCelular from '../../../components/error';
+import { db } from "../../../../config/firebaseImgConfig.js";
 import { collection, getDocs, doc, getDoc } from 'firebase/firestore';
 import { getStorage, ref, getDownloadURL } from 'firebase/storage';
 import FilterButtonMateriaColunaProfessor from './filterButtonMateriaColunaProfessor';
@@ -12,7 +12,7 @@ import { Navigate, useNavigate, useLocation} from 'react-router-dom';
 
 
 
-function MateriaColuna() {
+function MateriaColunaCarrossel() {
 
     const navigate = useNavigate()
     const [filter, setFilter] = useState('Todos');
@@ -41,9 +41,9 @@ function MateriaColuna() {
                 .then((docSnapshot) => {
                     if (docSnapshot.exists()) {
                         const data = docSnapshot.data();
-                        const imageColumn = data.imageColumn; // Pegando o campo imageColumn
-                        if (imageColumn) {
-                            setBannerImage(imageColumn);
+                        const bannerImage = data.bannerImage; // Pegando o campo imageColumn
+                        if (bannerImage) {
+                            setBannerImage(bannerImage);
                         } else {
                             setBannerError(true);
                         }
@@ -179,37 +179,7 @@ function MateriaColuna() {
     };
 
     console.log("aqui2", bannerImage)
-    useEffect(() => {
-        const currentPath = location.pathname;
-        if (currentPath.includes('controle-colunas')) {
-            setBannerImage('/path/to/controle-colunas-banner.jpg');
-        } else if (currentPath.includes('carousel')) {
-            setBannerImage('/path/to/carousel-banner.jpg');
-        } else {
-            // Buscar do Firebase como fallback
-            const idColum = localStorage.getItem('idColum');
-            if (idColum) {
-                const docRef = doc(db, 'colunas', idColum);
-                getDoc(docRef)
-                    .then((docSnapshot) => {
-                        if (docSnapshot.exists()) {
-                            const data = docSnapshot.data();
-                            if (data.imageColumn) {
-                                setBannerImage(data.imageColumn);
-                            } else {
-                                setBannerError(true);
-                            }
-                        } else {
-                            setBannerError(true);
-                        }
-                    })
-                    .catch(() => setBannerError(true));
-            } else {
-                setBannerError(true);
-            }
-        }
-    }, [location.pathname]);
-
+    
     return (
         <div className="professor-materiaColuna-container">
             <NavBarProfessor />
@@ -363,10 +333,10 @@ function MateriaColuna() {
                 </div>
             </div>
             <div className='professor-materiaColuna-mensagem-error'>
-                <Error />
+                <ErrorCelular />
             </div>
         </div>
     );
 }
 
-export default MateriaColuna;
+export default MateriaColunaCarrossel;

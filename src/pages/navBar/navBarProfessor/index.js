@@ -12,7 +12,8 @@ export const NavBarProfessor = ({ toggleNavBar }) => {
 
     const handleLogout = () => {
         // Limpar tudo do sessionStorage
-        sessionStorage.clear();
+        // sessionStorage.clear();
+        localStorage.clear();
         
         // Redireciona para a página de login
         navigate('/login');
@@ -23,7 +24,7 @@ export const NavBarProfessor = ({ toggleNavBar }) => {
         { text: 'CONTROLE COLUNAS', path: '/controleColunas' },
         { text: 'CONTROLE COLUNISTA', path: '/controleUsuario' },
         { text: 'EDITAR TELA INICIAL', path: '/editarTelaInicialProfessor' },
-        { text: 'CHAT', path: '/chat' },
+        { text: 'CHAT', path: '/chatProfessor' },
         { text: 'FALE CONOSCO', path: '/faleConoscoProfessor' }
     ];
 

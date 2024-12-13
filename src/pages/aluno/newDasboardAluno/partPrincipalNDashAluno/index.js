@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'; // Importação necessária
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../partPrincipalNDashAluno/partPrincipalNDashAluno.css';
-import CardPerfil from '../../dashBoardAluno/componetsAluno/cardPerfil/index.js';
+import CardPerfil from '../componetsAluno/cardPerfil/index.js'
 import ModalPerfil from '../../dashBoardAluno/componetsAluno/modalPerfil/index.js';
 import { Button, Modal } from 'react-bootstrap';
 import api from "../../../../config/configApi.js";
@@ -185,8 +185,7 @@ export const PartPrincipalDasboardAluno = ({ systemMessage, messageModal }) => {
                 <div className="rightColumnDashAlunoNew">
                     <div className="partPrincipalNDashAlunoModalPartPerfilDashAluno">
                         <div className="partPrincipalNDashAluno__sideCard">
-                            <CardPerfil />
-                        </div>
+                            <CardPerfil/>                        </div>
 
                     </div>
                     <div className="custom-timelineDashAlunoNew">
