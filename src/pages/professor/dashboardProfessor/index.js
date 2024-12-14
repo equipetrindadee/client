@@ -406,9 +406,13 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
 
 
     const visibleColunas = [];
-    for (let i = 0; i < itemsToShow; i++) {
-        visibleColunas.push(colunas[(currentIndex + i) % colunas.length]?.columname); // Usando o campo columname
-    }
+for (let i = 0; i < itemsToShow; i++) {
+  // Verifica se a coluna está ativa antes de adicioná-la
+  const coluna = colunas[(currentIndex + i) % colunas.length];
+  if (coluna?.estadoColuna === 'ativo') {
+    visibleColunas.push(coluna.columname); // Usando o campo columname
+  }
+}
 
     const visibleitemsCardDash = [];
     for (let i = 0; i < itemsCardShow; i++) {

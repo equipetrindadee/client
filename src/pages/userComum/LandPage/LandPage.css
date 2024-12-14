@@ -57,12 +57,14 @@
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    font-family: 'Oswald-Regular';
+    font-family: 'Oswald' !important;
     align-items: center;
 }
 
 .home_date {
     font-size: 20px;
+    font-weight: 400 !important;
+    letter-spacing: 20% !important;
 }
 
 .home_header ul {
@@ -87,6 +89,7 @@
     position: relative;
     display: inline-block;
     padding-bottom: 6px;
+    color: #000 !important;
 }
 
 .home_header ul li img {
@@ -171,6 +174,71 @@
     padding: 0 10px;
 }
 
+.carrosselDashboard-Professor{
+    width: 70%;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    justify-content: space-around;
+}
+
+.arrowLeft, .arrowRight {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.colunaSlide-dashboard-professor{
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    height: 65px;
+    transition: transform 0.8s ease-in-out; 
+}
+
+.colunaSlide-dashboard-professor div {
+    opacity: 1;
+    transform: scale(1);
+    transition: transform 0.6s ease-in-out; /* Aumentei o tempo para suavidade */
+}
+
+.animatingLeft , .animatingRight{
+    opacity: 0.9;
+    transform: scale(0.8); /* Leve efeito visual mais suave */
+    transition: transform 0.6s ease-in-out; /* Suavização */
+}
+
+.colunaSlide-dashboard-professor.animatingLeft {
+    transform: translateX(15px) scale(0.99); /* Movimentação um pouco maior e suave */
+}
+
+.colunaSlide-dashboard-professor.animatingRight {
+    transform: translateX(-15px) scale(0.99); /* Movimentação um pouco maior e suave */
+}
+
+.colunaSlide-dashboard-professor div {
+    opacity: 1;
+    transform: scale(1);
+}
+.divColuna-dashboard-professor{
+    color: white;
+    width: 125px;
+    border-radius: 5px;
+    text-align: end;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.titleColunas-dashboard-professor{
+    text-align: left;
+    font-size: 15px;
+    font-family: 'Oswald', 'sans-serif'; 
+    font-weight: 600;
+    margin-bottom: 0 !important;
+    z-index: 1;
+    margin: 6px;
+    height: 35px;
+}
 .carousel_container {
     margin: 50px;
 }
@@ -184,6 +252,7 @@
     max-width: 450px;
     border-right: solid 2px rgba(105, 52, 255, 0.5);
     padding-right: 20px;
+    font-family: 'Oswald' !important;
 }
 
 .home_aside-content {
@@ -191,32 +260,36 @@
 }
 
 .home_aside-content h2 {
-    color: #024959;
-    font-family: 'Oswald-Medium';
+    color: #024959 !important;
     text-align: center;
     margin-bottom: 15px;
     font-size: 36px;
+    font-weight: 600 !important;
 }
 
 .home_aside-content h4 {
     color: #000;
-    font-family: 'Oswald-Light';
     font-size: 32px;
+    font-weight: 400 !important;
+    padding-top: 5%;
+
 }
 
 .home_aside-content p {
     color: #161515;
-    font-family: 'Oswald-Light';
     font-size: 18px;
+    font-weight: 300 !important;
+   text-align: justify !important;
+
 }
 
 .home_aside-content span {
     color: #024959;
-    font-family: 'Oswald-Regular';
 }
 
 .home_article {
     padding: 30px 50px;
+    font-family: 'Oswald' !important;
 }
 
 .home_article-content {
@@ -262,17 +335,25 @@
     margin-left: 10px;
 }
 
-.home_article_img {
+.home_article_img1 {
     height: 250px;
     width: 350px;
-    background-image: url(../../../../public/img/article-img.svg);
+    background-image: url(../../../../public/img/IMG-ALEMLIVRO-HOMEPAGE.svg);
+    background-size: cover;
+}
+.home_article_img2 {
+    height: 250px;
+    width: 350px;
+    background-image: url(../../../../public/img/IMG_TEC-HOMEPAGE.svg);
     background-size: cover;
 }
 
 .home_article_img-credits {
-    font-family: 'Oswald-Regular';
+   /* font-weight: ; */
     font-size: 12px;
     color: #A6A5A5;
+    letter-spacing: 1% !important;
+    text-transform: uppercase;
 }
 
 .home_article-text {
@@ -282,20 +363,25 @@
 
 .home_article-text h4 {
     color: #000;
-    font-family: 'Oswald-Medium';
     font-size: 28px;
+    font-weight: 600 !important;
+    letter-spacing: 5% !important;
+
 }
 
 .home_article-text h5 {
     color: #A6A5A5;
     font-size: 14px;
-    font-family: 'Oswald-Regular';
+    font-weight: 400 !important;
+
 }
 
 .home_article-text p {
     color: #161515;
-    font-family: 'Oswald-Light';
     font-size: 16px;
+    font-weight: 400 !important;
+    text-align: justify;
+
 }
 
 .home_article-text span {
@@ -308,15 +394,15 @@
 }
 
 .gallery_section-title {
-    font-family: 'Coiny';
+   font-family: "Coiny" !important;
     font-size: 45px;
     color: #000;
 }
 
 .gallery_section-subtitle {
-    font-family: 'Oswald-Regular';
+    font-family: 'Oswald';
     font-size: 12px;
-    margin-top: -15px;
+    margin-top: 0.01% !important;
     color: #A6A5A5;
 }
 
@@ -398,10 +484,12 @@
 }
 
 .article_recent-news-header h1 {
-    font-family: 'Oswald-Regular';
+    font-family: 'Oswald';
     color: #fff;
     text-align: end;
     margin-right: 20px;
+    font-size: 40px;
+    letter-spacing: 50%;
 }
 
 .article_recent-news-container {
@@ -417,16 +505,20 @@
 }
 
 .article_recent-news_text h4 {
-    font-family: 'Oswald-Regular';
+    font-family: 'Oswald';
     font-size: 32px;
     color: #000;
+    font-weight: 400 !important;
 }
 
 .article_recent-news_text p {
-    font-family: 'Oswald-Light';
+    font-family: 'Oswald';
     font-size: 16px;
     color: #000;
     margin-bottom: 0.2rem;
+    font-weight: 300 !important;
+    text-align: justify;
+
 }
 
 .article_recent-news_text span {
@@ -447,7 +539,7 @@
 .article_recent-news-img {
     width: 350px;
     height: 250px;
-    background-image: url(../../../../public/img/article_recent-news-img.svg);
+    background-image: url(../../../../public/img/img-columdestaque.svg);
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -458,7 +550,7 @@
 }
 
 .go-to_animated-button {
-    font-family: 'Oswald-Regular';
+    font-family: 'Oswald';
     position: relative;
     display: flex;
     align-items: center;
