@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
+import { db } from '../../../config/firebaseImgConfig'; // Importação do Firestore
+import { doc, getDoc } from 'firebase/firestore';
 import '../publicacao/publicacao.css';
 import Commets from './comments';
 import Artigo from './artigo';
-/* import NavbarUserComum from "../../navBar/navBarUserComum/index.js" */
-
+import NavbarUserComum from '../../navBar/navBarUserComum/index.js';
 function Publicacao() {
     const navigate = useNavigate();
-
-
     const [isLiked, setLiked] = useState(false); // Estado para controlar o coração
+
 
 
     const navigateToLogin = () => {
@@ -19,13 +20,13 @@ function Publicacao() {
     const toggleLike = () => {
         setLiked(!isLiked); // Alterna o estado do coração
     };
-
-
+    const articleId = localStorage.getItem('articleId');
+    console.log(articleId);  // Isso exibirá o ID do artigo armazenado
 
     return (
         <div className='user_publicacao-container'>
             <header>
-{/*                 <NavbarUserComum/> */}
+                                <NavbarUserComum/>
             </header>
             <div className="user_publicacao-banner">
                 <div className='user_publicacao-banner-img'>
@@ -41,9 +42,9 @@ function Publicacao() {
                     </div>
                     <div className='user_publicacao-comentario'>
                         <button type="button" className="userPubli" >
-                        <h4>10</h4>
-                        <p className="d-none d-md-block">Comentários</p>
-                        <i className="bi bi-chat"></i>
+                            <h4>10</h4>
+                            <p className="d-none d-md-block">Comentários</p>
+                            <i className="bi bi-chat"></i>
                         </button>
                     </div>
                     <div className='user_publicacao-like'>
@@ -64,7 +65,7 @@ function Publicacao() {
                     </div>
                     <p>Clique para ouvir a máteria em áudio </p>
                 </div>
-                <Artigo />
+                <Artigo articleId={articleId}/>
 
 
 
@@ -74,10 +75,11 @@ function Publicacao() {
 
 
 
-         
+
         </div>
+     
 
-
+        
     );
 }
 

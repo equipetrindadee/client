@@ -130,6 +130,12 @@
     margin-top: 2px;
 }
 
+
+.home_li-5 i {
+    color: #000 !important;
+    font-size: 18px;
+}
+
 .container-sm.home_1 {
     display: block;
     align-items: center;

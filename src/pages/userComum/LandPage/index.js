@@ -147,10 +147,10 @@ for (let i = 0; i < itemsToShow; i++) {
               </li>
             </a>
           ) : (
-            <a href='/userComum/perfil'>
+            <a href='/userComum/meuPerfil'>
               <li className='home_li-5'>
-                <span>Usuário</span>
-                <img src='../img/user-icon.svg' alt="Usuário" />
+                {/* <span>Usuário</span> */}
+                <i class='bx bx-user'></i>              
               </li>
             </a>
           )}

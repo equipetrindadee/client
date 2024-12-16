@@ -82,12 +82,13 @@ body {
   padding: 10px;
   font-size: 16px;
   border-radius: 5px;
-  background-color: #312CBF;
-  border: 1px solid #ccc;
+  border: 1px solid #fff !important;
   width: 200px;
   height: 35px;
   color: white;
 }
+
+
 
 .userComum-search-bar::placeholder {
   color: white;
@@ -114,11 +115,32 @@ body {
 .userComum-listaArtigo-articles-list {
   display: flex;
   flex-direction: column;
+  /* background-color: #312CBF; */
+  width: 50vw !important;
 }
 
 .userComum-article {
   display: flex;
   margin-bottom: 35px;
+  /* width: 10%;
+  background-color: #555; */
+}
+
+.userComum-listarArtigo-conteudoartigo{
+  /* background-color: #b83939; */
+  width: 50% !important;
+}
+.userComum-listarArtigo-conteudoartigo p{
+  /* background-color: #312CBF; */
+  font-size: 14px; /* Ajuste o tamanho da fonte conforme necessário */
+  line-height: 1.4em; /* Ajusta a altura das linhas */
+  max-height: 4.2em; /* Defina a altura máxima para limitar o número de linhas (3 linhas * line-height) */
+  overflow: hidden; /* Esconde o texto que ultrapassa o limite de altura */
+  display: -webkit-box; /* Necessário para usar o line-clamp */
+  -webkit-box-orient: vertical; /* Necessário para usar o line-clamp */
+  -webkit-line-clamp: 3; /* Limita a 3 linhas */
+  text-overflow: ellipsis; /* Adiciona '...' no final quando o texto é cortado */
+  text-align: justify !important;
 }
 
 .userComum-article img {

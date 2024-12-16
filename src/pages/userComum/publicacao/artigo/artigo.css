@@ -1,147 +1,168 @@
-.user_publicacao-materia {
-    width: 84vw;
-    height: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    font-family: 'Libre Baskerville';
-    font-size: 15px !important;
-    text-align: justify;
-  }
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.article-container {
+  width: 100%;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  color: #333;
+  padding: 20px;
+}
+
+.user_publicacao-materia-title h3 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.user_publicacao-materia-text-esquerdo p,
+.user_publicacao-materia-paragrafo p,
+.user_publicacao-materia-text-centro p,
+.user_publicacao-materia-paragrafo-inferior p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+/* Imagem à direita */
+.user_publicacao-materia-img-direito {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.user_publicacao-materia-img-direito img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-left: auto;
+  display: block;
+}
+
+/* Imagem à esquerda */
+.user_publicacao-materia-img-esquerdo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.user_publicacao-materia-img-esquerdo img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-right: auto;
+  display: block;
+}
+
+/* Imagem centralizada */
+.user_publicacao-materia-text-centro {
+  text-align: center;
+}
+
+.user_publicacao-materia-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.user_publicacao-materia-footer-item {
+  display: flex;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  flex: 1;
+}
+
+.user_publicacao-materia-footer-img img {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.user_publicacao-materia-footer-text p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.audio-controller {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.audio-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #007bff;
+}
+
+.audio-button:hover {
+  color: #0056b3;
+}
+
+.audio-progress-container {
+  width: 100%;
+  background-color: #ddd;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.audio-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  transition: width 0.1s linear; /* Transição suave */
+}
 
 
-  
-  .user_publicacao-materia-title {
-    grid-column: 1 / -1;
-    text-align: center;
-  }
-  
-  .user_publicacao-materia-title h3 {
-    font-family: 'Oswald';
-    padding: 1rem 0;
-    font-size: 35px;
-  }
-  
-  .user_publicacao-materia-text-esquerdo,
-  .user_publicacao-materia-text-centro {
-    padding: 10% 2rem;
+/* Responsividade */
+@media (max-width: 768px) {
+  .user_publicacao-materia-footer {
+    flex-direction: column;
   }
 
-  .user_publicacao-materia-text-esquerdo p{
-    font-size: 1.8rem;
-  }
-  
-  .user_publicacao-materia-img-direito,
-  .user_publicacao-materia-img-esquerdo {
+  .user_publicacao-materia-footer-item {
     width: 100%;
   }
-  
+
   .user_publicacao-materia-img-direito img,
   .user_publicacao-materia-img-esquerdo img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .user_publicacao-materia-paragrafo,
-  .user_publicacao-materia-paragrafo-inferior {
-    grid-column: 1 / -1;
-    padding: 10% 2rem;
+    max-width: 300px;
   }
 
-  .user_publicacao-materia-paragrafo-inferior {
-    padding: 10% 2rem;
-    padding-top: 0%;
+  .user_publicacao-materia-title h3 {
+    font-size: 1.5rem;
   }
-  
-  .user_publicacao-materia-footer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    width: 100%;
+}
+
+@media (max-width: 480px) {
+  .user_publicacao-materia-img-direito img,
+  .user_publicacao-materia-img-esquerdo img {
+    max-width: 100%;
   }
 
-
-  
-  .user_publicacao-materia-footer-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .user_publicacao-materia-footer-img{
-    text-align: center;
-  }
-  
   .user_publicacao-materia-footer-img img {
-    width: 100%;
-    max-width: 150px;
-    height: auto;
-    margin-inline: auto;
+    width: 40px;
+    height: 40px;
   }
-  
-  .user_publicacao-materia-footer-text {
-    margin-left: 20px;
-  }
-  @media (max-width: 900px) {
-    .user_publicacao-materia {
-      grid-template-columns: 1fr;
-      /* Uma coluna em telas menores */
-    }
-  
-    .user_publicacao-materia-title,
-    .user_publicacao-materia-text-esquerdo,
-    .user_publicacao-materia-text-centro,
-    .user_publicacao-materia-paragrafo,
-    .user_publicacao-materia-paragrafo-inferior {
-      grid-column: 1;
-      /* Ocupa a coluna inteira */
-    }
-  
-    .user_publicacao-materia-img-direito,
-    .user_publicacao-materia-img-esquerdo {
-      grid-column: 1;
-      /* Imagens ocupam a coluna inteira */
-    }
-  
-  
-    .user_publicacao-materia-footer {
-      grid-template-columns: 1fr;
-      /* Mudança para uma coluna no modo responsivo */
-      gap: 10px;
-      /* Espaçamento menor no responsivo */
-    }
-  
-    .user_publicacao-materia-footer-item {
-      display: grid;
-      /* Usar grid para manter imagem e texto lado a lado */
-      grid-template-columns: 1fr 2fr;
-      /* Imagem ocupando 1 parte e texto ocupando 2 partes */
-      align-items: center;
-      gap: 10px;
-    }
-  
-    .user_publicacao-materia-footer-img img {
-      width: 100%;
-      max-width: 100px;
-      /* Ajusta o tamanho da imagem no responsivo */
-    }
-  
-    .user_publicacao-materia-footer-text {
-      margin-left: 0;
-      /* Remover margem no responsivo */
-    }
 
-    .user_publicacao-materia-text-esquerdo p{
-      font-size: 1.4rem;
-    }
-
-    .user_publicacao-materia p{
-      font-size: 1.4rem;
-    }
-  
-   
+  .user_publicacao-materia-footer-text p {
+    font-size: 0.8rem;
   }
-  
- 
+}
