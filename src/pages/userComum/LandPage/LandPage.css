@@ -80,6 +80,9 @@
     position: relative;
     cursor: pointer;
 }
+.home_header a {
+    color: #000 !important;
+}
 
 .home_header ul li span {
     text-align: center;

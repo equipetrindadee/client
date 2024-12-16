@@ -156,7 +156,7 @@ function ModalEditarColuna({ colunaId, colunaNomeOriginal, corColunaOriginal, ba
                     <Button className='buttonSalvarColuna' onClick={handleSave}>
                         SALVAR
                     </Button>
-                    <h3>Usuários Encontrados:</h3>
+                    
             {usuariosEncontrados.length > 0 ? (
                 <ul>
                     {usuariosEncontrados.map((nome, index) => (

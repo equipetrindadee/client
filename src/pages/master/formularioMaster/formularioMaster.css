@@ -9,11 +9,9 @@
 .formularioMaster-container {
   width: 104% !important;
   margin-left: 10vh;
-<<<<<<< HEAD
-  padding: 17px 90px !important;
-=======
+
   padding: 98px;
->>>>>>> 07b75f853abfe50a096439256c2d1b28872fa06b
+
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   height: 730px !important;
@@ -105,7 +103,6 @@ margin-bottom: 20px;
   border-color: #D9D9D9;
   border-radius: 5px;
   padding: 10px;
-<<<<<<< HEAD
   height: 6vh;   
 }
 
@@ -151,55 +148,6 @@ margin-bottom: 20px;
 
 .FormularioMaster-dropdown-Item p{
   font-size: 17px;
-=======
-  height: 45px;
-
-}
-
-.formularioMaster-dropdown {
-  max-height: 60% !important;
-}
-
-.FormularioMaster-dropdown-custom{
-  font-family: Montserrat;
-  width: 100%;
-  height: 45px;
-  background-color: #ffffff;
-  color: black;
-  border-radius: 8px;
-  border: 2px solid #D9D9D9;
-}
-
-.FormularioMaster-dropdown-custom:hover{
-  background-color: #6846EF;
-  color: white;
-}
-
-.FormularioMaster-dropdown-custom h5{
-  margin-top: 7px;
-  font-weight: 600 !important;
-}
-
-.FormularioMaster-dropdown-Item {
-  border: 1.5px solid #D9D9D9; 
-  width: 99%;
-  border-radius: 5px; 
-  margin: 5px; 
-  margin-left: 7px !important;
-  padding: 7px; 
-  transition: background-color 0.3s, color 0.3s; 
-}
-
-.FormularioMaster-dropdown-Item:hover {
-  color: #000000; 
-  border-color: #6846EF;
-}
-
-.formularioMaster-dropdown-Menu{
-  background-color: white;
-  width: 100% !important;
-  
->>>>>>> 07b75f853abfe50a096439256c2d1b28872fa06b
 }
 
 .formularioMaster-submit-button {

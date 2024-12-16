@@ -26,11 +26,7 @@ function ComentariosReagidos({ email, mensagem, resposta, tipoAtivo }) {
         <div className="comentariosReagidos_cardReagido container mt-3  border rounded">
             <div className="row align-items-center">
                 <div className="col-2 d-flex justify-content-center comentariosReagidos_imagem">
-                    <img
-                        src="https://via.placeholder.com/60"
-                        alt="User"
-                        className="comentariosReagidos_userImage rounded-circle"
-                    />
+                <i className="bx bxs-user-circle faleConoscoProfessor_profileImage"></i> 
                 </div>
                 <div className="col-6">
                     <span className="comentariosReagidos_email  d-block mb-1">De: {email}</span>

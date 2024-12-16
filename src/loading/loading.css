@@ -4,6 +4,7 @@
     height: 100vh !important;
     z-index: 2000 !important;
     justify-content: center !important;
+    background-color: white !important;
     align-items: center !important;
     height:70vh !important; /* Altura da tela cheia */
     overflow: hidden; /* Evita overflow se a imagem for maior que a tela */

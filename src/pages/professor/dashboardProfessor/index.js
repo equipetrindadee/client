@@ -51,7 +51,7 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
             sessionStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color); // Salvando a cor também
             // localStorage.setItem("ColumName", colunaName);
             // localStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color); // Salvando a cor também
-    
+
             // Navega para a página /MateriaColuna
             navigate("/MateriaColuna");
         } else if (acesso === 'limitado') {
@@ -413,7 +413,7 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
 
 
     return (
-        <body>
+        <div>
             <div className="container-dashboard-Professor">
 
                 {mostrarNavbarProf && <NavBarProf />}
@@ -494,10 +494,7 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
 
                         <i className="bi bi-caret-right-fill arrowRight arrowCards-Dashboard-Professor" onClick={cardDashNext}></i>
                     </div>
-
-
-
-                    {/* Fim Cards de Visualização do Professor, com carrossel Responsivo */}
+ {/* Fim Cards de Visualização do Professor, com carrossel Responsivo */}
 
                     {/* footer da tela professor */}
                     {/* <footer className="footer-dashboard-Professor">
@@ -536,75 +533,72 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
 <
                 <button className='buttonEdicao-dashboard-Professor'>Baixar Arquivo</button>
 =======
-                {/* Carrossel do Topo, tela Professor */}
-                <div className="carrosselDashboard-Professor">
-                    <i className="bi bi-caret-left-fill arrowLeft" onClick={handlePrev}></i>
-                    <div className={`colunaSlide-dashboard-professor ${isAnimatingLeft ? 'animatingLeft' : ''}${isAnimatingRight ? 'animatingRight' : ''}`}>
-                        {visibleColunas.map((coluna, index) => (
-                            <a
-                                key={index}
-                                className="coluna divColuna-dashboard-professor"
-                                style={{ backgroundColor: colunas.find(c => c.columname === coluna)?.color }} // Define a cor de fundo
-                                onClick={() => handleClick(coluna)} // Chama a função de clique
-                            >
-                                <h3 className='titleColunas-dashboard-professor'>{coluna}</h3>
-                                <i className="bi bi-play-circle-fill buttonColunas-dashboard-professor"></i>
-                            </a>
-                        ))}
-                    </div>
-                    <i className="bi bi-caret-right-fill arrowRight" onClick={handleNext}></i>
-                </div>
-                {/* Fim do Carrossel Topo */}
-
-                {/* Cards de Visualização do Professor, com carrossel Responsivo */}
-                <div className="cardVisualizacao-dashboard-Professor">
-                    <i className="bi bi-caret-left-fill arrowLeft arrowCards-Dashboard-Professor" onClick={cardDashPrev}></i>
-
-                    {visibleitemsCardDash.map((item) => (
-                        <div
-                        key={item.id}
-                        className={`${item.card}`}
-                        style={{
-                            height: item.colunas.length > 0 
-                                ? `${Math.min(item.colunas.length + 400, 520)}px` // Se o tamanho ultrapassar 520px, ele não aumenta mais
-                                : '22%', // Se não houver colunas, a altura será 22%
-                        }}
-                        >
-                            <div className={item.logo}>
-                                <i className={item.iconeLogoCard}></i>
-                            </div>
-
-                            <h3>{item.title}</h3>
-
-                            <div className={item.colunas}>
-                                {/* Filtra as colunas do item com base nas colunas permitidas */}
-                                {item.colunas
-                                    .filter(colunaData => colunasPermitidas.includes(colunaData.coluna))  // Filtrando colunas com base no acesso
-                                    .map((colunaData, index) => (
-                                        <div key={index} className='colunasVisualizacao-dashboard-Professor'>
-                                            <div className='allConteudo-colunas-dashboard-professor'>
-                                                <div className={`classNamePara${colunaData.coluna}`}> {/* Use a coluna para aplicar uma classe específica, se necessário */}
-                                                    <i className='bx bx-radio-circle-marked'></i>
-                                                </div>
-                                                <h3>{colunaData.coluna}</h3> {/* Exibindo o nome da coluna */}
-                                            </div>
-                                        </div>
-                                    ))}
-                            </div>
-
-                            <button className='buttonNotificar-dashboard-Professor' onClick={handleNotificarTodos}>NOTIFICAR TODOS</button>
+              
+                    <div className="carrosselDashboard-Professor">
+                        <i className="bi bi-caret-left-fill arrowLeft" onClick={handlePrev}></i>
+                        <div className={`colunaSlide-dashboard-professor ${isAnimatingLeft ? 'animatingLeft' : ''}${isAnimatingRight ? 'animatingRight' : ''}`}>
+                            {visibleColunas.map((coluna, index) => (
+                                <a
+                                    key={index}
+                                    className="coluna divColuna-dashboard-professor"
+                                    style={{ backgroundColor: colunas.find(c => c.columname === coluna)?.color }} 
+                                    onClick={() => handleClick(coluna)} 
+                                >
+                                    <h3 className='titleColunas-dashboard-professor'>{coluna}</h3>
+                                    <i className="bi bi-play-circle-fill buttonColunas-dashboard-professor"></i>
+                                </a>
+                            ))}
                         </div>
-                    ))}
+                        <i className="bi bi-caret-right-fill arrowRight" onClick={handleNext}></i>
+                    </div>
+                    
+                    <div className="cardVisualizacao-dashboard-Professor">
+                        <i className="bi bi-caret-left-fill arrowLeft arrowCards-Dashboard-Professor" onClick={cardDashPrev}></i>
 
-                    <i className="bi bi-caret-right-fill arrowRight arrowCards-Dashboard-Professor" onClick={cardDashNext}></i>
-                </div>
+                        {visibleitemsCardDash.map((item) => (
+                            <div
+                                key={item.id}
+                                className={`${item.card}`}
+                                style={{
+                                    height: item.colunas.length > 0
+                                        ? `${Math.min(item.colunas.length + 400, 520)}px` 
+                                        : '22%', 
+                                }}
+                            >
+                                <div className={item.logo}>
+                                    <i className={item.iconeLogoCard}></i>
+                                </div>
+
+                                <h3>{item.title}</h3>
+
+                                <div className={item.colunas}>
+                                
+                                    {item.colunas
+                                        .filter(colunaData => colunasPermitidas.includes(colunaData.coluna))  
+                                        .map((colunaData, index) => (
+                                            <div key={index} className='colunasVisualizacao-dashboard-Professor'>
+                                                <div className='allConteudo-colunas-dashboard-professor'>
+                                                    <div className={`classNamePara${colunaData.coluna}`}>
+                                                        <i className='bx bx-radio-circle-marked'></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                </div>
+
+                                <button className='buttonNotificar-dashboard-Professor' onClick={handleNotificarTodos}>NOTIFICAR TODOS</button>
+                            </div>
+                        ))}
+
+                        <i className="bi bi-caret-right-fill arrowRight arrowCards-Dashboard-Professor" onClick={cardDashNext}></i>
+                    </div>
 
 
 
-                {/* Fim Cards de Visualização do Professor, com carrossel Responsivo */}
+                    {/* Fim Cards de Visualização do Professor, com carrossel Responsivo */}
 
-                {/* footer da tela professor */}
-                {/* <footer className="footer-dashboard-Professor">
+                    {/* footer da tela professor */}
+                    {/* <footer className="footer-dashboard-Professor">
 
                     <div className="calendario-dashboard-Professor">
                         <Calendario />
@@ -643,40 +637,24 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
                     </div>
 
                 </footer> */}
-                {/*Fim do footer */}
-<<<<<<< HEAD
->>>>>>> 5abe64af25a3e9dd09cafefd548595af1e57d3de
-=======
-
-        
-=======
-
->>>>>>> 07b75f853abfe50a096439256c2d1b28872fa06b
-{/* 
-            </div>
-
-        </div>
-
-<<<<<<< HEAD
-    </footer> */} */}
-=======
-<<<<<<< HEAD
-        {/* </footer> */} 
-=======
-    </footer> */} 
->>>>>>> e4f5bbe2996a1ebe906da77f13efba69189417b3
->>>>>>> 07b75f853abfe50a096439256c2d1b28872fa06b
                     {/*Fim do footer */}
 
-                {/* </div>
+
+
+                    {/* </footer> */}
+
+                    {/* </footer> */}
+
+                    {/*Fim do footer */}
+
+                    {/* </div>
 
             </div> */}
-            <div>
 
+                </div>
             </div>
-        </body>
 
-    );
+        </div>);
 };
 
 export default DashboardProfessor;

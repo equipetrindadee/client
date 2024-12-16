@@ -1,0 +1,58 @@
+.aluno_ChatAluno-container {
+    position: fixed; /* Fixa o contêiner na tela */
+  top: 4rem; /* Margem superior para acomodar a navbar */
+  left: 10rem; /* Margem esquerda para posicionar o contêiner */
+  width: calc(100% - 10rem); /* Largura total menos a margem esquerda */
+  height: calc(100vh - 7rem); /* Altura total menos a margem superior */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Impede rolagem dentro do contêiner */
+}
+
+.aluno_ChatAluno-row {
+    display: flex; /* Usar flexbox para alinhar sidebar e chat */
+    height: 100%; /* Garantir que a linha ocupe toda a altura do contêiner */
+}
+
+.no-contact-selected {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #666;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    border: 2px dashed #ccc;
+  }
+
+.sidebar {
+    width: 35rem; /* Largura fixa para a sidebar */
+    flex-shrink: 0; /* Impede que a sidebar encolha */
+     /* Borda para separar */
+}
+
+.chat {
+    flex-grow: 1; /* Permite que o chat preencha todo o espaço restante */
+    height: 100%; /* Ajusta a altura para preencher o espaço disponível */
+    overflow: hidden; /* Evita rolagem extra no contêiner */
+}
+@media (max-width: 870px) {
+    .sidebar {
+        width: 30rem; /* Oculta a sidebar em telas menores */
+    }
+
+   
+}
+
+@media (max-width: 769px) {
+    .sidebar {
+        display: none; /* Oculta a sidebar em telas menores */
+    }
+
+    .chat {
+        flex: 1; /* O chat ainda ocupa o espaço disponível */
+    }
+}

@@ -36,7 +36,7 @@ export function FaleConoscoProfessor() {
     fetchCards();
   }, []);
 
-  const [isExpanded, setIsExpanded] = useState(false); 
+  const [isExpanded, setIsExpanded] = useState(false);
   const [inputValue, setInputValue] = useState('');
 
   const handleFocus = () => {
@@ -44,9 +44,9 @@ export function FaleConoscoProfessor() {
   };
 
   const handleBlur = () => {
-      if (inputValue === '') {
-          setIsExpanded(false); // Encolhe o input se não houver texto
-      }
+    if (inputValue === '') {
+      setIsExpanded(false); // Encolhe o input se não houver texto
+    }
   };
 
   const handleInputChange = (e) => {
@@ -98,7 +98,7 @@ export function FaleConoscoProfessor() {
     const matchesSearchTerm = card.email && card.email.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesFilter = filter === 'todos' || (filter && card.tipoAtivo && card.tipoAtivo.toLowerCase() === filter.toLowerCase());
     return matchesSearchTerm && matchesFilter;
-});
+  });
 
   const handleFilterChange = (selectedFilter) => {
     setFilter(selectedFilter);
@@ -130,23 +130,23 @@ export function FaleConoscoProfessor() {
           <div className="faleConoscoProfessor_headerLine"></div>
           <div className="faleConoscoProfessorFilterButtonsTopOfPage">
 
-                <div className={`contentColunaHeaderContentProfessor-actionsButtonsSearch-wrapper ${searchTerm ? 'no-hover' : ''}`}>
-                    <div className={`search-containerMaster ${isExpanded ? 'expandedMaster' : ''}`}>
-                        <input
-                          type="text"
-                          value={searchTerm}
-                          onChange={handleInputChange}
-                          onFocus={handleFocus}
-                          onBlur={handleBlur}
+            <div className={`contentColunaHeaderContentProfessor-actionsButtonsSearch-wrapper ${searchTerm ? 'no-hover' : ''}`}>
+              <div className={`search-containerMaster ${isExpanded ? 'expandedMaster' : ''}`}>
+                <input
+                  type="text"
+                  value={searchTerm}
+                  onChange={handleInputChange}
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
 
-                          className="search-inputMaster"
-                        />
-                        <i class='bx bx-search search-iconMaster'></i>
-                    </div>
-                </div>
-              <div>
-                <FilterButtonFaleConoscoProfessor onFilterChange={handleFilterChange} />
+                  className="search-inputMaster"
+                />
+                <i class='bx bx-search search-iconMaster'></i>
               </div>
+            </div>
+            <div>
+              <FilterButtonFaleConoscoProfessor onFilterChange={handleFilterChange} />
+            </div>
           </div>
         </div>
 
@@ -157,8 +157,9 @@ export function FaleConoscoProfessor() {
               <div className="faleConoscoProfessor_card" key={card.id}>
                 <div className="faleConoscoProfessor_cardHeader d-flex align-items-center">
                   <div className="faleConoscoProfessor_content">
-                    <img src={card.imagemUrl || "https://via.placeholder.com/50"} alt="Perfil" className="faleConoscoProfessor_profileImage" />
-                    <div className="professor_info">
+                    <i className="bx bxs-user-circle faleConoscoProfessor_profileImage"></i>
+                    
+                      <div className="professor_info">
                       <span className="faleConoscoProfessor_email">De: {card.email}</span>
                       <div className="faleConoscoProfessor_categoria"><p className="faleConoscoProfessorCategoriaTagName">{card.tipoAtivo}</p></div>
                     </div>
@@ -216,72 +217,72 @@ export function FaleConoscoProfessor() {
 
       {/* Modais */}
       <Modal show={showFullMessageModal} onHide={() => closeModal('full')} centered className="faleConoscoProfessor_modal">
-          <Modal.Header closeButton className="faleConoscoProfessor_modalHeader">
-            <img src={selectedCard.profileImage || "https://via.placeholder.com/50"} alt="Perfil" className="faleConoscoProfessor_profileImage" />
-            <div className="faleConoscoProfessor_emailWrapper ms-2">
-              <span className="faleConoscoProfessor_email text-white">{selectedCard.email}</span>
-              <div className="faleConoscoProfessor_categoria"><p className="faleConoscoProfessorCategoriaTagName">{selectedCard.tipoAtivo}</p></div>
-            </div>
-          </Modal.Header>
-          <Modal.Body className="faleConoscoProfessor_modalBody">
-            <p className='changeFontFamilyFaleConoscoMontsserrat'>{selectedCard.mensagem}</p>
+        <Modal.Header closeButton className="faleConoscoProfessor_modalHeader">
+          <img src={selectedCard.profileImage || "https://via.placeholder.com/50"} alt="Perfil" className="faleConoscoProfessor_profileImage" />
+          <div className="faleConoscoProfessor_emailWrapper ms-2">
+            <span className="faleConoscoProfessor_email text-white">{selectedCard.email}</span>
+            <div className="faleConoscoProfessor_categoria"><p className="faleConoscoProfessorCategoriaTagName">{selectedCard.tipoAtivo}</p></div>
+          </div>
+        </Modal.Header>
+        <Modal.Body className="faleConoscoProfessor_modalBody">
+          <p className='changeFontFamilyFaleConoscoMontsserrat'>{selectedCard.mensagem}</p>
 
-          </Modal.Body>
-          <Modal.Footer className="faleConoscoProfessorMensagemResponse">
-            <input
-              type="text"
-              className="faleConoscoProfessor_textArea"
-              placeholder="Digite sua resposta..."
-              value={newMessage}
-              onChange={(e) => setNewMessage(e.target.value)}
-            />
-            <Button onClick={enviarResposta} className="faleConoscoProfessor_closeButton">
-              <i className="bi bi-arrow-right-circle"></i>
-            </Button>
-          </Modal.Footer>
-        </Modal>
+        </Modal.Body>
+        <Modal.Footer className="faleConoscoProfessorMensagemResponse">
+          <input
+            type="text"
+            className="faleConoscoProfessor_textArea"
+            placeholder="Digite sua resposta..."
+            value={newMessage}
+            onChange={(e) => setNewMessage(e.target.value)}
+          />
+          <Button onClick={enviarResposta} className="faleConoscoProfessor_closeButton">
+            <i className="bi bi-arrow-right-circle"></i>
+          </Button>
+        </Modal.Footer>
+      </Modal>
 
-        <Modal show={showChatModal} onHide={() => closeModal('chat')} centered className="faleConoscoProfessor_modal">
-          <Modal.Header closeButton className="faleConoscoProfessor_modalHeader">
-            <img src={selectedCard.profileImage || "https://via.placeholder.com/50"} alt="Perfil" className="faleConoscoProfessor_profileImage" />
-            <div className="faleConoscoProfessor_emailWrapper ms-2">
-              <span className="faleConoscoProfessor_email text-white">{selectedCard.email}</span>
-              <div className="faleConoscoProfessor_categoria"><p className="faleConoscoProfessorCategoriaTagName">{selectedCard.tipoAtivo}</p></div>
-            </div>
-          </Modal.Header>
-          <Modal.Body className="faleConoscoProfessor_modalBody">
-            <p className='changeFontFamilyFaleConoscoMontsserrat'  >{selectedCard.mensagem}</p>
-          </Modal.Body>
-          <Modal.Footer>
-            <i className="bi bi-heart faleConoscoProfessorHeartButton"></i>
-            <button className="faleConoscoProfessor_card_button" onClick={() => openModal('delete', selectedCard)}>
-              <i className="bi bi-trash iconeFaleConoscoLixoMMC"></i>
-            </button>
-          </Modal.Footer>
-        </Modal>
+      <Modal show={showChatModal} onHide={() => closeModal('chat')} centered className="faleConoscoProfessor_modal">
+        <Modal.Header closeButton className="faleConoscoProfessor_modalHeader">
+          <img src={selectedCard.profileImage || "https://via.placeholder.com/50"} alt="Perfil" className="faleConoscoProfessor_profileImage" />
+          <div className="faleConoscoProfessor_emailWrapper ms-2">
+            <span className="faleConoscoProfessor_email text-white">{selectedCard.email}</span>
+            <div className="faleConoscoProfessor_categoria"><p className="faleConoscoProfessorCategoriaTagName">{selectedCard.tipoAtivo}</p></div>
+          </div>
+        </Modal.Header>
+        <Modal.Body className="faleConoscoProfessor_modalBody">
+          <p className='changeFontFamilyFaleConoscoMontsserrat'  >{selectedCard.mensagem}</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <i className="bi bi-heart faleConoscoProfessorHeartButton"></i>
+          <button className="faleConoscoProfessor_card_button" onClick={() => openModal('delete', selectedCard)}>
+            <i className="bi bi-trash iconeFaleConoscoLixoMMC"></i>
+          </button>
+        </Modal.Footer>
+      </Modal>
 
-        <Modal show={showDeleteModal} onHide={() => closeModal('delete')} centered>
-          <Modal.Header className='modalFaleConoscoModalDeleteHeader'>
-            <Button onClick={() => closeModal('delete')} variant="link">
-              <i className="bi bi-x-circle gooutDelete"></i>
-            </Button>
-          </Modal.Header>
-          <Modal.Body className='modalFaleConoscoModalDeleteBody'>
-            <p>Você tem certeza de que deseja deletar este comentário? </p>
-            <p>Esta ação não pode ser desfeita.</p>
-          </Modal.Body>
-          <Modal.Footer className='modalFaleConoscoButtonsFooter'>
-            <Button onClick={() => closeModal('delete')} className='modalFaleConoscoButtonsFooterNao'>
-              <p className='modalFaleConoscoButtonsFooterNaoP'> NÃO</p>
-            </Button>
-            <Button onClick={() => {
-              deleteComentario(selectedCard.id);
-              closeModal('delete');
-            }} className='modalFaleConoscoButtonsFooterSim'>
-              <p className='modalFaleConoscoButtonsFooterSimP'>SIM</p>
-            </Button>
-          </Modal.Footer>
-        </Modal>
+      <Modal show={showDeleteModal} onHide={() => closeModal('delete')} centered>
+        <Modal.Header className='modalFaleConoscoModalDeleteHeader'>
+          <Button onClick={() => closeModal('delete')} variant="link">
+            <i className="bi bi-x-circle gooutDelete"></i>
+          </Button>
+        </Modal.Header>
+        <Modal.Body className='modalFaleConoscoModalDeleteBody'>
+          <p>Você tem certeza de que deseja deletar este comentário? </p>
+          <p>Esta ação não pode ser desfeita.</p>
+        </Modal.Body>
+        <Modal.Footer className='modalFaleConoscoButtonsFooter'>
+          <Button onClick={() => closeModal('delete')} className='modalFaleConoscoButtonsFooterNao'>
+            <p className='modalFaleConoscoButtonsFooterNaoP'> NÃO</p>
+          </Button>
+          <Button onClick={() => {
+            deleteComentario(selectedCard.id);
+            closeModal('delete');
+          }} className='modalFaleConoscoButtonsFooterSim'>
+            <p className='modalFaleConoscoButtonsFooterSimP'>SIM</p>
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }

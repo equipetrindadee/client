@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import api from '../../../config/configApi';
+
 import { Context } from "../../../Context/AuthContext";
 import Loading from "../../../loading/loading"
 import '../login/login.css';
@@ -56,7 +57,7 @@ function Login() {
     };
 
     const navigateToCriarConta = () => navigate('/cadastro');
-    const navigateToMudarSenha = () => navigate('/recuperarSenha');
+    const navigateToPageInitial = () => navigate('/');
 
     return (
         <div>
@@ -95,7 +96,7 @@ function Login() {
                                 required 
                             />
                             <div className='rightLogin-contentFooter-MoreInformation'>
-                                <a onClick={navigateToMudarSenha} className='rightLogin-contentFooter-MoreInformationA'>Esqueci minha senha</a>
+                                <a onClick={ navigateToPageInitial} className='rightLogin-contentFooter-MoreInformationA'>Ir para o início</a>
                                 <a onClick={navigateToCriarConta} className='rightLogin-contentFooter-MoreInformationA'>Cadastre-se</a>
                             </div>
                         </form>
@@ -115,8 +116,4 @@ function Login() {
     );
 }
 
-<<<<<<< HEAD
 export default Login;   
-=======
-export default Login;
->>>>>>> e4f5bbe2996a1ebe906da77f13efba69189417b3

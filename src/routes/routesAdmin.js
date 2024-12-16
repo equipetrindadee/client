@@ -47,11 +47,9 @@ import SobreNos from "../pages/userComum/SobreNos/index.js";
 import NewDashBoardAluno from "../pages/aluno/newDasboardAluno/index.js"
 import FormularioMaster from "../pages/master/formularioMaster/index.js";
 import ContentPrincipalListMaster from "../pages/master/listarMaster/index.js";
-<<<<<<< HEAD
 import ListarMasterdois from "../pages/master/ListarMasterdois/index.js";
-=======
 import LogoutButton from "../pages/userComum/Logout/index.js";
->>>>>>> d90629d6e843d1e25da32e2b0e1f3d9a81236afe
+import ChatProfessor from "../pages/professor/chatProfessor/componetPrincipal/index.js";
 
 
 export default function RoutesAdmin() {
@@ -87,6 +85,7 @@ export default function RoutesAdmin() {
                 <Route path='/controleUsuario' element={<ControleUsuario />} />
                 <Route path='/faleConoscoProfessor' element={<FaleConoscoProfessor />} />
                 <Route path='/dashP' element={<DashboardProfessor />} />
+                <Route path='/chatProfessor' element={<ChatProfessor     />} />
                 <Route path='/materiaColuna' element={<MateriaColuna />} />
                 <Route path='/editarTelaInicialProfessor' element={<EditarTelaProf />} />
                 <Route path='/postagem/telaInicial' element={<PostagemTelaInicial />} />

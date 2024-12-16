@@ -1,0 +1,186 @@
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+
+
+:root {
+    --cor-aluno: #41BFB3; /* Cor do aluno */
+    --cor-professor: #000; /* Cor do professor */
+}
+.aluno_chat-body {
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+}
+
+.aluno_chat-body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari e Opera */
+}
+
+/* Resetando o padding de parágrafos */
+p {
+    padding: 0;
+}
+
+/* Container do Chat */
+.aluno_chat-container {
+    height: 100%;
+    width: 95%;
+    margin-left: 2rem;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #E1E1E1;
+    display: flex;
+    flex-direction: column;
+  
+}
+.chatSidebarContainerChatBgUserNotSelected{
+    position: relative; /* Para permitir posicionamento absoluto do alerta */
+    margin: 0 auto;
+    padding-left: 10rem;
+    left: 16rem;
+    height: 100%;
+    
+    width: 100%;
+    border-radius: 10px;
+    
+    overflow-y: auto; /* Permite rolagem quando necessário */
+  
+  }
+  .imgChatBgUserNotSelected{
+    position: relative;
+   
+    margin: 0 auto;
+    width: 59%;
+  }
+
+/* Cabeçalho do Chat */
+.aluno_chat-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #D9D9D9;
+    background-color: white; /* Cor da mensagem enviada */
+    color: black;
+}
+
+.aluno_chat-header-withImg {
+    display: flex;
+    align-items: center;
+}
+
+.userChatMenssage {
+    width: 40px; /* Tamanho da imagem do usuário */
+    height: 40px;
+    border-radius: 50%; /* Canto arredondado */
+    margin-right: 10px;
+}
+
+.aluno_chat-messageInformationUserStatus {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Corpo do Chat */
+.aluno_chat-body {
+    flex: 1;
+    overflow-y: auto; /* Rolagem vertical se necessário */
+    padding: 10px;
+    background-color: #fff;
+}
+
+/* Mensagens */
+.aluno_chat-message {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+.aluno_chat-messageStatus-userName{
+    font-family: "Oswald", sans-serif;
+    font-size: 17px;
+}
+
+/* Mensagem do lado esquerdo */
+.aluno_chat-message.left {
+    display: flex;
+}
+
+.aluno_chat-message.left .aluno_chat-message-content {
+    background-color: #F6F6F6; /* Cor da mensagem recebida */
+    font-family: "Montserrat", sans-serif !important; /* Fonte consistente */
+    padding: 10px;
+    width: 60%; /* Largura da mensagem */
+    border-radius: 5px;
+    max-width: 70%;
+    margin-right: auto; /* Alinhamento à esquerda */
+    color: black; /* Cor do texto */
+}
+
+/* Mensagem do lado direito */
+.aluno_chat-message.right {
+    display: flex;
+}
+.aluno_chat-message.right img {
+   margin-left: 5px;
+
+}
+
+.aluno_chat-message.right .aluno_chat-message-content {
+    background-color: var(--cor-professor); /* Cor da mensagem enviada */
+    font-family: "Montserrat", sans-serif !important; /* Fonte consistente */
+    font-size: 10px;
+    padding: 10px;
+    width: 60%; /* Largura da mensagem */
+    border-radius: 5px;
+    max-width: 70%;
+    margin-left: auto; /* Alinhamento à direita */
+    color: white; /* Cor do texto */
+}
+
+/* Rodapé do Chat */
+.aluno_chat-footer {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff; /* Cor do rodapé */
+   ;
+}
+
+.aluno_chat-footer-input {
+    flex: 1;
+    height: 3rem;
+    padding: 14px;
+    font-family: "Montsserrat", sans-serif;
+    border: 1px solid #DCDCDC;
+    border-radius: 5px;
+    color: #DCDCDC;
+    font-size: 12px;
+}
+
+.arrowChatUserSend {
+    font-size: 25px; /* Tamanho do ícone */
+    color: var(--cor-professor); /* Cor do ícone */
+    margin-left: 2px;
+    cursor: pointer;
+}
+
+/* Alertas */
+.alert {
+    position: relative;
+    z-index: 1000; /* Para garantir que o alerta fique acima de outros elementos */
+}
+
+/* Estilos Responsivos */
+@media (max-width: 870px) {
+    .aluno_chat-container {
+        margin-left: 1rem;
+    }
+
+    .userChatMenssage {
+        width: 35px;
+        height: 35px;
+    }
+
+    .arrowChatUserSend {
+        font-size: 20px; /* Reduz o tamanho do ícone em telas menores */
+    }
+}

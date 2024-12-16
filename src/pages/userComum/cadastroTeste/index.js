@@ -55,7 +55,7 @@ const Cadastro = () => {
       };
 
       // Usando a instância 'api' para fazer a requisição POST
-      const response = await api.post('/formularioComum', userData);  // Envia para a rota '/formularioComum'
+      const response = await api.post('/cadastroComum', userData);  // Envia para a rota '/formularioComum'
       
       // Verificando a resposta da API
       if (!response.data.error) {
