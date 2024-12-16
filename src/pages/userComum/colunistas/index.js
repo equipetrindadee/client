@@ -5,10 +5,19 @@ import FlipMove from 'react-flip-move'; // Importa a biblioteca
 import { motion } from 'framer-motion'; // Importa o Framer Motion
 import { Modal, Button, Form } from 'react-bootstrap'; // Importa componentes do Bootstrap
 import { Dropdown } from 'react-bootstrap';
+import Colunistas from '../colunistaTeste/index.js';
+import NavbarUserComum from '../../navBar/navBarUserComum/index.js';
 /* import NavbarUserComum from '../../navBar/navBarUserComum'; */
 
-
+// function ColunistaUsuario(){
+//   return(
+//     <div>
+// <Colunistas/>
+//     </div>
+//   )
+// }
 function ColunistaUsuario() {
+  
   const [colunistas, setColunistas] = useState([
     { nome: "Ana Silva", ano: "2024", materia: "ACONTECEU ESCOLA", imagem: "../img/TecnaWinson1.svg", cor: "#FF5733", descricao: "Ana é uma excelente matemática, sempre pronta para ajudar!" },
     { nome: "Pedro Souza", ano: "2023", materia: "BIOFIMICA EM AÇÃO", imagem: "../img/LinaFigueredo1.svg", cor: "#33C1FF", descricao: "Pedro é apaixonado por história e adora contar curiosidades!" },
@@ -106,7 +115,7 @@ function ColunistaUsuario() {
 
   return (
     <div className="usercomum-container-colunistas">
-{/*       <NavbarUserComum/> */}
+      <NavbarUserComum/>
       {/* Botão para criar um novo colunista */}
       {/* <div className="button-containercolunista">
         <Button variant="primary" onClick={handleShowModal}>

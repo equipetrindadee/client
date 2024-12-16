@@ -8,15 +8,7 @@ function Rodape() {
 
       {/* Primeiro bloco de contato */}
       <div className="userComum-rodape-contact-container">
-        <h2>Contato</h2>
-        <div className="userComum-rodape-contact-email">
-          <img src="../img/email.svg" alt="Imagem email" className="userComum-rodape-email-icon" />
-          <p>admin@educaa.com.br</p>
-        </div>
-        <div className="userComum-rodape-contact-number">
-          <img src="../img/phone-line.svg" alt="Imagem telefone" className="userComum-rodape-phone-icon" />
-          <p>11 12345-6789</p>
-        </div>
+        
       </div>
 
       {/* Segundo bloco de contato */}
@@ -24,24 +16,22 @@ function Rodape() {
         <h2>Contato</h2>
         <div className="userComum-rodape-contact-email">
           <img src="../img/email.svg" alt="Imagem email" className="userComum-rodape-email-icon" />
-          <p>admin@educaa.com.br</p>
+          <p>contato@exemplo.com</p>
         </div>
         <div className="userComum-rodape-contact-number">
           <img src="../img/phone-line.svg" alt="Imagem telefone" className="userComum-rodape-phone-icon" />
-          <p>11 12345-6789</p>
+          <p>(11) 4448-5666</p>
         </div>
       </div>
 
       {/* Terceiro bloco de contato */}
       <div className="userComum-rodape-contact-container">
-        <h2>Contato</h2>
+        <h2>Localização</h2>
         <div className="userComum-rodape-contact-email">
-          <img src="../img/email.svg" alt="Imagem email" className="userComum-rodape-email-icon" />
-          <p>admin@educaa.com.br</p>
+          <p>Escola SESI-SP de Cajamar (CE 438)</p>
         </div>
         <div className="userComum-rodape-contact-number">
-          <img src="../img/phone-line.svg" alt="Imagem telefone" className="userComum-rodape-phone-icon" />
-          <p>11 12345-6789</p>
+          <p> Rua das Camélias, 75 - Portal dos Ipês II</p>
         </div>
       </div>
     </footer>

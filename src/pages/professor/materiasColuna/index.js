@@ -8,7 +8,7 @@ import { db } from '../../../config/firebaseImgConfig';
 import { collection, getDocs, doc, getDoc } from 'firebase/firestore';
 import { getStorage, ref, getDownloadURL } from 'firebase/storage';
 import FilterButtonMateriaColunaProfessor from './filterButtonMateriaColunaProfessor';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate, useLocation} from 'react-router-dom';
 
 
 
@@ -26,6 +26,7 @@ function MateriaColuna() {
     const [bannerError, setBannerError] = useState('');
     const [selectColum, setSelectColum] = useState(localStorage.getItem('ColumName') || '');
     const [bannerImage, setBannerImage] = useState(''); // Estado para armazenar a URL da imagem
+    const location = useLocation(); // Hook para obter a rota atual
 
 
 
@@ -178,6 +179,36 @@ function MateriaColuna() {
     };
 
     console.log("aqui2", bannerImage)
+    useEffect(() => {
+        const currentPath = location.pathname;
+        if (currentPath.includes('controle-colunas')) {
+            setBannerImage('/path/to/controle-colunas-banner.jpg');
+        } else if (currentPath.includes('carousel')) {
+            setBannerImage('/path/to/carousel-banner.jpg');
+        } else {
+            // Buscar do Firebase como fallback
+            const idColum = localStorage.getItem('idColum');
+            if (idColum) {
+                const docRef = doc(db, 'colunas', idColum);
+                getDoc(docRef)
+                    .then((docSnapshot) => {
+                        if (docSnapshot.exists()) {
+                            const data = docSnapshot.data();
+                            if (data.imageColumn) {
+                                setBannerImage(data.imageColumn);
+                            } else {
+                                setBannerError(true);
+                            }
+                        } else {
+                            setBannerError(true);
+                        }
+                    })
+                    .catch(() => setBannerError(true));
+            } else {
+                setBannerError(true);
+            }
+        }
+    }, [location.pathname]);
 
     return (
         <div className="professor-materiaColuna-container">
@@ -255,7 +286,7 @@ function MateriaColuna() {
 
                                                         <Card.Text>
                                                             <div className="professor-materiaColuna-author-info">
-                                                                <img src={item.authorImage} alt="Imagem do Autor" className="professor-materiaColuna-author-image" />
+                                                                {/* <img src={item.authorImage} alt="Imagem do Autor" className="professor-materiaColuna-author-image" /> */}
                                                                 <p className="professor-materiaColuna-author-name">{item.author}</p>
 
                                                             </div>

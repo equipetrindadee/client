@@ -46,21 +46,34 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
         if (acesso === "ilimitado") {
             // Salva o nome da coluna no localStorage
             // Salva o nome da coluna no sessionStorage
+            const colunaSelecionada = colunas.find(c => c.columname === colunaName);
 
+            if (colunaSelecionada) {
+            // sessionStorage.setItem("ColumName", colunaName);
+            // sessionStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color); // Salvando a cor também
+            localStorage.setItem("ColumName", colunaName);
+            localStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color); // Salvando a cor também
+            localStorage.setItem("bannerImage", colunaSelecionada.imageColumn); // Salva a imagem do banner
+
+
+<<<<<<< HEAD
             sessionStorage.setItem("ColumName", colunaName);
             sessionStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color); // Salvando a cor também
             // localStorage.setItem("ColumName", colunaName);
             // localStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color); // Salvando a cor também
 
+=======
+>>>>>>> a7019159bc6a23de6112faf29bcb76d2eef31611
             // Navega para a página /MateriaColuna
-            navigate("/MateriaColuna");
+            navigate("/materiaColunaCarrosel");
+            }
         } else if (acesso === 'limitado') {
             // Verifica se a colunaName é a mesma que a coluna do usuário
             if (colunaName === colunasC) {
-                sessionStorage.setItem("ColumName", colunaName);
-                sessionStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color);
-                // localStorage.setItem("ColumName", colunaName);
-                // localStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color);
+                // sessionStorage.setItem("ColumName", colunaName);
+                // sessionStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color);
+                localStorage.setItem("ColumName", colunaName);
+                localStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color);
                 navigate("/MateriaColuna");
             } else {
                 alert("Você não tem permissão para acessar esta tela. Você só pode acessar a coluna na qual está registrado.");
@@ -68,8 +81,8 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
         }
     };
     const fetchUserName = async () => {
-        const storedToken = sessionStorage.getItem('token');
-        // const storedToken = localStorage.getItem('token');
+        // const storedToken = sessionStorage.getItem('token');
+        const storedToken = localStorage.getItem('token');
 
 
         if (storedToken) {
@@ -124,8 +137,8 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
     };
 
     const fetchColunas = async () => {
-        // const storedToken = localStorage.getItem('token');
-        const storedToken = sessionStorage.getItem('token');
+        const storedToken = localStorage.getItem('token');
+        // const storedToken = sessionStorage.getItem('token');
 
         if (storedToken) {
             try {
@@ -401,9 +414,13 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
 
 
     const visibleColunas = [];
-    for (let i = 0; i < itemsToShow; i++) {
-        visibleColunas.push(colunas[(currentIndex + i) % colunas.length]?.columname); // Usando o campo columname
-    }
+for (let i = 0; i < itemsToShow; i++) {
+  // Verifica se a coluna está ativa antes de adicioná-la
+  const coluna = colunas[(currentIndex + i) % colunas.length];
+  if (coluna?.estadoColuna === 'ativo') {
+    visibleColunas.push(coluna.columname); // Usando o campo columname
+  }
+}
 
     const visibleitemsCardDash = [];
     for (let i = 0; i < itemsCardShow; i++) {
@@ -422,6 +439,7 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
 
 
                 <div className="dashboard-content-Professor">
+
 
                     {/* Logo do proprio Jornal chamado EDUCADOR */}
                     <div className="logoDashboard-logo-Professor">
@@ -533,16 +551,26 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
 <
                 <button className='buttonEdicao-dashboard-Professor'>Baixar Arquivo</button>
 =======
+<<<<<<< HEAD
               
                     <div className="carrosselDashboard-Professor">
+=======
+                {/* Carrossel do Topo, tela Professor */}
+                    {/* <div className="carrosselDashboard-Professor">
+>>>>>>> a7019159bc6a23de6112faf29bcb76d2eef31611
                         <i className="bi bi-caret-left-fill arrowLeft" onClick={handlePrev}></i>
                         <div className={`colunaSlide-dashboard-professor ${isAnimatingLeft ? 'animatingLeft' : ''}${isAnimatingRight ? 'animatingRight' : ''}`}>
                             {visibleColunas.map((coluna, index) => (
                                 <a
                                     key={index}
                                     className="coluna divColuna-dashboard-professor"
+<<<<<<< HEAD
                                     style={{ backgroundColor: colunas.find(c => c.columname === coluna)?.color }} 
                                     onClick={() => handleClick(coluna)} 
+=======
+                                    style={{ backgroundColor: colunas.find(c => c.columname === coluna)?.color }} // Define a cor de fundo
+                                    onClick={() => handleClick(coluna)} // Chama a função de clique
+>>>>>>> a7019159bc6a23de6112faf29bcb76d2eef31611
                                 >
                                     <h3 className='titleColunas-dashboard-professor'>{coluna}</h3>
                                     <i className="bi bi-play-circle-fill buttonColunas-dashboard-professor"></i>
@@ -551,18 +579,32 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
                         </div>
                         <i className="bi bi-caret-right-fill arrowRight" onClick={handleNext}></i>
                     </div>
+<<<<<<< HEAD
                     
                     <div className="cardVisualizacao-dashboard-Professor">
                         <i className="bi bi-caret-left-fill arrowLeft arrowCards-Dashboard-Professor" onClick={cardDashPrev}></i>
 
+=======
+                    {/* Fim do Carrossel Topo */}
+
+                    {/* Cards de Visualização do Professor, com carrossel Responsivo *
+                    <div className="cardVisualizacao-dashboard-Professor">
+                        <i className="bi bi-caret-left-fill arrowLeft arrowCards-Dashboard-Professor" onClick={cardDashPrev}></i>
+
+>>>>>>> a7019159bc6a23de6112faf29bcb76d2eef31611
                         {visibleitemsCardDash.map((item) => (
                             <div
                                 key={item.id}
                                 className={`${item.card}`}
                                 style={{
                                     height: item.colunas.length > 0
+<<<<<<< HEAD
                                         ? `${Math.min(item.colunas.length + 400, 520)}px` 
                                         : '22%', 
+=======
+                                        ? `${Math.min(item.colunas.length + 400, 520)}px` // Se o tamanho ultrapassar 520px, ele não aumenta mais
+                                        : '22%', // Se não houver colunas, a altura será 22%
+>>>>>>> a7019159bc6a23de6112faf29bcb76d2eef31611
                                 }}
                             >
                                 <div className={item.logo}>
@@ -572,6 +614,7 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
                                 <h3>{item.title}</h3>
 
                                 <div className={item.colunas}>
+<<<<<<< HEAD
                                 
                                     {item.colunas
                                         .filter(colunaData => colunasPermitidas.includes(colunaData.coluna))  
@@ -581,6 +624,18 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
                                                     <div className={`classNamePara${colunaData.coluna}`}>
                                                         <i className='bx bx-radio-circle-marked'></i>
                                                     </div>
+=======
+                                    {/* Filtra as colunas do item com base nas colunas permitidas 
+                                    {item.colunas
+                                        .filter(colunaData => colunasPermitidas.includes(colunaData.coluna))  // Filtrando colunas com base no acesso
+                                        .map((colunaData, index) => (
+                                            <div key={index} className='colunasVisualizacao-dashboard-Professor'>
+                                                <div className='allConteudo-colunas-dashboard-professor'>
+                                                    <div className={`classNamePara${colunaData.coluna}`}> {/* Use a coluna para aplicar uma classe específica, se necessário 
+                                                        <i className='bx bx-radio-circle-marked'></i>
+                                                    </div>
+                                                    <h3>{colunaData.coluna}</h3> {/* Exibindo o nome da coluna *
+>>>>>>> a7019159bc6a23de6112faf29bcb76d2eef31611
                                                 </div>
                                             </div>
                                         ))}
@@ -591,7 +646,11 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
                         ))}
 
                         <i className="bi bi-caret-right-fill arrowRight arrowCards-Dashboard-Professor" onClick={cardDashNext}></i>
+<<<<<<< HEAD
                     </div>
+=======
+                    </div> */}
+>>>>>>> a7019159bc6a23de6112faf29bcb76d2eef31611
 
 
 
@@ -639,6 +698,7 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
                 </footer> */}
                     {/*Fim do footer */}
 
+<<<<<<< HEAD
 
 
                     {/* </footer> */}
@@ -651,6 +711,12 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
 
             </div> */}
 
+=======
+
+                    <div>
+
+                    </div>
+>>>>>>> a7019159bc6a23de6112faf29bcb76d2eef31611
                 </div>
             </div>
 

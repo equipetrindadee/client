@@ -24,7 +24,7 @@
 }
 
 .userComum-rodape-contact-container h2 {
-  font-family: 'Inter-Bold', sans-serif;
+  font-family: 'Inter';
   font-size: 20px;
   color: #fff;
 }
@@ -43,7 +43,7 @@
 
 /* Alterando a cor do texto do email */
 .userComum-rodape-contact-email p {
-  font-family: 'Inter-Bold', sans-serif;
+  font-family: 'Inter';
   font-size: 15px;
   color: rgb(255, 255, 255); /* Azul para o email */
 }

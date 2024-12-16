@@ -12,7 +12,8 @@ export const NavBarProfessor = ({ toggleNavBar }) => {
 
     const handleLogout = () => {
         // Limpar tudo do sessionStorage
-        sessionStorage.clear();
+        // sessionStorage.clear();
+        localStorage.clear();
         
         // Redireciona para a página de login
         navigate('/login');

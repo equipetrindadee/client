@@ -14,7 +14,7 @@
     width: 40vw;
     /* Ocupa metade da largura da tela */
     height: 100vh;
-    /* background-image: url('../../../../public/img/img-sobrenos.svg'); */
+    background-image: url('../../../../public/img/img-sobrenos.svg');
     background-size: cover;
     background-position: center;
     z-index: 1000;
@@ -29,23 +29,25 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff;
+    /* background-color: #a32929; */
     text-align: center;
 }
 
 .UserComum_SobreNos-Title {
-    font-size: 3em;
+    font-size: 60px !important;
     font-weight: bold;
     margin-bottom: 20px;
+    font-family: 'Montserrat' !important;
 }
 
 .UserComum_SobreNos-Description {
-    font-size: 1.2em;
+    font-size: 18px !important;
     color: #000000;
-    font-weight: bold;
+    font-weight: 500;
     max-width: 80%;
     margin-bottom: 40px;
     text-align: justify;
+    font-family: 'Montserrat' !important;
 }
 
 .UserComum_SobreNos-Objectives {
@@ -60,10 +62,11 @@
 }
 
 .UserComum_SobreNos-ObjectivesTitle {
-    font-size: 1.5em;
+    font-size: 20px !important;
     font-weight: bold;
     align-self: flex-start;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
+    font-family: 'Montserrat' !important;
 }
 
 .UserComum_SobreNos-ObjectiveItem {
@@ -72,13 +75,20 @@
     margin-bottom: 20px;
     position: relative;
     padding-left: 20px;
+    /* background-color: #007bff; */
+    margin-top: 1%;
+}
+.UserComum_SobreNos-ObjectiveItem p{
+    font-family: 'Montserrat' !important;
+    font-weight: 400;
+
 }
 
 .UserComum_SobreNos-ObjectiveItem::before {
     content: '';
     width: 20px;
     height: 20px;
-    background-color: #007bff;
+    /* background-color: #007bff; */
     /* Cor azul para a bolinha */
     border-radius: 50%;
     position: absolute;
@@ -86,16 +96,16 @@
     margin-bottom: 10px;
 }
 
-.UserComum_SobreNos-Objectives::before {
+/* .UserComum_SobreNos-Objectives::before {
     content: '';
     position: absolute;
     width: 2px;
     height: 55%;
     background-color: #D9D9D9;
     left: 24px;
-    /* Alinha a linha vertical com as bolinhas */
+    /* Alinha a linha vertical com as bolinhas 
     top: 60px;
-}
+} */
 
 .UserComum_SobreNos-Envolvidos {
     display: flex;
@@ -119,7 +129,7 @@
     }
 
     .UserComum_SobreNos-Description {
-        font-size: 0.9em;
+        font-size: 0.9rem !important;
         color: #000000;
         font-weight: bold;
         max-width: 80%;
@@ -241,11 +251,18 @@
     }
 
     .UserComum_SobreNos-Title {
-        font-size: 2em; /* Ajusta o tamanho do título para telas menores */
+        font-size: 20px !important; /* Ajusta o tamanho do título para telas menores */
     }
 
+  
     .UserComum_SobreNos-Description, 
     .UserComum_SobreNos-ObjectivesTitle {
         text-align: center; /* Centraliza o texto */
+        font-size: 16px !important;
+        text-align: justify;
+        font-weight: 400;
+
+
+
     }
 }
