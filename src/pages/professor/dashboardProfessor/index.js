@@ -56,6 +56,14 @@ export const DashboardProfessor = () => { // Renomeie para DashboardProfessor
             localStorage.setItem("bannerImage", colunaSelecionada.imageColumn); // Salva a imagem do banner
 
 
+<<<<<<< HEAD
+            sessionStorage.setItem("ColumName", colunaName);
+            sessionStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color); // Salvando a cor também
+            // localStorage.setItem("ColumName", colunaName);
+            // localStorage.setItem("colunaColor", colunas.find(c => c.columname === colunaName)?.color); // Salvando a cor também
+
+=======
+>>>>>>> a7019159bc6a23de6112faf29bcb76d2eef31611
             // Navega para a página /MateriaColuna
             navigate("/materiaColunaCarrosel");
             }
@@ -422,7 +430,7 @@ for (let i = 0; i < itemsToShow; i++) {
 
 
     return (
-        <body>
+        <div>
             <div className="container-dashboard-Professor">
 
                 {mostrarNavbarProf && <NavBarProf />}
@@ -504,10 +512,7 @@ for (let i = 0; i < itemsToShow; i++) {
 
                         <i className="bi bi-caret-right-fill arrowRight arrowCards-Dashboard-Professor" onClick={cardDashNext}></i>
                     </div>
-
-
-
-                    {/* Fim Cards de Visualização do Professor, com carrossel Responsivo */}
+ {/* Fim Cards de Visualização do Professor, com carrossel Responsivo */}
 
                     {/* footer da tela professor */}
                     {/* <footer className="footer-dashboard-Professor">
@@ -546,16 +551,26 @@ for (let i = 0; i < itemsToShow; i++) {
 <
                 <button className='buttonEdicao-dashboard-Professor'>Baixar Arquivo</button>
 =======
+<<<<<<< HEAD
+              
+                    <div className="carrosselDashboard-Professor">
+=======
                 {/* Carrossel do Topo, tela Professor */}
                     {/* <div className="carrosselDashboard-Professor">
+>>>>>>> a7019159bc6a23de6112faf29bcb76d2eef31611
                         <i className="bi bi-caret-left-fill arrowLeft" onClick={handlePrev}></i>
                         <div className={`colunaSlide-dashboard-professor ${isAnimatingLeft ? 'animatingLeft' : ''}${isAnimatingRight ? 'animatingRight' : ''}`}>
                             {visibleColunas.map((coluna, index) => (
                                 <a
                                     key={index}
                                     className="coluna divColuna-dashboard-professor"
+<<<<<<< HEAD
+                                    style={{ backgroundColor: colunas.find(c => c.columname === coluna)?.color }} 
+                                    onClick={() => handleClick(coluna)} 
+=======
                                     style={{ backgroundColor: colunas.find(c => c.columname === coluna)?.color }} // Define a cor de fundo
                                     onClick={() => handleClick(coluna)} // Chama a função de clique
+>>>>>>> a7019159bc6a23de6112faf29bcb76d2eef31611
                                 >
                                     <h3 className='titleColunas-dashboard-professor'>{coluna}</h3>
                                     <i className="bi bi-play-circle-fill buttonColunas-dashboard-professor"></i>
@@ -564,20 +579,32 @@ for (let i = 0; i < itemsToShow; i++) {
                         </div>
                         <i className="bi bi-caret-right-fill arrowRight" onClick={handleNext}></i>
                     </div>
+<<<<<<< HEAD
+                    
+                    <div className="cardVisualizacao-dashboard-Professor">
+                        <i className="bi bi-caret-left-fill arrowLeft arrowCards-Dashboard-Professor" onClick={cardDashPrev}></i>
+
+=======
                     {/* Fim do Carrossel Topo */}
 
                     {/* Cards de Visualização do Professor, com carrossel Responsivo *
                     <div className="cardVisualizacao-dashboard-Professor">
                         <i className="bi bi-caret-left-fill arrowLeft arrowCards-Dashboard-Professor" onClick={cardDashPrev}></i>
 
+>>>>>>> a7019159bc6a23de6112faf29bcb76d2eef31611
                         {visibleitemsCardDash.map((item) => (
                             <div
                                 key={item.id}
                                 className={`${item.card}`}
                                 style={{
                                     height: item.colunas.length > 0
+<<<<<<< HEAD
+                                        ? `${Math.min(item.colunas.length + 400, 520)}px` 
+                                        : '22%', 
+=======
                                         ? `${Math.min(item.colunas.length + 400, 520)}px` // Se o tamanho ultrapassar 520px, ele não aumenta mais
                                         : '22%', // Se não houver colunas, a altura será 22%
+>>>>>>> a7019159bc6a23de6112faf29bcb76d2eef31611
                                 }}
                             >
                                 <div className={item.logo}>
@@ -587,6 +614,17 @@ for (let i = 0; i < itemsToShow; i++) {
                                 <h3>{item.title}</h3>
 
                                 <div className={item.colunas}>
+<<<<<<< HEAD
+                                
+                                    {item.colunas
+                                        .filter(colunaData => colunasPermitidas.includes(colunaData.coluna))  
+                                        .map((colunaData, index) => (
+                                            <div key={index} className='colunasVisualizacao-dashboard-Professor'>
+                                                <div className='allConteudo-colunas-dashboard-professor'>
+                                                    <div className={`classNamePara${colunaData.coluna}`}>
+                                                        <i className='bx bx-radio-circle-marked'></i>
+                                                    </div>
+=======
                                     {/* Filtra as colunas do item com base nas colunas permitidas 
                                     {item.colunas
                                         .filter(colunaData => colunasPermitidas.includes(colunaData.coluna))  // Filtrando colunas com base no acesso
@@ -597,6 +635,7 @@ for (let i = 0; i < itemsToShow; i++) {
                                                         <i className='bx bx-radio-circle-marked'></i>
                                                     </div>
                                                     <h3>{colunaData.coluna}</h3> {/* Exibindo o nome da coluna *
+>>>>>>> a7019159bc6a23de6112faf29bcb76d2eef31611
                                                 </div>
                                             </div>
                                         ))}
@@ -607,7 +646,11 @@ for (let i = 0; i < itemsToShow; i++) {
                         ))}
 
                         <i className="bi bi-caret-right-fill arrowRight arrowCards-Dashboard-Professor" onClick={cardDashNext}></i>
+<<<<<<< HEAD
+                    </div>
+=======
                     </div> */}
+>>>>>>> a7019159bc6a23de6112faf29bcb76d2eef31611
 
 
 
@@ -655,15 +698,29 @@ for (let i = 0; i < itemsToShow; i++) {
                 </footer> */}
                     {/*Fim do footer */}
 
+<<<<<<< HEAD
+
+
+                    {/* </footer> */}
+
+                    {/* </footer> */}
+
+                    {/*Fim do footer */}
+
+                    {/* </div>
+
+            </div> */}
+
+=======
 
                     <div>
 
                     </div>
+>>>>>>> a7019159bc6a23de6112faf29bcb76d2eef31611
                 </div>
             </div>
-        </body>
 
-    );
+        </div>);
 };
 
 export default DashboardProfessor;

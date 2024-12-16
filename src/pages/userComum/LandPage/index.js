@@ -101,6 +101,66 @@ for (let i = 0; i < itemsToShow; i++) {
      // Estado para controlar se o usuário está logado ou não
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+<<<<<<< HEAD
+  return (
+    <div className="container-fluid home">
+      <header className='home_header'>
+        <div className='home_date'>
+          <span>{currentDate}</span>
+        </div>
+        <div className='home_header-left'>
+          <ul style={{ marginBottom: '0rem' }}>
+            <a href='/userComum/faleConosco'><li className='home_li-1'><span>Fale Conosco</span><img src='../img/fale_conosco-img.svg' alt="Fale Conosco" /></li></a>
+            <a href='/userComum/colunistaUsuario' ><li className='home_li-2'><span>Colunistas</span><img src='../img/colunistas-img.svg' alt="Colunistas" /></li></a>
+            <a  href='/userComum/sobreNos'><li className='home_li-3'><span>Sobre nós</span><img src='../img/sobre_nos-img.svg' alt="Sobre Nós" /></li></a>
+            <a  href='/login'><li className='home_li-5'><span>Log in</span><img src='../img/login-img.svg' alt="Log In" /></li></a>
+          </ul>
+        </div>
+      </header>
+      <div class="container-sm home_1">
+        <nav className='home_main-title'>
+          <h2 className='home_title'>O EDUCADOR</h2>
+          <span className='home_subtitle'>TE MANTER INFORMADO É A NOSSA MISSÃO</span>
+        </nav>
+        <div className='carousel_container'>
+          <div style={{ maxWidth: '1800px', margin: '0 auto', position: 'relative' }}>
+            <Swiper
+              modules={[Navigation]} 
+              navigation={{
+                prevEl: '.custom-prev', // Botão "Anterior"
+                nextEl: '.custom-next', // Botão "Próximo"
+              }}
+              spaceBetween={20}
+              slidesPerView={6}
+              loop={true} // Torna o carrossel infinito
+              breakpoints={{
+                1024: { slidesPerView: 5 }, // Desktops maiores
+                768: { slidesPerView: 3 },  // Tablet
+                480: { slidesPerView: 2 },  // Celular
+                320: { slidesPerView: 2 },  // Pequenos dispositivos
+              }}
+            >
+              {items.map((item, index) => (
+                <SwiperSlide key={index}>
+                  <div
+                    style={{
+                      backgroundColor: item.color,
+                      borderRadius: '8px',
+                      padding: '20px',
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      color: '#fff',
+                      fontFamily: 'Rajdhani-Bold',
+                      fontSize: '15px',
+                      height: '80px',
+                    }}
+                  >
+                    {item.text}
+                    <span style={{ fontSize: '24px' }}>▶</span>
+                  </div>
+                </SwiperSlide>
+=======
   // Verifica se o token existe no localStorage
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -176,6 +236,7 @@ for (let i = 0; i < itemsToShow; i++) {
                   <h3 className='titleColunas-dashboard-professor'>{coluna}</h3>
                   <i className="bi bi-play-circle-fill buttonColunas-dashboard-professor"></i>
                 </a>
+>>>>>>> a7019159bc6a23de6112faf29bcb76d2eef31611
               ))}
             </div>
             <i className="bi bi-caret-right-fill arrowRight" onClick={handleNext}></i>

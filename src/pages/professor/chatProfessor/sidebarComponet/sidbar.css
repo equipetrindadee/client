@@ -3,8 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --cor-aluno:  #41BFB3; /* Cor do aluno */
-  /* Cor do professor */
+  --cor-aluno:  var(--cor-professor); /* Cor do aluno */
+  --cor-professor: #000; /* Cor do professor */
 }
 
 
@@ -92,7 +92,7 @@ p {
 }
 
 .aluno_chatSidebar-user-item:hover {
-  border: 1px  var(--cor-aluno) solid;
+  border: 1px  var(--cor-professor) solid;
 }
 
 .aluno_chatSidebar-userImg {

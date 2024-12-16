@@ -212,7 +212,7 @@
     display: flex !important;
     position: relative !important;
     font-size: 16px !important;
-    bottom: 5px !important;
+    
     justify-content: space-between !important;
 }
 
@@ -220,6 +220,7 @@
     flex-grow: 1 !important; /* Permite que o conteúdo do body cresça e ocupe o espaço disponível */
     display: flex !important;
     margin-top: 3rem !important;
+    margin-bottom: 5px !important;
     flex-direction: column !important;
     justify-content: center !important; /* Centraliza o conteúdo verticalmente */
     align-items: center !important; /* Centraliza o conteúdo horizontalmente */
