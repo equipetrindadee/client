@@ -55,7 +55,7 @@ function ComentariosReagidos({ email, mensagem, resposta, tipoAtivo }) {
 
 
             {/* Modal para exibir mensagens */}
-            <Modal show={showFullMessageModal} onHide={() => setShowFullMessageModal(false)} className="faleConoscoProfessor_modal" >
+            {/* <Modal show={showFullMessageModal} onHide={() => setShowFullMessageModal(false)} className="faleConoscoProfessor_modal" >
                 <Modal.Header className='faleConoscoModalHistoricoDeMensagemHeader'>
                     <Modal.Title className='faleConoscoModalHistoricoDeMensagemTitle'  >HISTÓRICO DA MENSAGEM</Modal.Title>
                     <Button variant="link" onClick={() => setShowFullMessageModal(false)} className="faleConoscoModalHistoricoDeMensagemtext-white  justify-content-end">
@@ -68,7 +68,7 @@ function ComentariosReagidos({ email, mensagem, resposta, tipoAtivo }) {
                 </Modal.Body>
 
 
-            </Modal>
+            </Modal> */}
         </div>
     );
 }

@@ -218,7 +218,7 @@ export function FaleConoscoProfessor() {
       {/* Modais */}
       <Modal show={showFullMessageModal} onHide={() => closeModal('full')} centered className="faleConoscoProfessor_modal">
         <Modal.Header closeButton className="faleConoscoProfessor_modalHeader">
-          <img src={selectedCard.profileImage || "https://via.placeholder.com/50"} alt="Perfil" className="faleConoscoProfessor_profileImage" />
+        <i className="bx bxs-user-circle faleConoscoProfessor_profileImageModal"></i>
           <div className="faleConoscoProfessor_emailWrapper ms-2">
             <span className="faleConoscoProfessor_email text-white">{selectedCard.email}</span>
             <div className="faleConoscoProfessor_categoria"><p className="faleConoscoProfessorCategoriaTagName">{selectedCard.tipoAtivo}</p></div>
@@ -244,7 +244,7 @@ export function FaleConoscoProfessor() {
 
       <Modal show={showChatModal} onHide={() => closeModal('chat')} centered className="faleConoscoProfessor_modal">
         <Modal.Header closeButton className="faleConoscoProfessor_modalHeader">
-          <img src={selectedCard.profileImage || "https://via.placeholder.com/50"} alt="Perfil" className="faleConoscoProfessor_profileImage" />
+        <i className="bx bxs-user-circle faleConoscoProfessor_profileImageModal"></i>
           <div className="faleConoscoProfessor_emailWrapper ms-2">
             <span className="faleConoscoProfessor_email text-white">{selectedCard.email}</span>
             <div className="faleConoscoProfessor_categoria"><p className="faleConoscoProfessorCategoriaTagName">{selectedCard.tipoAtivo}</p></div>

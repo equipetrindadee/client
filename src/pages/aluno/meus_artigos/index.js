@@ -92,7 +92,7 @@ function Meus_artigos() {
                       <div class="aluno_MeusArtigos-row"></div>
                     </div>
                     <div class="card aluno_MeusArtigos-card-Materia">
-                      <img src="../img/foto_meusArtigos.svg" class="card-img-top-meusArtigos" alt="Imagem do Artigo" />
+                    <img src="../img/imgPadraoNewsletterPreview.svg" class="card-img-top-meusArtigos" alt="Imagem do Artigo" />
                       <div class="card-body aluno_MeusArtigos-cardBody-Materia">
                         <h5 class="card-title  aluno_MeusArtigos-cardTitle-Materia">The new way of english</h5>
                         <div class='aluno_MeusArtigos-cardUser-Materia'>
@@ -107,7 +107,7 @@ function Meus_artigos() {
                     </div>
   
                     <div class="card aluno_MeusArtigos-card-Materia">
-                      <img src="../img/foto_meusArtigos.svg" class="card-img-top-meusArtigos" alt="Imagem do Artigo" />
+                    <img src="../img/imgPadraoNewsletterPreview.svg" class="card-img-top-meusArtigos" alt="Imagem do Artigo" />
                       <div class="card-body aluno_MeusArtigos-cardBody-Materia">
                         <h5 class="card-title  aluno_MeusArtigos-cardTitle-Materia">The new way of english</h5>
                         <div class='aluno_MeusArtigos-cardUser-Materia'>
@@ -122,7 +122,7 @@ function Meus_artigos() {
                     </div>
   
                     <div class="card aluno_MeusArtigos-card-Materia">
-                      <img src="../img/foto_meusArtigos.svg" class="card-img-top-meusArtigos" alt="Imagem do Artigo" />
+                    <img src="../img/imgPadraoNewsletterPreview.svg" class="card-img-top-meusArtigos" alt="Imagem do Artigo" />
                       <div class="card-body aluno_MeusArtigos-cardBody-Materia">
                         <h5 class="card-title  aluno_MeusArtigos-cardTitle-Materia">The new way of english</h5>
                         <div class='aluno_MeusArtigos-cardUser-Materia'>
@@ -148,7 +148,7 @@ function Meus_artigos() {
              <CardPerfil/>
             </div>
             
-            <div class="card my-4 aluno_MeusArtigos-rightSide-MaisLidos">
+            {/* <div class="card my-4 aluno_MeusArtigos-rightSide-MaisLidos">
               <div class="card-body aluno_MeusArtigos-rightSide-MaisLidos-card-body">
                 <div className='aluno_MeusArtigos-rightSide-MaisLidos-title'>
                   <h3 class="card-title">MAIS LIDOS</h3>
@@ -224,7 +224,7 @@ function Meus_artigos() {
   
                 </ul>
               </div>
-            </div>
+            </div> */}
           </div>
           
           {/* Modal em si */}

@@ -9,7 +9,11 @@ button:hover {
   background-color: none !important;
   border: none !important;
 }
-
+.faleConoscoProfessor_profileImageModal{
+  font-size: 50px;
+  color: white;
+  margin-right: 20px;
+}
 /* Header */
 .faleConoscoProfessor_header {
   margin-bottom: 20px;

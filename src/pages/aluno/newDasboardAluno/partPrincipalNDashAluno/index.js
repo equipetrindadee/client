@@ -188,7 +188,7 @@ export const PartPrincipalDasboardAluno = ({ systemMessage, messageModal }) => {
                             <CardPerfil/>                        </div>
 
                     </div>
-                    <div className="custom-timelineDashAlunoNew">
+                    {/* <div className="custom-timelineDashAlunoNew">
                         <div className='rsuite-timeline-itemDashAlunoNew'>
                             <p className='rsuite-timeline-itemDashAlunoNewP'>23 de Março de 2024</p>
                             <p className='rsuite-timeline-itemDashAlunoNewP'> 10:20</p>
@@ -212,7 +212,7 @@ export const PartPrincipalDasboardAluno = ({ systemMessage, messageModal }) => {
 
 
 
-                    </div>
+                    </div> */}
 
                     <div className="partPrincipalNDashAluno__progressCard">
                         {/* <h3 className="partPrincipalNDashAluno__progressTitle">Progresso</h3>

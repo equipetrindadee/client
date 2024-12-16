@@ -29,7 +29,6 @@ function CardPerfil() {
 
         };
         fetchData();
-<<<<<<< HEAD
       }, []);
     
       
@@ -48,27 +47,9 @@ function CardPerfil() {
                     }
                 } catch (error) {
                     console.error("Erro ao decodificar o token ou consultar o Firestore:", error);
-=======
-    }, []);
-
-
-
-    const fetchUserData = async () => {
-        const storedToken = localStorage.getItem('token');
-        if (storedToken) {
-            try {
-                const decoded = jwtDecode(storedToken);
-                const userId = decoded.id;
-                const docRef = doc(db, "users", userId);
-                const docSnap = await getDoc(docRef);
-
-                if (docSnap.exists()) {
-                    const userData = docSnap.data();
-                    setAlunos(userData); // Salva apenas o usuário logado
->>>>>>> a7019159bc6a23de6112faf29bcb76d2eef31611
                 }
-            } catch (error) {
-                console.error("Erro ao decodificar o token ou consultar o Firestore:", error);
+            // } catch (error) {
+            //     console.error("Erro ao decodificar o token ou consultar o Firestore:", error);
                 //       const fetchUserData = async () => {
                 //         const storedToken = sessionStorage.getItem('token');
                 //         if (storedToken) {
@@ -113,6 +94,6 @@ function CardPerfil() {
             </div>
         )
     }
-}
+
 
 export default CardPerfil;

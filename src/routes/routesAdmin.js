@@ -47,17 +47,9 @@ import SobreNos from "../pages/userComum/SobreNos/index.js";
 import NewDashBoardAluno from "../pages/aluno/newDasboardAluno/index.js"
 import FormularioMaster from "../pages/master/formularioMaster/index.js";
 import ContentPrincipalListMaster from "../pages/master/listarMaster/index.js";
-<<<<<<< HEAD
-import ListarMasterdois from "../pages/master/ListarMasterdois/index.js";
 import LogoutButton from "../pages/userComum/Logout/index.js";
 import ChatProfessor from "../pages/professor/chatProfessor/componetPrincipal/index.js";
-=======
-// import ListarMasterdois from "../pages/master/ListarMasterdois/index.js";
-import ChatProfessor from "../pages/professor/chatTeste/componetPrincipal/index.js";
-
-import LogoutButton from "../pages/userComum/Logout/index.js";
 import MateriaColunaCarrossel from "../pages/professor/dashboardProfessor/materiasColuna/index.js";
->>>>>>> a7019159bc6a23de6112faf29bcb76d2eef31611
 
 
 export default function RoutesAdmin() {
@@ -140,7 +132,7 @@ export default function RoutesAdmin() {
                 {/* master */}
                 <Route path='/master/Dashboard' element={<DashBoardMaster />} />
                 <Route path='/master/ListarUsuarios' element={<ContentPrincipalListMaster />} />
-                <Route path='/master/FormularioMaster' element={<FormularioMaster />} />
+                {/* <Route path='/master/FormularioMaster' element={<FormularioMaster />} /> */}
                 {/* <Route path='/listar2' element={<ListarMasterdois />} /> */}
 
 

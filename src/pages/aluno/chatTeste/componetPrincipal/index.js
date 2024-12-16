@@ -17,13 +17,7 @@ function ChatTeste() {
   return (
     <div>
       {/* <NavBaraluno /> */}
-<<<<<<< HEAD
       < SideNavBarNewAluno/>
-=======
-      <SideNavBarNewAluno />
-
-      {/* <NavBarProfessor /> */}
->>>>>>> a7019159bc6a23de6112faf29bcb76d2eef31611
       <div className="aluno_ChatAluno-container">
         <div className="aluno_ChatAluno-row">
           {/* Sidebar Component */}
