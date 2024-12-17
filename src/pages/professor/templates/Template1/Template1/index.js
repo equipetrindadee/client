@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useRef } from "react";
 import {
     collection, addDoc, getFirestore,
     doc,
@@ -13,7 +13,6 @@ import { db } from '../../../../../config/firebaseImgConfig'; // Importando a co
 import "../Template1/t1.css"; // Importando o CSS
 import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from "react-router-dom";
-import api from '../../../../../config/configApi.js'
 
 
 export const Template1 = ({ selectedUser }) => {
@@ -36,7 +35,7 @@ export const Template1 = ({ selectedUser }) => {
     const [qrCodeText2, setQrCodeText2] = useState('');
     const [userColum, setColumName] = useState('');
 
-
+    const rightSideRef2 = useRef(null);
 
     useEffect(() => {
         const fetchUserData = async () => {
@@ -66,12 +65,18 @@ export const Template1 = ({ selectedUser }) => {
         fetchUserData();
     }, []);
 
-    // const handleNavigateProcesso{
-
+    const navegarPR= () => {
+        const rightSideHTML2 = rightSideRef2.current?.outerHTML;
+        navigate('/processodePostagem', {
+            state: { rightSideHTML2 },
+        });
+    };
     // }
     const handleTextChange = (event) => {
         setTextcampo1(event.target.value);
     };
+
+
 
     const handleText4Change = (event) => {
         setTextCampo2(event.target.value);
@@ -147,45 +152,46 @@ export const Template1 = ({ selectedUser }) => {
     const handleSubmit = async (event) => {
         event.preventDefault(); // Impede o envio padrão do formulário
 
-        // Prepara os dados para envio
-        const formData = new FormData();
-        formData.append('numberTemplate', "1");
-        formData.append('title', valueTitle);
-        formData.append('author', userName);
-        formData.append('status', "Revisão");
-        formData.append('coluna', userColum);
-        formData.append('texts', JSON.stringify([
-            campo1Text, // Artigo 1
-            campo2Text, // Artigo 2
-            campo3Text, // Artigo 3
-            campo4Text, // Artigo 4
-        ]));
-        formData.append('qrCodeText1', qrCodeText1);
-        formData.append('qrCodeText2', qrCodeText2);
+        // Coleta os valores dos textareas
+        const dataToSave = {
+            numberTemplate: "1",
+            title: valueTitle,
+            author: userName,
+            status: "Revisão",
+            coluna: userColum,
+            texts: [
+                campo1Text, // Artigo 1
+                campo2Text,     // Artigo 2
+                campo3Text,// Artigo 3
+                campo4Text,// Artigo 4
+                qrCodeText1, // QR Code 1
+                qrCodeText2  // QR Code 2
 
-        // Adiciona a imagem ao FormData, se existir
-        if (campo5Image) {
-            formData.append('image', campo5Image);
-        }
+            ],
+            timestamp: new Date() // Adicionando a data e hora atuais
 
+        };
         try {
-            // Teste de comunicação com a API (modifique a URL se necessário)
-            const response = await api.post('/marcelaob', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data', // Define o tipo de conteúdo
-                },
-            });
+            // Referência à coleção do Firestore onde os dados serão armazenados
+            const collectionRef = collection(db, 'edicao'); // Substitua pelo seu nome de coleção
 
-            console.log('Resposta do servidor:', response); // Mostra a resposta do servidor
+            // Adiciona os dados como um novo documento
+            await addDoc(collectionRef, dataToSave);
 
-            if (response.status === 201) {
-                alert('Dados enviados com sucesso!');
-            } else {
-                alert('Erro ao enviar os dados.');
-            }
+            // Limpa os campos após o envio
+            setTextcampo1('');
+            setTextCampo2('');
+            setTextCampo3('');
+            setTextCampo4('');
+            setValueTitle('');
+            setQrCodeText1('');
+            setQrCodeText2('');
+
+
+            alert('Dados enviados com sucesso!');
         } catch (error) {
             console.error("Erro ao enviar os dados:", error);
-            alert('Erro ao conectar com o servidor.');
+            alert('Erro ao enviar os dados.');
         }
     };
 
@@ -200,7 +206,7 @@ export const Template1 = ({ selectedUser }) => {
                         <h2 className='oEducadorTemplete1Title-t1'> O EDUCADOR</h2>
                         <p className='oEducadorTemplete1SubTitle-t1'>TE MANTER INFORMADO É NOSSA MISSÃO</p>
                     </span>
-                    <p>VOLTAR PRÓXIMA PÁGINA <i className='bx bxs-chevron-right'></i></p>
+                    {/* <p>VOLTAR PRÓXIMA PÁGINA <i className='bx bxs-chevron-right'></i></p> */}
                 </header>
 
                 {/* corpo lado esquerdo */}
@@ -213,7 +219,7 @@ export const Template1 = ({ selectedUser }) => {
                             onChange={handleValueTilte}
                             maxLength="30"
                         />
-                        
+                        <p>{valueTitle.length}/30</p>
 
                         {/* header esquerda com inputs */}
                         <div className="header-left-t1">
@@ -228,9 +234,9 @@ export const Template1 = ({ selectedUser }) => {
                                         placeholder="Artigo 1"
                                         value={campo1Text}
                                         onChange={handleTextChange}
-                                        maxLength="400"
+                                        maxLength="460"
                                     />
-                                    <p>{campo1Text.length}/400</p>
+                                    <p>{campo1Text.length}/460</p>
                                 </div>
                                 <div className="text2-t1 btn-bg-t1" id="text2BtnBg">
                                     <input
@@ -270,9 +276,9 @@ export const Template1 = ({ selectedUser }) => {
                                         placeholder="Artigo 3"
                                         value={campo3Text}
                                         onChange={handlecampo3TextChange}
-                                        maxLength="365" // Limite de caracteres no textarea
+                                        maxLength="465" // Limite de caracteres no textarea
                                     />
-                                    <p>{campo3Text.length}/365</p>
+                                    <p>{campo3Text.length}/465</p>
                                 </div>
 
                                 <div className="text6-t1 btn-bg-t1" id="text6BtnBg">
@@ -346,7 +352,7 @@ export const Template1 = ({ selectedUser }) => {
                             </div>
 
                             <div className="text12-t1">
-                                <button type="submit" className="send-btn-t1" href="/processopostagemProfessor">Enviar</button>
+                                <button type="submit" onClick={navegarPR} className="send-btn-t1" href="/processoPostagem">Enviar</button>
                             </div>
                         </div>
                     </form>
@@ -357,21 +363,22 @@ export const Template1 = ({ selectedUser }) => {
             </div>
 
             {/* lado direito */}
-            <div className="right-side-t1 lado2-t1">
+            <div className="right-side-t1 lado2-t1" ref={rightSideRef2}>
                 <div className="main-right-t1">
                     {/* cabeçalho direita */}
                     <div className="header-right-t1">
                         {/* barra colorida */}
                         <div className="barra-topo-header-right-t1">
-                            <img src="../img/logo.svg" alt="imagem topo" />
+                            {/* <img src="../img/logo.svg" alt="imagem topo" /> */}
                         </div>
 
                         <div className="mid-header-right-t1">
                             <div className="info-mid-header-right-t1">
-                                <img src="../img/processoPostagemJornalista.svg" alt="imagem pessoa" />
+                                <i class="bx bxs-user-circle "></i>
+                                {/* <img src="../img/processoPostagemJornalista.svg" alt="imagem pessoa" /> */}
                                 <div className="escrita-mid-header-right-t1">
                                     <h4 className='nameUserTemplete1WriterRightPart-t1'>{userName}</h4>
-                                    <p className='nameUserTemplete1WriterRightPartDate-t1'>01/01/2001</p>
+                                    {/* <p className='nameUserTemplete1WriterRightPartDate-t1'>01/01/2001</p> */}
                                 </div>
                             </div>
                         </div>
@@ -421,31 +428,10 @@ export const Template1 = ({ selectedUser }) => {
                         </div>
 
                         <div className="footer-right-t1">
-                            {/* parte dos QRcodes */}
-                            {/* QRcode 1 */}
-                            <div className="QRcode-1-footer">
-                                <div className="campo9-t1">
-                                    <div className="texto-t1">
-                                        <p className="textValueReceiveTemplete1-t1 textWithBG-t1 LinkQRcode">{qrCodeText1}</p> {/* Texto do campo8 */}
-                                    </div>
-                                </div>
-                                <div className="campo10-t1">
-                                    {/* Imagem carregada para campo9 */}
-                                    {code1Image && <img src={code1Image} className="image-400w-t1 imgQRcodes" alt="Imagem do campo9" />}
-                                </div>
-                            </div>
-                            {/* QRcode 2 */}
-                            <div className="QRcode-2-footer">
-                                <div className="campo11-t1">
-                                    <div className="texto-t1">
-                                        <p className="textValueReceiveTemplete1-t1 textWithBG-t1 LinkQRcode">{qrCodeText2}</p> {/* Texto do campo10*/}
-                                    </div>
-                                </div>
-                                <div className="campo8-t1">
-                                    {/* Imagem carregada para campo11 */}
-                                    {code2Image && <img src={code2Image} className="image-400w-t1 imgQRcodes" alt="Imagem do campo11" />}
-                                </div>
-                            </div>
+                            <p className="textValueReceiveTemplete1-t1">{qrCodeText1}</p>
+                            {code1Image && <img src={code1Image} className="image-150w-t1" alt="QrCode1" />}
+                            <p className="textValueReceiveTemplete1-t1">{qrCodeText2}</p>
+                            {code2Image && <img src={code2Image} className="image-150w-t1" alt="QrCode2" />}
                         </div>
                     </div>
                 </div>

@@ -13,7 +13,7 @@ function UserComumPerfil() {
   const handleClose = () => setShowModal(false);
 
 
-  const [selectedImage, setSelectedImage] = useState('../img/oruam.jpg'); // Imagem de perfil atual
+  const [selectedImage, setSelectedImage] = useState('../../../../public/img/Percy.svg'); // Imagem de perfil atual
 
   // Função para fazer upload de uma imagem e gerar uma pré-visualização
   const handleImageUpload = (event) => {

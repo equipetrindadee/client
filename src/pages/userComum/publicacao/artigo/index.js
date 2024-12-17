@@ -124,7 +124,7 @@ function Artigo({ articleId }) {
           </div>
 
           <div className="user_publicacao-materia-img-direito div3">
-            <img src="../img/landpage1.svg" alt="logo" />
+            <img src="../img/imgPadraoNewsletterPreview.svg" alt="logo" />
           </div>
 
           <div className="user_publicacao-materia-paragrafo div4">
@@ -132,14 +132,14 @@ function Artigo({ articleId }) {
           </div>
 
           <div className="user_publicacao-materia-img-esquerdo1 div5">
-            <img src="../img/landpage2.svg" alt="imagem 1" />
+            <img src="../img/imgMateria1 1.jpg" alt="imagem 1" />
           </div>
 
           <div className="user_publicacao-materia-text-direito div6">
             <p>{articleContent?.texts?.[2]}</p>  {/* Acessa o valor da posição 0 */}
           </div>
           <div className="user_publicacao-materia-img-esquerdo2 div7">
-            <img src="../img/landpage2.svg" alt="imagem 1" />
+            <img src="../img/imgMateria2 1.jpg" alt="imagem 1" />
           </div> 
 
           <div className="user_publicacao-materia-text-direito div8">
@@ -152,19 +152,19 @@ function Artigo({ articleId }) {
         <div className="user_publicacao-materia-footer">
           <div className='user_publicacao-materia-footer-item'>
             <div className='user_publicacao-materia-footer-img'>
-              <img src="../img/meninoBackGroundLoginGeneral.svg" alt="logo" />
+              <img src="../img/qrcode.png" alt="logo" />
             </div>
             <div className='user_publicacao-materia-footer-text'>
-              <p>Leia na íntegra sobre a digitalização do jornal 'O Educador' e descubra como a comunidade escolar está se transformando</p>
+              <p>Leia na íntegra sobre a digitalização do jornal 'O Educador'</p>
             </div>
           </div>
 
           <div className='user_publicacao-materia-footer-item'>
             <div className='user_publicacao-materia-footer-img'>
-              <img src="../img/meninoBackGroundLoginGeneral.svg" alt="logo" />
+              <img src="../img/qrcode.png" alt="logo" />
             </div>
             <div className='user_publicacao-materia-footer-text'>
-              <p>Leia na íntegra sobre a digitalização do jornal 'O Educador' e descubra como a comunidade escolar está se transformando</p>
+              <p>Descubra como a comunidade escolar está se transformando</p>
             </div>
           </div>
         </div>

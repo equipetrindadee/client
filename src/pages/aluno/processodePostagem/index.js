@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../../aluno/processodePostagem/processodePostagem.css';
@@ -6,8 +7,13 @@ import { Container, Row, Col } from 'react-bootstrap';
 import NavBaraluno from '../../navBar/navBarAluno';
 import ErrorCelular from '../../components/error';
 import { Modal, Button } from 'react-bootstrap';
+import SideNavBarNewAluno from '../../navBar/newNavBarSideBarAluno/index.js'
 
 export const ProcessodePostagem = () => {
+
+    const location = useLocation();
+    const { rightSideHTML2 } = location.state || {}; // Recebe o HTML do `right-side`
+
 
     const [showModalPergunta, setShowModalPergunta] = useState(false);
     const [showModalSucesso, setShowModalSucesso] = useState(false);
@@ -61,8 +67,7 @@ export const ProcessodePostagem = () => {
             </div>
 
             <div className='fullContainer-div-processoPostagem'>
-                <NavBaraluno />
-
+                <SideNavBarNewAluno />
                 {/* Container Processo de Postagem */}
                 <section className="container-processodePostagem">
                     {/* Topo Processo de Postagem */}
@@ -77,81 +82,30 @@ export const ProcessodePostagem = () => {
 
                     {/* Conteudo Processo de Postagem */}
                     <Col className="content-processodePostagem">
-                        {/* Jornal Processo de Postagem */}
-                        <div className="row">
-                            {/* Informação Processo de Postagem */}
-                            <div className="infoJornal-processodePostagem">
-                                {/* Autor Jornal Processo de Postagem */}
-                                <div className="autor-processorPostagem">
-                                    <img src="../img/processoPostagemJornalista.svg" alt="teste" className="imagemAutor-processodePostagem" />
-                                    <div>
-                                        <p className="nome-processodePostagem">Por Catarina Benedetto</p>
-                                        <p className="data-processodePostagem">01/01/2001</p>
-                                    </div>
-                                </div>
-
-                                {/* Audio Jornal Processo de Postagem */}
-                                <div className='audio-processorPostagem'>
-                                    <i className='bx bx-play'></i>
-                                    <div className='linhaAudio-processorPostagem'></div>
-                                </div>
-
-                                {/* Titulo Jornal Processo de Postagem */}
-                                <h3 className='titlecontent-processorPostagem'>O papel das olímpiadas</h3>
-
-                                {/* Parágrafos do artigo */}
-                                <section className="firstParagrafo-processorPostagem">
-                                    <p className="campoTexto1-processorPostagem">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                                    <div className="campoImagem1-processorPostagem"></div>
-                                </section>
-
-                                <section className="segundoParagrafo-processorPostagem">
-                                    <p className="campoTexto2-processorPostagem">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                                </section>
-
-                                <section className="terceiroParagrafo-processorPostagem">
-                                    <div className="campoImagem2-processorPostagem"></div>
-                                    <p className="campoTexto3-processorPostagem">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                                </section>
-
-                                <section className="quartoParagrafo-processorPostagem">
-                                    <div className="campoImagem3-processorPostagem"></div>
-                                    <p className="campoTexto4-processorPostagem">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                                </section>
-
-                                {/* Footer Jornal Processo de Postagem */}
-                                <footer className="fotter-processorPostagem">
-                                    <h2 className="saibaMais-processoPostagem">Saiba Mais</h2>
-                                    <div className="linkSaiba-processorPostagem">
-                                        <p>nt here, content here', making it look like</p>
-                                        <div className="qrCode-processorPostagem"></div>
-                                    </div>
-                                    <div className="linkSaiba-processorPostagem">
-                                        <p>nt here, content here', making it look like</p>
-                                        <div className="qrCode-processorPostagem"></div>
-                                    </div>
-                                </footer>
-                            </div>
-
-                            {/* Área Colunista Processo de Postagem */}
+                        <div className='row'>
+                            {/* Jornal Processo de Postagem */}
+                            <div className='miri' dangerouslySetInnerHTML={{ __html: rightSideHTML2 }} />
                             <section className="areaColunista-processodePostagem">
-                                <h1 className="titleAreaColunista-processodePostagem">Área Colunista</h1>
-                                <button 
-                                    className="buttoEnviar-processodePostagem" 
-                                    id='buttonActive_processoPostagem' 
-                                    onClick={abrirModalPergunta} // Aqui, chamamos diretamente a função para abrir o modal
-                                >
-                                    Enviar para Revisão <i className='bx bx-paper-plane'></i>
-                                </button>
-                                <button 
-                                    className="buttoEditar-processodePostagem" 
-                                    id='buttonVoltar_Editar_ProcessoPostagem'
-                                >
-                                    Voltar para Editar <i className='bx bxs-edit'></i>
-                                </button>
-                            </section>
+                            <h1 className="titleAreaColunista-processodePostagem">Área Colunista</h1>
+                            <button
+                                className="buttoEnviar-processodePostagem"
+                                id='buttonActive_processoPostagem'
+                                onClick={abrirModalPergunta} // Aqui, chamamos diretamente a função para abrir o modal
+                            >
+                                Enviar para Revisão <i className='bx bx-paper-plane'></i>
+                            </button>
+                            <button
+                                className="buttoEditar-processodePostagem"
+                                id='buttonVoltar_Editar_ProcessoPostagem'
+                            >
+                                Voltar para Editar <i className='bx bxs-edit'></i>
+                            </button>
+                        </section>
                         </div>
+                     
+
                     </Col>
+
                 </section>
 
                 {/* Modal de Pergunta */}

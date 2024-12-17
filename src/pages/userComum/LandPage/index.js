@@ -135,12 +135,7 @@ export const LandPage = () => {
                 <img src='../img/fale_conosco-img.svg' alt="Fale Conosco" />
               </li>
             </a>
-            <a href='/userComum/colunistaUsuario'>
-              <li className='home_li-2'>
-                <span>Colunistas</span>
-                <img src='../img/colunistas-img.svg' alt="Colunistas" />
-              </li>
-            </a>
+            
             <a href='/userComum/sobreNos'>
               <li className='home_li-3'>
                 <span>Sobre nós</span>

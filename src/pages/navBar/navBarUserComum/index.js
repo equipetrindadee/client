@@ -36,9 +36,9 @@ const NavbarUserComum = () => {
                         <Nav.Link href="/userComum/faleConosco">
                             Fale Conosco <i className="bi bi-chat ms-2"></i>
                         </Nav.Link>
-                        <Nav.Link href="/userComum/colunistaUsuario">
+                        {/* <Nav.Link href="/userComum/colunistaUsuario">
                             Colunistas <i className="bi bi-book ms-2"></i>
-                        </Nav.Link>
+                        </Nav.Link> */}
                         <Nav.Link href="/userComum/sobreNos">
                             Sobre Nós <i className="bi bi-people ms-2"></i>
                         </Nav.Link>

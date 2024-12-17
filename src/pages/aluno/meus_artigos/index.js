@@ -80,10 +80,10 @@ function Meus_artigos() {
                     <div class="card aluno_MeusArtigos-card-Materia">
                       <img src="../img/imgPadraoNewsletterPreview.svg" class="card-img-top-meusArtigos" alt="Imagem do Artigo" />
                       <div class="card-body aluno_MeusArtigos-cardBody-Materia">
-                        <h5 class="card-title  aluno_MeusArtigos-cardTitle-Materia">The new way of english</h5>
+                        <h5 class="card-title  aluno_MeusArtigos-cardTitle-Materia">Minha Escola bem cuidada</h5>
                         <div class='aluno_MeusArtigos-cardUser-Materia'>
-                          <img src="../../../img/ft-Perfil.svg" class="aluno_MeusArtigos-cardImg-Materia" alt="Foto de Perfil" />
-                          <p class="card-text  aluno_MeusArtigos-cardSubTitle-Materia">Ciclana dos Santos Luise</p>
+                        <img src="../../../img/imgperfil-ana.jpg" class="aluno_MeusArtigos-cardImg-Materia" alt="Foto de Perfil" />
+                          <p class="card-text  aluno_MeusArtigos-cardSubTitle-Materia">Ana</p>
                         </div>
   
                         <button className='buttonContinuarEditando-button-meusArtigos'>Continuar editando</button>
@@ -94,10 +94,10 @@ function Meus_artigos() {
                     <div class="card aluno_MeusArtigos-card-Materia">
                     <img src="../img/imgPadraoNewsletterPreview.svg" class="card-img-top-meusArtigos" alt="Imagem do Artigo" />
                       <div class="card-body aluno_MeusArtigos-cardBody-Materia">
-                        <h5 class="card-title  aluno_MeusArtigos-cardTitle-Materia">The new way of english</h5>
+                        <h5 class="card-title  aluno_MeusArtigos-cardTitle-Materia">Valor pedagógico e cultural</h5>
                         <div class='aluno_MeusArtigos-cardUser-Materia'>
-                          <img src="../../../img/ft-Perfil.svg" class="aluno_MeusArtigos-cardImg-Materia" alt="Foto de Perfil" />
-                          <p class="card-text  aluno_MeusArtigos-cardSubTitle-Materia">Ciclana dos Santos Luise</p>
+                          <img src="../../../img/imgperfil-ana.jpg" class="aluno_MeusArtigos-cardImg-Materia" alt="Foto de Perfil" />
+                          <p class="card-text  aluno_MeusArtigos-cardSubTitle-Materia">Ana</p>
                         </div>
   
                         <button className='buttonContinuarEditando-button-meusArtigos'>Continuar editando</button>
@@ -109,10 +109,10 @@ function Meus_artigos() {
                     <div class="card aluno_MeusArtigos-card-Materia">
                     <img src="../img/imgPadraoNewsletterPreview.svg" class="card-img-top-meusArtigos" alt="Imagem do Artigo" />
                       <div class="card-body aluno_MeusArtigos-cardBody-Materia">
-                        <h5 class="card-title  aluno_MeusArtigos-cardTitle-Materia">The new way of english</h5>
+                        <h5 class="card-title  aluno_MeusArtigos-cardTitle-Materia">Reunião Integrativa SESI-SENAI</h5>
                         <div class='aluno_MeusArtigos-cardUser-Materia'>
-                          <img src="../../../img/ft-Perfil.svg" class="aluno_MeusArtigos-cardImg-Materia" alt="Foto de Perfil" />
-                          <p class="card-text  aluno_MeusArtigos-cardSubTitle-Materia">Ciclana dos Santos Luise</p>
+                        <img src="../../../img/imgperfil-ana.jpg" class="aluno_MeusArtigos-cardImg-Materia" alt="Foto de Perfil" />
+                          <p class="card-text  aluno_MeusArtigos-cardSubTitle-Materia">Ana</p>
                         </div>
   
                         <p class="card-text aluno_MeusArtigos-cardData-Materia">Há 4 dias</p>
@@ -124,10 +124,10 @@ function Meus_artigos() {
                     <div class="card aluno_MeusArtigos-card-Materia">
                     <img src="../img/imgPadraoNewsletterPreview.svg" class="card-img-top-meusArtigos" alt="Imagem do Artigo" />
                       <div class="card-body aluno_MeusArtigos-cardBody-Materia">
-                        <h5 class="card-title  aluno_MeusArtigos-cardTitle-Materia">The new way of english</h5>
+                        <h5 class="card-title  aluno_MeusArtigos-cardTitle-Materia">O poder do grêmio</h5>
                         <div class='aluno_MeusArtigos-cardUser-Materia'>
-                          <img src="../../../img/ft-Perfil.svg" class="aluno_MeusArtigos-cardImg-Materia" alt="Foto de Perfil" />
-                          <p class="card-text  aluno_MeusArtigos-cardSubTitle-Materia">Ciclana dos Santos Luise</p>
+                        <img src="../../../img/imgperfil-ana.jpg" class="aluno_MeusArtigos-cardImg-Materia" alt="Foto de Perfil" />
+                          <p class="card-text  aluno_MeusArtigos-cardSubTitle-Materia">Ana</p>
                         </div>
   
                         <p class="card-text aluno_MeusArtigos-cardData-Materia">Há 4 dias</p>

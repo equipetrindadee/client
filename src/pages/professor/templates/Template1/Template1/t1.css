@@ -20,7 +20,8 @@
     text-align: center;
     margin-block: 0.25rem !important;
     font-weight: 600;
-    font-size: 13px;
+    margin-left: 5px;
+    font-size: 15px;
 }
 
 .nameUserTemplete1WriterRightPartDate-t1 {
@@ -126,7 +127,9 @@
 .info-mid-header-right-t1 {
     display: flex;
 }
-
+.info-mid-header-right-t1  i{
+font-size: 40px !important
+;}
 .info-mid-header-right-t1 img {
     border-radius: 50%;
     max-width: 50px;
@@ -306,7 +309,7 @@
     width: 100%;
     padding: 20px 0px 20px 30px;
     margin-top: 10px;
-    background-color: #312CBF;
+    background-color: #d9d9d9;
     text-align: center;
     display: grid;
     grid-template-columns: repeat(4, 1fr);

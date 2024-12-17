@@ -86,11 +86,11 @@ function ModalPerfil() {
             {alunos && (
               <>
                 <div className="aluno_MeusArtigos-rightSide-Modal-img">
-                  <img
+                  {/* <img
                     src={alunos.imagemUrl}
                     className="alunoModalDashRoundedImg"
                     alt="Imagem do Artigo"
-                  />
+                  /> */}
                 </div>
 
                 <div className="mb-3 aluno_MeusArtigos-rightSide-Modal-input">
@@ -98,7 +98,8 @@ function ModalPerfil() {
                   <input
                     type="email"
                     className="form-control"
-                    value={alunos.name || ''}
+                    // value={alunos.name || ''}
+                    placeholder='Ana'
 
                   />
                 </div>
@@ -107,7 +108,8 @@ function ModalPerfil() {
                   <input
                     type="email"
                     className="form-control"
-                    value={alunos.email || ''}
+                    // value={alunos.email || ''}
+                    placeholder='ana@gmail.com'
 
                   />
                 </div>
@@ -117,7 +119,7 @@ function ModalPerfil() {
                     type="text"
                     className="form-control"
                     value={alunos.coluna || ''}
-                    placeholder="Palavreando"
+                    placeholder="Aconteceu na Escola"
                   />
                 </div>
                 <div className="mb-3 aluno_MeusArtigos-rightSide-Modal-input">
@@ -125,7 +127,9 @@ function ModalPerfil() {
                   <input
                     type="text"
                     className="form-control"
-                    value={alunos.anoEscolar || ''}
+                    // value={alunos.anoEscolar || ''}
+                    placeholder="2A do Ensino Médio"
+
 
                   />
                 </div>

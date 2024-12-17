@@ -75,7 +75,7 @@ const Cadastro = () => {
       }
     } catch (error) {
       console.error("Erro ao criar usuário:", error);
-      setError("Erro ao criar o usuário, tente novamente.");
+      // setError("Erro ao criar o usuário, tente novamente.");
     } finally {
       setLoading(false);  // Desativa o estado de carregamento após o processo
     }

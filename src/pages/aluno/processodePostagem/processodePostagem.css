@@ -1,7 +1,13 @@
 :root{
     font-size: 10px;
 }
-
+.miri{
+    /* background-color: #312CBF !important; */
+    margin-left: 18% !important;
+    align-items: center !important;
+    width: 60% !important;
+    height: auto !important;
+}
 .section-processodePostagem {
     padding: 2rem;
 }

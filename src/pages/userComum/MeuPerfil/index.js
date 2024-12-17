@@ -14,7 +14,7 @@ const MeuPerfil = () => {
     const [inputName, setInputName] = useState(""); // Para editar o nome
     const [inputEmail, setInputEmail] = useState(""); // Para editar o email
     const [inputPhone, setInputPhone] = useState(""); // Para editar o telefone
-    const [profileImage, setProfileImage] = useState("/img/profileee.svg");
+    const [profileImage, setProfileImage] = useState("/img/percy.svg");
 
     const handleLogout = () => {
         // Limpar tudo do sessionStorage
@@ -27,11 +27,12 @@ const MeuPerfil = () => {
         const token = localStorage.getItem("token"); // Pega o token do localStorage
         if (token) {
             try {
+                
                 const decodedToken = jwtDecode(token); // Decodifica o token
                 // A partir do token decodificado, preenche as informações do perfil
-                setName(decodedToken.name);
+                setName(decodedToken.name || "Pedro");
                 setEmail(decodedToken.email);
-                setPhone(decodedToken.phone);
+                setPhone(decodedToken.phone || "11 936587245");
                 // Inicializa os campos de input com os dados do token
                 setInputName(decodedToken.name);
                 setInputEmail(decodedToken.email);
@@ -70,8 +71,8 @@ const MeuPerfil = () => {
                             onChange={(e) => setProfileImage(URL.createObjectURL(e.target.files[0]))}
                         />
                     </div>
-                    <p><i className="bi bi-person-fill"></i> {name}</p> {/* Exibe o nome do usuário */}
-                    <p><i className="bi bi-envelope"></i> {email}</p> {/* Exibe o email do usuário */}
+                    <p><i className="bi bi-person-fill"></i>{name}</p> {/* Exibe o nome do usuário */}
+                    <p><i className="bi bi-envelope"></i>{email}</p> {/* Exibe o email do usuário */}
                     <button className="log-out-btn" onClick={handleLogout}>Log Out</button>
                 </div>
                 <div className="usercomum_meuperfil-profile-content">
@@ -91,7 +92,7 @@ const MeuPerfil = () => {
                                 <label>Nome Completo</label>
                                 <input
                                     type="text"
-                                    value={inputName}  // Preenche o campo com o nome
+                                    value={name}  // Preenche o campo com o nome
                                     onChange={(e) => setInputName(e.target.value)}
                                 />
                                 <label>Email</label>
@@ -103,12 +104,10 @@ const MeuPerfil = () => {
                                 <label>Telefone</label>
                                 <input
                                     type="tel"
-                                    value={inputPhone}  // Preenche o campo com o telefone
+                                    value={phone}  // Preenche o campo com o telefone
                                     onChange={(e) => setInputPhone(e.target.value)}
                                 />
-                                <button type="button" onClick={handleSaveChangess} className="save-btn">
-                                    Salvar Alterações
-                                </button>
+                                
                             </form>
                         </>
                     ) : null}
