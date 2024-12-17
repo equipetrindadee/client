@@ -165,7 +165,7 @@ function FaleConosco() {
         </div>
 
         <div className="fale_conosco-imagem col-md-6">
-          <img src="../img/faleConosco.svg" className="img-fluid w-100 h-100" alt="Imagem de contato" />
+          <img src="../img/faleConosco.svg" className="img-fluid" alt="Imagem de contato" />
         </div>
       </div>
 

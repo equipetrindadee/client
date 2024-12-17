@@ -12,22 +12,49 @@
   color: #333;
   padding: 20px;
 }
+.user_publicacao-materia{
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  /* grid-template-rows: 10% repeat(2, 20%) repeat(2, 25%); */
+  grid-template-rows: auto;
 
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+.div1 { grid-area: 1 / 1 / 2 / 3; }
+.div2 { grid-area: 2 / 1 / 3 / 2; }
+.div3 { grid-area: 2 / 2 / 3 / 3; }
+.div4 { grid-area: 3 / 1 / 4 / 3; }
+.div5 { grid-area: 4 / 1 / 5 / 2; }
+.div6 { grid-area: 4 / 2 / 5 / 3; }
+.div7 { grid-area: 5 / 1 / 6 / 2; }
+.div8 { grid-area: 5 / 2 / 6 / 3; }
 .user_publicacao-materia-title h3 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 3.5rem;
   font-weight: bold;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
   color: #000;
+  margin: 0 auto;
+}
+
+.user_publicacao-materia-title {
+  /* background-color: brown; */
+}
+.user_publicacao-materia-text-esquerdo{
+  /* background-color: #0056b3; */
+  padding: 10px;
+  font-size: 20px;
+  color: #000 !important;
 }
 
 .user_publicacao-materia-text-esquerdo p,
 .user_publicacao-materia-paragrafo p,
 .user_publicacao-materia-text-centro p,
 .user_publicacao-materia-paragrafo-inferior p {
-  font-size: 1rem;
-  margin-bottom: 10px;
-  text-align: justify;
+  
+
+  text-align: justify !important;
 }
 
 /* Imagem à direita */
@@ -35,31 +62,62 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 15px 0;
+  /* margin: 15px 0; */
 }
 
 .user_publicacao-materia-img-direito img {
   width: 100%;
+  height: 100%;
   max-width: 400px;
-  height: auto;
   margin-left: auto;
   display: block;
+  margin: 0 auto;
+}
+
+.user_publicacao-materia-paragrafo{
+  height: auto;
+  padding: 10px;
+  
 }
 
 /* Imagem à esquerda */
-.user_publicacao-materia-img-esquerdo {
+.user_publicacao-materia-img-esquerdo1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 15px 0;
+  height: auto;
+  /* margin: 15px 0; */
 }
 
-.user_publicacao-materia-img-esquerdo img {
+.user_publicacao-materia-img-esquerdo1 img {
   width: 100%;
-  max-width: 400px;
-  height: auto;
+  height: 80% ;
+  /* height: ; */
   margin-right: auto;
   display: block;
+  margin: 0 auto;
+}
+
+.user_publicacao-materia-text-direito p{
+  height: auto;
+  padding:5% 10px 10px 10px;
+  text-align: justify;
+}
+
+.user_publicacao-materia-img-esquerdo2 {
+  display: flex;
+  align-items: center;
+  height: auto;
+  /* margin: 15px 0; */
+}
+
+.user_publicacao-materia-img-esquerdo2 img {
+  width: 100%;
+  height:80% !important ;
+  /* height: ; */
+  display: block;
+  margin: 0 auto;
+
 }
 
 /* Imagem centralizada */
@@ -78,21 +136,21 @@
 .user_publicacao-materia-footer-item {
   display: flex;
   align-items: center;
-  background-color: #f8f8f8;
+  /* background-color: #f8f8f8; */
   padding: 10px;
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   border-radius: 5px;
   flex: 1;
 }
 
 .user_publicacao-materia-footer-img img {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   margin-right: 10px;
 }
 
 .user_publicacao-materia-footer-text p {
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   color: #555;
 }
 
@@ -102,22 +160,28 @@
   gap: 10px;
   margin-bottom: 15px;
 }
+.user_publicacao-materia-controle-texto p{
+  font-family: 'Roboto';
+  font-size: 18px !important;
+  margin-left: 10px;
+  margin-top: 5px;
+}
 
 .audio-button {
   background: none;
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: #007bff;
+  color: #000;
 }
 
 .audio-button:hover {
-  color: #0056b3;
+  color: #000;
 }
 
 .audio-progress-container {
   width: 100%;
-  background-color: #ddd;
+  background-color: #d9d9d9;
   height: 8px;
   border-radius: 4px;
   overflow: hidden;
@@ -126,28 +190,37 @@
 
 .audio-progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, #007bff, #0056b3);
+  background: linear-gradient(90deg, #000000, #000000);
   transition: width 0.1s linear; /* Transição suave */
 }
 
-
 /* Responsividade */
-@media (max-width: 768px) {
+@media (max-width: 888px) {
+
+  /* Mudando a estrutura do grid para coluna única em telas pequenas */
+  .user_publicacao-materia {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Imagens à esquerda e à direita em telas menores, ocupando a largura total */
+  .user_publicacao-materia-img-direito img,
+  .user_publicacao-materia-img-esquerdo img {
+    max-width: 100%;  /* Ajuste para ocupar toda a largura disponível */
+  }
+
+  /* Ajuste do tamanho da fonte para títulos menores em telas pequenas */
+  .user_publicacao-materia-title h3 {
+    font-size: 2.5rem;
+  }
+
+  /* Ajuste das imagens dentro do footer */
   .user_publicacao-materia-footer {
     flex-direction: column;
   }
 
   .user_publicacao-materia-footer-item {
     width: 100%;
-  }
-
-  .user_publicacao-materia-img-direito img,
-  .user_publicacao-materia-img-esquerdo img {
-    max-width: 300px;
-  }
-
-  .user_publicacao-materia-title h3 {
-    font-size: 1.5rem;
   }
 }
 

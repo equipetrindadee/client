@@ -18,10 +18,12 @@
 
 .user_publicacao-conteiner {
   /* background-color: blueviolet; */
-  width: 84vw;
+  width: 80vw !important;
   height: 100vh;
   margin: 0 auto !important;
 }
+
+
 
 .user_publicacao-infos {
   /* background-color: blue; */
@@ -35,10 +37,11 @@
   margin-bottom: 20px;
 }
 
-.user_publicacao-img {
-  width: 50%;
+.user_publicacao-img  {
+  /* width: 50%; */
   margin-left: 40%;
   margin-top: 5%;
+  font-size: 60px !important;
 }
 
 .user_publicacao-descricao h3 {
@@ -192,9 +195,11 @@
 /* Estilos responsivos */
 @media (max-width: 1024px) {
   .user_publicacao-img {
-    width: 70% !important;
+    /* width: 70% !important; */
     margin-left: 20%;
     margin-top: 5%;
+    font-size: 40px !important;
+
   }
 
   .user_publicacao-descricao h3 {
@@ -226,9 +231,10 @@
 
 @media (max-width: 920px) {
   .user_publicacao-img {
-    width: 70% !important;
     margin-left: 20%;
     margin-top: 5%;
+    font-size: 30px !important;
+
   }
 
   .user_publicacao-descricao h3 {

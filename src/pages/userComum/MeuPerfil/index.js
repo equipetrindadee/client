@@ -1,128 +1,52 @@
 import React, { useState, useEffect } from 'react';
+import { jwtDecode } from 'jwt-decode'; // Importando jwtDecode
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from "react-router-dom";
-
 import NavbarUserComum from "../../navBar/navBarUserComum/index.js";
-
 import './meuperfil.css';
-
-
-// No componente CommentCard, modifique o JSX para incluir um div ao redor de name e date
-const CommentCard = ({ name, date, text, likes, responses }) => (
-    <div className="usercomum_meuperfil-comment-card">
-        <div className="usercomum_meuperfil-comment-header">
-            <strong>{name}</strong>
-            <span className="usercomum_meuperfil-comment-date">{date}</span>
-        </div>
-        <p>{text}</p>
-        <div className="usercomum_meuperfil-comment-actions">
-            <span>
-                <i className="bi bi-heart"> </i><p className='usercomum_meuperfil-comment-actions-likes'>{likes} Curtidas</p>
-            </span>
-            <span>
-                <i className="bi bi-chat-dots"></i><p className='usercomum_meuperfil-comment-actions-responses'>{responses} Respostas</p>
-            </span>
-            <a href="#">Ver matéria</a>
-        </div>
-    </div>
-);
-
-
-
 
 const MeuPerfil = () => {
     const navigate = useNavigate();
-    const [show, setShow] = useState(false);
     const [activeTab, setActiveTab] = useState("informacoes");
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-    const [name, setName] = useState("laraSla");
-    const [email, setEmail] = useState("lara@gmail.com");
-    const [phone, setPhone] = useState("(11) 24123-4992");
-    const [inputName, setInputName] = useState(name);
-    const [inputEmail, setInputEmail] = useState(email);
-    const [inputPhone, setInputPhone] = useState(phone);
-    const [showConfirmation, setShowConfirmation] = useState(false);
-    const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+    const [name, setName] = useState(""); // Armazenar o nome do usuário
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [inputName, setInputName] = useState(""); // Para editar o nome
+    const [inputEmail, setInputEmail] = useState(""); // Para editar o email
+    const [inputPhone, setInputPhone] = useState(""); // Para editar o telefone
     const [profileImage, setProfileImage] = useState("/img/profileee.svg");
-
 
     const handleLogout = () => {
         // Limpar tudo do sessionStorage
         sessionStorage.clear();
-        
         // Redireciona para a página de login
         navigate('/login');
-    }
-
-    const handleSaveChangess = () => {
-        setName(inputName);
-        setEmail(inputEmail);
-        setPhone(inputPhone);
-        setShowConfirmation(true);
-    };
-
-    const handleSaveChanges = () => {
-        setShowConfirmation(true); // Exibe a seção de confirmação
-    };
-
-    const comments = [
-        {
-            name: 'IaraSla oque Gomes',
-            date: '22/06',
-            text: 'Olá, gostaria de deixar meu feedback sobre o artigo "As Novas Tendências do Mercado Financeiro"...',
-            likes: 2,
-            responses: 4,
-        },
-        {
-            name: 'Carlos Silva',
-            date: '18/06',
-            text: 'Achei o artigo muito interessante, realmente as novas tendências estão surpreendendo...',
-            likes: 5,
-            responses: 2,
-        },
-        {
-            name: 'Ana Paula',
-            date: '16/06',
-            text: 'Concordo com os pontos levantados no texto, especialmente na parte sobre investimentos...',
-            likes: 3,
-            responses: 1,
-        },
-    ];
-
-    const handleNo = () => {
-        setShowConfirmation(false);
     };
 
     useEffect(() => {
-        document.body.classList.add('no-scroll');
-        return () => {
-            document.body.classList.remove('no-scroll');
-        };
+        const token = localStorage.getItem("token"); // Pega o token do localStorage
+        if (token) {
+            try {
+                const decodedToken = jwtDecode(token); // Decodifica o token
+                // A partir do token decodificado, preenche as informações do perfil
+                setName(decodedToken.name);
+                setEmail(decodedToken.email);
+                setPhone(decodedToken.phone);
+                // Inicializa os campos de input com os dados do token
+                setInputName(decodedToken.name);
+                setInputEmail(decodedToken.email);
+                setInputPhone(decodedToken.phone);
+            } catch (error) {
+                console.error("Erro ao decodificar o token", error);
+            }
+        }
     }, []);
 
-    const closeConfirmation = () => {
-        setShowConfirmation(false); // Fecha a mensagem de confirmação
-    };
-
-    const handleYes = () => {
-        setName(inputName);
-        setEmail(inputEmail);
-        setPhone(inputPhone);
-        setShowConfirmation(false);
-        setShowSuccessMessage(true);
-    };
-
-    const handleOk = () => {
-        setShowSuccessMessage(false);
-    };
-
-    const handleImageChange = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            const imageURL = URL.createObjectURL(file);
-            setProfileImage(imageURL); // Atualiza a imagem de perfil
-        }
+    const handleSaveChangess = () => {
+        setName(inputName); // Atualiza o nome do usuário
+        setEmail(inputEmail); // Atualiza o email
+        setPhone(inputPhone); // Atualiza o telefone
+        // Aqui você pode adicionar lógica para salvar essas alterações (ex: em um backend ou no localStorage)
     };
 
     return (
@@ -130,9 +54,7 @@ const MeuPerfil = () => {
             <div>
                 <NavbarUserComum />
             </div>
-
             <div className="usercomum_meuperfil-header-background"></div>
-
             <div className="usercomum_meuperfil-profile-container">
                 <div className="usercomum_meuperfil-profile-sidebar">
                     <div className="profile-picture-container">
@@ -145,17 +67,13 @@ const MeuPerfil = () => {
                             id="fileInput"
                             style={{ display: 'none' }}
                             accept="image/*"
-                            onChange={handleImageChange}
+                            onChange={(e) => setProfileImage(URL.createObjectURL(e.target.files[0]))}
                         />
                     </div>
-                    <p><i className="bi bi-person-fill"></i> {name}</p>
-                    <p><i className="bi bi-envelope"></i> {email}</p>
-                    <p><i className="bi bi-telephone-fill"></i> {phone}</p>
-                    <p><i className="bi bi-clock"></i> desde 2011</p>
-                    <p><i className="bi bi-heart-fill"></i> 21 curtidas</p>
+                    <p><i className="bi bi-person-fill"></i> {name}</p> {/* Exibe o nome do usuário */}
+                    <p><i className="bi bi-envelope"></i> {email}</p> {/* Exibe o email do usuário */}
                     <button className="log-out-btn" onClick={handleLogout}>Log Out</button>
                 </div>
-
                 <div className="usercomum_meuperfil-profile-content">
                     <div className="usercomum_meuperfil-tabs">
                         <button
@@ -164,12 +82,6 @@ const MeuPerfil = () => {
                         >
                             INFORMAÇÕES
                         </button>
-                        {/* <button
-                            className={`usercomum_meuperfil-tab-btn ${activeTab === "comentarios" ? "active" : ""}`}
-                            onClick={() => setActiveTab("comentarios")}
-                        >
-                            Comentários
-                        </button> */}
                     </div>
 
                     {activeTab === "informacoes" ? (
@@ -179,61 +91,27 @@ const MeuPerfil = () => {
                                 <label>Nome Completo</label>
                                 <input
                                     type="text"
-                                    value={inputName}
+                                    value={inputName}  // Preenche o campo com o nome
                                     onChange={(e) => setInputName(e.target.value)}
                                 />
                                 <label>Email</label>
                                 <input
                                     type="email"
-                                    value={inputEmail}
+                                    value={inputEmail}  // Preenche o campo com o e-mail
                                     onChange={(e) => setInputEmail(e.target.value)}
                                 />
                                 <label>Telefone</label>
                                 <input
                                     type="tel"
-                                    value={inputPhone}
+                                    value={inputPhone}  // Preenche o campo com o telefone
                                     onChange={(e) => setInputPhone(e.target.value)}
                                 />
                                 <button type="button" onClick={handleSaveChangess} className="save-btn">
                                     Salvar Alterações
                                 </button>
                             </form>
-
-                            {showConfirmation && (
-                                <div className="usercomum_meuperfil-overlay">
-                                    <div className="usercomum_meuperfil-confirmation-section">
-                                        <p>Tem certeza?</p>
-                                        <button className="no-btn" onClick={handleNo}>NÃO</button>
-                                        <button className="yes-btn" onClick={handleYes}>SIM</button>
-                                    </div>
-                                </div>
-                            )}
                         </>
                     ) : null}
-
-                    {/* Comentado a parte do activeTab === "comentarios" */}
-                    {/* 
-{activeTab === "comentarios" ? (
-    <div className="usercomum_meuperfil-section">
-        <h1>COMENTÁRIOS</h1>
-        <div className="usercomum_meuperfil-container">
-            {/* Comentários estão comentados, por enquanto */}
-                    {/* <div className="usercomum_meuperfil-comments-section">
-                {comments.map((comment, index) => (
-                    <CommentCard key={index} {...comment} />
-                ))}
-            </div>
-
-            <div className="usercomum_meuperfil-liked-section">
-                <h2>Matérias Curtidas</h2>
-                <p>Nenhuma Coluna selecionada</p>
-                <div className="usercomum_meuperfil-sad-icon"><i className="bi bi-emoji-frown"></i></div>
-            </div>
-        </div> 
-    </div>
-) : null} 
-*/}
-
                 </div>
             </div>
         </>
